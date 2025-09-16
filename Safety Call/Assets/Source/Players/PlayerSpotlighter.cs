@@ -1,15 +1,18 @@
 using UnityEngine;
 
-public class PlayerSpotlighter : MonoBehaviour
+namespace Source.Players
 {
-    [SerializeField] private GameObject[] _playerLights;
-
-    public void SetChosenPlayer(int index)
+    public class PlayerSpotlighter : MonoBehaviour
     {
-        for (int i = 0; i < _playerLights.Length; i++)
+        [SerializeField] private GameObject[] _playerLights;
+
+        public void SetChosenPlayer(int index)
         {
-            if(i == index) _playerLights[i].SetActive(true);
-            else _playerLights[i].SetActive(false);
+            for (int i = 0; i < _playerLights.Length; i++)
+            {
+                if(i == index) _playerLights[i].SetActive(true);
+                else _playerLights[i].SetActive(false);
+            }
         }
     }
 }

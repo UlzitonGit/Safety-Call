@@ -1,13 +1,15 @@
-using System;
+using Source.Creatures.Movement;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class PlayerMovement : CreatureMovement
+namespace Source.Players.Movement
 {
-    
-    public override void MoveOnTarget(Vector3 target)
+    public class PlayerMovement : CreatureMovement
     {
-        base.MoveOnTarget(target);
-    }
+    
+        public override void MoveOnTarget(Vector3 target)
+        {
+            base.MoveOnTarget(target);
+        }
    
+    }
 }

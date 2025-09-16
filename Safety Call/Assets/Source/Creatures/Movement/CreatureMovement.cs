@@ -1,22 +1,24 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 
-public abstract class CreatureMovement : MonoBehaviour
+namespace Source.Creatures.Movement
 {
-    protected NavMeshAgent _agent;
-    void Start()
+    public abstract class CreatureMovement : MonoBehaviour
     {
-        _agent = GetComponent<NavMeshAgent>();
-    }
+        protected NavMeshAgent _agent;
+        void Start()
+        {
+            _agent = GetComponent<NavMeshAgent>();
+        }
 
-    private void Update()
-    {
-        transform.rotation = new Quaternion(0,0,0,1);
-    }
+        private void Update()
+        {
+            transform.rotation = new Quaternion(0,0,0,1);
+        }
 
-    public virtual void MoveOnTarget(Vector3 target)
-    {
-        _agent.SetDestination(target);
+        public virtual void MoveOnTarget(Vector3 target)
+        {
+            _agent.SetDestination(target);
+        }
     }
 }
