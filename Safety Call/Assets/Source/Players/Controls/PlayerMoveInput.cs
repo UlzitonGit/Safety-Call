@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerMoveInput : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerMoveInput : MonoBehaviour
         {
             MakePlayerMove(GetClickCoordinates());
         }
+        
     }
 
     public void SetPlayerMovement(CreatureMovement playerMovement)
