@@ -8,6 +8,11 @@ public class EnemyVisibility : MonoBehaviour
    Coroutine _hideCoroutine;
    private float _timeToHide;
 
+   private void Start()
+   {
+      HideEnemy();
+   }
+
    private void Update()
    {
       if (_timeToHide > 0)
