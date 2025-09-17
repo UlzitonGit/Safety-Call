@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3161888714526866910}
   - component: {fileID: 1696551949418460514}
+  - component: {fileID: 7612936933694942662}
   m_Layer: 0
   m_Name: PlayerLinePath
   m_TagString: Untagged
@@ -56,7 +57,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 50e21814976eb1142acbac30a58652d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -139,3 +140,15 @@ LineRenderer:
   m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &7612936933694942662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6939182828118033346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29361452aeaa8084f883c13b177b5d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

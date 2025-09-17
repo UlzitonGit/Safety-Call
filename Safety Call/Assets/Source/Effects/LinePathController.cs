@@ -4,23 +4,14 @@ using UnityEngine.AI;
 
 public class LinePathController : MonoBehaviour
 {
-    [SerializeField] private NavMeshAgent _agent;
-    
     private LineRenderer _pathLine;
 
     private void Start()
     {
         _pathLine = GetComponent<LineRenderer>();
     }
-
-    private void Update()
-    {
-        if (_agent.hasPath)
-        {
-            UpdateLineRenderer(_agent.path);
-        }
-    }
-    void UpdateLineRenderer(NavMeshPath path)
+    
+    public void UpdateLineRenderer(NavMeshPath path)
     {
         if (path.corners.Length < 2)
         {

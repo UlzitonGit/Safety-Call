@@ -1,11 +1,12 @@
 using Source.Creatures.Movement;
+using Source.Players.Movement;
 using UnityEngine;
 
 namespace Source.Players.Controls
 {
     public class PlayerMoveInput : MonoBehaviour
     {
-        private CreatureMovement _playerMovement;
+        private PlayerMovement _playerMovement;
         private void Update()
         {
             if (Input.GetButtonDown("Fire2"))
@@ -15,7 +16,7 @@ namespace Source.Players.Controls
         
         }
 
-        public void SetPlayerMovement(CreatureMovement playerMovement)
+        public void SetPlayerMovement(PlayerMovement playerMovement)
         {
             _playerMovement = playerMovement;
         }
@@ -34,6 +35,7 @@ namespace Source.Players.Controls
         private void MakePlayerMove(Vector3 position)
         {
             if(_playerMovement == null) return;
+            _playerMovement.UpdatePathLine();
             _playerMovement.MoveOnTarget(position);
         }
     }

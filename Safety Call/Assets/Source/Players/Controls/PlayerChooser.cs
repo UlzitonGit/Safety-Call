@@ -1,4 +1,5 @@
 using Source.Creatures.Movement;
+using Source.Players.Movement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ namespace Source.Players.Controls
     {
         [SerializeField] private Button[] _playerButtons;
     
-        [SerializeField] private CreatureMovement[] _creatureMovements;
+        [SerializeField] private PlayerMovement[] _creatureMovements;
     
         [SerializeField] private PlayerMoveInput _playerMoveInput;
     

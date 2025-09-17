@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 public class TimeStopManager : MonoBehaviour
 {
     [SerializeField] private Volume _volume;
-    
+    [SerializeField] private FieldOfView[] _fieldOfViews;
     private float _volumeWeight = 0.7f;
     private bool _isStoped;
 
@@ -24,15 +24,21 @@ public class TimeStopManager : MonoBehaviour
     private void StopTime()
     {
         _isStoped = true;
-        
-        Time.timeScale = 0.05f;
+        foreach (var fieldOfView in _fieldOfViews)
+        {
+            fieldOfView.DrawTriangle();
+        }
+        Time.timeScale = 0;
         _volume.weight = _volumeWeight;
     }
 
     private void PlayTime()
     {
         _isStoped = false;
-        
+        foreach (var fieldOfView in _fieldOfViews)
+        {
+            fieldOfView.HideTriangle();
+        }
         Time.timeScale = 1;
         _volume.weight = 0f;
     }
