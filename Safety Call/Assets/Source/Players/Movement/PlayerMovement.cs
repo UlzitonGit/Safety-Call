@@ -6,7 +6,6 @@ namespace Source.Players.Movement
 {
     public class PlayerMovement : CreatureMovement
     {
-        [SerializeField] private FieldOfView _fieldOfView;
         [SerializeField] private LinePathController _lineRenderer;
         public override void MoveOnTarget(Vector3 target)
         {
@@ -15,7 +14,6 @@ namespace Source.Players.Movement
 
         private void FixedUpdate()
         {
-            _fieldOfView.SetOrigin(transform.position);
             UpdatePathLine();
         }
 

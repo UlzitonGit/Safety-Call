@@ -338,6 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de482c30ad1f2240a1af65e5a4135e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lineRenderer: {fileID: 0}
 --- !u!1 &8614093271525184653
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3401516190086788079}
+  - component: {fileID: 5062556670094873782}
   m_Layer: 0
   m_Name: AimPoint
   m_TagString: Untagged
@@ -369,3 +371,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4552896821078176600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5062556670094873782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8614093271525184653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a13fed4aaf870b4fa95fcd97ee412ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _viewRange: 15
