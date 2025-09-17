@@ -13,6 +13,10 @@ namespace Source.Players.Controls
             {
                 MakePlayerMove(GetClickCoordinates());
             }
+            if (Input.GetButtonDown("Fire1"))
+            {
+                MakePlayerAim(GetClickCoordinates());
+            }
         
         }
 
@@ -37,6 +41,11 @@ namespace Source.Players.Controls
             if(_playerMovement == null) return;
             _playerMovement.UpdatePathLine();
             _playerMovement.MoveOnTarget(position);
+        }
+        private void MakePlayerAim(Vector3 target)
+        {
+            if(_playerMovement == null) return;
+            _playerMovement.LookAtTarget(target);
         }
     }
 }
