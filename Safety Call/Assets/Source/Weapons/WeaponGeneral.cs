@@ -11,6 +11,8 @@ public abstract class WeaponGeneral : MonoBehaviour
     
     [SerializeField] protected ParticleSystem _shootVfx;
     
+    [SerializeField] protected AudioSource _audioSource;
+    
     [SerializeField] protected float _timeBetweenShots;
     [SerializeField] protected float _damage;
     
@@ -40,6 +42,7 @@ public abstract class WeaponGeneral : MonoBehaviour
         if (_currentTimeBetweenShot <= 0)
         {
             _shootVfx.Play();
+            _audioSource.PlayOneShot(_audioSource.clip);
             print("Shoot");
             Vector2 direction = (_target.position - transform.position).normalized;
             RaycastHit2D hit = Physics2D.Raycast(_shootPoint.position, direction, 100, ~_layersToIgnore);
