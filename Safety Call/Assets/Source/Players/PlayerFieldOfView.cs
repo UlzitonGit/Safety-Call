@@ -10,7 +10,7 @@ public class PlayerFieldOfView : FieldOfView
     {
         
         viewAngle = 60;
-        viewRadius = 10;
+        viewRadius = 15;
     }
 
     private void FixedUpdate()

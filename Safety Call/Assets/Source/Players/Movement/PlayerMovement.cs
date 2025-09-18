@@ -8,22 +8,22 @@ namespace Source.Players.Movement
     {
         [SerializeField] private LinePathController _lineRenderer;
         
-        private Vector3 _target;
         public override void MoveOnTarget(Vector3 target)
         {
             base.MoveOnTarget(target);
         }
 
-        public void LookAtTarget(Vector3 target)
+        protected void FixedUpdate()
+        {
+            LookAtPosition();
+            UpdatePathLine();
+        }
+
+        public override void LookAtTarget(Vector3 target)
         {
             _target = target;
         }
-
-        private void FixedUpdate()
-        {
-            UpdatePathLine();
-            LookAtPosition(_target);
-        }
+        
 
         public void UpdatePathLine()
         {
@@ -33,9 +33,9 @@ namespace Source.Players.Movement
             }
         }
 
-        public override void LookAtPosition(Vector3 targetPosition)
+        protected override void LookAtPosition()
         {
-            base.LookAtPosition(targetPosition);
+            base.LookAtPosition();
         }
     }
 }

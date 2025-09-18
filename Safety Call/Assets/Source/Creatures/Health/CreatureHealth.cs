@@ -1,23 +1,31 @@
 using System;
+using Source.Creatures.Movement;
 using UnityEngine;
 
 namespace Source.Creatures.Health
 {
     public abstract class CreatureHealth : MonoBehaviour
     {
+        [SerializeField] protected GameObject _bloodVfxPrefab;
+        
         [SerializeField] protected float _maxHealth;
         protected float _currentHealth;
-
+        
+        protected CreatureMovement _movement;
+        
         protected bool _isAlive;
 
         protected virtual void Start()
         {
             _currentHealth = _maxHealth;
+            _movement = GetComponent<CreatureMovement>();
         }
 
-        public virtual void GetDamage(float damage)
+        public virtual void GetDamage(float damage, Vector3 enemyPos)
         {
             _currentHealth -= damage;
+            _movement.LookAtTarget(enemyPos);
+            Instantiate(_bloodVfxPrefab, transform.position, Quaternion.identity);
             print(_currentHealth);
             CheckHealth();
         }

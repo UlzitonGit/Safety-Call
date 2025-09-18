@@ -8,6 +8,7 @@ public class EnemyGunFightBehaviour : GunfightBehaviourManager
     {
         return _canShootFirst;
     }
+    
 
     public override void AddEnemyTarget(CreatureStates enemy)
     {

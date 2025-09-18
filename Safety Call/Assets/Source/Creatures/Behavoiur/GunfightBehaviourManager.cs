@@ -48,7 +48,7 @@ namespace Source.Players.Behaviour
             if (CheckShootingRelevation())
             {
                 print("TargetAdded");
-                _movement.LookAtPosition(enemy.transform.position);
+                _movement.LookAtTarget(enemy.transform.position);
                 _weapon.StartFire(EnemyTarget.transform);
             }
         }

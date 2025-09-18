@@ -18,6 +18,6 @@ public class AslautRifle : WeaponGeneral
     {
         if (!hit.collider.CompareTag(_tag)) return;
         print(hit.collider.name);
-        hit.transform.GetComponent<CreatureHealth>().GetDamage(_damage);
+        hit.transform.GetComponent<CreatureHealth>().GetDamage(_damage, transform.position);
     }
 }

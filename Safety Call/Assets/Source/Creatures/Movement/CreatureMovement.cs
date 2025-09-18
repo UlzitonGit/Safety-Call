@@ -10,6 +10,8 @@ namespace Source.Creatures.Movement
         [SerializeField] protected float _rotationSpeed = 5;
         [SerializeField] protected float _angleOffset;
         
+        protected Vector3 _target;
+        
         protected NavMeshAgent _agent;
         void Start()
         {
@@ -20,15 +22,19 @@ namespace Source.Creatures.Movement
         {
             transform.rotation = new Quaternion(0,0,0,1);
         }
-
+        public virtual void LookAtTarget(Vector3 target)
+        {
+            print("LookAtTarget");
+            _target = target;
+        }
         public virtual void MoveOnTarget(Vector3 target)
         {
             _agent.SetDestination(target);
         }
-        public virtual void LookAtPosition(Vector3 targetPosition)
+        protected virtual void LookAtPosition()
         {
             //print(targetPosition);
-            Vector3 direction = targetPosition - _aimPoint.position;
+            Vector3 direction = _target - _aimPoint.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             
             angle += _angleOffset;

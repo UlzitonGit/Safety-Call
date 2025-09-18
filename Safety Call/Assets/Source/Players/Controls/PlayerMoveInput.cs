@@ -46,6 +46,7 @@ namespace Source.Players.Controls
         private void MakePlayerAim(Vector3 target)
         {
             if(_playerMovement == null) return;
+            print("look");
             _playerMovement.LookAtTarget(target);
         }
     }

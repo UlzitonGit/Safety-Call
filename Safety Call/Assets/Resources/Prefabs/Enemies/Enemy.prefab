@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d100b79e639e9fa49bd4bb694a7ce09c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bloodVfxPrefab: {fileID: 5931750505607395279, guid: e142c5577ffba5e43b29e5fc9bd8cbb5, type: 3}
   _maxHealth: 100
 --- !u!114 &2402734017574895527
 MonoBehaviour:
@@ -5223,8 +5224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6f290d2bc9f48498eec40e1907578b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 10
-  viewAngle: 60
+  viewRadius: 15
+  viewAngle: 180
   _targetLayerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -15122,6 +15123,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 72
   _shootVfx: {fileID: 8033531837036404913}
-  _timeBetweenShots: 0.03
+  _timeBetweenShots: 0.02
   _damage: 10
   _tag: Player

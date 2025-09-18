@@ -10,8 +10,8 @@ public class EnemyFieldOfView : FieldOfView
     void Start()
     {
         
-        viewAngle = 60;
-        viewRadius = 5;
+        viewAngle = 90;
+        viewRadius = 15;
     }
 
     private void FixedUpdate()
