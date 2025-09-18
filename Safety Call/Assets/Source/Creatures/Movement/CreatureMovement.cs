@@ -41,7 +41,19 @@ namespace Source.Creatures.Movement
             
             Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
             _aimPoint.rotation = Quaternion.Slerp(_aimPoint.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
-            
+        }
+
+        public virtual float  GetHorizontalSpeed()
+        {
+            return _agent.velocity.x;
+        }
+        public virtual float  GetVerticalSpeed()
+        {
+            return _agent.velocity.y;
+        }
+        public virtual float  GetSpeed()
+        {
+            return _agent.velocity.magnitude;
         }
     }
 }
