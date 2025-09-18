@@ -7,13 +7,13 @@ public abstract class FieldOfView : MonoBehaviour
     public float viewRadius = 10;
     public float viewAngle;
     
-    [SerializeField] private LayerMask _targetLayerMask;
-    [SerializeField] private LayerMask _obstacleLayerMask;
+    [SerializeField] protected LayerMask _targetLayerMask;
+    [SerializeField] protected LayerMask _obstacleLayerMask;
+    
 
     protected virtual void FindVisibleTargets()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, viewRadius, _targetLayerMask);
-        
         for (int i = 0; i < colliders.Length; i++)
         {
             Transform target = colliders[i].transform;

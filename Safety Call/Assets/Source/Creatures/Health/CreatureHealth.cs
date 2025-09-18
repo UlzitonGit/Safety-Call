@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Source.Creatures.Health
@@ -5,13 +6,19 @@ namespace Source.Creatures.Health
     public abstract class CreatureHealth : MonoBehaviour
     {
         [SerializeField] protected float _maxHealth;
-        [SerializeField] protected float _currentHealth;
+        protected float _currentHealth;
 
         protected bool _isAlive;
+
+        protected virtual void Start()
+        {
+            _currentHealth = _maxHealth;
+        }
 
         public virtual void GetDamage(float damage)
         {
             _currentHealth -= damage;
+            print(_currentHealth);
             CheckHealth();
         }
 

@@ -23,7 +23,7 @@ public class TimeStopManager : MonoBehaviour
     private void StopTime()
     {
         _isStoped = true;
-        Time.timeScale = 0.05f;
+        Time.timeScale = 0.02f;
         _volume.weight = _volumeWeight;
     }
 

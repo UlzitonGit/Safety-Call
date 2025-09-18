@@ -38,8 +38,11 @@ namespace Source.Players.Controls
 
         public void SetChosenPlayer(int playerIndex)
         {
-            _playerMoveInput.SetPlayerMovement(_creatureMovements[playerIndex]);
-            _playerSpotlighter.SetChosenPlayer(playerIndex);
+            if (_creatureMovements[playerIndex] != null)
+            {
+                _playerMoveInput.SetPlayerMovement(_creatureMovements[playerIndex]);
+                _playerSpotlighter.SetChosenPlayer(playerIndex);
+            }
         }
     }
 }
