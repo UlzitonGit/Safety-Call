@@ -13,6 +13,7 @@ public class PlayerHealth : CreatureHealth
     protected override void Death()
     {
         base.Death();
+        _gameplayStagesManager.PlayerKilled();
         _playerStates.SetAlive(_isAlive);
         Destroy(gameObject);
     }

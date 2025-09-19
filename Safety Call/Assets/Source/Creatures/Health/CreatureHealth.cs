@@ -6,6 +6,7 @@ namespace Source.Creatures.Health
 {
     public abstract class CreatureHealth : MonoBehaviour
     {
+        public float CurrentHealth => _currentHealth;
         [SerializeField] protected GameObject _bloodVfxPrefab;
         
         [SerializeField] protected float _maxHealth;
@@ -14,11 +15,14 @@ namespace Source.Creatures.Health
         protected CreatureMovement _movement;
         
         protected bool _isAlive;
+        
+        protected GameplayStagesManager _gameplayStagesManager;
 
         protected virtual void Start()
         {
             _currentHealth = _maxHealth;
             _movement = GetComponent<CreatureMovement>();
+            _gameplayStagesManager = FindAnyObjectByType<GameplayStagesManager>();
         }
 
         public virtual void GetDamage(float damage, Vector3 enemyPos)

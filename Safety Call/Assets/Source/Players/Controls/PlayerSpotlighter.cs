@@ -10,8 +10,11 @@ namespace Source.Players
         {
             for (int i = 0; i < _playerLights.Length; i++)
             {
-                if(i == index) _playerLights[i].SetActive(true);
-                else _playerLights[i].SetActive(false);
+                if (_playerLights[i] != null)
+                {
+                    if(i == index) _playerLights[i].SetActive(true);
+                    else _playerLights[i].SetActive(false);
+                }
             }
         }
     }

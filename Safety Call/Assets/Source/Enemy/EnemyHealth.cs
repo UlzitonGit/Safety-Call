@@ -1,5 +1,4 @@
 using Source.Creatures.Health;
-using UnityEngine;
 
 namespace Source.Enemy
 {
@@ -15,6 +14,7 @@ namespace Source.Enemy
         protected override void Death()
         {
             base.Death();
+            _gameplayStagesManager.EnemyKilled();
             _enemyStates.SetAlive(_isAlive);
             Destroy(gameObject);
         }
