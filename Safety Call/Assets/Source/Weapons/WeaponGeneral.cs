@@ -21,26 +21,29 @@ public abstract class WeaponGeneral : MonoBehaviour
     protected bool _startFire;
     
     protected Transform _target;
+
+    protected bool _isShooting;
     private void Start()
     {
         _currentTimeBetweenShot = _timeBetweenShots;
+        StartCoroutine(Shooting());
     }
 
     public virtual void StartFire(Transform target)
     {
          _target = target;
          _startFire = true;
+          StartCoroutine(Shooting());
     }
     
     public virtual void StopFire()
     {
         _startFire = false;
+        _isShooting = false;
     }
 
     protected virtual void Shoot()
     {
-        if (_currentTimeBetweenShot <= 0)
-        {
             _shootVfx.Play();
             _audioSource.PlayOneShot(_audioSource.clip);
             print("Shoot");
@@ -48,7 +51,7 @@ public abstract class WeaponGeneral : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(_shootPoint.position, direction, 100, ~_layersToIgnore);
             Debug.DrawRay(_shootPoint.position, direction * 10f, Color.red, 1);
             DealDamage(hit);
-        }
+        
     }
 
     protected virtual void DealDamage(RaycastHit2D hit)
@@ -56,16 +59,14 @@ public abstract class WeaponGeneral : MonoBehaviour
         
     }
 
-    protected virtual void Update()
+    protected IEnumerator Shooting()
     {
-        if (_currentTimeBetweenShot > 0 && _startFire)
+        yield return new WaitForSeconds(_timeBetweenShots);
+        if (_startFire)
         {
-            _currentTimeBetweenShot -= Time.deltaTime;
-            if (_currentTimeBetweenShot <= 0)
-            {
-                Shoot();
-                _currentTimeBetweenShot = _timeBetweenShots;
-            }
+            print("shootC");
+            Shoot();
+            StartCoroutine(Shooting());
         }
     }
 }

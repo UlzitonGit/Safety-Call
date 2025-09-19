@@ -5,10 +5,7 @@ public class AslautRifle : WeaponGeneral
 {
     [SerializeField] private string _tag;
     
-    protected override void Update()
-    {
-        base.Update();
-    }
+    
 
     protected override void Shoot()
     {

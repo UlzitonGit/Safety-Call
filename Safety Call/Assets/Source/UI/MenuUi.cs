@@ -7,4 +7,9 @@ public class MenuUi : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
