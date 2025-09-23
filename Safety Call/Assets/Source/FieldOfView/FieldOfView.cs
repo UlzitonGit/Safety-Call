@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public abstract class FieldOfView : MonoBehaviour
 {
-    public float viewRadius = 10;
-    public float viewAngle;
+    [SerializeField] protected float _viewRadius = 10; 
+    [SerializeField] protected float _viewAngle;
     
     [SerializeField] protected LayerMask _targetLayerMask;
     [SerializeField] protected LayerMask _obstacleLayerMask;
@@ -13,12 +14,12 @@ public abstract class FieldOfView : MonoBehaviour
 
     protected virtual void FindVisibleTargets()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, viewRadius, _targetLayerMask);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _viewRadius, _targetLayerMask);
         for (int i = 0; i < colliders.Length; i++)
         {
             Transform target = colliders[i].transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
-            if (Vector2.Angle(transform.up, dirToTarget) < viewAngle / 2)
+            if (Vector2.Angle(transform.up, dirToTarget) < _viewAngle / 2)
             {
                 print(colliders.Length);
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
@@ -29,6 +30,16 @@ public abstract class FieldOfView : MonoBehaviour
                 }
             }
         }
+    }
+
+    public float GetViewRadius()
+    {
+        return _viewRadius;
+    }
+
+    public float GetViewAngle()
+    {
+        return _viewAngle;
     }
     public virtual Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
     {

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Source.Players
@@ -6,15 +7,16 @@ namespace Source.Players
     {
         [SerializeField] private GameObject[] _playerLights;
 
-        public void SetChosenPlayer(int index)
+        public void SetChosenPlayer(List<int> index)
         {
-            for (int i = 0; i < _playerLights.Length; i++)
+            foreach (GameObject light in _playerLights)
             {
-                if (_playerLights[i] != null)
-                {
-                    if(i == index) _playerLights[i].SetActive(true);
-                    else _playerLights[i].SetActive(false);
-                }
+                if(light != null)
+                    light.SetActive(false);
+            }
+            foreach (int playerIndex in index)
+            {
+                _playerLights[playerIndex].gameObject.SetActive(true);
             }
         }
     }

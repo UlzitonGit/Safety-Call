@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Source.Creatures.Movement;
 using Source.Players.Movement;
 using UnityEngine;
@@ -6,7 +7,7 @@ namespace Source.Players.Controls
 {
     public class PlayerMoveInput : MonoBehaviour
     {
-        private PlayerMovement _playerMovement;
+        private List<PlayerMovement> _playerMovement;
         private void Update()
         {
             if (Input.GetButtonDown("Fire2"))
@@ -20,8 +21,9 @@ namespace Source.Players.Controls
         
         }
 
-        public void SetPlayerMovement(PlayerMovement playerMovement)
+        public void SetPlayerMovement(List<PlayerMovement> playerMovement)
         {
+            _playerMovement = new List<PlayerMovement>();
             _playerMovement = playerMovement;
         }
 
@@ -40,14 +42,20 @@ namespace Source.Players.Controls
         private void MakePlayerMove(Vector3 position)
         {
             if(_playerMovement == null) return;
-            _playerMovement.UpdatePathLine();
-            _playerMovement.MoveOnTarget(position);
+            for (int i = 0; i < _playerMovement.Count; i++)
+            {
+                _playerMovement[i].UpdatePathLine();
+                _playerMovement[i].MoveOnTarget(position);
+            }
         }
         private void MakePlayerAim(Vector3 target)
         {
             if(_playerMovement == null) return;
             print("look");
-            _playerMovement.LookAtTarget(target);
+            for (int i = 0; i < _playerMovement.Count; i++)
+            {
+                _playerMovement[i].LookAtTarget(target);
+            }
         }
     }
 }

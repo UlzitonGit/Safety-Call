@@ -6,13 +6,6 @@ public class PlayerFieldOfView : FieldOfView
 {
     [SerializeField] private GunfightBehaviourManager _playerGunfightBehaviourManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-        viewAngle = 60;
-        viewRadius = 15;
-    }
-
     private void FixedUpdate()
     {
         FindVisibleTargets();
