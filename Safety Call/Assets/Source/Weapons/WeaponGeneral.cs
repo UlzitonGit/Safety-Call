@@ -16,28 +16,24 @@ public abstract class WeaponGeneral : MonoBehaviour
     [SerializeField] protected float _timeBetweenShots;
     [SerializeField] protected float _damage;
     
-    protected float _currentTimeBetweenShot;
+    protected Coroutine _shootingCoroutine;
     
     protected bool _startFire;
     
     protected Transform _target;
 
     protected bool _isShooting;
-    private void Start()
-    {
-        _currentTimeBetweenShot = _timeBetweenShots;
-        StartCoroutine(Shooting());
-    }
 
     public virtual void StartFire(Transform target)
     {
          _target = target;
          _startFire = true;
-          StartCoroutine(Shooting());
+         StartCoroutine(Shooting());
     }
     
     public virtual void StopFire()
     {
+        StopAllCoroutines();
         _startFire = false;
         _isShooting = false;
     }
@@ -46,7 +42,6 @@ public abstract class WeaponGeneral : MonoBehaviour
     {
             _shootVfx.Play();
             _audioSource.PlayOneShot(_audioSource.clip);
-            print("Shoot");
             Vector2 direction = (_target.position - transform.position).normalized;
             RaycastHit2D hit = Physics2D.Raycast(_shootPoint.position, direction, 100, ~_layersToIgnore);
             Debug.DrawRay(_shootPoint.position, direction * 10f, Color.red, 1);
@@ -64,9 +59,8 @@ public abstract class WeaponGeneral : MonoBehaviour
         yield return new WaitForSeconds(_timeBetweenShots);
         if (_startFire)
         {
-            print("shootC");
             Shoot();
-            StartCoroutine(Shooting());
+            _shootingCoroutine = StartCoroutine(Shooting());
         }
     }
 }

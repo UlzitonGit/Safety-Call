@@ -16,7 +16,6 @@ namespace Source.Enemy
             base.Death();
             _gameplayStagesManager.EnemyKilled();
             _enemyStates.SetAlive(_isAlive);
-            Destroy(gameObject);
         }
     }
 }

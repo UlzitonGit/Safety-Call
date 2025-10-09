@@ -14,7 +14,7 @@ namespace Source.Creatures.Health
         
         protected CreatureMovement _movement;
         
-        protected bool _isAlive;
+        protected bool _isAlive = true;
         
         protected GameplayStagesManager _gameplayStagesManager;
 
@@ -36,7 +36,7 @@ namespace Source.Creatures.Health
 
         protected virtual void CheckHealth()
         {
-            if (_currentHealth <= 0)
+            if (_currentHealth <= 0 && _isAlive)
             {
                 Death();
             }

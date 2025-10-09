@@ -15,6 +15,5 @@ public class PlayerHealth : CreatureHealth
         base.Death();
         _gameplayStagesManager.PlayerKilled();
         _playerStates.SetAlive(_isAlive);
-        Destroy(gameObject);
     }
 }

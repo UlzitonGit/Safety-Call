@@ -16,6 +16,8 @@ namespace Source.Players.Behaviour
         
         protected bool _hasTarget;
 
+        protected bool _canShoot = true;
+
         protected virtual void Start()
         {
             _movement = GetComponent<CreatureMovement>();
@@ -34,23 +36,37 @@ namespace Source.Players.Behaviour
             }
         }
 
+        public bool IsHasTarget()
+        {
+            return _hasTarget;
+        }
+
+        public virtual void AddEnemyTarget(CreatureStates enemy)
+        {
+            if(EnemyTarget !=null || _hasTarget || !_canShoot || !enemy.IsAlive) return;
+            EnemyTarget = enemy;
+            _hasTarget = true;
+            if (CheckShootingRelevation())
+            {
+                print("TargetAdded " + _hasTarget);
+                _movement.LookAtTarget(enemy.transform.position);
+                _weapon.StartFire(EnemyTarget.transform);
+            }
+        }
+
+        public void SetIsAbleToShoot(bool isAbleToShoot)
+        {
+            _canShoot = isAbleToShoot;
+            if (!_canShoot)
+            {
+                _weapon.StopFire();
+            }
+        }
+        
         protected virtual bool CheckShootingRelevation()
         {
             return true;
         }
         
-
-        public virtual void AddEnemyTarget(CreatureStates enemy)
-        {
-            if(EnemyTarget!=null) return;
-            EnemyTarget = enemy;
-            _hasTarget = true;
-            if (CheckShootingRelevation())
-            {
-                print("TargetAdded");
-                _movement.LookAtTarget(enemy.transform.position);
-                _weapon.StartFire(EnemyTarget.transform);
-            }
-        }
     }
 }

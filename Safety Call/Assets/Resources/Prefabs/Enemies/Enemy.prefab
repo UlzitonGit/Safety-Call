@@ -230,6 +230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c38440b83c5144c8b690e5d52dc960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _movement: {fileID: 8495540433829747488}
+  _creatureGunfight: {fileID: 8757865318597274204}
+  _creatureFieldOfView: {fileID: 2890953296134418534}
 --- !u!114 &8757865318597274204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,8 +347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6f290d2bc9f48498eec40e1907578b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 15
-  viewAngle: 180
+  _viewRadius: 15
+  _viewAngle: 60
   _targetLayerMask:
     serializedVersion: 2
     m_Bits: 128

@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using Source.Players.Behaviour;
 using UnityEngine;
 
@@ -7,13 +9,6 @@ public class EnemyFieldOfView : FieldOfView
 
     [SerializeField] private EnemyVisibility _enemyVisibility;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-        _viewAngle = 90;
-        _viewRadius = 15;
-    }
-
     private void FixedUpdate()
     {
         FindVisibleTargets();

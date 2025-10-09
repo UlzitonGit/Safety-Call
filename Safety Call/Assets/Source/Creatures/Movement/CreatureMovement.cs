@@ -13,6 +13,8 @@ namespace Source.Creatures.Movement
         protected Vector3 _target;
         
         protected NavMeshAgent _agent;
+
+        protected bool _canMove = true;
         void Start()
         {
             _agent = GetComponent<NavMeshAgent>();
@@ -24,15 +26,17 @@ namespace Source.Creatures.Movement
         }
         public virtual void LookAtTarget(Vector3 target)
         {
-            print("LookAtTarget");
+            if(!_canMove) return;
             _target = target;
         }
         public virtual void MoveOnTarget(Vector3 target)
         {
+            if(!_canMove) return;
             _agent.SetDestination(target);
         }
         protected virtual void LookAtPosition()
         {
+            if(!_canMove) return;
             //print(targetPosition);
             Vector3 direction = _target - _aimPoint.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -54,6 +58,11 @@ namespace Source.Creatures.Movement
         public virtual float  GetSpeed()
         {
             return _agent.velocity.magnitude;
+        }
+
+        public void SetCanMove(bool canMove)
+        {
+            _canMove = canMove;
         }
     }
 }

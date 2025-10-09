@@ -10,10 +10,16 @@ public abstract class FieldOfView : MonoBehaviour
     
     [SerializeField] protected LayerMask _targetLayerMask;
     [SerializeField] protected LayerMask _obstacleLayerMask;
-    
 
+    protected bool _isAbleToSee = true;
+    
+    protected void Start()
+    {
+        _isAbleToSee = true;
+    }
     protected virtual void FindVisibleTargets()
     {
+        if(_isAbleToSee == false) return;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _viewRadius, _targetLayerMask);
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -30,6 +36,11 @@ public abstract class FieldOfView : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetIsAbleToSee(bool isAbleToSee)
+    {
+        _isAbleToSee = isAbleToSee;
     }
 
     public float GetViewRadius()
