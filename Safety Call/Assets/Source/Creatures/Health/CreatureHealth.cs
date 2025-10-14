@@ -11,18 +11,24 @@ namespace Source.Creatures.Health
         
         [SerializeField] protected float _maxHealth;
         protected float _currentHealth;
+
+        protected CapsuleCollider2D _capsuleCollider2D;
         
         protected CreatureMovement _movement;
         
         protected bool _isAlive = true;
         
         protected GameplayStagesManager _gameplayStagesManager;
+        
+        protected PlayerAnimator _playerAnimator;
 
         protected virtual void Start()
         {
             _currentHealth = _maxHealth;
             _movement = GetComponent<CreatureMovement>();
             _gameplayStagesManager = FindAnyObjectByType<GameplayStagesManager>();
+            _playerAnimator = GetComponent<PlayerAnimator>();
+            _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         }
 
         public virtual void GetDamage(float damage, Vector3 enemyPos)
@@ -45,6 +51,9 @@ namespace Source.Creatures.Health
         protected virtual void Death()
         {
             if(!_isAlive) return;
+            _playerAnimator.Death();
+            _capsuleCollider2D.enabled = false;
+            _movement.SetCanMove(false);
             _isAlive = false;
         }
     }

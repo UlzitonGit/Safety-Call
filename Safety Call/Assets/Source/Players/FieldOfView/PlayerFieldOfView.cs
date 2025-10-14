@@ -10,16 +10,16 @@ public class PlayerFieldOfView : FieldOfView
     {
         _isAbleToSee = true;
     }
-    private void Update()
+    private void FixedUpdate()
     {
         FindVisibleTargets();
-      
     }
 
     protected override void ActionViewedObject(Transform target)
     {
        // if(_playerGunfightBehaviourManager.IsHasTarget()) return;
         EnemyVisibility enemy = target.GetComponent<EnemyVisibility>();
+        print(enemy);
         enemy.ShowEnemy();
         _playerGunfightBehaviourManager.AddEnemyTarget(enemy.GetComponent<CreatureStates>());
     }

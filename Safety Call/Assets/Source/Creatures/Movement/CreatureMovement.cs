@@ -63,6 +63,7 @@ namespace Source.Creatures.Movement
         public void SetCanMove(bool canMove)
         {
             _canMove = canMove;
+            if (!_canMove) _agent.Stop();
         }
     }
 }

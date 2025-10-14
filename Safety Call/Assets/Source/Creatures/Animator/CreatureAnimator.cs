@@ -15,6 +15,8 @@ public abstract class CreatureAnimator : MonoBehaviour
     [SerializeField] protected SpriteRenderer _bodySpriteRenderer;
 
     public float _rotationIndex;
+    
+    protected bool _isDead = false;
 
     protected void Update()
     {
@@ -27,5 +29,11 @@ public abstract class CreatureAnimator : MonoBehaviour
             _bodySpriteRenderer.sortingOrder = 3;
         else  
             _bodySpriteRenderer.sortingOrder = 1;
+    }
+
+    public void Death()
+    {
+        if(_isDead) return;
+        _upperAnimator.SetTrigger("Death");
     }
 }
