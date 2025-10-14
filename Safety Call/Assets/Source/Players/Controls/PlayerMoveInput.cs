@@ -31,7 +31,7 @@ namespace Source.Players.Controls
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
-            if(hit2D.transform.gameObject.layer == LayerMask.NameToLayer("UI")) return default;
+            //if(hit2D.transform.gameObject.layer == LayerMask.NameToLayer("UI")) return default;
             if (hit2D.collider != null)
             {
                 return hit2D.point;
