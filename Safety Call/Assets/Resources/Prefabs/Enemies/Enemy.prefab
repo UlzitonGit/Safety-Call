@@ -508,18 +508,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1506585922548495257}
     m_Modifications:
     - target: {fileID: 291335330471831298, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.8485
-      objectReference: {fileID: 0}
-    - target: {fileID: 291335330471831298, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8485
-      objectReference: {fileID: 0}
-    - target: {fileID: 291335330471831298, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.8485
-      objectReference: {fileID: 0}
-    - target: {fileID: 291335330471831298, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.163
       objectReference: {fileID: 0}
@@ -563,53 +551,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestWeapon
       objectReference: {fileID: 0}
-    - target: {fileID: 346286653191486819, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1862564622958421891, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1944591312241677976, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
-      propertyPath: ShapeModule.angle
-      value: 23.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1944591312241677976, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 1.2
-      objectReference: {fileID: 0}
     - target: {fileID: 3957164289097227882, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
       propertyPath: _tag
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957164289097227882, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
-      propertyPath: _damage
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3957164289097227882, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
       propertyPath: _shootPoint
       value: 
       objectReference: {fileID: 1506585922548495257}
     - target: {fileID: 3957164289097227882, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
-      propertyPath: _timeBetweenShots
-      value: 0.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957164289097227882, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
       propertyPath: _layersToIgnore.m_Bits
       value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 4577968225654914055, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4583058712510504454, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5160349072901052229, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
-      propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 183
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

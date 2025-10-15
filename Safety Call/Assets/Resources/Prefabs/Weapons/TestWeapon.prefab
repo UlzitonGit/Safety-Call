@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2859190088496257653}
   - component: {fileID: 3957164289097227882}
   - component: {fileID: 5337648750142095221}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TestWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,8 +108,8 @@ MonoBehaviour:
     m_Bits: 136
   _shootVfx: {fileID: 7953178337403452290}
   _audioSource: {fileID: 5337648750142095221}
-  _timeBetweenShots: 0.12
-  _damage: 7
+  _timeBetweenShots: 0.2
+  _damage: 20
   _tag: Enemy
 --- !u!82 &5337648750142095221
 AudioSource:
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 7461071707147772209}
   - component: {fileID: 7953178337403452290}
   - component: {fileID: 670813857980173229}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootSfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5112,7 +5112,7 @@ GameObject:
   - component: {fileID: 3641096577360413547}
   - component: {fileID: 1944591312241677976}
   - component: {fileID: 77670687850727804}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootSfx (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10003,7 +10003,7 @@ GameObject:
   - component: {fileID: 5232606410183229920}
   - component: {fileID: 5160349072901052229}
   - component: {fileID: 7655276140092401867}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootSfx (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14895,7 +14895,7 @@ GameObject:
   - component: {fileID: 1327440335488816749}
   - component: {fileID: 964843500428582203}
   - component: {fileID: 1923925417038951046}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
