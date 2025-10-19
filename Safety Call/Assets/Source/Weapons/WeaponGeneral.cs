@@ -8,10 +8,10 @@ public abstract class WeaponGeneral : MonoBehaviour
     [SerializeField] private Transform _shootPoint;
     
     [SerializeField] protected LayerMask _layersToIgnore;
+
+    [SerializeField] protected WeaponSoundPlayer _weaponSoundPlayer;
     
-    [SerializeField] protected ParticleSystem _shootVfx;
-    
-    [SerializeField] protected AudioSource _audioSource;
+    [SerializeField] protected ParticleSystem _shootVFX;
     
     [SerializeField] protected float _timeBetweenShots;
     [SerializeField] protected float _damage;
@@ -28,23 +28,28 @@ public abstract class WeaponGeneral : MonoBehaviour
     {
          _target = target;
          _startFire = true;
+         
          StartCoroutine(Shooting());
     }
     
     public virtual void StopFire()
     {
         StopAllCoroutines();
+        
         _startFire = false;
         _isShooting = false;
     }
 
     protected virtual void Shoot()
     {
-            _shootVfx.Play();
-            _audioSource.PlayOneShot(_audioSource.clip);
+            _shootVFX.Play();
+            _weaponSoundPlayer.PlayShootSound();
+            
             Vector2 direction = (_target.position - transform.position).normalized;
+            
             RaycastHit2D hit = Physics2D.Raycast(_shootPoint.position, direction, 100, ~_layersToIgnore);
             Debug.DrawRay(_shootPoint.position, direction * 10f, Color.red, 1);
+            
             DealDamage(hit);
         
     }
