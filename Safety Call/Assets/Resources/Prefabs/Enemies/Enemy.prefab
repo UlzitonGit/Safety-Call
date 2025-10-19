@@ -246,7 +246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapon: {fileID: 1436282911230911774}
-  _fieldOfView: {fileID: 2890953296134418534}
   _canShootFirst: 1
 --- !u!114 &8495540433829747488
 MonoBehaviour:
@@ -290,7 +289,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1871498622278647340}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.33
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -477,6 +476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8579834690224718510}
+  - component: {fileID: 4514820717754740138}
   m_Layer: 0
   m_Name: Graphic
   m_TagString: Untagged
@@ -500,6 +500,58 @@ Transform:
   - {fileID: 3425053157304054430}
   m_Father: {fileID: 9039889718096340712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4514820717754740138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8828717864427696516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_Priority: 0
+  m_ComponentVersion: 5
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0.1
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.24258399, y: -0.9694059, z: 0}
+  - {x: -0.24258375, y: 0.8684585, z: 0}
+  - {x: 0.43943143, y: 0.8179846, z: 0}
+  - {x: 0.39400506, y: -1.0602584, z: 0}
+  m_ShapePathHash: -201714331
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 0}
+  m_ShadowShape2DProvider:
+    rid: -2
+  m_ShadowCastingSource: 1
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: 0.09842372, y: -0.09589994, z: 0}
+      m_Extent: {x: 0.3410077, y: 0.96435845, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 0
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 0
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0
+  m_PreviousEdgeProcessing: 1
+  m_PreviousShadowCastingSource: 1
+  m_PreviousShadowShape2DSource: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1001 &2667283571615578996
 PrefabInstance:
   m_ObjectHideFlags: 0

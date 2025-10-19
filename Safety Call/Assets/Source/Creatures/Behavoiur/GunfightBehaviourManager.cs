@@ -54,6 +54,8 @@ namespace Source.Players.Behaviour
             }
         }
 
+      
+
         public void SetIsAbleToShoot(bool isAbleToShoot)
         {
             _canShoot = isAbleToShoot;

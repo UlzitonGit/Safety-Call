@@ -12,6 +12,8 @@ public abstract class WeaponGeneral : MonoBehaviour
     [SerializeField] protected WeaponSoundPlayer _weaponSoundPlayer;
     
     [SerializeField] protected ParticleSystem _shootVFX;
+
+    [SerializeField] protected float _prepareBeforeShoot;
     
     [SerializeField] protected float _timeBetweenShots;
     [SerializeField] protected float _damage;
@@ -24,13 +26,14 @@ public abstract class WeaponGeneral : MonoBehaviour
 
     protected bool _isShooting;
 
-    public virtual void StartFire(Transform target)
+    public virtual void StartFire(Transform target, bool prepareMultiply = false)
     {
          _target = target;
          _startFire = true;
          
-         StartCoroutine(Shooting());
+         StartCoroutine(Preparing(prepareMultiply));
     }
+    
     
     public virtual void StopFire()
     {
@@ -57,6 +60,13 @@ public abstract class WeaponGeneral : MonoBehaviour
     protected virtual void DealDamage(RaycastHit2D hit)
     {
         
+    }
+    protected IEnumerator Preparing(bool prepareMultiply)
+    {
+        if(prepareMultiply) yield return new WaitForSeconds(_prepareBeforeShoot);
+        
+        yield return new WaitForSeconds(_prepareBeforeShoot);
+        StartCoroutine(Shooting());
     }
 
     protected IEnumerator Shooting()
