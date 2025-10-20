@@ -13,6 +13,7 @@ public class EnemyVisibility : MonoBehaviour
    private EnemyStates _enemyStates;
    
    private float _timeToHide;
+   
 
    private void Start()
    {
@@ -26,7 +27,7 @@ public class EnemyVisibility : MonoBehaviour
       {
          _timeToHide -= Time.deltaTime;
       }
-      else if (_timeToHide <= 0)
+      else if (_timeToHide <= 0 && _enemyStates.IsAlive)
       {
          HideEnemy();
       }
@@ -49,5 +50,6 @@ public class EnemyVisibility : MonoBehaviour
       IsVisible = false;
       _enemyStates.SetVisible(IsVisible);
    }
+   
    
 }
