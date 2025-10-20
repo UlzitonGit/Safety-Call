@@ -25,16 +25,25 @@ public abstract class FieldOfView : MonoBehaviour
         {
             Transform target = colliders[i].transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
-            if (Vector2.Angle(transform.up, dirToTarget) < _viewAngle / 2)
+            float dstToTarget = Vector3.Distance(transform.position, target.position);
+            if (dstToTarget < 3)
             {
-                print(colliders.Length);
-                float dstToTarget = Vector3.Distance(transform.position, target.position);
                 if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, _obstacleLayerMask))
                 {
                     print("Find");
                     ActionViewedObject(target);
                 }
             }
+            else if (Vector2.Angle(transform.up, dirToTarget) < _viewAngle / 2)
+            {
+                print(colliders.Length);
+                if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, _obstacleLayerMask))
+                {
+                    print("Find");
+                    ActionViewedObject(target);
+                }
+            }
+            
         }
     }
 
