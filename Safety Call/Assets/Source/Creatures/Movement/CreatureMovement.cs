@@ -34,8 +34,8 @@ namespace Source.Creatures.Movement
         public virtual void MoveOnTarget(Vector3 target)
         {
             if(!_canMove) return;
-            if(target == null) return;
             _currentTarget = target;
+            if(_currentTarget == null) return;
             _agent.SetDestination(_currentTarget);
         }
         protected virtual void LookAtPosition()

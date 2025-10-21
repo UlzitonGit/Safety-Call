@@ -26,8 +26,8 @@ public class GlobalEnemyActionController: MonoBehaviour
 
     IEnumerator MoveRandomEnemy()
     {
-        yield return new WaitForSeconds(Random.Range(5f, 10f));
-        InitializeMovementToRandomPoint(_enemiesList[Random.Range(0, _enemiesList.Count)]);
+        yield return new WaitForSeconds(Random.Range(4f, 15f));
+        InitializeMovementToRandomPoint(_enemiesList[Random.Range(0, _enemiesList.Count - 1)]);
         StartCoroutine(MoveRandomEnemy());
     }
     public void InitializeStartPoints(List<EnemyMovement> enemiesList)

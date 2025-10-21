@@ -15,6 +15,7 @@ public class EnemyStrategySetter
 
     public void PerformMovement(CreatureMovement creature, Transform target)
     {
+        //Debug.Log(creature + " : " + target.name);
         _moveStrategy.PerformStrategy(creature, target);
     }
     public void PerformStay(CreatureMovement creature, Transform target)
