@@ -15,6 +15,8 @@ namespace Source.Creatures.Movement
         protected NavMeshAgent _agent;
 
         protected bool _canMove = true;
+        
+        protected Vector3 _currentTarget;
         void Start()
         {
             _agent = GetComponent<NavMeshAgent>();
@@ -32,7 +34,9 @@ namespace Source.Creatures.Movement
         public virtual void MoveOnTarget(Vector3 target)
         {
             if(!_canMove) return;
-            _agent.SetDestination(target);
+            if(target == null) return;
+            _currentTarget = target;
+            _agent.SetDestination(_currentTarget);
         }
         protected virtual void LookAtPosition()
         {
@@ -58,6 +62,11 @@ namespace Source.Creatures.Movement
         public virtual float  GetSpeed()
         {
             return _agent.velocity.magnitude;
+        }
+
+        public NavMeshPath GetPath()
+        {
+            return _agent.path;
         }
 
         public void SetCanMove(bool canMove)

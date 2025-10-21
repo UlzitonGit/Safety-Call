@@ -11,7 +11,11 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private int[] _enemiesInLocationRandomize;
     
+    [SerializeField] private GlobalEnemyActionController _actionController;
+    
     private List<int>  busySpawns = new List<int>();
+
+    private List<EnemyMovement> _enemyMovements = new List<EnemyMovement>();
     
 
     private void Start()
@@ -19,6 +23,10 @@ public class EnemySpawner : MonoBehaviour
         if(_enemiesInLocationRandomize[1] >= _enemies.Length) _enemiesInLocationRandomize[1] = _enemies.Length;
         
         int enemiesCount = Random.Range(_enemiesInLocationRandomize[0], _enemiesInLocationRandomize[1]);
+        foreach (var enemy in _enemies)
+        {
+            _enemyMovements.Add(enemy.GetComponent<EnemyMovement>());
+        }
         
         for (int i = 0; i < _enemiesInLocationRandomize[0] - 1; i++)
         {
@@ -28,8 +36,9 @@ public class EnemySpawner : MonoBehaviour
             
             _enemies[i].SetActive(true);
             _enemies[i].transform.position = _spawnPoints[currentSpawn].position;
-            _enemies[i].GetComponent<EnemyMovement>().LookAtTarget(_spawnPoints[Random.Range(0, _spawnPoints.Length)].position);
+          
             busySpawns.Add(currentSpawn);
         }
+        _actionController.InitializeStartPoints(_enemyMovements);
     }
 }

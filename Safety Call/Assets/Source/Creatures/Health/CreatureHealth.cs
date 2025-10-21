@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Source.Creatures.Movement;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace Source.Creatures.Health
         [SerializeField] protected GameObject _bloodVfxPrefab;
         
         [SerializeField] protected float _maxHealth;
+
+        [SerializeField] protected float _timeToReaction = 0.4f;
         protected float _currentHealth;
 
         protected CapsuleCollider2D _capsuleCollider2D;
@@ -34,10 +37,16 @@ namespace Source.Creatures.Health
         public virtual void GetDamage(float damage, Vector3 enemyPos)
         {
             _currentHealth -= damage;
-            _movement.LookAtTarget(enemyPos);
+            StartCoroutine(LookAtTarget(enemyPos));
             Instantiate(_bloodVfxPrefab, transform.position, Quaternion.identity);
             print(_currentHealth);
             CheckHealth();
+        }
+
+        IEnumerator LookAtTarget(Vector3 enemyPos)
+        {
+            yield return new WaitForSeconds(_timeToReaction);
+            _movement.LookAtTarget(enemyPos);
         }
 
         protected virtual void CheckHealth()
