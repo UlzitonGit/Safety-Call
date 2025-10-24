@@ -11,7 +11,7 @@ public class AutomaticDoor : MonoBehaviour, IHackable
     {
         if(!_isActive) return;
         
-        if (other.CompareTag("Player") || other.CompareTag("Enemy"))
+        if (other.CompareTag("Player") || other.CompareTag("Enemy") || other.CompareTag("Interactive"))
         {
             _animator.SetBool("isOpened", true);
         }
@@ -21,7 +21,7 @@ public class AutomaticDoor : MonoBehaviour, IHackable
     {
         if(!_isActive) return;
         
-        if (other.CompareTag("Player") || other.CompareTag("Enemy"))
+        if (other.CompareTag("Player") || other.CompareTag("Enemy") || other.CompareTag("Interactive"))
         {
             _animator.SetBool("isOpened", false);
         }

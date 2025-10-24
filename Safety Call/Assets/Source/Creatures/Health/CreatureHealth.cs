@@ -13,11 +13,11 @@ namespace Source.Creatures.Health
         [SerializeField] protected float _maxHealth;
 
         [SerializeField] protected float _timeToReaction = 0.4f;
+        
+        [SerializeField] protected CreaturesData _creaturesData;
         protected float _currentHealth;
 
         protected CapsuleCollider2D _capsuleCollider2D;
-        
-        protected CreatureMovement _movement;
         
         protected bool _isAlive = true;
         
@@ -28,7 +28,6 @@ namespace Source.Creatures.Health
         protected virtual void Start()
         {
             _currentHealth = _maxHealth;
-            _movement = GetComponent<CreatureMovement>();
             _gameplayStagesManager = FindAnyObjectByType<GameplayStagesManager>();
             _playerAnimator = GetComponent<PlayerAnimator>();
             _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
@@ -46,7 +45,7 @@ namespace Source.Creatures.Health
         IEnumerator LookAtTarget(Vector3 enemyPos)
         {
             yield return new WaitForSeconds(_timeToReaction);
-            _movement.LookAtTarget(enemyPos);
+            _creaturesData._playerMovement.LookAtTarget(enemyPos);
         }
 
         protected virtual void CheckHealth()
@@ -61,8 +60,9 @@ namespace Source.Creatures.Health
         {
             if(!_isAlive) return;
             _playerAnimator.Death();
+            _creaturesData._playerState.SetCanMove(false);
+            _creaturesData._playerMovement.StopMovement();
             _capsuleCollider2D.enabled = false;
-            _movement.SetCanMove(false);
             _isAlive = false;
         }
     }

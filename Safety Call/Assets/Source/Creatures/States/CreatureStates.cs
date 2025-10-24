@@ -7,17 +7,19 @@ public class CreatureStates : MonoBehaviour
 {
     public bool IsVisible { get; private set; }
     public bool IsAlive { get; private set; }
+    public bool IsStunned { get; private set; }
     
-   [SerializeField] protected CreatureMovement _movement;
+    public bool CanMove  {get; private set;}
     
-   [SerializeField]  protected GunfightBehaviourManager _creatureGunfight;
+   [SerializeField] protected CreaturesData _data;
     
-   [SerializeField]  protected FieldOfView _creatureFieldOfView;
+   
     
 
     private void Start()
     {
         IsAlive = true;
+        CanMove = true;
         //_movement = GetComponent<CreatureMovement>();
         //_creatureGunfight = GetComponent<PlayerGunfightBehaviour>();
         //_creatureFieldOfView = GetComponentInChildren<FieldOfView>();
@@ -31,8 +33,18 @@ public class CreatureStates : MonoBehaviour
     public virtual void SetAlive(bool alive)
     {
         IsAlive = alive;
-        _movement.SetCanMove(alive);
-        _creatureFieldOfView.SetIsAbleToSee(alive);
-        _creatureGunfight.SetIsAbleToShoot(alive);
+        CanMove = alive;
+        _data._FieldOfView.SetIsAbleToSee(alive);
+        _data._playerGunfight.SetIsAbleToShoot(alive);
+    }
+
+    public virtual void SetStunned(bool stunned)
+    {
+        IsStunned = stunned;
+    }
+
+    public void SetCanMove(bool canMove)
+    {
+        CanMove = canMove;
     }
 }

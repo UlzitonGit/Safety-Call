@@ -12,25 +12,32 @@ namespace Source.Players.Behaviour
         
         [SerializeField] protected WeaponGeneral _weapon;
         
-        protected CreatureMovement _movement;
+       [SerializeField] protected CreaturesData _creaturesData;
         
         protected bool _hasTarget;
 
         protected bool _canShoot = true;
 
-        protected virtual void Start()
-        {
-            _movement = GetComponent<CreatureMovement>();
-        }
+        protected bool _isShooting = false;
+
+      
 
         protected virtual void Update()
         {
             if (!_hasTarget) return;
+            
+            if (_creaturesData._playerState.IsStunned && _isShooting)
+            {
+                _weapon.StopFire();
+                _isShooting = false;
+            }
+            
             {
                 if (!EnemyTarget.IsAlive || !EnemyTarget.IsVisible)
                 {
                     EnemyTarget = null;
                     _weapon.StopFire();
+                    _isShooting = false;
                     _hasTarget = false;
                 }
             }
@@ -49,8 +56,9 @@ namespace Source.Players.Behaviour
             if (CheckShootingRelevation())
             {
                 print("TargetAdded " + _hasTarget);
-                _movement.LookAtTarget(enemy.transform.position);
+                _creaturesData._playerMovement.LookAtTarget(enemy.transform.position);
                 _weapon.StartFire(EnemyTarget.transform);
+                _isShooting = true;
             }
         }
 

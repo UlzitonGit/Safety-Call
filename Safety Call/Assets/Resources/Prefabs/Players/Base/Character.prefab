@@ -433,6 +433,55 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &3706069111323220397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3892635344352425103}
+  - component: {fileID: 3939940155969001234}
+  m_Layer: 7
+  m_Name: GranadeThrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3892635344352425103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3706069111323220397}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4552896821078176600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3939940155969001234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3706069111323220397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f2da68da86ca148ab8ec23fceb8170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerData: {fileID: 8060874682696989706}
+  _granades:
+  - {fileID: 5609180747791850526, guid: 0a135d8d7a04d144da62c926def80462, type: 3}
+  _spawnPoint: {fileID: 3401516190086788079}
+  _granadesCount: 3
 --- !u!1 &5808896999414277240
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +668,7 @@ GameObject:
   - component: {fileID: 4523262986331714428}
   - component: {fileID: 503795488036556017}
   - component: {fileID: 5908649938361012505}
+  - component: {fileID: 8060874682696989706}
   m_Layer: 7
   m_Name: Character
   m_TagString: Player
@@ -643,6 +693,7 @@ Transform:
   - {fileID: 2565010466612811827}
   - {fileID: 3401516190086788079}
   - {fileID: 1671351197052874134}
+  - {fileID: 3892635344352425103}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &6458111709133955545
@@ -719,6 +770,7 @@ MonoBehaviour:
   _aimPoint: {fileID: 3401516190086788079}
   _rotationSpeed: 5
   _angleOffset: -90
+  _creatureStates: {fileID: 5187802826194267677}
   _lineRenderer: {fileID: 0}
 --- !u!114 &3224729614087275558
 MonoBehaviour:
@@ -733,6 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapon: {fileID: 60272821444732932}
+  _creaturesData: {fileID: 8060874682696989706}
   _canShootFirst: 1
 --- !u!114 &5187802826194267677
 MonoBehaviour:
@@ -746,9 +799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92d97beb585bf74b8255c3b2c6ab75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movement: {fileID: 9199300337024040843}
-  _creatureGunfight: {fileID: 3224729614087275558}
-  _creatureFieldOfView: {fileID: 2887123306717992400}
+  _data: {fileID: 8060874682696989706}
 --- !u!114 &4523262986331714428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,6 +814,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bloodVfxPrefab: {fileID: 5931750505607395279, guid: e142c5577ffba5e43b29e5fc9bd8cbb5, type: 3}
   _maxHealth: 150
+  _timeToReaction: 0.4
+  _creaturesData: {fileID: 8060874682696989706}
 --- !u!114 &503795488036556017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,6 +847,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsVisible: 0
+--- !u!114 &8060874682696989706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7974762739157073992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c047875483e5b41a1fddc196c89bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <_playerMovement>k__BackingField: {fileID: 9199300337024040843}
+  <_playerGunfight>k__BackingField: {fileID: 3224729614087275558}
+  <_playerState>k__BackingField: {fileID: 5187802826194267677}
+  <_playerHealth>k__BackingField: {fileID: 4523262986331714428}
+  <_FieldOfView>k__BackingField: {fileID: 2887123306717992400}
+  <_playerVisibility>k__BackingField: {fileID: 5908649938361012505}
+  <_GranadeThrower>k__BackingField: {fileID: 3939940155969001234}
 --- !u!1 &8315838543900478723
 GameObject:
   m_ObjectHideFlags: 0

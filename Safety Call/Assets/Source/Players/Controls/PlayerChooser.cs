@@ -15,6 +15,10 @@ namespace Source.Players.Controls
     
         [SerializeField] private PlayerSpotlighter _playerSpotlighter;
 
+        private int _playersChoosen;
+        
+        private List<PlayerData> _players;
+
         private void Update()
         {
             if (Input.GetKey(KeyCode.Alpha1))
@@ -53,9 +57,11 @@ namespace Source.Players.Controls
         public void SetChosenPlayer(List<int> playerIndexes)
         {
              List<PlayerMovement> playersToControl = new List<PlayerMovement>();
+             _players = new List<PlayerData>();
              foreach (var index in playerIndexes)
              {
                  playersToControl.Add(_creatureMovements[index]);
+                 _players.Add(_creatureMovements[index].GetComponent<PlayerData>());
                  print(_creatureMovements[index].gameObject.name);
              }
              _playerMoveInput.SetPlayerMovement(playersToControl);
@@ -73,7 +79,18 @@ namespace Source.Players.Controls
                     indexesToReturn.Add(index);
                 }
             }
+            _playersChoosen = indexesToReturn.Count;
             return indexesToReturn;
+        }
+
+        public List<PlayerData> GetChosenPlayer()
+        {
+            return _players;
+        }
+
+        public int GetPlayersChoosen()
+        {
+            return _playersChoosen;
         }
     }
 }
