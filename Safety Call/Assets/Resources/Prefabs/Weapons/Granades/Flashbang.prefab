@@ -329,7 +329,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: a49e051ab5479ec449b145dbb743e397, type: 2}
   m_IncludeLayers:
@@ -377,7 +377,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0.03, y: 0}
-  m_Size: {x: 0.21, y: 0.19}
+  m_Size: {x: 0.21, y: 0.42}
   m_Direction: 0
 --- !u!114 &5609180747791850526
 MonoBehaviour:
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layersToIgnore:
     serializedVersion: 2
-    m_Bits: 652
+    m_Bits: 1676
   _targetLayer:
     serializedVersion: 2
     m_Bits: 64
