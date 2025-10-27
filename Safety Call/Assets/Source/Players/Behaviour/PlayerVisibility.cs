@@ -2,17 +2,19 @@ using UnityEngine;
 
 public class PlayerVisibility : MonoBehaviour
 {
+    [SerializeField] private PlayerData _playerData;
+    
     public bool IsVisible;
     
     Coroutine _hideCoroutine;
 
-    private PlayerStates _playerStates;
+    private CreatureStates _playerStates;
    
     private float _timeToHide;
 
     private void Start()
     {
-        _playerStates = GetComponent<PlayerStates>();
+        _playerStates = _playerData._playerState;
         HideEnemy();
     }
 

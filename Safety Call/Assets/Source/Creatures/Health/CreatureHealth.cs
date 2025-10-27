@@ -23,13 +23,12 @@ namespace Source.Creatures.Health
         
         protected GameplayStagesManager _gameplayStagesManager;
         
-        protected PlayerAnimator _playerAnimator;
+       [SerializeField] protected CreatureAnimator _playerAnimator;
 
         protected virtual void Start()
         {
             _currentHealth = _maxHealth;
             _gameplayStagesManager = FindAnyObjectByType<GameplayStagesManager>();
-            _playerAnimator = GetComponent<PlayerAnimator>();
             _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         }
 

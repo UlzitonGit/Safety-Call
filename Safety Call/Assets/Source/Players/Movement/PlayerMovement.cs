@@ -8,8 +8,14 @@ namespace Source.Players.Movement
     {
         [SerializeField] private LinePathController _lineRenderer;
         
+        [SerializeField] private Rigidbody2D _rigidbody;
+        
+        private bool _isControlling;
+        
+        
         public override void MoveOnTarget(Vector3 target)
         {
+            if (!_agent.enabled) return;
             base.MoveOnTarget(target);
         }
 
@@ -18,6 +24,7 @@ namespace Source.Players.Movement
             LookAtPosition();
             UpdatePathLine();
         }
+        
 
         public override void LookAtTarget(Vector3 target)
         {
@@ -27,7 +34,7 @@ namespace Source.Players.Movement
 
         public void UpdatePathLine()
         {
-            if (_agent.hasPath)
+            if (_agent.hasPath && _agent.enabled)
             {
                 _lineRenderer.UpdateLineRenderer(_agent.path);
             }
@@ -35,7 +42,20 @@ namespace Source.Players.Movement
 
         protected override void LookAtPosition()
         {
+            if (!_agent.enabled) return;
             base.LookAtPosition();
+        }
+
+        public void StopAgent(bool stop)
+        {
+            _agent.isStopped = stop;
+            _rigidbody.isKinematic = !stop;
+        }
+
+        public void MoveSingle(Vector2 direction)
+        {
+            if(!_creatureStates.CanMove || _creatureStates.IsStunned) return;   
+            _rigidbody.linearVelocity = direction * _agent.speed;
         }
     }
 }

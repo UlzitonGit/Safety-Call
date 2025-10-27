@@ -11,7 +11,7 @@ namespace Source.Players.Controls
     {
         [SerializeField] private PlayerMovement[] _creatureMovements;
     
-        [SerializeField] private PlayerMoveInput _playerMoveInput;
+        [SerializeField] private PlayerTacticalControlInput _playerMoveInput;
     
         [SerializeField] private PlayerSpotlighter _playerSpotlighter;
 
@@ -92,5 +92,7 @@ namespace Source.Players.Controls
         {
             return _playersChoosen;
         }
+
+      
     }
 }

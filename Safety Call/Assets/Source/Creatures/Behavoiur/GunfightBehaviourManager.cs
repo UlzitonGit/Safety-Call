@@ -10,7 +10,7 @@ namespace Source.Players.Behaviour
     {
         public CreatureStates EnemyTarget{get; private set;}
         
-        [SerializeField] protected WeaponGeneral _weapon;
+        [SerializeField] protected WeaponController _weapon;
         
        [SerializeField] protected CreaturesData _creaturesData;
         

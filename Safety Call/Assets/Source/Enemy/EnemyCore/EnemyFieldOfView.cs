@@ -16,10 +16,10 @@ public class EnemyFieldOfView : FieldOfView
 
     protected override void ActionViewedObject(Transform target)
     {
-        PlayerStates player = target.GetComponent<PlayerStates>();
+        PlayerData player = target.GetComponent<PlayerData>();
         print(player.transform.name);
-        player.SetVisible(true);
+        player._playerState.SetVisible(true);
         _enemyVisibility.ShowEnemy();
-        _enemyGunfightBehaviourManager.AddEnemyTarget(player);
+        _enemyGunfightBehaviourManager.AddEnemyTarget(player._playerState);
     }
 }

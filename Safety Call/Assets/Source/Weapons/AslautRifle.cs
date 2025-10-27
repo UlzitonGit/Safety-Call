@@ -4,18 +4,17 @@ using UnityEngine;
 public class AslautRifle : WeaponGeneral
 {
     [SerializeField] private string _tag;
-    
-    
 
-    protected override void Shoot()
+
+    public override void Shoot(Vector3 target)
     {
-        base.Shoot();
+        base.Shoot(target);
     }
 
     protected override void DealDamage(RaycastHit2D hit)
     {
         if (!hit.collider.CompareTag(_tag)) return;
         print(hit.collider.name);
-        hit.transform.GetComponent<CreatureHealth>().GetDamage(_damage, transform.position);
+        hit.transform.GetComponent<CreaturesData>()._playerHealth.GetDamage(_damage, transform.position);
     }
 }

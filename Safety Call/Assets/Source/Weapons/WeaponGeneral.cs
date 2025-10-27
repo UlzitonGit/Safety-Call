@@ -19,63 +19,44 @@ public abstract class WeaponGeneral : MonoBehaviour
     [SerializeField] protected float _damage;
     
     protected Coroutine _shootingCoroutine;
-    
-    protected bool _startFire;
-    
-    protected Transform _target;
 
-    protected bool _isShooting;
-
-    public virtual void StartFire(Transform target, bool prepareMultiply = false)
-    {
-         _target = target;
-         _startFire = true;
-         
-         StartCoroutine(Preparing(prepareMultiply));
-    }
+    private bool _canShoot = true;
     
     
-    public virtual void StopFire()
-    {
-        StopAllCoroutines();
-        
-        _startFire = false;
-        _isShooting = false;
-    }
+    
 
-    protected virtual void Shoot()
+    public virtual void Shoot(Vector3 target)
     {
+        if(!_canShoot) return;
             _shootVFX.Play();
+             _canShoot = false;
             _weaponSoundPlayer.PlayShootSound();
             
-            Vector2 direction = (_target.position - transform.position).normalized;
+           Vector2 direction = (target - transform.position).normalized;
             
             RaycastHit2D hit = Physics2D.Raycast(_shootPoint.position, direction, 100, ~_layersToIgnore);
             Debug.DrawRay(_shootPoint.position, direction * 10f, Color.red, 1);
             
             DealDamage(hit);
-        
+            StartCoroutine(DelayBetweenShoots());
+
     }
 
     protected virtual void DealDamage(RaycastHit2D hit)
     {
         
     }
-    protected IEnumerator Preparing(bool prepareMultiply)
-    {
-        if(prepareMultiply) yield return new WaitForSeconds(_prepareBeforeShoot);
-        
-        yield return new WaitForSeconds(_prepareBeforeShoot);
-        StartCoroutine(Shooting());
-    }
 
-    protected IEnumerator Shooting()
+    IEnumerator DelayBetweenShoots()
     {
         yield return new WaitForSeconds(_timeBetweenShots);
-        if (_startFire)
-        {
-            Shoot();
-            _shootingCoroutine = StartCoroutine(Shooting());
-        }
+        _canShoot = true;
     }
+
+    public bool IsCanShoot()
+    {
+        return _canShoot;
+    }
+
+ 
 }
