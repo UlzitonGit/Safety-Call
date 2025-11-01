@@ -49,7 +49,7 @@ namespace Source.Players.Movement
         public void StopAgent(bool stop)
         {
             _lineRenderer.GetLine().enabled = !stop;
-            if(!_creatureStates.IsAlive && stop == true) return;
+            if(!_creatureStates.IsAlive) return;
             _agent.isStopped = stop;
             _rigidbody.linearVelocity = new Vector3(0,0,0);
         }
@@ -63,6 +63,7 @@ namespace Source.Players.Movement
         public override void StopMovement()
         {
             base.StopMovement();
+            _lineRenderer.GetLine().enabled = false;
             _rigidbody.linearVelocity = new Vector3(0,0,0);
         }
     }
