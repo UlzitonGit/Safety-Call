@@ -23,7 +23,7 @@ public class PlayerMedic : MonoBehaviour
         {
             print(player.gameObject.name);
             PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-            if (_reviveCount > 0 && !playerHealth.GetIsAlive())
+            if (_reviveCount > 0 && !playerHealth.GetIsAlive() && !playerHealth.GetIsRevived())
             {
                 playerHealth.Revive();
                 _reviveCount -= 1;
