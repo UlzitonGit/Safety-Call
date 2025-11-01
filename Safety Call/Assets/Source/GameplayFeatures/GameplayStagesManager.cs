@@ -6,6 +6,7 @@ public class GameplayStagesManager : MonoBehaviour
 {
     [SerializeField] private GameObject _winEndPanel;
     [SerializeField] private GameObject _looseEndPanel;
+    [SerializeField] private CreaturesData[] _creaturesData;
     private int _playersCount;
     private int _enemyCount;
 
@@ -26,8 +27,17 @@ public class GameplayStagesManager : MonoBehaviour
 
     public void PlayerKilled()
     {
-        _playersCount -= 1;
-        if (_playersCount == 0)
+
+        int dead = 0;
+        foreach (var creature in _creaturesData)
+        {
+            if (creature._playerState.IsAlive == false)
+            {
+                dead++;
+            }
+        }
+
+        if (dead == _playersCount)
         {
             _looseEndPanel.SetActive(true);
         }
