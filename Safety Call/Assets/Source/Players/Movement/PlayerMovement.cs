@@ -50,6 +50,7 @@ namespace Source.Players.Movement
         {
             _lineRenderer.GetLine().enabled = !stop;
             if(!_creatureStates.IsAlive) return;
+            _agent.SetDestination(this.transform.position);
             _agent.isStopped = stop;
             _rigidbody.linearVelocity = new Vector3(0,0,0);
         }
@@ -66,5 +67,6 @@ namespace Source.Players.Movement
             _lineRenderer.GetLine().enabled = false;
             _rigidbody.linearVelocity = new Vector3(0,0,0);
         }
+        
     }
 }

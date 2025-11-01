@@ -36,4 +36,8 @@ public abstract class CreatureAnimator : MonoBehaviour
         if(_isDead) return;
         _upperAnimator.SetTrigger("Death");
     }
+    public void Revive()
+    {
+        _upperAnimator.SetTrigger("Revive");
+    }
 }

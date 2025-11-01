@@ -30,7 +30,6 @@ public abstract class FieldOfView : MonoBehaviour
             {
                 if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, _obstacleLayerMask))
                 {
-                    print("Find");
                     ActionViewedObject(target);
                 }
             }
@@ -39,7 +38,6 @@ public abstract class FieldOfView : MonoBehaviour
                 print(colliders.Length);
                 if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, _obstacleLayerMask))
                 {
-                    print("Find");
                     ActionViewedObject(target);
                 }
             }

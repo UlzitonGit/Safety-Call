@@ -64,5 +64,10 @@ namespace Source.Creatures.Health
             _capsuleCollider2D.enabled = false;
             _isAlive = false;
         }
+
+        public bool GetIsAlive()
+        {
+            return _isAlive;
+        }
     }
 }

@@ -1,4 +1,5 @@
 using Source.Creatures.Health;
+using Source.Players.Movement;
 using UnityEngine;
 
 public class PlayerHealth : CreatureHealth
@@ -13,6 +14,24 @@ public class PlayerHealth : CreatureHealth
     {
         base.GetDamage(damage, enemyPos);
         _playerUiDrawer.UpdateUI(_currentHealth);
+    }
+
+    private void AddHealth(float health)
+    {
+        _currentHealth += health;
+        print(_currentHealth);
+        _playerUiDrawer.UpdateUI(_currentHealth);
+    }
+
+    public void Revive()
+    {
+        _creaturesData._playerState.SetCanMove(true);
+        _creaturesData._playerState.SetAlive(true);
+        _creaturesData._playerMovement.GetComponent<PlayerMovement>().StopAgent(false);
+        _playerAnimator.Revive();
+        AddHealth(40f);
+        _capsuleCollider2D.enabled = true;
+        _isAlive = true;
     }
 
     protected override void Death()
