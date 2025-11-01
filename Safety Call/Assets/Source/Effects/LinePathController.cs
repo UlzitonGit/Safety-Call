@@ -27,4 +27,9 @@ public class LinePathController : MonoBehaviour
             _pathLine.SetPosition(i, pointPosition);
         }
     }
+
+    public LineRenderer GetLine()
+    {
+        return _pathLine;
+    }
 }

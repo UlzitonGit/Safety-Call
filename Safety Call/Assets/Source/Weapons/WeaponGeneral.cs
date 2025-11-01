@@ -20,7 +20,7 @@ public abstract class WeaponGeneral : MonoBehaviour
     
     protected Coroutine _shootingCoroutine;
 
-    private bool _canShoot = true;
+    [SerializeField] private bool _canShoot = true;
     
     
     

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerSingleControlInput : MonoBehaviour
 {
-    [HideInInspector] public PlayerMovement _playerMovement;
+    [SerializeField] public PlayerMovement _playerMovement;
     
     void Update()
     {

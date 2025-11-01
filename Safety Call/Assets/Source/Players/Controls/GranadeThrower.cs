@@ -10,7 +10,7 @@ public class GranadeThrower : MonoBehaviour
 
     public void Throw(Vector3 direction)
     {
-        if(_granadesCount <= 0 && _playerData._playerState.IsAlive) return;
+        if(_granadesCount <= 0 || !_playerData._playerState.IsAlive) return;
         GranadeAbstract _currentGranade = Instantiate(_granades[0], _spawnPoint.position, _spawnPoint.localRotation);
         _currentGranade.Throw();
         _granadesCount -= 1;

@@ -53,7 +53,7 @@ namespace Source.Creatures.Movement
             _aimPoint.rotation = Quaternion.Slerp(_aimPoint.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
         }
 
-        public void StopMovement()
+        public virtual void StopMovement()
         {
             _agent.isStopped = true;
         }
@@ -80,6 +80,8 @@ namespace Source.Creatures.Movement
         {
             return _agent.path;
         }
-        
+
+       
+
     }
 }

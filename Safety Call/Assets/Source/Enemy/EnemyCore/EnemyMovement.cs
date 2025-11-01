@@ -20,4 +20,5 @@ public class EnemyMovement : CreatureMovement
         if(!_isTargeted) return;
         base.LookAtPosition();
     }
+    
 }

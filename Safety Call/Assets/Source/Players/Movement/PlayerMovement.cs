@@ -48,14 +48,22 @@ namespace Source.Players.Movement
 
         public void StopAgent(bool stop)
         {
+            _lineRenderer.GetLine().enabled = !stop;
+            if(!_creatureStates.IsAlive && stop == true) return;
             _agent.isStopped = stop;
-            _rigidbody.isKinematic = !stop;
+            _rigidbody.linearVelocity = new Vector3(0,0,0);
         }
-
+    
         public void MoveSingle(Vector2 direction)
         {
             if(!_creatureStates.CanMove || _creatureStates.IsStunned) return;   
             _rigidbody.linearVelocity = direction * _agent.speed;
+        }
+
+        public override void StopMovement()
+        {
+            base.StopMovement();
+            _rigidbody.linearVelocity = new Vector3(0,0,0);
         }
     }
 }
