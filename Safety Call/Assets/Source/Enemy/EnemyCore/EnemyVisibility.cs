@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class EnemyVisibility : MonoBehaviour
+public class EnemyVisibility : MonoBehaviour, IPlayerSpotable
 {
    public bool IsVisible;
    

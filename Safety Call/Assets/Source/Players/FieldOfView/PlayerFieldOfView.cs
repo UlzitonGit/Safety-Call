@@ -18,10 +18,11 @@ public class PlayerFieldOfView : FieldOfView
     protected override void ActionViewedObject(Transform target)
     {
        // if(_playerGunfightBehaviourManager.IsHasTarget()) return;
-        EnemyVisibility enemy = target.GetComponent<EnemyVisibility>();
+        IPlayerSpotable enemy = target.GetComponent<IPlayerSpotable>();
         print(enemy);
         enemy.ShowEnemy();
-        _playerGunfightBehaviourManager.AddEnemyTarget(enemy.GetComponent<CreatureStates>());
+        if(target.TryGetComponent<CreatureStates>(out var creature))
+            _playerGunfightBehaviourManager.AddEnemyTarget(creature);
     }
     
 }

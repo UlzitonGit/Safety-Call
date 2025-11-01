@@ -1426,7 +1426,7 @@ MonoBehaviour:
   _viewAngle: 80
   _targetLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4160
   _obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 1025
@@ -1495,6 +1495,10 @@ PrefabInstance:
       propertyPath: _shootPoint
       value: 
       objectReference: {fileID: 3401516190086788079}
+    - target: {fileID: 3957164289097227882, guid: f4d839801c3c8394abcff12d4e5e4e38, type: 3}
+      propertyPath: _layersToIgnore.m_Bits
+      value: 4748
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

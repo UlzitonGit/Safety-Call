@@ -59,6 +59,7 @@ namespace Source.Creatures.Health
         {
             if(!_isAlive) return;
             _playerAnimator.Death();
+            _currentHealth = 0;
             _creaturesData._playerState.SetCanMove(false);
             _creaturesData._playerMovement.StopMovement();
             _capsuleCollider2D.enabled = false;

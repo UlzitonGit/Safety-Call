@@ -8,7 +8,7 @@ public class CCTVFOV : MonoBehaviour, IHackable
     
     [SerializeField] private bool _isActive;
     
-    private List<EnemyVisibility> _enemyVisibilities = new List<EnemyVisibility>();
+    private List<IPlayerSpotable> _enemyVisibilities = new List<IPlayerSpotable>();
 
     private bool _hasInSeeZone;
 
@@ -27,8 +27,8 @@ public class CCTVFOV : MonoBehaviour, IHackable
     {
         if (other.CompareTag("Enemy"))
         {
-            EnemyVisibility enemy;
-            other.TryGetComponent<EnemyVisibility>(out enemy);
+            IPlayerSpotable enemy;
+            other.TryGetComponent<IPlayerSpotable>(out enemy);
             _enemyVisibilities.Add(enemy);
             _hasInSeeZone = true;
         }
@@ -38,8 +38,8 @@ public class CCTVFOV : MonoBehaviour, IHackable
     {
         if (other.CompareTag("Enemy"))
         {
-            EnemyVisibility enemy;
-            other.TryGetComponent<EnemyVisibility>(out enemy);
+            IPlayerSpotable enemy;
+            other.TryGetComponent<IPlayerSpotable>(out enemy);
             if (_enemyVisibilities.Contains(enemy))
                 _enemyVisibilities.Remove(enemy);
             if(_enemyVisibilities.Count == 0) _hasInSeeZone = false;

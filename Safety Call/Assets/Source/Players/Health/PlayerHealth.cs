@@ -27,6 +27,7 @@ public class PlayerHealth : CreatureHealth
 
     public void Revive()
     {
+        _currentHealth = 0;
         _creaturesData._playerState.SetCanMove(true);
         _creaturesData._playerState.SetAlive(true);
         _creaturesData._playerMovement.GetComponent<PlayerMovement>().StopAgent(false);
