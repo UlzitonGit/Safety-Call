@@ -8,6 +8,8 @@ public class Claymore : GranadeAbstract
     [SerializeField] private ParticleSystem _explosionSystem;
     
     [SerializeField] private AudioSource _audioSource;
+
+    [SerializeField] private GameObject _parent;
     
     [SerializeField] private float _damage;
 
@@ -37,12 +39,15 @@ public class Claymore : GranadeAbstract
     IEnumerator Destroy()
     {
         yield return new WaitForSeconds(4f);
+        Destroy(_parent);
         gameObject.SetActive(false);
     }
 
     public void Deactivate()
     {
         _isActive = false;
+        Destroy(_parent);
         gameObject.SetActive(false);
+        
     }
 }

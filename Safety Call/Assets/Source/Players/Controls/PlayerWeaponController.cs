@@ -7,6 +7,7 @@ public class PlayerWeaponController : WeaponController
     [SerializeField] private PlayerData _playerData;
     
     private bool _isLocal;
+    
     private void Update()
     {
         if (_weaponGeneral.IsCanShoot() && _startFire)

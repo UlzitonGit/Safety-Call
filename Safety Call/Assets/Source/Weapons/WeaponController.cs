@@ -6,7 +6,7 @@ public abstract class WeaponController : MonoBehaviour
 {
     [SerializeField] protected float _prepareBeforeShoot;
 
-    [SerializeField] protected WeaponGeneral _weaponGeneral;
+    [SerializeField] public WeaponGeneral _weaponGeneral;
     
     protected bool _startFire;
     

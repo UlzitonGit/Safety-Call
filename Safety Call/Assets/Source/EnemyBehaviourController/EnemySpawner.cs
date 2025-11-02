@@ -12,6 +12,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int[] _enemiesInLocationRandomize;
     
     [SerializeField] private GlobalEnemyActionController _actionController;
+
+    [SerializeField] private PlayerLoadoutSO[] _loadouts;
     
     private List<int>  busySpawns = new List<int>();
 
@@ -26,13 +28,13 @@ public class EnemySpawner : MonoBehaviour
         foreach (var enemy in _enemies)
         {
             _enemyMovements.Add(enemy.GetComponent<EnemyMovement>());
+            enemy.GetComponentInChildren<PlayerSOReader>().SetWeapon(_loadouts[Random.Range(0, _loadouts.Length  - 1)]);
         }
         
         for (int i = 0; i < _enemiesInLocationRandomize[0] - 1; i++)
         {
             int currentSpawn = Random.Range(0, _spawnPoints.Length);
             
-          
             
             _enemies[i].SetActive(true);
             _enemies[i].transform.position = _spawnPoints[currentSpawn].position;

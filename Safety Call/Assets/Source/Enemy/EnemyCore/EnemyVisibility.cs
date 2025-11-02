@@ -7,7 +7,9 @@ public class EnemyVisibility : MonoBehaviour, IPlayerSpotable
    public bool IsVisible;
    
    [SerializeField] private GameObject _meshRenderer;
-   [SerializeField] private SpriteRenderer _weaponGameObject;
+   [SerializeField] private GameObject _weapon;
+   
+   public SpriteRenderer _weaponGameObject;
    Coroutine _hideCoroutine;
 
    private EnemyStates _enemyStates;
@@ -46,6 +48,7 @@ public class EnemyVisibility : MonoBehaviour, IPlayerSpotable
    public void HideEnemy()
    {
       _meshRenderer.SetActive(false);
+      if(_weaponGameObject == null) _weaponGameObject = _weapon.GetComponentInChildren<SpriteRenderer>();
       _weaponGameObject.enabled = false;
       IsVisible = false;
       _enemyStates.SetVisible(IsVisible);

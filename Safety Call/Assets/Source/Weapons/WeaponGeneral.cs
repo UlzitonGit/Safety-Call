@@ -13,6 +13,8 @@ public abstract class WeaponGeneral : MonoBehaviour
     
     [SerializeField] protected ParticleSystem _shootVFX;
 
+    [SerializeField] protected int _maxAmmo;
+
     [SerializeField] protected float _prepareBeforeShoot;
     
     [SerializeField] protected float _timeBetweenShots;
@@ -58,5 +60,24 @@ public abstract class WeaponGeneral : MonoBehaviour
         return _canShoot;
     }
 
+    public string GetFireRate()
+    {
+        return (60 / _timeBetweenShots).ToString();
+    }
+
+    public string GetDamage()
+    {
+        return _damage.ToString();
+    }
+
+    public string GetName()
+    {
+        return gameObject.name;
+    }
+
+    public int GetMaxAmmo()
+    {
+        return _maxAmmo;
+    }
  
 }
