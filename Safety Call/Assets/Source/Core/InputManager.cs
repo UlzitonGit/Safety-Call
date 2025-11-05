@@ -23,9 +23,6 @@ namespace Source.Core
         {
             GameInput =  new GameInput();
             GameInput.Enable();
-            GameInput.MissionController.Enable();
-            GameInput.TacticalMove.Enable();
-            GameInput.IndividualMove.Disable();
         }
 
 
@@ -45,13 +42,44 @@ namespace Source.Core
         {
             switch(mapType)
             {
+                case ActionMapType.MissionController:
+                    GameInput.MissionController.Enable();
+                    GameInput.TacticalMove.Enable();
+                    GameInput.HubController.Disable();
+                    GameInput.IndividualMove.Disable();
+                    GameInput.UI.Disable();
+                    GameInput.Dialogue.Disable();
+                    break;
+                case ActionMapType.HubController:
+                    GameInput.HubController.Enable();
+                    GameInput.MissionController.Disable();
+                    GameInput.TacticalMove.Disable();
+                    GameInput.IndividualMove.Disable();
+                    GameInput.UI.Disable();
+                    GameInput.Dialogue.Disable();
+                    break;
                 case ActionMapType.TacticalMove:
                     GameInput.TacticalMove.Enable();
+                    GameInput.MissionController.Enable();
                     GameInput.IndividualMove.Disable();
                     break;
                 case ActionMapType.IndividualMove:
-                    GameInput.TacticalMove.Disable();
                     GameInput.IndividualMove.Enable();
+                    GameInput.MissionController.Enable();
+                    GameInput.TacticalMove.Disable();
+                    break;
+                case ActionMapType.UI:
+                    GameInput.UI.Enable();
+                    GameInput.MissionController.Disable();
+                    GameInput.TacticalMove.Disable();
+                    GameInput.IndividualMove.Disable();
+                    GameInput.HubController.Disable();
+                    GameInput.Dialogue.Disable();
+                    break;
+                case ActionMapType.Dialogue:
+                    GameInput.Dialogue.Enable();
+                    GameInput.HubController.Disable();
+                    GameInput.UI.Disable();
                     break;
                 default:
                     GameInput.TacticalMove.Enable(); 
@@ -59,12 +87,15 @@ namespace Source.Core
 
             }
         }
-
-        public enum ActionMapType
-        {
-            TacticalMove,
-            IndividualMove
-        }
     }
+    public enum ActionMapType
+    {
+        MissionController,
+        HubController,
+        TacticalMove,
+        IndividualMove,
+        UI,
+        Dialogue
 
+    }
 }

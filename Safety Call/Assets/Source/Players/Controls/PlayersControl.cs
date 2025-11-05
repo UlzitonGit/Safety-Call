@@ -51,7 +51,7 @@ public class PlayersControl : MonoBehaviour
         _singlePlayerControl.enabled = true;
         _tacticalControl.enabled = false;
         SwitchPlayerStates(true);
-        InputManager.Instance.SwitchActionMapType(InputManager.ActionMapType.IndividualMove);
+        InputManager.Instance.SwitchActionMapType(ActionMapType.IndividualMove);
     }
 
     public void SwitchToTactic()
@@ -60,7 +60,7 @@ public class PlayersControl : MonoBehaviour
         _tacticalControl.enabled = true;
         _isSinglePlayer = false;
         SwitchPlayerStates(false);
-        InputManager.Instance.SwitchActionMapType(InputManager.ActionMapType.TacticalMove);
+        InputManager.Instance.SwitchActionMapType(ActionMapType.TacticalMove);
     }
 
     private void SwitchPlayerStates(bool state)
