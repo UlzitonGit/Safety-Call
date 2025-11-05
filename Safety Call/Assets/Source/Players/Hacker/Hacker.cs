@@ -1,18 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Hacker : MonoBehaviour
+public class Hacker : ASpecialAbility
 {
     private bool _collidingRCP;
 
     private RemoteControlePanel _controlePanel;
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && _collidingRCP)
-        {
-            _controlePanel.Hack();
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,6 +24,14 @@ public class Hacker : MonoBehaviour
         {
             _controlePanel = null;
             _collidingRCP = false;
+        }
+    }
+
+    protected override void DoAbility(InputAction.CallbackContext ctx)
+    {
+        if (_collidingRCP)
+        {
+            _controlePanel.Hack();
         }
     }
 }

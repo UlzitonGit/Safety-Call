@@ -1,22 +1,22 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class BeastBalisticShield : MonoBehaviour
+public class BeastBalisticShield : ASpecialAbility
 {
     [SerializeField] private PlayerData _playerData;
     [SerializeField] private ItemsSwitcher _switcher;
     [SerializeField] private GameObject _shield;
     
     private bool _shieldActive;
-    
-    // Update is called once per frame
-    void Update()
+
+    protected override void DoAbility(InputAction.CallbackContext ctx)
     {
-        if (Input.GetKeyDown(KeyCode.E) && _playerData._PlayerGunfightBehaviour._isControlling && !_shieldActive)
+        if (_playerData._PlayerGunfightBehaviour._isControlling && !_shieldActive)
         {
             _switcher.SwitchToTargetedObject(_shield);
             _shieldActive = true;
         }
-        else if (Input.GetKeyDown(KeyCode.E) && _playerData._PlayerGunfightBehaviour._isControlling && _shieldActive)
+        else if (_playerData._PlayerGunfightBehaviour._isControlling && _shieldActive)
         {
             _switcher.SwitchToIndexObject(0);
             print("SwitchToIndexObject");

@@ -1,14 +1,14 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class PlayerPolice : MonoBehaviour
+public class PlayerPolice : ASpecialAbility
 {
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private PlayerData _playerData;
-    
-    // Update is called once per frame
-    void Update()
+
+    protected override void DoAbility(InputAction.CallbackContext ctx)
     {
-        if (Input.GetKeyDown(KeyCode.E) && _playerData._PlayerGunfightBehaviour._isControlling)
+        if (_playerData._PlayerGunfightBehaviour._isControlling)
         {
             CheckPlayersToRevive();
         }
