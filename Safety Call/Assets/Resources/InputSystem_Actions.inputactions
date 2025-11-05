@@ -15,6 +15,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ScaleCamera",
+                    "type": "PassThrough",
+                    "id": "fe05f80d-a222-4f45-b65a-2a6c0fafcc7d",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MoveCamera",
+                    "type": "Button",
+                    "id": "741a816d-5db3-4978-9838-d4fda42f7310",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "UseAbility",
                     "type": "Button",
                     "id": "d3831789-9fcc-46f8-831a-83158ee4f61d",
@@ -51,6 +69,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "TimeDilation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6b5940ea-efd4-4f94-9c72-f2efd09ba4e0",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "Normalize(min=-1,max=1)",
+                    "groups": "",
+                    "action": "ScaleCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7a9bebac-3bcc-4db7-99b6-8220968bd4d9",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveCamera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -107,24 +147,6 @@
                     "type": "Button",
                     "id": "f21d28df-2dbe-4bb5-951d-d76ef7555c57",
                     "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "MoveCamera",
-                    "type": "Button",
-                    "id": "1a66404e-3ce3-4e9f-9870-be0cc23d43ae",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ScaleCamera",
-                    "type": "PassThrough",
-                    "id": "167d6f03-6f5b-4aac-ad3b-e74169f2c8ea",
-                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -202,17 +224,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5a8f3a97-c23b-494d-914e-5a89272e1466",
-                    "path": "<Mouse>/middleButton",
-                    "interactions": "Press(behavior=2)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveCamera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -301,17 +312,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Turn",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a46a854c-6f9b-46c2-abc3-ecb59bea26c1",
-                    "path": "<Mouse>/scroll/y",
-                    "interactions": "",
-                    "processors": "Normalize(min=-1,max=1)",
-                    "groups": "",
-                    "action": "ScaleCamera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

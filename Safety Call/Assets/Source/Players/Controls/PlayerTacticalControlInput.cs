@@ -11,6 +11,7 @@ namespace Source.Players.Controls
         private List<PlayerMovement> _playerMovement;
         private InputAction _moveAction;
         private InputAction _turnAction;
+
         private void OnEnable()
         {
             _moveAction = InputManager.Instance.GameInput.TacticalMove.Move;

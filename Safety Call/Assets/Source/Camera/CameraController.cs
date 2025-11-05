@@ -1,4 +1,6 @@
+using Source.Core;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
@@ -14,7 +16,22 @@ public class CameraController : MonoBehaviour
     private Camera cam;
     private Vector3 dragOrigin;
     private bool isDragging = false;
-    
+    private float scroll;
+
+    private InputAction _zoomCameraAction;
+    private InputAction _moveCameraAction;
+
+    private void OnEnable()
+    {
+        _zoomCameraAction = InputManager.Instance.GameInput.MissionController.ScaleCamera;
+        _moveCameraAction = InputManager.Instance.GameInput.MissionController.MoveCamera;
+
+        _moveCameraAction.started += StartHandleDrag;
+        _moveCameraAction.canceled += StopHandleDrag;
+    }
+
+   
+
     void Start()
     {
         cam = GetComponent<Camera>();
@@ -26,15 +43,30 @@ public class CameraController : MonoBehaviour
     
     void Update()
     {
-        HandleZoom();
+        HandleZoom(_zoomCameraAction.ReadValue<float>());
         HandleDrag();
         ClampCameraPosition();
     }
-    
-    void HandleZoom()
+
+    private void OnDisable()
     {
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        
+        _moveCameraAction.started -= StartHandleDrag;
+        _moveCameraAction.canceled -= StopHandleDrag;
+    }
+
+    private void StartHandleDrag(InputAction.CallbackContext ctx)
+    {
+        isDragging = true;
+        dragOrigin = GetMouseWorldPosition();
+    }
+
+    private void StopHandleDrag(InputAction.CallbackContext ctx)
+    {
+        isDragging = false;
+    }
+
+    private void HandleZoom(float scroll)
+    {
         if (scroll != 0f)
         {
             cam.orthographicSize -= scroll * zoomSpeed;
@@ -44,15 +76,6 @@ public class CameraController : MonoBehaviour
     
     void HandleDrag()
     {
-        if (Input.GetMouseButtonDown(2))
-        {
-            isDragging = true;
-            dragOrigin = GetMouseWorldPosition();
-        }
-        if (Input.GetMouseButtonUp(2))
-        {
-            isDragging = false;
-        }
         if (isDragging)
         {
             Vector3 currentPos = GetMouseWorldPosition();
@@ -64,7 +87,7 @@ public class CameraController : MonoBehaviour
     
     private Vector3 GetMouseWorldPosition()
     {
-        Vector3 mousePos = Input.mousePosition;
+        Vector3 mousePos = Mouse.current.position.ReadValue();
         mousePos.z = -transform.position.z;
         return cam.ScreenToWorldPoint(mousePos);
     }

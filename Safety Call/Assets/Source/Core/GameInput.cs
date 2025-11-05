@@ -103,6 +103,24 @@ namespace Source.Core
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""ScaleCamera"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""fe05f80d-a222-4f45-b65a-2a6c0fafcc7d"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveCamera"",
+                    ""type"": ""Button"",
+                    ""id"": ""741a816d-5db3-4978-9838-d4fda42f7310"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""UseAbility"",
                     ""type"": ""Button"",
                     ""id"": ""d3831789-9fcc-46f8-831a-83158ee4f61d"",
@@ -139,6 +157,28 @@ namespace Source.Core
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""TimeDilation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6b5940ea-efd4-4f94-9c72-f2efd09ba4e0"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": ""Normalize(min=-1,max=1)"",
+                    ""groups"": """",
+                    ""action"": ""ScaleCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7a9bebac-3bcc-4db7-99b6-8220968bd4d9"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -195,24 +235,6 @@ namespace Source.Core
                     ""type"": ""Button"",
                     ""id"": ""f21d28df-2dbe-4bb5-951d-d76ef7555c57"",
                     ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""MoveCamera"",
-                    ""type"": ""Button"",
-                    ""id"": ""1a66404e-3ce3-4e9f-9870-be0cc23d43ae"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""ScaleCamera"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""167d6f03-6f5b-4aac-ad3b-e74169f2c8ea"",
-                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -290,17 +312,6 @@ namespace Source.Core
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5a8f3a97-c23b-494d-914e-5a89272e1466"",
-                    ""path"": ""<Mouse>/middleButton"",
-                    ""interactions"": ""Press(behavior=2)"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -389,17 +400,6 @@ namespace Source.Core
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Turn"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a46a854c-6f9b-46c2-abc3-ecb59bea26c1"",
-                    ""path"": ""<Mouse>/scroll/y"",
-                    ""interactions"": """",
-                    ""processors"": ""Normalize(min=-1,max=1)"",
-                    ""groups"": """",
-                    ""action"": ""ScaleCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1260,6 +1260,8 @@ namespace Source.Core
             // MissionController
             m_MissionController = asset.FindActionMap("MissionController", throwIfNotFound: true);
             m_MissionController_TimeDilation = m_MissionController.FindAction("TimeDilation", throwIfNotFound: true);
+            m_MissionController_ScaleCamera = m_MissionController.FindAction("ScaleCamera", throwIfNotFound: true);
+            m_MissionController_MoveCamera = m_MissionController.FindAction("MoveCamera", throwIfNotFound: true);
             m_MissionController_UseAbility = m_MissionController.FindAction("UseAbility", throwIfNotFound: true);
             m_MissionController_SwitchMoveType = m_MissionController.FindAction("SwitchMoveType", throwIfNotFound: true);
             m_MissionController_UseGranade = m_MissionController.FindAction("UseGranade", throwIfNotFound: true);
@@ -1267,8 +1269,6 @@ namespace Source.Core
             m_TacticalMove = asset.FindActionMap("TacticalMove", throwIfNotFound: true);
             m_TacticalMove_Move = m_TacticalMove.FindAction("Move", throwIfNotFound: true);
             m_TacticalMove_Turn = m_TacticalMove.FindAction("Turn", throwIfNotFound: true);
-            m_TacticalMove_MoveCamera = m_TacticalMove.FindAction("MoveCamera", throwIfNotFound: true);
-            m_TacticalMove_ScaleCamera = m_TacticalMove.FindAction("ScaleCamera", throwIfNotFound: true);
             m_TacticalMove_SelectUnit1 = m_TacticalMove.FindAction("SelectUnit1", throwIfNotFound: true);
             m_TacticalMove_SelectUnit2 = m_TacticalMove.FindAction("SelectUnit2", throwIfNotFound: true);
             m_TacticalMove_SelectUnit3 = m_TacticalMove.FindAction("SelectUnit3", throwIfNotFound: true);
@@ -1388,6 +1388,8 @@ namespace Source.Core
         private readonly InputActionMap m_MissionController;
         private List<IMissionControllerActions> m_MissionControllerActionsCallbackInterfaces = new List<IMissionControllerActions>();
         private readonly InputAction m_MissionController_TimeDilation;
+        private readonly InputAction m_MissionController_ScaleCamera;
+        private readonly InputAction m_MissionController_MoveCamera;
         private readonly InputAction m_MissionController_UseAbility;
         private readonly InputAction m_MissionController_SwitchMoveType;
         private readonly InputAction m_MissionController_UseGranade;
@@ -1406,6 +1408,14 @@ namespace Source.Core
             /// Provides access to the underlying input action "MissionController/TimeDilation".
             /// </summary>
             public InputAction @TimeDilation => m_Wrapper.m_MissionController_TimeDilation;
+            /// <summary>
+            /// Provides access to the underlying input action "MissionController/ScaleCamera".
+            /// </summary>
+            public InputAction @ScaleCamera => m_Wrapper.m_MissionController_ScaleCamera;
+            /// <summary>
+            /// Provides access to the underlying input action "MissionController/MoveCamera".
+            /// </summary>
+            public InputAction @MoveCamera => m_Wrapper.m_MissionController_MoveCamera;
             /// <summary>
             /// Provides access to the underlying input action "MissionController/UseAbility".
             /// </summary>
@@ -1447,6 +1457,12 @@ namespace Source.Core
                 @TimeDilation.started += instance.OnTimeDilation;
                 @TimeDilation.performed += instance.OnTimeDilation;
                 @TimeDilation.canceled += instance.OnTimeDilation;
+                @ScaleCamera.started += instance.OnScaleCamera;
+                @ScaleCamera.performed += instance.OnScaleCamera;
+                @ScaleCamera.canceled += instance.OnScaleCamera;
+                @MoveCamera.started += instance.OnMoveCamera;
+                @MoveCamera.performed += instance.OnMoveCamera;
+                @MoveCamera.canceled += instance.OnMoveCamera;
                 @UseAbility.started += instance.OnUseAbility;
                 @UseAbility.performed += instance.OnUseAbility;
                 @UseAbility.canceled += instance.OnUseAbility;
@@ -1470,6 +1486,12 @@ namespace Source.Core
                 @TimeDilation.started -= instance.OnTimeDilation;
                 @TimeDilation.performed -= instance.OnTimeDilation;
                 @TimeDilation.canceled -= instance.OnTimeDilation;
+                @ScaleCamera.started -= instance.OnScaleCamera;
+                @ScaleCamera.performed -= instance.OnScaleCamera;
+                @ScaleCamera.canceled -= instance.OnScaleCamera;
+                @MoveCamera.started -= instance.OnMoveCamera;
+                @MoveCamera.performed -= instance.OnMoveCamera;
+                @MoveCamera.canceled -= instance.OnMoveCamera;
                 @UseAbility.started -= instance.OnUseAbility;
                 @UseAbility.performed -= instance.OnUseAbility;
                 @UseAbility.canceled -= instance.OnUseAbility;
@@ -1518,8 +1540,6 @@ namespace Source.Core
         private List<ITacticalMoveActions> m_TacticalMoveActionsCallbackInterfaces = new List<ITacticalMoveActions>();
         private readonly InputAction m_TacticalMove_Move;
         private readonly InputAction m_TacticalMove_Turn;
-        private readonly InputAction m_TacticalMove_MoveCamera;
-        private readonly InputAction m_TacticalMove_ScaleCamera;
         private readonly InputAction m_TacticalMove_SelectUnit1;
         private readonly InputAction m_TacticalMove_SelectUnit2;
         private readonly InputAction m_TacticalMove_SelectUnit3;
@@ -1546,14 +1566,6 @@ namespace Source.Core
             /// Provides access to the underlying input action "TacticalMove/Turn".
             /// </summary>
             public InputAction @Turn => m_Wrapper.m_TacticalMove_Turn;
-            /// <summary>
-            /// Provides access to the underlying input action "TacticalMove/MoveCamera".
-            /// </summary>
-            public InputAction @MoveCamera => m_Wrapper.m_TacticalMove_MoveCamera;
-            /// <summary>
-            /// Provides access to the underlying input action "TacticalMove/ScaleCamera".
-            /// </summary>
-            public InputAction @ScaleCamera => m_Wrapper.m_TacticalMove_ScaleCamera;
             /// <summary>
             /// Provides access to the underlying input action "TacticalMove/SelectUnit1".
             /// </summary>
@@ -1614,12 +1626,6 @@ namespace Source.Core
                 @Turn.started += instance.OnTurn;
                 @Turn.performed += instance.OnTurn;
                 @Turn.canceled += instance.OnTurn;
-                @MoveCamera.started += instance.OnMoveCamera;
-                @MoveCamera.performed += instance.OnMoveCamera;
-                @MoveCamera.canceled += instance.OnMoveCamera;
-                @ScaleCamera.started += instance.OnScaleCamera;
-                @ScaleCamera.performed += instance.OnScaleCamera;
-                @ScaleCamera.canceled += instance.OnScaleCamera;
                 @SelectUnit1.started += instance.OnSelectUnit1;
                 @SelectUnit1.performed += instance.OnSelectUnit1;
                 @SelectUnit1.canceled += instance.OnSelectUnit1;
@@ -1658,12 +1664,6 @@ namespace Source.Core
                 @Turn.started -= instance.OnTurn;
                 @Turn.performed -= instance.OnTurn;
                 @Turn.canceled -= instance.OnTurn;
-                @MoveCamera.started -= instance.OnMoveCamera;
-                @MoveCamera.performed -= instance.OnMoveCamera;
-                @MoveCamera.canceled -= instance.OnMoveCamera;
-                @ScaleCamera.started -= instance.OnScaleCamera;
-                @ScaleCamera.performed -= instance.OnScaleCamera;
-                @ScaleCamera.canceled -= instance.OnScaleCamera;
                 @SelectUnit1.started -= instance.OnSelectUnit1;
                 @SelectUnit1.performed -= instance.OnSelectUnit1;
                 @SelectUnit1.canceled -= instance.OnSelectUnit1;
@@ -2336,6 +2336,20 @@ namespace Source.Core
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnTimeDilation(InputAction.CallbackContext context);
             /// <summary>
+            /// Method invoked when associated input action "ScaleCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnScaleCamera(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "MoveCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnMoveCamera(InputAction.CallbackContext context);
+            /// <summary>
             /// Method invoked when associated input action "UseAbility" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
             /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
@@ -2378,20 +2392,6 @@ namespace Source.Core
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnTurn(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "MoveCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnMoveCamera(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "ScaleCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnScaleCamera(InputAction.CallbackContext context);
             /// <summary>
             /// Method invoked when associated input action "SelectUnit1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
