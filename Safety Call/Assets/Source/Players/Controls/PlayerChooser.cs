@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
-using Source.Creatures.Movement;
+using Source.Core;
 using Source.Players.Movement;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 namespace Source.Players.Controls
 {
@@ -19,39 +18,77 @@ namespace Source.Players.Controls
         
         private List<PlayerData> _players;
 
-        private void Update()
+        private InputAction _selectUnit1Action;
+        private InputAction _selectUnit2Action;
+        private InputAction _selectUnit3Action;
+        private InputAction _selectUnit4Action;
+        private InputAction _selectUnits12Action;
+        private InputAction _selectUnits34Action;
+        private InputAction _selectAllUnitsAction;
+
+        private void OnEnable()
         {
-            if (Input.GetKey(KeyCode.Alpha1))
-            {
-                SetChosenPlayer(AddPlayersToList(new []{0}));
-            }
-            if (Input.GetKey(KeyCode.Alpha2))
-            {
-                SetChosenPlayer(AddPlayersToList(new []{1}));
-            }
-            if (Input.GetKey(KeyCode.Alpha3))
-            {
-                SetChosenPlayer(AddPlayersToList(new []{2}));
-            }
-            if (Input.GetKey(KeyCode.Alpha4))
-            {
-                SetChosenPlayer(AddPlayersToList(new []{3}));
-            }
+            _selectUnit1Action = InputManager.Instance.GameInput.TacticalMove.SelectUnit1;
+            _selectUnit2Action = InputManager.Instance.GameInput.TacticalMove.SelectUnit2;
+            _selectUnit3Action = InputManager.Instance.GameInput.TacticalMove.SelectUnit3;
+            _selectUnit4Action = InputManager.Instance.GameInput.TacticalMove.SelectUnit4;
+            _selectUnits12Action = InputManager.Instance.GameInput.TacticalMove.SelectUnits12;
+            _selectUnits34Action = InputManager.Instance.GameInput.TacticalMove.SelectUnits34;
+            _selectAllUnitsAction = InputManager.Instance.GameInput.TacticalMove.SelectAllUnits;
 
-            if (Input.GetKey(KeyCode.C))
-            {
-                SetChosenPlayer(AddPlayersToList(new []{0,1}));
-            }
+            _selectUnit1Action.performed += SetFirstPlayer;
+            _selectUnit2Action.performed += SetSecondPlayer;
+            _selectUnit3Action.performed += SetThirdPlayer;
+            _selectUnit4Action.performed += SetFourthPlayer;
+            _selectUnits12Action.performed += SetFirstAndSecondPlayers;
+            _selectUnits34Action.performed += SetThirdAndFourthPlayers;
+            _selectAllUnitsAction.performed += SetAllPlayers;
+        }
 
-            if (Input.GetKey(KeyCode.B))
-            {
-                SetChosenPlayer(AddPlayersToList(new []{2,3}));
-            }
+        private void OnDisable()
+        {
+            _selectUnit1Action.performed -= SetFirstPlayer;
+            _selectUnit2Action.performed -= SetSecondPlayer;
+            _selectUnit3Action.performed -= SetThirdPlayer;
+            _selectUnit4Action.performed -= SetFourthPlayer;
+            _selectUnits12Action.performed -= SetFirstAndSecondPlayers;
+            _selectUnits34Action.performed -= SetThirdAndFourthPlayers;
+            _selectAllUnitsAction.performed -= SetAllPlayers;
+        }
 
-            if (Input.GetKey(KeyCode.H))
-            {
-                SetChosenPlayer(AddPlayersToList(new []{0, 1, 2,3}));
-            }
+        private void SetFirstPlayer(InputAction.CallbackContext ctx)
+        {
+            SetChosenPlayer(AddPlayersToList(new[] { 0 }));
+        }
+
+        private void SetSecondPlayer(InputAction.CallbackContext ctx)
+        {
+            SetChosenPlayer(AddPlayersToList(new[] { 1 }));
+        }
+
+        private void SetThirdPlayer(InputAction.CallbackContext ctx)
+        {
+            SetChosenPlayer(AddPlayersToList(new[] { 2 }));
+        }
+
+        private void SetFourthPlayer(InputAction.CallbackContext ctx)
+        {
+            SetChosenPlayer(AddPlayersToList(new[] { 3 }));
+        }
+
+        private void SetFirstAndSecondPlayers(InputAction.CallbackContext ctx)
+        {
+            SetChosenPlayer(AddPlayersToList(new[] { 0, 1 }));
+        }
+
+        private void SetThirdAndFourthPlayers(InputAction.CallbackContext ctx)
+        {
+            SetChosenPlayer(AddPlayersToList(new[] { 2, 3 }));
+        }
+
+        private void SetAllPlayers(InputAction.CallbackContext ctx)
+        {
+            SetChosenPlayer(AddPlayersToList(new[] { 0, 1, 2, 3 }));
         }
 
         public void SetChosenPlayer(List<int> playerIndexes)
@@ -92,7 +129,5 @@ namespace Source.Players.Controls
         {
             return _playersChoosen;
         }
-
-      
     }
 }

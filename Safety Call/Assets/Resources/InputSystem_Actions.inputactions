@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "UseGranade",
+                    "type": "Button",
+                    "id": "ada9159d-200e-4afb-a930-8800daff8687",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -66,6 +75,17 @@
                     "action": "SwitchMoveType",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a26ae265-54bc-4c9f-9964-13892f8dfaac",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseGranade",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -80,7 +100,7 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Turn",
@@ -146,7 +166,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SelectUnit12",
+                    "name": "SelectUnits12",
                     "type": "Button",
                     "id": "192f3da1-2979-47a1-a2ea-e47c80c18a46",
                     "expectedControlType": "",
@@ -155,7 +175,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SelectUnit34",
+                    "name": "SelectUnits34",
                     "type": "Button",
                     "id": "9578c4e8-1fb7-4579-b373-67e6ef3b77a0",
                     "expectedControlType": "",
@@ -258,7 +278,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SelectUnit12",
+                    "action": "SelectUnits12",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -269,7 +289,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SelectUnit34",
+                    "action": "SelectUnits34",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -401,7 +421,7 @@
                     "id": "c5f5721a-60b4-4b16-a027-f69bd656cedc",
                     "path": "<Mouse>/delta",
                     "interactions": "",
-                    "processors": "NormalizeVector2",
+                    "processors": "",
                     "groups": "",
                     "action": "Turn",
                     "isComposite": false,

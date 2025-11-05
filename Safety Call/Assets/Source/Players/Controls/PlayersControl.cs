@@ -1,7 +1,9 @@
 using System;
+using Source.Core;
 using Source.Players.Controls;
 using Source.Players.Movement;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayersControl : MonoBehaviour
 {
@@ -15,13 +17,27 @@ public class PlayersControl : MonoBehaviour
     
     private bool _isSinglePlayer;
 
-    private void Update()
+    private InputAction _switchMoveTypeAction;
+
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.F) && _chooser.GetPlayersChoosen() == 1 && !_isSinglePlayer)
+        _switchMoveTypeAction = InputManager.Instance.GameInput.MissionController.SwitchMoveType;
+
+        _switchMoveTypeAction.performed += DoSwitchMoveType;
+    }
+
+    private void OnDisable()
+    {
+        _switchMoveTypeAction.performed -= DoSwitchMoveType;
+    }
+
+    private void DoSwitchMoveType(InputAction.CallbackContext ctx)
+    {
+        if (_chooser.GetPlayersChoosen() == 1 && !_isSinglePlayer)
         {
             SwitchToSingle(_chooser.GetChosenPlayer()[0]);
         }
-        else if (Input.GetKeyDown(KeyCode.F) && _isSinglePlayer)
+        else if (_isSinglePlayer)
         {
             SwitchToTactic();
         }
@@ -35,6 +51,7 @@ public class PlayersControl : MonoBehaviour
         _singlePlayerControl.enabled = true;
         _tacticalControl.enabled = false;
         SwitchPlayerStates(true);
+        InputManager.Instance.SwitchActionMapType(InputManager.ActionMapType.IndividualMove);
     }
 
     public void SwitchToTactic()
@@ -43,6 +60,7 @@ public class PlayersControl : MonoBehaviour
         _tacticalControl.enabled = true;
         _isSinglePlayer = false;
         SwitchPlayerStates(false);
+        InputManager.Instance.SwitchActionMapType(InputManager.ActionMapType.TacticalMove);
     }
 
     private void SwitchPlayerStates(bool state)

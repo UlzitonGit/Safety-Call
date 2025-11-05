@@ -1,5 +1,6 @@
-using System;
+using Source.Core;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
 public class TimeStopManager : MonoBehaviour
@@ -8,7 +9,21 @@ public class TimeStopManager : MonoBehaviour
     private float _volumeWeight = 0.7f;
     private bool _isStoped;
 
-    private void Update()
+    private InputAction _timeDilationAction;
+
+    private void OnEnable()
+    {
+        _timeDilationAction = InputManager.Instance.GameInput.MissionController.TimeDilation;
+
+        _timeDilationAction.performed += DoTimeDilation;
+    }
+
+    private void OnDisable()
+    {
+        _timeDilationAction.performed -= DoTimeDilation;
+    }
+
+    private void DoTimeDilation(InputAction.CallbackContext ctx)
     {
         if (!_isStoped && Input.GetKeyDown(KeyCode.Space))
         {

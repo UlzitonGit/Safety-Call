@@ -119,6 +119,15 @@ namespace Core
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UseGranade"",
+                    ""type"": ""Button"",
+                    ""id"": ""ada9159d-200e-4afb-a930-8800daff8687"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -154,6 +163,17 @@ namespace Core
                     ""action"": ""SwitchMoveType"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a26ae265-54bc-4c9f-9964-13892f8dfaac"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseGranade"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -168,7 +188,7 @@ namespace Core
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Turn"",
@@ -234,7 +254,7 @@ namespace Core
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SelectUnit12"",
+                    ""name"": ""SelectUnits12"",
                     ""type"": ""Button"",
                     ""id"": ""192f3da1-2979-47a1-a2ea-e47c80c18a46"",
                     ""expectedControlType"": """",
@@ -243,7 +263,7 @@ namespace Core
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SelectUnit34"",
+                    ""name"": ""SelectUnits34"",
                     ""type"": ""Button"",
                     ""id"": ""9578c4e8-1fb7-4579-b373-67e6ef3b77a0"",
                     ""expectedControlType"": """",
@@ -346,7 +366,7 @@ namespace Core
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SelectUnit12"",
+                    ""action"": ""SelectUnits12"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -357,7 +377,7 @@ namespace Core
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SelectUnit34"",
+                    ""action"": ""SelectUnits34"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -489,7 +509,7 @@ namespace Core
                     ""id"": ""c5f5721a-60b4-4b16-a027-f69bd656cedc"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
-                    ""processors"": ""NormalizeVector2"",
+                    ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Turn"",
                     ""isComposite"": false,
@@ -1242,6 +1262,7 @@ namespace Core
             m_MissionController_TimeDilation = m_MissionController.FindAction("TimeDilation", throwIfNotFound: true);
             m_MissionController_UseAbility = m_MissionController.FindAction("UseAbility", throwIfNotFound: true);
             m_MissionController_SwitchMoveType = m_MissionController.FindAction("SwitchMoveType", throwIfNotFound: true);
+            m_MissionController_UseGranade = m_MissionController.FindAction("UseGranade", throwIfNotFound: true);
             // TacticalMove
             m_TacticalMove = asset.FindActionMap("TacticalMove", throwIfNotFound: true);
             m_TacticalMove_Move = m_TacticalMove.FindAction("Move", throwIfNotFound: true);
@@ -1252,8 +1273,8 @@ namespace Core
             m_TacticalMove_SelectUnit2 = m_TacticalMove.FindAction("SelectUnit2", throwIfNotFound: true);
             m_TacticalMove_SelectUnit3 = m_TacticalMove.FindAction("SelectUnit3", throwIfNotFound: true);
             m_TacticalMove_SelectUnit4 = m_TacticalMove.FindAction("SelectUnit4", throwIfNotFound: true);
-            m_TacticalMove_SelectUnit12 = m_TacticalMove.FindAction("SelectUnit12", throwIfNotFound: true);
-            m_TacticalMove_SelectUnit34 = m_TacticalMove.FindAction("SelectUnit34", throwIfNotFound: true);
+            m_TacticalMove_SelectUnits12 = m_TacticalMove.FindAction("SelectUnits12", throwIfNotFound: true);
+            m_TacticalMove_SelectUnits34 = m_TacticalMove.FindAction("SelectUnits34", throwIfNotFound: true);
             m_TacticalMove_SelectAllUnits = m_TacticalMove.FindAction("SelectAllUnits", throwIfNotFound: true);
             // IndividualMove
             m_IndividualMove = asset.FindActionMap("IndividualMove", throwIfNotFound: true);
@@ -1369,6 +1390,7 @@ namespace Core
         private readonly InputAction m_MissionController_TimeDilation;
         private readonly InputAction m_MissionController_UseAbility;
         private readonly InputAction m_MissionController_SwitchMoveType;
+        private readonly InputAction m_MissionController_UseGranade;
         /// <summary>
         /// Provides access to input actions defined in input action map "MissionController".
         /// </summary>
@@ -1392,6 +1414,10 @@ namespace Core
             /// Provides access to the underlying input action "MissionController/SwitchMoveType".
             /// </summary>
             public InputAction @SwitchMoveType => m_Wrapper.m_MissionController_SwitchMoveType;
+            /// <summary>
+            /// Provides access to the underlying input action "MissionController/UseGranade".
+            /// </summary>
+            public InputAction @UseGranade => m_Wrapper.m_MissionController_UseGranade;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -1427,6 +1453,9 @@ namespace Core
                 @SwitchMoveType.started += instance.OnSwitchMoveType;
                 @SwitchMoveType.performed += instance.OnSwitchMoveType;
                 @SwitchMoveType.canceled += instance.OnSwitchMoveType;
+                @UseGranade.started += instance.OnUseGranade;
+                @UseGranade.performed += instance.OnUseGranade;
+                @UseGranade.canceled += instance.OnUseGranade;
             }
 
             /// <summary>
@@ -1447,6 +1476,9 @@ namespace Core
                 @SwitchMoveType.started -= instance.OnSwitchMoveType;
                 @SwitchMoveType.performed -= instance.OnSwitchMoveType;
                 @SwitchMoveType.canceled -= instance.OnSwitchMoveType;
+                @UseGranade.started -= instance.OnUseGranade;
+                @UseGranade.performed -= instance.OnUseGranade;
+                @UseGranade.canceled -= instance.OnUseGranade;
             }
 
             /// <summary>
@@ -1492,8 +1524,8 @@ namespace Core
         private readonly InputAction m_TacticalMove_SelectUnit2;
         private readonly InputAction m_TacticalMove_SelectUnit3;
         private readonly InputAction m_TacticalMove_SelectUnit4;
-        private readonly InputAction m_TacticalMove_SelectUnit12;
-        private readonly InputAction m_TacticalMove_SelectUnit34;
+        private readonly InputAction m_TacticalMove_SelectUnits12;
+        private readonly InputAction m_TacticalMove_SelectUnits34;
         private readonly InputAction m_TacticalMove_SelectAllUnits;
         /// <summary>
         /// Provides access to input actions defined in input action map "TacticalMove".
@@ -1539,13 +1571,13 @@ namespace Core
             /// </summary>
             public InputAction @SelectUnit4 => m_Wrapper.m_TacticalMove_SelectUnit4;
             /// <summary>
-            /// Provides access to the underlying input action "TacticalMove/SelectUnit12".
+            /// Provides access to the underlying input action "TacticalMove/SelectUnits12".
             /// </summary>
-            public InputAction @SelectUnit12 => m_Wrapper.m_TacticalMove_SelectUnit12;
+            public InputAction @SelectUnits12 => m_Wrapper.m_TacticalMove_SelectUnits12;
             /// <summary>
-            /// Provides access to the underlying input action "TacticalMove/SelectUnit34".
+            /// Provides access to the underlying input action "TacticalMove/SelectUnits34".
             /// </summary>
-            public InputAction @SelectUnit34 => m_Wrapper.m_TacticalMove_SelectUnit34;
+            public InputAction @SelectUnits34 => m_Wrapper.m_TacticalMove_SelectUnits34;
             /// <summary>
             /// Provides access to the underlying input action "TacticalMove/SelectAllUnits".
             /// </summary>
@@ -1600,12 +1632,12 @@ namespace Core
                 @SelectUnit4.started += instance.OnSelectUnit4;
                 @SelectUnit4.performed += instance.OnSelectUnit4;
                 @SelectUnit4.canceled += instance.OnSelectUnit4;
-                @SelectUnit12.started += instance.OnSelectUnit12;
-                @SelectUnit12.performed += instance.OnSelectUnit12;
-                @SelectUnit12.canceled += instance.OnSelectUnit12;
-                @SelectUnit34.started += instance.OnSelectUnit34;
-                @SelectUnit34.performed += instance.OnSelectUnit34;
-                @SelectUnit34.canceled += instance.OnSelectUnit34;
+                @SelectUnits12.started += instance.OnSelectUnits12;
+                @SelectUnits12.performed += instance.OnSelectUnits12;
+                @SelectUnits12.canceled += instance.OnSelectUnits12;
+                @SelectUnits34.started += instance.OnSelectUnits34;
+                @SelectUnits34.performed += instance.OnSelectUnits34;
+                @SelectUnits34.canceled += instance.OnSelectUnits34;
                 @SelectAllUnits.started += instance.OnSelectAllUnits;
                 @SelectAllUnits.performed += instance.OnSelectAllUnits;
                 @SelectAllUnits.canceled += instance.OnSelectAllUnits;
@@ -1644,12 +1676,12 @@ namespace Core
                 @SelectUnit4.started -= instance.OnSelectUnit4;
                 @SelectUnit4.performed -= instance.OnSelectUnit4;
                 @SelectUnit4.canceled -= instance.OnSelectUnit4;
-                @SelectUnit12.started -= instance.OnSelectUnit12;
-                @SelectUnit12.performed -= instance.OnSelectUnit12;
-                @SelectUnit12.canceled -= instance.OnSelectUnit12;
-                @SelectUnit34.started -= instance.OnSelectUnit34;
-                @SelectUnit34.performed -= instance.OnSelectUnit34;
-                @SelectUnit34.canceled -= instance.OnSelectUnit34;
+                @SelectUnits12.started -= instance.OnSelectUnits12;
+                @SelectUnits12.performed -= instance.OnSelectUnits12;
+                @SelectUnits12.canceled -= instance.OnSelectUnits12;
+                @SelectUnits34.started -= instance.OnSelectUnits34;
+                @SelectUnits34.performed -= instance.OnSelectUnits34;
+                @SelectUnits34.canceled -= instance.OnSelectUnits34;
                 @SelectAllUnits.started -= instance.OnSelectAllUnits;
                 @SelectAllUnits.performed -= instance.OnSelectAllUnits;
                 @SelectAllUnits.canceled -= instance.OnSelectAllUnits;
@@ -2317,6 +2349,13 @@ namespace Core
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnSwitchMoveType(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "UseGranade" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnUseGranade(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "TacticalMove" which allows adding and removing callbacks.
@@ -2382,19 +2421,19 @@ namespace Core
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnSelectUnit4(InputAction.CallbackContext context);
             /// <summary>
-            /// Method invoked when associated input action "SelectUnit12" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// Method invoked when associated input action "SelectUnits12" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
             /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnSelectUnit12(InputAction.CallbackContext context);
+            void OnSelectUnits12(InputAction.CallbackContext context);
             /// <summary>
-            /// Method invoked when associated input action "SelectUnit34" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// Method invoked when associated input action "SelectUnits34" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
             /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnSelectUnit34(InputAction.CallbackContext context);
+            void OnSelectUnits34(InputAction.CallbackContext context);
             /// <summary>
             /// Method invoked when associated input action "SelectAllUnits" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>

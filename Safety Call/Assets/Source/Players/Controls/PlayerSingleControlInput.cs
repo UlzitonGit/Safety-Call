@@ -1,23 +1,40 @@
+using Source.Core;
 using Source.Players.Movement;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerSingleControlInput : MonoBehaviour
 {
     [SerializeField] public PlayerMovement _playerMovement;
-    
-    void Update()
+    private InputAction _moveAction;
+    private InputAction _turnAction;
+
+    private void OnEnable()
     {
-        _playerMovement.MoveSingle(GetControls());
-        _playerMovement.LookAtTarget(GetClickCoordinates());
+        _moveAction = InputManager.Instance.GameInput.IndividualMove.Move;
+        _turnAction = InputManager.Instance.GameInput.IndividualMove.Turn;
     }
 
-    private Vector2 GetControls()
+    void Update()
     {
-        return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        _playerMovement.MoveSingle(_moveAction.ReadValue<Vector2>());
+        _playerMovement.LookAtTarget(GetClickCoordinates());
     }
+    
+    private void OnDisable()
+    {
+        _moveAction = null;
+        _turnAction = null;
+    }
+
+    private Vector3 GetMousCoordinate()
+    {
+        return new Vector3(Mouse.current.position.x.ReadValue(), Mouse.current.position.y.ReadValue(), 1);
+    }
+
     public Vector3 GetClickCoordinates()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(GetMousCoordinate());
         RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
         //if(hit2D.transform.gameObject.layer == LayerMask.NameToLayer("UI")) return default;
         if (hit2D.collider != null)
