@@ -21,6 +21,11 @@ namespace Source.Core
         }
         private void Awake()
         {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
             GameInput =  new GameInput();
             GameInput.Enable();
         }
@@ -30,59 +35,64 @@ namespace Source.Core
         {
             if (Instance == this)
             {
-                GameInput.Disable();
-                GameInput.MissionController.Disable();
-                GameInput.TacticalMove.Disable();
+                print("Disable!!");
+                DisableAllActionMaps();
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (Instance == this)
+            {
+                GameInput?.Dispose();
                 GameInput = null;
                 Instance = null;
             }
         }
 
+        private void DisableAllActionMaps()
+        {
+            GameInput?.Base.Disable();
+            GameInput?.Mission.Disable();
+            GameInput?.TacticalMove.Disable();
+            GameInput?.IndividualMove.Disable();
+            GameInput?.Hub.Disable();
+            GameInput?.UI.Disable();
+            GameInput?.Dialogue.Disable();
+        }
+
         public void SwitchActionMapType(ActionMapType mapType)
         {
+            DisableAllActionMaps();
             switch(mapType)
             {
                 case ActionMapType.MissionController:
-                    GameInput.MissionController.Enable();
+                    GameInput.Base.Enable();
+                    GameInput.Mission.Enable();
                     GameInput.TacticalMove.Enable();
-                    GameInput.HubController.Disable();
-                    GameInput.IndividualMove.Disable();
-                    GameInput.UI.Disable();
-                    GameInput.Dialogue.Disable();
                     break;
                 case ActionMapType.HubController:
-                    GameInput.HubController.Enable();
-                    GameInput.MissionController.Disable();
-                    GameInput.TacticalMove.Disable();
-                    GameInput.IndividualMove.Disable();
-                    GameInput.UI.Disable();
-                    GameInput.Dialogue.Disable();
+                    GameInput.Base.Enable();
+                    GameInput.Hub.Enable();
                     break;
                 case ActionMapType.TacticalMove:
+                    GameInput.Base.Enable();
+                    GameInput.Mission.Enable();
                     GameInput.TacticalMove.Enable();
-                    GameInput.MissionController.Enable();
-                    GameInput.IndividualMove.Disable();
                     break;
                 case ActionMapType.IndividualMove:
+                    GameInput.Base.Enable();
+                    GameInput.Mission.Enable();
                     GameInput.IndividualMove.Enable();
-                    GameInput.MissionController.Enable();
-                    GameInput.TacticalMove.Disable();
                     break;
                 case ActionMapType.UI:
                     GameInput.UI.Enable();
-                    GameInput.MissionController.Disable();
-                    GameInput.TacticalMove.Disable();
-                    GameInput.IndividualMove.Disable();
-                    GameInput.HubController.Disable();
-                    GameInput.Dialogue.Disable();
                     break;
                 case ActionMapType.Dialogue:
                     GameInput.Dialogue.Enable();
-                    GameInput.HubController.Disable();
-                    GameInput.UI.Disable();
                     break;
                 default:
-                    GameInput.TacticalMove.Enable(); 
+                    GameInput.Base.Enable();
                     break;
 
             }

@@ -2,22 +2,13 @@
     "name": "InputSystem_Actions",
     "maps": [
         {
-            "name": "MissionController",
-            "id": "df70fa95-8a34-4494-b137-73ab6b9c7d37",
+            "name": "Base",
+            "id": "873bb18e-ad33-4636-b408-d65623d24126",
             "actions": [
-                {
-                    "name": "TimeDilation",
-                    "type": "Button",
-                    "id": "b1a5dac3-ad13-4649-9fce-28ab40afe66a",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
                 {
                     "name": "ScaleCamera",
                     "type": "PassThrough",
-                    "id": "fe05f80d-a222-4f45-b65a-2a6c0fafcc7d",
+                    "id": "7436ab8b-9c73-4157-991c-a99bd07aa132",
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
@@ -26,7 +17,46 @@
                 {
                     "name": "MoveCamera",
                     "type": "Button",
-                    "id": "741a816d-5db3-4978-9838-d4fda42f7310",
+                    "id": "e1ec6392-8eb5-4a1d-9a49-68ca7126f5e8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "66b009df-f4db-481c-bc34-6a50f6ee409d",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "Normalize(min=-1,max=1)",
+                    "groups": "",
+                    "action": "ScaleCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c39e93d-443f-4e30-8da0-29fd0b04e67a",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Mission",
+            "id": "df70fa95-8a34-4494-b137-73ab6b9c7d37",
+            "actions": [
+                {
+                    "name": "TimeDilation",
+                    "type": "Button",
+                    "id": "b1a5dac3-ad13-4649-9fce-28ab40afe66a",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -42,18 +72,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwitchMoveType",
+                    "name": "UseGranade",
                     "type": "Button",
-                    "id": "27b8eab0-a860-43b0-8d2a-cf83628d5ebd",
+                    "id": "ada9159d-200e-4afb-a930-8800daff8687",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "UseGranade",
+                    "name": "SwitchMoveType",
                     "type": "Button",
-                    "id": "ada9159d-200e-4afb-a930-8800daff8687",
+                    "id": "27b8eab0-a860-43b0-8d2a-cf83628d5ebd",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -69,28 +99,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "TimeDilation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6b5940ea-efd4-4f94-9c72-f2efd09ba4e0",
-                    "path": "<Mouse>/scroll/y",
-                    "interactions": "",
-                    "processors": "Normalize(min=-1,max=1)",
-                    "groups": "",
-                    "action": "ScaleCamera",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7a9bebac-3bcc-4db7-99b6-8220968bd4d9",
-                    "path": "<Mouse>/middleButton",
-                    "interactions": "Press(behavior=2)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveCamera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -430,7 +438,7 @@
             ]
         },
         {
-            "name": "HubController",
+            "name": "Hub",
             "id": "ce549b07-ca35-499e-95d3-3bd402c9f773",
             "actions": [
                 {

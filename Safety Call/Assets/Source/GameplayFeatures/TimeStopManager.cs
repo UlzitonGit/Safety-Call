@@ -13,7 +13,7 @@ public class TimeStopManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _timeDilationAction = InputManager.Instance.GameInput.MissionController.TimeDilation;
+        _timeDilationAction = InputManager.Instance.GameInput.Mission.TimeDilation;
 
         _timeDilationAction.performed += DoTimeDilation;
     }

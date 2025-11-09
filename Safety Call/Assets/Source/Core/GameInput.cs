@@ -90,22 +90,13 @@ namespace Source.Core
     ""name"": ""InputSystem_Actions"",
     ""maps"": [
         {
-            ""name"": ""MissionController"",
-            ""id"": ""df70fa95-8a34-4494-b137-73ab6b9c7d37"",
+            ""name"": ""Base"",
+            ""id"": ""873bb18e-ad33-4636-b408-d65623d24126"",
             ""actions"": [
-                {
-                    ""name"": ""TimeDilation"",
-                    ""type"": ""Button"",
-                    ""id"": ""b1a5dac3-ad13-4649-9fce-28ab40afe66a"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
                 {
                     ""name"": ""ScaleCamera"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""fe05f80d-a222-4f45-b65a-2a6c0fafcc7d"",
+                    ""id"": ""7436ab8b-9c73-4157-991c-a99bd07aa132"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -114,7 +105,46 @@ namespace Source.Core
                 {
                     ""name"": ""MoveCamera"",
                     ""type"": ""Button"",
-                    ""id"": ""741a816d-5db3-4978-9838-d4fda42f7310"",
+                    ""id"": ""e1ec6392-8eb5-4a1d-9a49-68ca7126f5e8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""66b009df-f4db-481c-bc34-6a50f6ee409d"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": ""Normalize(min=-1,max=1)"",
+                    ""groups"": """",
+                    ""action"": ""ScaleCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c39e93d-443f-4e30-8da0-29fd0b04e67a"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Mission"",
+            ""id"": ""df70fa95-8a34-4494-b137-73ab6b9c7d37"",
+            ""actions"": [
+                {
+                    ""name"": ""TimeDilation"",
+                    ""type"": ""Button"",
+                    ""id"": ""b1a5dac3-ad13-4649-9fce-28ab40afe66a"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -130,18 +160,18 @@ namespace Source.Core
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SwitchMoveType"",
+                    ""name"": ""UseGranade"",
                     ""type"": ""Button"",
-                    ""id"": ""27b8eab0-a860-43b0-8d2a-cf83628d5ebd"",
+                    ""id"": ""ada9159d-200e-4afb-a930-8800daff8687"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""UseGranade"",
+                    ""name"": ""SwitchMoveType"",
                     ""type"": ""Button"",
-                    ""id"": ""ada9159d-200e-4afb-a930-8800daff8687"",
+                    ""id"": ""27b8eab0-a860-43b0-8d2a-cf83628d5ebd"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -157,28 +187,6 @@ namespace Source.Core
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""TimeDilation"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6b5940ea-efd4-4f94-9c72-f2efd09ba4e0"",
-                    ""path"": ""<Mouse>/scroll/y"",
-                    ""interactions"": """",
-                    ""processors"": ""Normalize(min=-1,max=1)"",
-                    ""groups"": """",
-                    ""action"": ""ScaleCamera"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7a9bebac-3bcc-4db7-99b6-8220968bd4d9"",
-                    ""path"": ""<Mouse>/middleButton"",
-                    ""interactions"": ""Press(behavior=2)"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -518,7 +526,7 @@ namespace Source.Core
             ]
         },
         {
-            ""name"": ""HubController"",
+            ""name"": ""Hub"",
             ""id"": ""ce549b07-ca35-499e-95d3-3bd402c9f773"",
             ""actions"": [
                 {
@@ -1257,14 +1265,16 @@ namespace Source.Core
         }
     ]
 }");
-            // MissionController
-            m_MissionController = asset.FindActionMap("MissionController", throwIfNotFound: true);
-            m_MissionController_TimeDilation = m_MissionController.FindAction("TimeDilation", throwIfNotFound: true);
-            m_MissionController_ScaleCamera = m_MissionController.FindAction("ScaleCamera", throwIfNotFound: true);
-            m_MissionController_MoveCamera = m_MissionController.FindAction("MoveCamera", throwIfNotFound: true);
-            m_MissionController_UseAbility = m_MissionController.FindAction("UseAbility", throwIfNotFound: true);
-            m_MissionController_SwitchMoveType = m_MissionController.FindAction("SwitchMoveType", throwIfNotFound: true);
-            m_MissionController_UseGranade = m_MissionController.FindAction("UseGranade", throwIfNotFound: true);
+            // Base
+            m_Base = asset.FindActionMap("Base", throwIfNotFound: true);
+            m_Base_ScaleCamera = m_Base.FindAction("ScaleCamera", throwIfNotFound: true);
+            m_Base_MoveCamera = m_Base.FindAction("MoveCamera", throwIfNotFound: true);
+            // Mission
+            m_Mission = asset.FindActionMap("Mission", throwIfNotFound: true);
+            m_Mission_TimeDilation = m_Mission.FindAction("TimeDilation", throwIfNotFound: true);
+            m_Mission_UseAbility = m_Mission.FindAction("UseAbility", throwIfNotFound: true);
+            m_Mission_UseGranade = m_Mission.FindAction("UseGranade", throwIfNotFound: true);
+            m_Mission_SwitchMoveType = m_Mission.FindAction("SwitchMoveType", throwIfNotFound: true);
             // TacticalMove
             m_TacticalMove = asset.FindActionMap("TacticalMove", throwIfNotFound: true);
             m_TacticalMove_Move = m_TacticalMove.FindAction("Move", throwIfNotFound: true);
@@ -1281,11 +1291,11 @@ namespace Source.Core
             m_IndividualMove_Move = m_IndividualMove.FindAction("Move", throwIfNotFound: true);
             m_IndividualMove_Turn = m_IndividualMove.FindAction("Turn", throwIfNotFound: true);
             m_IndividualMove_Shoot = m_IndividualMove.FindAction("Shoot", throwIfNotFound: true);
-            // HubController
-            m_HubController = asset.FindActionMap("HubController", throwIfNotFound: true);
-            m_HubController_Move = m_HubController.FindAction("Move", throwIfNotFound: true);
-            m_HubController_Interact = m_HubController.FindAction("Interact", throwIfNotFound: true);
-            m_HubController_Dialogue = m_HubController.FindAction("Dialogue", throwIfNotFound: true);
+            // Hub
+            m_Hub = asset.FindActionMap("Hub", throwIfNotFound: true);
+            m_Hub_Move = m_Hub.FindAction("Move", throwIfNotFound: true);
+            m_Hub_Interact = m_Hub.FindAction("Interact", throwIfNotFound: true);
+            m_Hub_Dialogue = m_Hub.FindAction("Dialogue", throwIfNotFound: true);
             // Dialogue
             m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
             m_Dialogue_Next = m_Dialogue.FindAction("Next", throwIfNotFound: true);
@@ -1306,10 +1316,11 @@ namespace Source.Core
 
         ~@GameInput()
         {
-            UnityEngine.Debug.Assert(!m_MissionController.enabled, "This will cause a leak and performance issues, GameInput.MissionController.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_Base.enabled, "This will cause a leak and performance issues, GameInput.Base.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_Mission.enabled, "This will cause a leak and performance issues, GameInput.Mission.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_TacticalMove.enabled, "This will cause a leak and performance issues, GameInput.TacticalMove.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_IndividualMove.enabled, "This will cause a leak and performance issues, GameInput.IndividualMove.Disable() has not been called.");
-            UnityEngine.Debug.Assert(!m_HubController.enabled, "This will cause a leak and performance issues, GameInput.HubController.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_Hub.enabled, "This will cause a leak and performance issues, GameInput.Hub.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_Dialogue.enabled, "This will cause a leak and performance issues, GameInput.Dialogue.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, GameInput.UI.Disable() has not been called.");
         }
@@ -1384,54 +1395,34 @@ namespace Source.Core
             return asset.FindBinding(bindingMask, out action);
         }
 
-        // MissionController
-        private readonly InputActionMap m_MissionController;
-        private List<IMissionControllerActions> m_MissionControllerActionsCallbackInterfaces = new List<IMissionControllerActions>();
-        private readonly InputAction m_MissionController_TimeDilation;
-        private readonly InputAction m_MissionController_ScaleCamera;
-        private readonly InputAction m_MissionController_MoveCamera;
-        private readonly InputAction m_MissionController_UseAbility;
-        private readonly InputAction m_MissionController_SwitchMoveType;
-        private readonly InputAction m_MissionController_UseGranade;
+        // Base
+        private readonly InputActionMap m_Base;
+        private List<IBaseActions> m_BaseActionsCallbackInterfaces = new List<IBaseActions>();
+        private readonly InputAction m_Base_ScaleCamera;
+        private readonly InputAction m_Base_MoveCamera;
         /// <summary>
-        /// Provides access to input actions defined in input action map "MissionController".
+        /// Provides access to input actions defined in input action map "Base".
         /// </summary>
-        public struct MissionControllerActions
+        public struct BaseActions
         {
             private @GameInput m_Wrapper;
 
             /// <summary>
             /// Construct a new instance of the input action map wrapper class.
             /// </summary>
-            public MissionControllerActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+            public BaseActions(@GameInput wrapper) { m_Wrapper = wrapper; }
             /// <summary>
-            /// Provides access to the underlying input action "MissionController/TimeDilation".
+            /// Provides access to the underlying input action "Base/ScaleCamera".
             /// </summary>
-            public InputAction @TimeDilation => m_Wrapper.m_MissionController_TimeDilation;
+            public InputAction @ScaleCamera => m_Wrapper.m_Base_ScaleCamera;
             /// <summary>
-            /// Provides access to the underlying input action "MissionController/ScaleCamera".
+            /// Provides access to the underlying input action "Base/MoveCamera".
             /// </summary>
-            public InputAction @ScaleCamera => m_Wrapper.m_MissionController_ScaleCamera;
-            /// <summary>
-            /// Provides access to the underlying input action "MissionController/MoveCamera".
-            /// </summary>
-            public InputAction @MoveCamera => m_Wrapper.m_MissionController_MoveCamera;
-            /// <summary>
-            /// Provides access to the underlying input action "MissionController/UseAbility".
-            /// </summary>
-            public InputAction @UseAbility => m_Wrapper.m_MissionController_UseAbility;
-            /// <summary>
-            /// Provides access to the underlying input action "MissionController/SwitchMoveType".
-            /// </summary>
-            public InputAction @SwitchMoveType => m_Wrapper.m_MissionController_SwitchMoveType;
-            /// <summary>
-            /// Provides access to the underlying input action "MissionController/UseGranade".
-            /// </summary>
-            public InputAction @UseGranade => m_Wrapper.m_MissionController_UseGranade;
+            public InputAction @MoveCamera => m_Wrapper.m_Base_MoveCamera;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
-            public InputActionMap Get() { return m_Wrapper.m_MissionController; }
+            public InputActionMap Get() { return m_Wrapper.m_Base; }
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
             public void Enable() { Get().Enable(); }
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -1439,9 +1430,9 @@ namespace Source.Core
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
             public bool enabled => Get().enabled;
             /// <summary>
-            /// Implicitly converts an <see ref="MissionControllerActions" /> to an <see ref="InputActionMap" /> instance.
+            /// Implicitly converts an <see ref="BaseActions" /> to an <see ref="InputActionMap" /> instance.
             /// </summary>
-            public static implicit operator InputActionMap(MissionControllerActions set) { return set.Get(); }
+            public static implicit operator InputActionMap(BaseActions set) { return set.Get(); }
             /// <summary>
             /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
             /// </summary>
@@ -1449,29 +1440,17 @@ namespace Source.Core
             /// <remarks>
             /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
             /// </remarks>
-            /// <seealso cref="MissionControllerActions" />
-            public void AddCallbacks(IMissionControllerActions instance)
+            /// <seealso cref="BaseActions" />
+            public void AddCallbacks(IBaseActions instance)
             {
-                if (instance == null || m_Wrapper.m_MissionControllerActionsCallbackInterfaces.Contains(instance)) return;
-                m_Wrapper.m_MissionControllerActionsCallbackInterfaces.Add(instance);
-                @TimeDilation.started += instance.OnTimeDilation;
-                @TimeDilation.performed += instance.OnTimeDilation;
-                @TimeDilation.canceled += instance.OnTimeDilation;
+                if (instance == null || m_Wrapper.m_BaseActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_BaseActionsCallbackInterfaces.Add(instance);
                 @ScaleCamera.started += instance.OnScaleCamera;
                 @ScaleCamera.performed += instance.OnScaleCamera;
                 @ScaleCamera.canceled += instance.OnScaleCamera;
                 @MoveCamera.started += instance.OnMoveCamera;
                 @MoveCamera.performed += instance.OnMoveCamera;
                 @MoveCamera.canceled += instance.OnMoveCamera;
-                @UseAbility.started += instance.OnUseAbility;
-                @UseAbility.performed += instance.OnUseAbility;
-                @UseAbility.canceled += instance.OnUseAbility;
-                @SwitchMoveType.started += instance.OnSwitchMoveType;
-                @SwitchMoveType.performed += instance.OnSwitchMoveType;
-                @SwitchMoveType.canceled += instance.OnSwitchMoveType;
-                @UseGranade.started += instance.OnUseGranade;
-                @UseGranade.performed += instance.OnUseGranade;
-                @UseGranade.canceled += instance.OnUseGranade;
             }
 
             /// <summary>
@@ -1480,36 +1459,24 @@ namespace Source.Core
             /// <remarks>
             /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
             /// </remarks>
-            /// <seealso cref="MissionControllerActions" />
-            private void UnregisterCallbacks(IMissionControllerActions instance)
+            /// <seealso cref="BaseActions" />
+            private void UnregisterCallbacks(IBaseActions instance)
             {
-                @TimeDilation.started -= instance.OnTimeDilation;
-                @TimeDilation.performed -= instance.OnTimeDilation;
-                @TimeDilation.canceled -= instance.OnTimeDilation;
                 @ScaleCamera.started -= instance.OnScaleCamera;
                 @ScaleCamera.performed -= instance.OnScaleCamera;
                 @ScaleCamera.canceled -= instance.OnScaleCamera;
                 @MoveCamera.started -= instance.OnMoveCamera;
                 @MoveCamera.performed -= instance.OnMoveCamera;
                 @MoveCamera.canceled -= instance.OnMoveCamera;
-                @UseAbility.started -= instance.OnUseAbility;
-                @UseAbility.performed -= instance.OnUseAbility;
-                @UseAbility.canceled -= instance.OnUseAbility;
-                @SwitchMoveType.started -= instance.OnSwitchMoveType;
-                @SwitchMoveType.performed -= instance.OnSwitchMoveType;
-                @SwitchMoveType.canceled -= instance.OnSwitchMoveType;
-                @UseGranade.started -= instance.OnUseGranade;
-                @UseGranade.performed -= instance.OnUseGranade;
-                @UseGranade.canceled -= instance.OnUseGranade;
             }
 
             /// <summary>
-            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="MissionControllerActions.UnregisterCallbacks(IMissionControllerActions)" />.
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="BaseActions.UnregisterCallbacks(IBaseActions)" />.
             /// </summary>
-            /// <seealso cref="MissionControllerActions.UnregisterCallbacks(IMissionControllerActions)" />
-            public void RemoveCallbacks(IMissionControllerActions instance)
+            /// <seealso cref="BaseActions.UnregisterCallbacks(IBaseActions)" />
+            public void RemoveCallbacks(IBaseActions instance)
             {
-                if (m_Wrapper.m_MissionControllerActionsCallbackInterfaces.Remove(instance))
+                if (m_Wrapper.m_BaseActionsCallbackInterfaces.Remove(instance))
                     UnregisterCallbacks(instance);
             }
 
@@ -1519,21 +1486,150 @@ namespace Source.Core
             /// <remarks>
             /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
             /// </remarks>
-            /// <seealso cref="MissionControllerActions.AddCallbacks(IMissionControllerActions)" />
-            /// <seealso cref="MissionControllerActions.RemoveCallbacks(IMissionControllerActions)" />
-            /// <seealso cref="MissionControllerActions.UnregisterCallbacks(IMissionControllerActions)" />
-            public void SetCallbacks(IMissionControllerActions instance)
+            /// <seealso cref="BaseActions.AddCallbacks(IBaseActions)" />
+            /// <seealso cref="BaseActions.RemoveCallbacks(IBaseActions)" />
+            /// <seealso cref="BaseActions.UnregisterCallbacks(IBaseActions)" />
+            public void SetCallbacks(IBaseActions instance)
             {
-                foreach (var item in m_Wrapper.m_MissionControllerActionsCallbackInterfaces)
+                foreach (var item in m_Wrapper.m_BaseActionsCallbackInterfaces)
                     UnregisterCallbacks(item);
-                m_Wrapper.m_MissionControllerActionsCallbackInterfaces.Clear();
+                m_Wrapper.m_BaseActionsCallbackInterfaces.Clear();
                 AddCallbacks(instance);
             }
         }
         /// <summary>
-        /// Provides a new <see cref="MissionControllerActions" /> instance referencing this action map.
+        /// Provides a new <see cref="BaseActions" /> instance referencing this action map.
         /// </summary>
-        public MissionControllerActions @MissionController => new MissionControllerActions(this);
+        public BaseActions @Base => new BaseActions(this);
+
+        // Mission
+        private readonly InputActionMap m_Mission;
+        private List<IMissionActions> m_MissionActionsCallbackInterfaces = new List<IMissionActions>();
+        private readonly InputAction m_Mission_TimeDilation;
+        private readonly InputAction m_Mission_UseAbility;
+        private readonly InputAction m_Mission_UseGranade;
+        private readonly InputAction m_Mission_SwitchMoveType;
+        /// <summary>
+        /// Provides access to input actions defined in input action map "Mission".
+        /// </summary>
+        public struct MissionActions
+        {
+            private @GameInput m_Wrapper;
+
+            /// <summary>
+            /// Construct a new instance of the input action map wrapper class.
+            /// </summary>
+            public MissionActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+            /// <summary>
+            /// Provides access to the underlying input action "Mission/TimeDilation".
+            /// </summary>
+            public InputAction @TimeDilation => m_Wrapper.m_Mission_TimeDilation;
+            /// <summary>
+            /// Provides access to the underlying input action "Mission/UseAbility".
+            /// </summary>
+            public InputAction @UseAbility => m_Wrapper.m_Mission_UseAbility;
+            /// <summary>
+            /// Provides access to the underlying input action "Mission/UseGranade".
+            /// </summary>
+            public InputAction @UseGranade => m_Wrapper.m_Mission_UseGranade;
+            /// <summary>
+            /// Provides access to the underlying input action "Mission/SwitchMoveType".
+            /// </summary>
+            public InputAction @SwitchMoveType => m_Wrapper.m_Mission_SwitchMoveType;
+            /// <summary>
+            /// Provides access to the underlying input action map instance.
+            /// </summary>
+            public InputActionMap Get() { return m_Wrapper.m_Mission; }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+            public void Enable() { Get().Enable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+            public void Disable() { Get().Disable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+            public bool enabled => Get().enabled;
+            /// <summary>
+            /// Implicitly converts an <see ref="MissionActions" /> to an <see ref="InputActionMap" /> instance.
+            /// </summary>
+            public static implicit operator InputActionMap(MissionActions set) { return set.Get(); }
+            /// <summary>
+            /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <param name="instance">Callback instance.</param>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+            /// </remarks>
+            /// <seealso cref="MissionActions" />
+            public void AddCallbacks(IMissionActions instance)
+            {
+                if (instance == null || m_Wrapper.m_MissionActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_MissionActionsCallbackInterfaces.Add(instance);
+                @TimeDilation.started += instance.OnTimeDilation;
+                @TimeDilation.performed += instance.OnTimeDilation;
+                @TimeDilation.canceled += instance.OnTimeDilation;
+                @UseAbility.started += instance.OnUseAbility;
+                @UseAbility.performed += instance.OnUseAbility;
+                @UseAbility.canceled += instance.OnUseAbility;
+                @UseGranade.started += instance.OnUseGranade;
+                @UseGranade.performed += instance.OnUseGranade;
+                @UseGranade.canceled += instance.OnUseGranade;
+                @SwitchMoveType.started += instance.OnSwitchMoveType;
+                @SwitchMoveType.performed += instance.OnSwitchMoveType;
+                @SwitchMoveType.canceled += instance.OnSwitchMoveType;
+            }
+
+            /// <summary>
+            /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <remarks>
+            /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+            /// </remarks>
+            /// <seealso cref="MissionActions" />
+            private void UnregisterCallbacks(IMissionActions instance)
+            {
+                @TimeDilation.started -= instance.OnTimeDilation;
+                @TimeDilation.performed -= instance.OnTimeDilation;
+                @TimeDilation.canceled -= instance.OnTimeDilation;
+                @UseAbility.started -= instance.OnUseAbility;
+                @UseAbility.performed -= instance.OnUseAbility;
+                @UseAbility.canceled -= instance.OnUseAbility;
+                @UseGranade.started -= instance.OnUseGranade;
+                @UseGranade.performed -= instance.OnUseGranade;
+                @UseGranade.canceled -= instance.OnUseGranade;
+                @SwitchMoveType.started -= instance.OnSwitchMoveType;
+                @SwitchMoveType.performed -= instance.OnSwitchMoveType;
+                @SwitchMoveType.canceled -= instance.OnSwitchMoveType;
+            }
+
+            /// <summary>
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="MissionActions.UnregisterCallbacks(IMissionActions)" />.
+            /// </summary>
+            /// <seealso cref="MissionActions.UnregisterCallbacks(IMissionActions)" />
+            public void RemoveCallbacks(IMissionActions instance)
+            {
+                if (m_Wrapper.m_MissionActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            /// <summary>
+            /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+            /// </summary>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+            /// </remarks>
+            /// <seealso cref="MissionActions.AddCallbacks(IMissionActions)" />
+            /// <seealso cref="MissionActions.RemoveCallbacks(IMissionActions)" />
+            /// <seealso cref="MissionActions.UnregisterCallbacks(IMissionActions)" />
+            public void SetCallbacks(IMissionActions instance)
+            {
+                foreach (var item in m_Wrapper.m_MissionActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_MissionActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        /// <summary>
+        /// Provides a new <see cref="MissionActions" /> instance referencing this action map.
+        /// </summary>
+        public MissionActions @Mission => new MissionActions(this);
 
         // TacticalMove
         private readonly InputActionMap m_TacticalMove;
@@ -1837,39 +1933,39 @@ namespace Source.Core
         /// </summary>
         public IndividualMoveActions @IndividualMove => new IndividualMoveActions(this);
 
-        // HubController
-        private readonly InputActionMap m_HubController;
-        private List<IHubControllerActions> m_HubControllerActionsCallbackInterfaces = new List<IHubControllerActions>();
-        private readonly InputAction m_HubController_Move;
-        private readonly InputAction m_HubController_Interact;
-        private readonly InputAction m_HubController_Dialogue;
+        // Hub
+        private readonly InputActionMap m_Hub;
+        private List<IHubActions> m_HubActionsCallbackInterfaces = new List<IHubActions>();
+        private readonly InputAction m_Hub_Move;
+        private readonly InputAction m_Hub_Interact;
+        private readonly InputAction m_Hub_Dialogue;
         /// <summary>
-        /// Provides access to input actions defined in input action map "HubController".
+        /// Provides access to input actions defined in input action map "Hub".
         /// </summary>
-        public struct HubControllerActions
+        public struct HubActions
         {
             private @GameInput m_Wrapper;
 
             /// <summary>
             /// Construct a new instance of the input action map wrapper class.
             /// </summary>
-            public HubControllerActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+            public HubActions(@GameInput wrapper) { m_Wrapper = wrapper; }
             /// <summary>
-            /// Provides access to the underlying input action "HubController/Move".
+            /// Provides access to the underlying input action "Hub/Move".
             /// </summary>
-            public InputAction @Move => m_Wrapper.m_HubController_Move;
+            public InputAction @Move => m_Wrapper.m_Hub_Move;
             /// <summary>
-            /// Provides access to the underlying input action "HubController/Interact".
+            /// Provides access to the underlying input action "Hub/Interact".
             /// </summary>
-            public InputAction @Interact => m_Wrapper.m_HubController_Interact;
+            public InputAction @Interact => m_Wrapper.m_Hub_Interact;
             /// <summary>
-            /// Provides access to the underlying input action "HubController/Dialogue".
+            /// Provides access to the underlying input action "Hub/Dialogue".
             /// </summary>
-            public InputAction @Dialogue => m_Wrapper.m_HubController_Dialogue;
+            public InputAction @Dialogue => m_Wrapper.m_Hub_Dialogue;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
-            public InputActionMap Get() { return m_Wrapper.m_HubController; }
+            public InputActionMap Get() { return m_Wrapper.m_Hub; }
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
             public void Enable() { Get().Enable(); }
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -1877,9 +1973,9 @@ namespace Source.Core
             /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
             public bool enabled => Get().enabled;
             /// <summary>
-            /// Implicitly converts an <see ref="HubControllerActions" /> to an <see ref="InputActionMap" /> instance.
+            /// Implicitly converts an <see ref="HubActions" /> to an <see ref="InputActionMap" /> instance.
             /// </summary>
-            public static implicit operator InputActionMap(HubControllerActions set) { return set.Get(); }
+            public static implicit operator InputActionMap(HubActions set) { return set.Get(); }
             /// <summary>
             /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
             /// </summary>
@@ -1887,11 +1983,11 @@ namespace Source.Core
             /// <remarks>
             /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
             /// </remarks>
-            /// <seealso cref="HubControllerActions" />
-            public void AddCallbacks(IHubControllerActions instance)
+            /// <seealso cref="HubActions" />
+            public void AddCallbacks(IHubActions instance)
             {
-                if (instance == null || m_Wrapper.m_HubControllerActionsCallbackInterfaces.Contains(instance)) return;
-                m_Wrapper.m_HubControllerActionsCallbackInterfaces.Add(instance);
+                if (instance == null || m_Wrapper.m_HubActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_HubActionsCallbackInterfaces.Add(instance);
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
@@ -1909,8 +2005,8 @@ namespace Source.Core
             /// <remarks>
             /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
             /// </remarks>
-            /// <seealso cref="HubControllerActions" />
-            private void UnregisterCallbacks(IHubControllerActions instance)
+            /// <seealso cref="HubActions" />
+            private void UnregisterCallbacks(IHubActions instance)
             {
                 @Move.started -= instance.OnMove;
                 @Move.performed -= instance.OnMove;
@@ -1924,12 +2020,12 @@ namespace Source.Core
             }
 
             /// <summary>
-            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="HubControllerActions.UnregisterCallbacks(IHubControllerActions)" />.
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="HubActions.UnregisterCallbacks(IHubActions)" />.
             /// </summary>
-            /// <seealso cref="HubControllerActions.UnregisterCallbacks(IHubControllerActions)" />
-            public void RemoveCallbacks(IHubControllerActions instance)
+            /// <seealso cref="HubActions.UnregisterCallbacks(IHubActions)" />
+            public void RemoveCallbacks(IHubActions instance)
             {
-                if (m_Wrapper.m_HubControllerActionsCallbackInterfaces.Remove(instance))
+                if (m_Wrapper.m_HubActionsCallbackInterfaces.Remove(instance))
                     UnregisterCallbacks(instance);
             }
 
@@ -1939,21 +2035,21 @@ namespace Source.Core
             /// <remarks>
             /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
             /// </remarks>
-            /// <seealso cref="HubControllerActions.AddCallbacks(IHubControllerActions)" />
-            /// <seealso cref="HubControllerActions.RemoveCallbacks(IHubControllerActions)" />
-            /// <seealso cref="HubControllerActions.UnregisterCallbacks(IHubControllerActions)" />
-            public void SetCallbacks(IHubControllerActions instance)
+            /// <seealso cref="HubActions.AddCallbacks(IHubActions)" />
+            /// <seealso cref="HubActions.RemoveCallbacks(IHubActions)" />
+            /// <seealso cref="HubActions.UnregisterCallbacks(IHubActions)" />
+            public void SetCallbacks(IHubActions instance)
             {
-                foreach (var item in m_Wrapper.m_HubControllerActionsCallbackInterfaces)
+                foreach (var item in m_Wrapper.m_HubActionsCallbackInterfaces)
                     UnregisterCallbacks(item);
-                m_Wrapper.m_HubControllerActionsCallbackInterfaces.Clear();
+                m_Wrapper.m_HubActionsCallbackInterfaces.Clear();
                 AddCallbacks(instance);
             }
         }
         /// <summary>
-        /// Provides a new <see cref="HubControllerActions" /> instance referencing this action map.
+        /// Provides a new <see cref="HubActions" /> instance referencing this action map.
         /// </summary>
-        public HubControllerActions @HubController => new HubControllerActions(this);
+        public HubActions @Hub => new HubActions(this);
 
         // Dialogue
         private readonly InputActionMap m_Dialogue;
@@ -2322,19 +2418,12 @@ namespace Source.Core
             }
         }
         /// <summary>
-        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "MissionController" which allows adding and removing callbacks.
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Base" which allows adding and removing callbacks.
         /// </summary>
-        /// <seealso cref="MissionControllerActions.AddCallbacks(IMissionControllerActions)" />
-        /// <seealso cref="MissionControllerActions.RemoveCallbacks(IMissionControllerActions)" />
-        public interface IMissionControllerActions
+        /// <seealso cref="BaseActions.AddCallbacks(IBaseActions)" />
+        /// <seealso cref="BaseActions.RemoveCallbacks(IBaseActions)" />
+        public interface IBaseActions
         {
-            /// <summary>
-            /// Method invoked when associated input action "TimeDilation" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnTimeDilation(InputAction.CallbackContext context);
             /// <summary>
             /// Method invoked when associated input action "ScaleCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
@@ -2349,6 +2438,21 @@ namespace Source.Core
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnMoveCamera(InputAction.CallbackContext context);
+        }
+        /// <summary>
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Mission" which allows adding and removing callbacks.
+        /// </summary>
+        /// <seealso cref="MissionActions.AddCallbacks(IMissionActions)" />
+        /// <seealso cref="MissionActions.RemoveCallbacks(IMissionActions)" />
+        public interface IMissionActions
+        {
+            /// <summary>
+            /// Method invoked when associated input action "TimeDilation" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnTimeDilation(InputAction.CallbackContext context);
             /// <summary>
             /// Method invoked when associated input action "UseAbility" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
@@ -2357,19 +2461,19 @@ namespace Source.Core
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnUseAbility(InputAction.CallbackContext context);
             /// <summary>
-            /// Method invoked when associated input action "SwitchMoveType" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnSwitchMoveType(InputAction.CallbackContext context);
-            /// <summary>
             /// Method invoked when associated input action "UseGranade" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
             /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnUseGranade(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "SwitchMoveType" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnSwitchMoveType(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "TacticalMove" which allows adding and removing callbacks.
@@ -2472,11 +2576,11 @@ namespace Source.Core
             void OnShoot(InputAction.CallbackContext context);
         }
         /// <summary>
-        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "HubController" which allows adding and removing callbacks.
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Hub" which allows adding and removing callbacks.
         /// </summary>
-        /// <seealso cref="HubControllerActions.AddCallbacks(IHubControllerActions)" />
-        /// <seealso cref="HubControllerActions.RemoveCallbacks(IHubControllerActions)" />
-        public interface IHubControllerActions
+        /// <seealso cref="HubActions.AddCallbacks(IHubActions)" />
+        /// <seealso cref="HubActions.RemoveCallbacks(IHubActions)" />
+        public interface IHubActions
         {
             /// <summary>
             /// Method invoked when associated input action "Move" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.

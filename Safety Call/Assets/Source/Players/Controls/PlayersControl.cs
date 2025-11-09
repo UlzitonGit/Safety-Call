@@ -21,7 +21,7 @@ public class PlayersControl : MonoBehaviour
 
     private void OnEnable()
     {
-        _switchMoveTypeAction = InputManager.Instance.GameInput.MissionController.SwitchMoveType;
+        _switchMoveTypeAction = InputManager.Instance.GameInput.Mission.SwitchMoveType;
 
         _switchMoveTypeAction.performed += DoSwitchMoveType;
     }

@@ -11,7 +11,7 @@ public class PlayerAbilitiesController : MonoBehaviour
 
     private void OnEnable()
     {
-        _useGranadeAction = InputManager.Instance.GameInput.MissionController.UseGranade;
+        _useGranadeAction = InputManager.Instance.GameInput.Mission.UseGranade;
 
         _useGranadeAction.performed += DoThrow;
     }

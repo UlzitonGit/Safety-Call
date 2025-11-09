@@ -23,8 +23,8 @@ public class CameraController : MonoBehaviour
 
     private void OnEnable()
     {
-        _zoomCameraAction = InputManager.Instance.GameInput.MissionController.ScaleCamera;
-        _moveCameraAction = InputManager.Instance.GameInput.MissionController.MoveCamera;
+        _zoomCameraAction = InputManager.Instance.GameInput.Base.ScaleCamera;
+        _moveCameraAction = InputManager.Instance.GameInput.Base.MoveCamera;
 
         _moveCameraAction.started += StartHandleDrag;
         _moveCameraAction.canceled += StopHandleDrag;

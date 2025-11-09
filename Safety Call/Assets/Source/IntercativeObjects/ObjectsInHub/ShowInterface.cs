@@ -1,4 +1,6 @@
+using Source.Core;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Source.IntercativeObjects.ObjectsInHub
 {
@@ -7,11 +9,24 @@ namespace Source.IntercativeObjects.ObjectsInHub
         [SerializeField] private GameObject _panel;
         [SerializeField] private GameObject _clue;
 
+        private InputAction _interactAction;
+
         private bool _canInteract = false;
-        // need new input system  \/\/\/
-        private void Update()
+
+        private void OnEnable()
         {
-            if (_canInteract && Input.GetKeyDown(KeyCode.E))
+            _interactAction = InputManager.Instance.GameInput.Hub.Interact;
+            _interactAction.performed += DoInteract;
+        }
+
+        private void OnDisable()
+        {;
+            _interactAction.performed -= DoInteract;
+        }
+
+        private void DoInteract(InputAction.CallbackContext ctx)
+        {
+            if (_canInteract)
             {
                 _panel.SetActive(true);
             }

@@ -6,25 +6,34 @@ using UnityEngine.InputSystem;
 public class PlayerSingleControlInput : MonoBehaviour
 {
     [SerializeField] public PlayerMovement _playerMovement;
-    private InputAction _moveAction;
-    private InputAction _turnAction;
+    private InputAction _missionMoveAction;
+    private InputAction _hubMoveAction;
 
     private void OnEnable()
     {
-        _moveAction = InputManager.Instance.GameInput.IndividualMove.Move;
-        _turnAction = InputManager.Instance.GameInput.IndividualMove.Turn;
+        _missionMoveAction = InputManager.Instance.GameInput.IndividualMove.Move;
+        _hubMoveAction = InputManager.Instance.GameInput.Hub.Move;
     }
 
     void Update()
     {
-        _playerMovement.MoveSingle(_moveAction.ReadValue<Vector2>());
+        _playerMovement.MoveSingle(MoveVector());
         _playerMovement.LookAtTarget(GetClickCoordinates());
     }
     
     private void OnDisable()
     {
-        _moveAction = null;
-        _turnAction = null;
+        _missionMoveAction = null;
+        _hubMoveAction = null;
+    }
+
+    private Vector2 MoveVector()
+    {
+        if (InputManager.Instance.GameInput.IndividualMove.enabled)
+        {
+            return _missionMoveAction.ReadValue<Vector2>();
+        }
+        return _hubMoveAction.ReadValue<Vector2>();
     }
 
     private Vector3 GetMousCoordinate()

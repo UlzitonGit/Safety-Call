@@ -8,7 +8,7 @@ public abstract class ASpecialAbility : MonoBehaviour
 
     private void OnEnable()
     {
-        _abilityAction = InputManager.Instance.GameInput.MissionController.UseAbility;
+        _abilityAction = InputManager.Instance.GameInput.Mission.UseAbility;
 
         _abilityAction.canceled += DoAbility;
     }
