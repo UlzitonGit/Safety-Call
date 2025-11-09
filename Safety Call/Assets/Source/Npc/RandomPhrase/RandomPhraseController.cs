@@ -7,7 +7,7 @@ public class RandomPhraseController : MonoBehaviour
 {
     [SerializeField] private float _minCooldown = 10;
     [SerializeField] private float _maxCooldown = 30;
-    [SerializeField] private List<NpsRandomPhrase> _listNps;
+    [SerializeField] private List<NpcRandomPhrase> _listNps;
 
     private void Start()
     {
@@ -20,9 +20,9 @@ public class RandomPhraseController : MonoBehaviour
         ChooseNps().ShowRandomPhrase();
     }
 
-    private NpsRandomPhrase ChooseNps()
+    private NpcRandomPhrase ChooseNps()
     {
-        var curListNps = new List<NpsRandomPhrase>();
+        var curListNps = new List<NpcRandomPhrase>();
         foreach (var n in _listNps)
         {
             if (!n.InDialogue)

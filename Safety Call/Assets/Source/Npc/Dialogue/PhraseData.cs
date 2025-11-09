@@ -11,5 +11,5 @@ public class PhraseData
 public enum TalkerType
 {
     Player = 0,
-    Nps = 1
+    Npc = 1
 }

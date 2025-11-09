@@ -2,12 +2,12 @@ using Source.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class NpsDialogue : MonoBehaviour
+public class NpcDialogue : MonoBehaviour
 {
     [SerializeField] private DialogueController dialogueController;
     [SerializeField] private GameObject hint;
 
-    private NpsRandomPhrase _npsRandomPhrase;
+    private NpcRandomPhrase _npsRandomPhrase;
     private bool _canTalk = false;
 
     private InputAction _dialogueAction;
@@ -20,7 +20,7 @@ public class NpsDialogue : MonoBehaviour
 
     private void Start()
     {
-        _npsRandomPhrase = GetComponent<NpsRandomPhrase>();
+        _npsRandomPhrase = GetComponent<NpcRandomPhrase>();
     }
 
     private void OnDisable()

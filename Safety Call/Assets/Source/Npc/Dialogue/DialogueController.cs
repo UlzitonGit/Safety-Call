@@ -8,9 +8,9 @@ public class DialogueController : MonoBehaviour
 {
     [SerializeField] private DialoguesDataSO dialoguesData;
     [SerializeField] private GameObject playerBubble;
-    [SerializeField] private GameObject npsBubble;
+    [SerializeField] private GameObject npcBubble;
     [SerializeField] private TextMeshProUGUI playerText;
-    [SerializeField] private TextMeshProUGUI npsText;
+    [SerializeField] private TextMeshProUGUI npcText;
 
     private AnimatedText _curAnimatedText;
     private DialogueData _curDialogue;
@@ -83,7 +83,7 @@ public class DialogueController : MonoBehaviour
     {
         _curPhraseIndex = 0;
         playerBubble.SetActive(false);
-        npsBubble.SetActive(false);
+        npcBubble.SetActive(false);
         InputManager.Instance.SwitchActionMapType(ActionMapType.HubController);
     }
 
@@ -94,15 +94,15 @@ public class DialogueController : MonoBehaviour
             if (_curDialogue.Phrase[_curPhraseIndex].Talker == TalkerType.Player)
             {
                 playerBubble.SetActive(true);
-                npsBubble.SetActive(false);
+                npcBubble.SetActive(false);
                 _curAnimatedText = playerText.GetComponent<AnimatedText>();
                 _curAnimatedText.StartPrintText(_curDialogue.Phrase[_curPhraseIndex].Phrase);
             }
             else
             {
-                npsBubble.SetActive(true);
+                npcBubble.SetActive(true);
                 playerBubble.SetActive(false);
-                _curAnimatedText = npsText.GetComponent<AnimatedText>();
+                _curAnimatedText = npcText.GetComponent<AnimatedText>();
                 _curAnimatedText.StartPrintText(_curDialogue.Phrase[_curPhraseIndex].Phrase);
             }
         }

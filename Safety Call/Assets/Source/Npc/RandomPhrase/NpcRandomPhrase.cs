@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class NpsRandomPhrase : MonoBehaviour
+public class NpcRandomPhrase : MonoBehaviour
 {
     [SerializeField] private float showTime;
     [SerializeField] private PhrasesSO phrases;
