@@ -7,7 +7,7 @@ namespace Source.IntercativeObjects.ObjectsInHub
     public class ShowInterface : MonoBehaviour
     {
         [SerializeField] private GameObject _panel;
-        [SerializeField] private GameObject _clue;
+        [SerializeField] private GameObject _hint;
 
         private InputAction _interactAction;
 
@@ -20,7 +20,7 @@ namespace Source.IntercativeObjects.ObjectsInHub
         }
 
         private void OnDisable()
-        {;
+        {
             _interactAction.performed -= DoInteract;
         }
 
@@ -36,7 +36,7 @@ namespace Source.IntercativeObjects.ObjectsInHub
         {
             if (collision.tag == "Player")
             {
-                _clue.SetActive(true);
+                _hint.SetActive(true);
                 _canInteract = true;
             }
         }
@@ -45,7 +45,7 @@ namespace Source.IntercativeObjects.ObjectsInHub
         {
             if (collision.tag == "Player")
             {
-                _clue.SetActive(false);
+                _hint.SetActive(false);
                 _canInteract = false;
             }
         }

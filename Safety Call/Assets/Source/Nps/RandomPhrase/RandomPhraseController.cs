@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class RandomPhraseController : MonoBehaviour
@@ -24,9 +25,9 @@ public class RandomPhraseController : MonoBehaviour
         var curListNps = new List<NpsRandomPhrase>();
         foreach (var n in _listNps)
         {
-            if (!n.InDialogue) 
+            if (!n.InDialogue)
                 curListNps.Add(n);
         }
-        return curListNps[Random.Range(0, _listNps.Count)];
+        return curListNps[Random.Range(0, _listNps.Count - 1)];
     }
 }

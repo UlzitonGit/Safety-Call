@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panel: {fileID: 0}
-  _clue: {fileID: 2676906715102751180}
+  _hint: {fileID: 2676906715102751180}
 --- !u!61 &2972415730693606940
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
     m_TrimEdge: 0.03
     m_FlipX: 0
     m_FlipY: 0
-    m_InitialTrim: 0.05
+    m_InitialTrim: 0
   m_CastingOption: 1
   m_PreviousTrimEdge: 0.03
   m_PreviousEdgeProcessing: 1
