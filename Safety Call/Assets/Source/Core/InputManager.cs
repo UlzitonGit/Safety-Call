@@ -8,7 +8,11 @@ namespace Source.Core
 
         public GameInput GameInput;
 
+        public ActionMapType CurentActionMapType; 
+        
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        
+        
         public static void Init()
         {
             if (Instance != null)
@@ -96,8 +100,10 @@ namespace Source.Core
                     break;
 
             }
+            CurentActionMapType = mapType;
         }
     }
+
     public enum ActionMapType
     {
         MissionController,

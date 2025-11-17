@@ -33,7 +33,7 @@ public class PlayersControl : MonoBehaviour
 
     private void DoSwitchMoveType(InputAction.CallbackContext ctx)
     {
-        if (_chooser.GetPlayersChoosen() == 1 && !_isSinglePlayer)
+        if (!_isSinglePlayer)
         {
             SwitchToSingle(_chooser.GetChosenPlayer()[0]);
         }
@@ -49,7 +49,7 @@ public class PlayersControl : MonoBehaviour
         _controlingData = _playerData;
         _singlePlayerControl._playerMovement = _controlingUnit;
         _singlePlayerControl.enabled = true;
-        _tacticalControl.enabled = false;
+        //_tacticalControl.enabled = false;
         SwitchPlayerStates(true);
         InputManager.Instance.SwitchActionMapType(ActionMapType.IndividualMove);
     }

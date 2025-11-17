@@ -13,6 +13,7 @@ public class TrapsVisibility : MonoBehaviour, IPlayerSpotable
 
     private void Start()
     {
+        if(Random.Range(0f, 1f) >= 0.25f) gameObject.SetActive(false);
         HideEnemy();
     }
 

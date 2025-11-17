@@ -1,4 +1,5 @@
 using Source.Core;
+using Source.Players.Controls;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -6,8 +7,12 @@ using UnityEngine.Rendering;
 public class TimeStopManager : MonoBehaviour
 {
     [SerializeField] private Volume _volume;
+    [SerializeField] private PlayerChooser _playerChooser;
+    
     private float _volumeWeight = 0.7f;
     private bool _isStoped;
+    
+    private ActionMapType _mapType;
 
     private InputAction _timeDilationAction;
 
@@ -40,12 +45,15 @@ public class TimeStopManager : MonoBehaviour
         _isStoped = true;
         Time.timeScale = 0.02f;
         _volume.weight = _volumeWeight;
+        _mapType = InputManager.Instance.CurentActionMapType;
+        InputManager.Instance.SwitchActionMapType(ActionMapType.TacticalMove);
     }
 
     private void PlayTime()
     {
         _isStoped = false;
         Time.timeScale = 1;
+        InputManager.Instance.SwitchActionMapType(_mapType);
         _volume.weight = 0f;
     }
 }
