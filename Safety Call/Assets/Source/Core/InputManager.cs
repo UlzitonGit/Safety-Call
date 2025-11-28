@@ -39,7 +39,6 @@ namespace Source.Core
         {
             if (Instance == this)
             {
-                print("Disable!!");
                 DisableAllActionMaps();
             }
         }
