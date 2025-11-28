@@ -36,6 +36,8 @@ public class DialogueController : MonoBehaviour
 
     private void DoNext(InputAction.CallbackContext ctx)
     {
+        if (_curAnimatedText == null)
+            return;
         if (_curAnimatedText.IsPrinted)
         {
             _curPhraseIndex++;
