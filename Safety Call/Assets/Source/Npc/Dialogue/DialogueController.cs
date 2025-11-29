@@ -11,10 +11,12 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private GameObject npcBubble;
     [SerializeField] private TextMeshProUGUI playerText;
     [SerializeField] private TextMeshProUGUI npcText;
+    [SerializeField] private GameObject exclamationMark;
 
     private AnimatedText _curAnimatedText;
     private DialogueData _curDialogue;
     private int _curPhraseIndex = 0;
+    private bool _haveDialogue = true;
 
     private InputAction _nextAction;
     private InputAction _exitAction;
@@ -73,6 +75,7 @@ public class DialogueController : MonoBehaviour
             if (!dialoguesData.DialogueData[i].AlreadyBeen)
             {
                 _curDialogue = dialoguesData.DialogueData[i];
+                exclamationMark.SetActive(false);
                 ShowPhrase();
                 return;
             }
@@ -87,6 +90,9 @@ public class DialogueController : MonoBehaviour
         playerBubble.SetActive(false);
         npcBubble.SetActive(false);
         InputManager.Instance.SwitchActionMapType(ActionMapType.HubController);
+        if (dialoguesData.DialogueData[dialoguesData.DialogueData.Count-1].AlreadyBeen)
+            _haveDialogue = false;
+        exclamationMark.SetActive(_haveDialogue);
     }
 
     private void ShowPhrase()

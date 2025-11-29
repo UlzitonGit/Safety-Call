@@ -59,6 +59,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6854394863373705353}
     m_Modifications:
+    - target: {fileID: 971752656623111170, guid: 4dff0cba653f9804ca6e3687733ca550, type: 3}
+      propertyPath: phraseController
+      value: 
+      objectReference: {fileID: 8935823708006530273}
     - target: {fileID: 2880617047072724621, guid: 4dff0cba653f9804ca6e3687733ca550, type: 3}
       propertyPath: m_Name
       value: Npc (1)
@@ -132,6 +136,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6854394863373705353}
     m_Modifications:
+    - target: {fileID: 971752656623111170, guid: 4dff0cba653f9804ca6e3687733ca550, type: 3}
+      propertyPath: phraseController
+      value: 
+      objectReference: {fileID: 8935823708006530273}
     - target: {fileID: 2880617047072724621, guid: 4dff0cba653f9804ca6e3687733ca550, type: 3}
       propertyPath: m_Name
       value: Npc
