@@ -134,7 +134,6 @@ namespace Source.Players.Controls
             {
                 if (player == playerData)
                 {
-                    print("Penus");
                     SetChosenPlayer(AddPlayersToList(new[] { i }));
                 }
 

@@ -50,7 +50,6 @@ public class TimeStopManager : MonoBehaviour
         _mapType = InputManager.Instance.CurentActionMapType;
         if (_mapType == ActionMapType.IndividualMove)
         {
-            print("true");
             _playerPicked = _playerChooser.GetChosenPlayers()[0];
         }
         InputManager.Instance.SwitchActionMapType(ActionMapType.TacticalMove);
@@ -62,7 +61,6 @@ public class TimeStopManager : MonoBehaviour
         Time.timeScale = 1;
         if (_mapType == ActionMapType.IndividualMove)
         {
-            print("false");
             _playerChooser.SetPlayerByData(_playerPicked.GetComponent<PlayerMovement>());
         }
         InputManager.Instance.SwitchActionMapType(_mapType);
