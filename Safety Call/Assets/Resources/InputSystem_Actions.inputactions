@@ -355,6 +355,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "StayOnMyPos",
+                    "type": "Button",
+                    "id": "a426d50d-df0e-4de1-9ccb-ae63895f6b0b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -432,6 +441,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "45c3eb44-4f3a-448c-8697-af3d51ea8cd0",
+                    "path": "<Keyboard>/#(H)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StayOnMyPos",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

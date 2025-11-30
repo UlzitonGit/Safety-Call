@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Source.Core;
 using Source.Players.Movement;
@@ -8,13 +9,13 @@ namespace Source.Players.Controls
 {
     public class PlayerChooser : MonoBehaviour
     {
-        [SerializeField] private PlayerMovement[] _creatureMovements;
+        [SerializeField] public PlayerMovement[] _creatureMovements;
     
         [SerializeField] private PlayerTacticalControlInput _playerMoveInput;
     
         [SerializeField] private PlayerSpotlighter _playerSpotlighter;
 
-        private int _playersChoosen;
+        private int _playersChosen;
         
         private List<PlayerData> _players;
 
@@ -44,6 +45,7 @@ namespace Source.Players.Controls
             _selectUnits34Action.performed += SetThirdAndFourthPlayers;
             _selectAllUnitsAction.performed += SetAllPlayers;
         }
+        
 
         private void OnDisable()
         {
@@ -116,18 +118,32 @@ namespace Source.Players.Controls
                     indexesToReturn.Add(index);
                 }
             }
-            _playersChoosen = indexesToReturn.Count;
+            _playersChosen = indexesToReturn.Count;
             return indexesToReturn;
         }
 
-        public List<PlayerData> GetChosenPlayer()
+        public List<PlayerData> GetChosenPlayers()
         {
             return _players;
         }
 
-        public int GetPlayersChoosen()
+        public void SetPlayerByData(PlayerMovement playerData)
         {
-            return _playersChoosen;
+            int i = 0;
+            foreach (var player in _creatureMovements)
+            {
+                if (player == playerData)
+                {
+                    print("Penus");
+                    SetChosenPlayer(AddPlayersToList(new[] { i }));
+                }
+
+                i++;
+            }
+        }
+        public int GetPlayersChosen()
+        {
+            return _playersChosen;
         }
     }
 }

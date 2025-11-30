@@ -1,5 +1,6 @@
 using Source.Core;
 using Source.Players.Controls;
+using Source.Players.Movement;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -16,6 +17,7 @@ public class TimeStopManager : MonoBehaviour
 
     private InputAction _timeDilationAction;
 
+    private PlayerData _playerPicked;
     private void OnEnable()
     {
         _timeDilationAction = InputManager.Instance.GameInput.Mission.TimeDilation;
@@ -46,6 +48,11 @@ public class TimeStopManager : MonoBehaviour
         Time.timeScale = 0.02f;
         _volume.weight = _volumeWeight;
         _mapType = InputManager.Instance.CurentActionMapType;
+        if (_mapType == ActionMapType.IndividualMove)
+        {
+            print("true");
+            _playerPicked = _playerChooser.GetChosenPlayers()[0];
+        }
         InputManager.Instance.SwitchActionMapType(ActionMapType.TacticalMove);
     }
 
@@ -53,6 +60,11 @@ public class TimeStopManager : MonoBehaviour
     {
         _isStoped = false;
         Time.timeScale = 1;
+        if (_mapType == ActionMapType.IndividualMove)
+        {
+            print("false");
+            _playerChooser.SetPlayerByData(_playerPicked.GetComponent<PlayerMovement>());
+        }
         InputManager.Instance.SwitchActionMapType(_mapType);
         _volume.weight = 0f;
     }

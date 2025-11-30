@@ -33,9 +33,10 @@ public class PlayersControl : MonoBehaviour
 
     private void DoSwitchMoveType(InputAction.CallbackContext ctx)
     {
+        if(_chooser.GetChosenPlayers() == null) return;
         if (!_isSinglePlayer)
         {
-            SwitchToSingle(_chooser.GetChosenPlayer()[0]);
+            SwitchToSingle(_chooser.GetChosenPlayers()[0]);
         }
         else if (_isSinglePlayer)
         {

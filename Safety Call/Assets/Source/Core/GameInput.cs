@@ -443,6 +443,15 @@ namespace Source.Core
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""StayOnMyPos"",
+                    ""type"": ""Button"",
+                    ""id"": ""a426d50d-df0e-4de1-9ccb-ae63895f6b0b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -520,6 +529,17 @@ namespace Source.Core
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Turn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""45c3eb44-4f3a-448c-8697-af3d51ea8cd0"",
+                    ""path"": ""<Keyboard>/#(H)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StayOnMyPos"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1291,6 +1311,7 @@ namespace Source.Core
             m_IndividualMove_Move = m_IndividualMove.FindAction("Move", throwIfNotFound: true);
             m_IndividualMove_Turn = m_IndividualMove.FindAction("Turn", throwIfNotFound: true);
             m_IndividualMove_Shoot = m_IndividualMove.FindAction("Shoot", throwIfNotFound: true);
+            m_IndividualMove_StayOnMyPos = m_IndividualMove.FindAction("StayOnMyPos", throwIfNotFound: true);
             // Hub
             m_Hub = asset.FindActionMap("Hub", throwIfNotFound: true);
             m_Hub_Move = m_Hub.FindAction("Move", throwIfNotFound: true);
@@ -1821,6 +1842,7 @@ namespace Source.Core
         private readonly InputAction m_IndividualMove_Move;
         private readonly InputAction m_IndividualMove_Turn;
         private readonly InputAction m_IndividualMove_Shoot;
+        private readonly InputAction m_IndividualMove_StayOnMyPos;
         /// <summary>
         /// Provides access to input actions defined in input action map "IndividualMove".
         /// </summary>
@@ -1844,6 +1866,10 @@ namespace Source.Core
             /// Provides access to the underlying input action "IndividualMove/Shoot".
             /// </summary>
             public InputAction @Shoot => m_Wrapper.m_IndividualMove_Shoot;
+            /// <summary>
+            /// Provides access to the underlying input action "IndividualMove/StayOnMyPos".
+            /// </summary>
+            public InputAction @StayOnMyPos => m_Wrapper.m_IndividualMove_StayOnMyPos;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -1879,6 +1905,9 @@ namespace Source.Core
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @StayOnMyPos.started += instance.OnStayOnMyPos;
+                @StayOnMyPos.performed += instance.OnStayOnMyPos;
+                @StayOnMyPos.canceled += instance.OnStayOnMyPos;
             }
 
             /// <summary>
@@ -1899,6 +1928,9 @@ namespace Source.Core
                 @Shoot.started -= instance.OnShoot;
                 @Shoot.performed -= instance.OnShoot;
                 @Shoot.canceled -= instance.OnShoot;
+                @StayOnMyPos.started -= instance.OnStayOnMyPos;
+                @StayOnMyPos.performed -= instance.OnStayOnMyPos;
+                @StayOnMyPos.canceled -= instance.OnStayOnMyPos;
             }
 
             /// <summary>
@@ -2574,6 +2606,13 @@ namespace Source.Core
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnShoot(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "StayOnMyPos" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnStayOnMyPos(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Hub" which allows adding and removing callbacks.
