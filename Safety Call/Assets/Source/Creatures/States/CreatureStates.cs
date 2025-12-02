@@ -34,8 +34,6 @@ public class CreatureStates : MonoBehaviour
     {
         IsAlive = alive;
         CanMove = alive;
-        _data._FieldOfView.SetIsAbleToSee(alive);
-        _data._playerGunfight.SetIsAbleToShoot(alive);
     }
 
     public virtual void SetStunned(bool stunned)

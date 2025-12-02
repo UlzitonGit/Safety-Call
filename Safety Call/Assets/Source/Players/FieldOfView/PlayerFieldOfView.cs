@@ -21,7 +21,7 @@ public class PlayerFieldOfView : FieldOfView
         IPlayerSpotable enemy = target.GetComponent<IPlayerSpotable>();
         print(enemy);
         enemy.ShowEnemy();
-        if(target.TryGetComponent<CreatureStates>(out var creature))
+        if(target.TryGetComponent<EnemyStates>(out var creature))
             _playerGunfightBehaviourManager.AddEnemyTarget(creature);
     }
     

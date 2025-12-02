@@ -9,4 +9,6 @@ public class PlayerData : CreaturesData
     [field:SerializeField] public PlayerGunfightBehaviour _PlayerGunfightBehaviour{ get; private set; }
     
     [field:SerializeField] public PlayerWeaponController _PlayerWeaponController { get; private set; }
+    
+    [field:SerializeField] public FieldOfView _FieldOfView { get; private set; }
 }

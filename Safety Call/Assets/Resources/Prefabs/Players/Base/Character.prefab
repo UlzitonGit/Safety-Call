@@ -995,6 +995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 8060874682696989706}
+  _playerData: {fileID: 8060874682696989706}
 --- !u!114 &4523262986331714428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,14 +1027,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <_playerMovement>k__BackingField: {fileID: 9199300337024040843}
-  <_playerGunfight>k__BackingField: {fileID: 7314110743048061526}
   <_playerState>k__BackingField: {fileID: 5187802826194267677}
   <_playerHealth>k__BackingField: {fileID: 4523262986331714428}
-  <_FieldOfView>k__BackingField: {fileID: 2887123306717992400}
   <_playerVisibility>k__BackingField: {fileID: 8276116939941312118}
   <_GranadeThrower>k__BackingField: {fileID: 3939940155969001234}
   <_PlayerGunfightBehaviour>k__BackingField: {fileID: 7314110743048061526}
   <_PlayerWeaponController>k__BackingField: {fileID: 2739827789379491557}
+  <_FieldOfView>k__BackingField: {fileID: 2887123306717992400}
 --- !u!50 &8593676973527141423
 Rigidbody2D:
   serializedVersion: 5
@@ -1426,7 +1426,7 @@ MonoBehaviour:
   _viewAngle: 80
   _targetLayerMask:
     serializedVersion: 2
-    m_Bits: 4160
+    m_Bits: 12352
   _obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 1025

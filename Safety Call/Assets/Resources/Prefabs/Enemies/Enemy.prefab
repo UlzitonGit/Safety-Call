@@ -206,6 +206,7 @@ MonoBehaviour:
   IsVisible: 0
   _meshRenderer: {fileID: 8828717864427696516}
   _weapon: {fileID: 8807926204296876587}
+  _weaponGameObject: {fileID: 0}
 --- !u!114 &2253681756269262941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 6912702452998548018}
+  _enemyData: {fileID: 6912702452998548018}
 --- !u!114 &8757865318597274204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,10 +322,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <_playerMovement>k__BackingField: {fileID: 8495540433829747488}
-  <_playerGunfight>k__BackingField: {fileID: 8757865318597274204}
   <_playerState>k__BackingField: {fileID: 2402734017574895527}
   <_playerHealth>k__BackingField: {fileID: 2253681756269262941}
-  <_FieldOfView>k__BackingField: {fileID: 2890953296134418534}
+  _FieldOfView: {fileID: 2890953296134418534}
+  _playerGunfight: {fileID: 8757865318597274204}
 --- !u!1 &1905116009122558922
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,14 +399,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3378993348822203433}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.77235, w: 0.63519716}
+  m_LocalRotation: {x: -0, y: -0, z: -0.774454, w: -0.6326302}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3117014105656847244}
   m_Father: {fileID: 9039889718096340712}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 101.131}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -258.489}
 --- !u!114 &2890953296134418534
 MonoBehaviour:
   m_ObjectHideFlags: 0

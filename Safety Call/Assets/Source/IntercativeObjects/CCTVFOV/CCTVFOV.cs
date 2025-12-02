@@ -25,7 +25,7 @@ public class CCTVFOV : MonoBehaviour, IHackable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") || other.CompareTag("Hostage"))
         {
             IPlayerSpotable enemy;
             other.TryGetComponent<IPlayerSpotable>(out enemy);
@@ -36,7 +36,7 @@ public class CCTVFOV : MonoBehaviour, IHackable
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") || other.CompareTag("Hostage"))
         {
             IPlayerSpotable enemy;
             other.TryGetComponent<IPlayerSpotable>(out enemy);
