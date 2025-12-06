@@ -9,6 +9,7 @@ public class PlayersControl : MonoBehaviour
 {
     [SerializeField] private PlayerTacticalControlInput _tacticalControl;
     [SerializeField] private PlayerSingleControlInput _singlePlayerControl;
+    [SerializeField] private CameraTypeSwitcher _cameraSwitcher;
     
     [SerializeField] private PlayerChooser _chooser;
     
@@ -53,6 +54,7 @@ public class PlayersControl : MonoBehaviour
         //_tacticalControl.enabled = false;
         SwitchPlayerStates(true);
         InputManager.Instance.SwitchActionMapType(ActionMapType.IndividualMove);
+        _cameraSwitcher.SwitchCameraToSinglePlayerControl(_playerData._playerMovement.transform);
     }
 
     public void SwitchToTactic()
@@ -62,6 +64,7 @@ public class PlayersControl : MonoBehaviour
         _isSinglePlayer = false;
         SwitchPlayerStates(false);
         InputManager.Instance.SwitchActionMapType(ActionMapType.TacticalMove);
+        _cameraSwitcher.SwitchCameraToTacticalControl();
     }
 
     private void SwitchPlayerStates(bool state)

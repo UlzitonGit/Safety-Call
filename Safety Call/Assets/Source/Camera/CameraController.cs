@@ -83,7 +83,7 @@ public class CameraController : MonoBehaviour
             Vector3 currentMousePosition = Input.mousePosition;
             Vector3 mouseDelta = currentMousePosition - lastMousePosition;
             
-            Vector3 cameraMovement = new Vector3(-mouseDelta.x, -mouseDelta.y, 0) * (dragSpeed * Time.deltaTime);
+            Vector3 cameraMovement = new Vector3(-mouseDelta.x, -mouseDelta.y, 0) * (dragSpeed * Time.deltaTime / Time.timeScale);
             
             transform.Translate(cameraMovement);
             

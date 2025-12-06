@@ -9,6 +9,7 @@ public class TimeStopManager : MonoBehaviour
 {
     [SerializeField] private Volume _volume;
     [SerializeField] private PlayerChooser _playerChooser;
+    [SerializeField] private CameraTypeSwitcher _cameraSwitcher;
     
     private float _volumeWeight = 0.7f;
     private bool _isStoped;
@@ -45,6 +46,7 @@ public class TimeStopManager : MonoBehaviour
     private void StopTime()
     {
         _isStoped = true;
+        _cameraSwitcher.SwitchCameraToTacticalControl();
         Time.timeScale = 0.02f;
         _volume.weight = _volumeWeight;
         _mapType = InputManager.Instance.CurentActionMapType;
@@ -62,6 +64,7 @@ public class TimeStopManager : MonoBehaviour
         if (_mapType == ActionMapType.IndividualMove)
         {
             _playerChooser.SetPlayerByData(_playerPicked.GetComponent<PlayerMovement>());
+            _cameraSwitcher.SwitchCameraToSinglePlayerControl(_playerPicked.GetComponent<PlayerMovement>().transform);
         }
         InputManager.Instance.SwitchActionMapType(_mapType);
         _volume.weight = 0f;
