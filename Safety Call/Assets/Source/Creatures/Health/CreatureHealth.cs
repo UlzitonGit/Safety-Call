@@ -63,6 +63,7 @@ namespace Source.Creatures.Health
             _creaturesData._playerState.SetCanMove(false);
             _creaturesData._playerMovement.StopMovement();
             _capsuleCollider2D.enabled = false;
+            _capsuleCollider2D.isTrigger = true;
             _isAlive = false;
         }
 

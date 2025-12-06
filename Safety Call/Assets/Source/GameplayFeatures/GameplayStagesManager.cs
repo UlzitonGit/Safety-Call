@@ -8,6 +8,8 @@ public class GameplayStagesManager : MonoBehaviour
     [SerializeField] private GameObject _looseEndPanel;
     [SerializeField] private CreaturesData[] _creaturesData;
     [SerializeField] private EndGamePanelUi _endGamePanel;
+    
+    [SerializeField] private GamePlayStatesUI _gamePlayStatesUI;
 
     private int _hostagesCount;
     private int _playersCount;
@@ -36,6 +38,7 @@ public class GameplayStagesManager : MonoBehaviour
         if (_enemyCount == 0)
         {
             _enemiesKilled = true;
+            _gamePlayStatesUI.CloseTask(1);
         }
         CheckMissionIsEnded();
     }
@@ -65,6 +68,7 @@ public class GameplayStagesManager : MonoBehaviour
         _score += 100;
         if (_hostagesCount == 0)
         {
+            _gamePlayStatesUI.CloseTask(0);
             _hostagesRescued = true;
         }
         CheckMissionIsEnded();

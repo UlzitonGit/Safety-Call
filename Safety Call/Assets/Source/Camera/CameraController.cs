@@ -14,6 +14,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Vector2 maxBounds = new Vector2(10f, 10f);
     
     private Camera cam;
+    private Vector3 lastMousePosition;
     private Vector3 dragOrigin;
     private bool isDragging = false;
     private float scroll;
@@ -58,6 +59,7 @@ public class CameraController : MonoBehaviour
     {
         isDragging = true;
         dragOrigin = GetMouseWorldPosition();
+        lastMousePosition = Input.mousePosition;
     }
 
     private void StopHandleDrag(InputAction.CallbackContext ctx)
@@ -78,10 +80,14 @@ public class CameraController : MonoBehaviour
     {
         if (isDragging)
         {
-            Vector3 currentPos = GetMouseWorldPosition();
-            Vector3 difference = dragOrigin - currentPos;
+            Vector3 currentMousePosition = Input.mousePosition;
+            Vector3 mouseDelta = currentMousePosition - lastMousePosition;
             
-            transform.position += difference * dragSpeed;
+            Vector3 cameraMovement = new Vector3(-mouseDelta.x, -mouseDelta.y, 0) * (dragSpeed * Time.deltaTime);
+            
+            transform.Translate(cameraMovement);
+            
+            lastMousePosition = currentMousePosition;
         }
     }
     
