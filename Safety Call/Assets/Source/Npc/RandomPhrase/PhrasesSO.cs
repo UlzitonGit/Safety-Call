@@ -18,7 +18,7 @@ public class PhrasesSO : ScriptableObject
     }
 }
 
-[CustomEditor(typeof(PhrasesSO))]
+/*[CustomEditor(typeof(PhrasesSO))]
 [CanEditMultipleObjects]
 [ExecuteInEditMode]
 public class PhrasesSOCostomEditor : Editor
@@ -73,4 +73,4 @@ public class PhrasesSOCostomEditor : Editor
         }
         _addPhrases = false;
     }
-}
+}*/
