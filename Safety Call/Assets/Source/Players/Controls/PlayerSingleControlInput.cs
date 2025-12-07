@@ -31,6 +31,8 @@ public class PlayerSingleControlInput : MonoBehaviour
     {
         _missionMoveAction = null;
         _hubMoveAction = null;
+        
+        _stayOnMe.performed -= StayOnMe;
     }
 
     private Vector2 MoveVector()

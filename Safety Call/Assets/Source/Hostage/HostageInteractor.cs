@@ -38,7 +38,13 @@ public class HostageInteractor : MonoBehaviour
     private bool CheckPlayers()
     {
         Collider2D[] players = Physics2D.OverlapCircleAll(transform.position, 2, _playerLayer);
-        if(players.Length > 0)  _player = players[0].transform;
+        foreach (var player in players)
+        {
+            if (player.GetComponent<PlayerData>()._playerState.IsAlive)
+            {
+                _player = player.transform;
+            }
+        }
         return players.Length > 0;
     }
 }
