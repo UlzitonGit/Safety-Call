@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 167183543175836789}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0366, y: 0.1969, z: 0}
-  m_LocalScale: {x: 5.7527747, y: 5.7527747, z: 5.7527747}
+  m_LocalPosition: {x: 0.0401, y: 0.2191, z: 0}
+  m_LocalScale: {x: 5.020633, y: 5.0206337, z: 5.0206337}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2265542255282484192}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
+  m_Sprite: {fileID: 7114522981547430709, guid: 6ba5f0b73824bee4d8fb2f3a7468e561, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 167183543175836789}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 92d82291f4101d94c8da6455ec7c2e8a, type: 2}
+  m_Controller: {fileID: 9100000, guid: f827cf3827d90a54b8e14bacb734e8eb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -443,8 +443,8 @@ Transform:
   m_GameObject: {fileID: 3014345862564632748}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1599, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.003, y: -0.19, z: 0}
+  m_LocalScale: {x: 0.7930315, y: 0.79731995, z: 0.8247}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7947878613775972204}
@@ -493,7 +493,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 571605816838999177, guid: 7ae26da5aed103f418180689ef4d23da, type: 3}
+  m_Sprite: {fileID: 7102623610984105296, guid: c310a159a3ecd5d4db5b55ad9ba468f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -514,7 +514,7 @@ Animator:
   m_GameObject: {fileID: 3014345862564632748}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0a73e45f32dd51f48ac94e36517cf98f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 260b0adb744566a429b0d53a578ad2cf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -983,6 +983,7 @@ MonoBehaviour:
   _creatureStates: {fileID: 5187802826194267677}
   _lineRenderer: {fileID: 0}
   _rigidbody: {fileID: 8593676973527141423}
+  _isControlling: 0
 --- !u!114 &5187802826194267677
 MonoBehaviour:
   m_ObjectHideFlags: 0
