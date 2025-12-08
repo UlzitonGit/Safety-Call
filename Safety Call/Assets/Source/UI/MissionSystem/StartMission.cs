@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class StartMission : MonoBehaviour
 {
-    public void OnMissionScene()
+    public void OnMissionScene(int index)
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(index);
     }
 }

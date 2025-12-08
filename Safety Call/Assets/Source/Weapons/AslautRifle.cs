@@ -4,6 +4,7 @@ using UnityEngine;
 public class AslautRifle : WeaponGeneral
 {
     [SerializeField] private string _tag;
+    [SerializeField] private float _missChance = 1;
 
 
     public override void Shoot(Vector3 target)
@@ -15,6 +16,9 @@ public class AslautRifle : WeaponGeneral
     {
         if (!hit.collider.CompareTag(_tag)) return;
         print(hit.collider.name);
-        hit.transform.GetComponent<CreaturesData>()._playerHealth.GetDamage(_damage, transform.position);
+        if (Random.Range(0f, 1f) < _missChance)
+        {
+            hit.transform.GetComponent<CreaturesData>()._playerHealth.GetDamage(_damage, transform.position);   
+        }
     }
 }
