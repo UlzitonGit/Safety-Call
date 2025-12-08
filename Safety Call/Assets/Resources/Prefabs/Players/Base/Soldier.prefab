@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 167183543175836789}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0366, y: 0.1969, z: 0}
-  m_LocalScale: {x: 5.7527747, y: 5.7527747, z: 5.7527747}
+  m_LocalPosition: {x: 0.095, y: 0.277, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2265542255282484192}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
+  m_Sprite: {fileID: -4859121182848250815, guid: 87b014bd8af16764f95e384a9ca96fed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -443,7 +443,7 @@ Transform:
   m_GameObject: {fileID: 3014345862564632748}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1599, z: 0}
+  m_LocalPosition: {x: -0.014, y: -0.262, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -493,7 +493,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 571605816838999177, guid: 7ae26da5aed103f418180689ef4d23da, type: 3}
+  m_Sprite: {fileID: 9151653347157489197, guid: a9697d339c739cf46953e1a2d593112a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -822,8 +822,8 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 8
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 2.07
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -847,7 +847,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
+  m_PointLightOuterRadius: 1.7
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -983,6 +983,7 @@ MonoBehaviour:
   _creatureStates: {fileID: 5187802826194267677}
   _lineRenderer: {fileID: 0}
   _rigidbody: {fileID: 8593676973527141423}
+  _isControlling: 0
 --- !u!114 &5187802826194267677
 MonoBehaviour:
   m_ObjectHideFlags: 0
