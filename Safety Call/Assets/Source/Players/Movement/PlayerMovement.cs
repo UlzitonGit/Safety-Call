@@ -9,7 +9,7 @@ namespace Source.Players.Movement
         
         [SerializeField] private Rigidbody2D _rigidbody;
         
-        private bool _isControlling;
+        public bool _isControlling;
         
         
         public override void MoveOnTarget(Vector3 target)
@@ -66,6 +66,20 @@ namespace Source.Players.Movement
             _lineRenderer.GetLine().enabled = false;
             _rigidbody.linearVelocity = new Vector3(0,0,0);
         }
-        
+
+        public override float GetHorizontalSpeed()
+        {
+            return _isControlling ? _rigidbody.linearVelocityX / _agent.speed : base.GetHorizontalSpeed();
+        }
+
+        public override float GetVerticalSpeed()
+        {
+            return _isControlling ? _rigidbody.linearVelocityY / _agent.speed : base.GetVerticalSpeed();
+        }
+
+        public override float GetSpeed()
+        {
+            return _isControlling ? _rigidbody.linearVelocity.magnitude : base.GetSpeed();
+        }
     }
 }

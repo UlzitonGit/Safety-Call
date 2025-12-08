@@ -70,6 +70,7 @@ public class PlayersControl : MonoBehaviour
     private void SwitchPlayerStates(bool state)
     {
         _controlingData._PlayerGunfightBehaviour._isControlling = state;
+        _controlingUnit._isControlling = state;
         _controlingData._PlayerWeaponController.SetLocal(state);
         _controlingUnit.StopAgent(state);
         _isSinglePlayer = state;

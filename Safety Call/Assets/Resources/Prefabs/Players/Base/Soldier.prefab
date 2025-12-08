@@ -345,7 +345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HACKER
+  m_text: 1a
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7bf2080641755b429c46b94853fb5c4, type: 2}
   m_sharedMaterial: {fileID: 9142882854171817519, guid: c7bf2080641755b429c46b94853fb5c4, type: 2}
@@ -875,8 +875,9 @@ GameObject:
   - component: {fileID: 8060874682696989706}
   - component: {fileID: 8593676973527141423}
   - component: {fileID: 410521767212501986}
+  - component: {fileID: 1384496929640200408}
   m_Layer: 7
-  m_Name: Character
+  m_Name: Soldier
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -892,8 +893,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.47, y: -0.7510207, z: 0.003257384}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4309925444745235387}
   - {fileID: 2565010466612811827}
@@ -1009,7 +1010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bloodVfxPrefab: {fileID: 5931750505607395279, guid: e142c5577ffba5e43b29e5fc9bd8cbb5, type: 3}
-  _maxHealth: 150
+  _maxHealth: 100
   _timeToReaction: 0.4
   _creaturesData: {fileID: 8060874682696989706}
   _playerAnimator: {fileID: 472451369716976119}
@@ -1098,6 +1099,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.86, y: 1.97}
   m_Direction: 0
+--- !u!114 &1384496929640200408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7974762739157073992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ea4dff5ce7e784786e8fb7b101ccb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8315838543900478723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,7 +1331,7 @@ Transform:
   m_GameObject: {fileID: 8571529064407569080}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.018430807, w: 0.9998302}
-  m_LocalPosition: {x: 0, y: 1.218, z: 0}
+  m_LocalPosition: {x: 0, y: 1.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1475,6 +1488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3de888c275978f4695232d0db16d39e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLoadout: {fileID: 11400000, guid: 6246b92a32f091a4bbf86d1f9d951d29, type: 2}
+  playerLoadout: {fileID: 11400000, guid: f71ac0574a957e244bff453a456509ab, type: 2}
   _weaponController: {fileID: 2739827789379491557}
   _weaponPoint: {fileID: 846770415165746587}
