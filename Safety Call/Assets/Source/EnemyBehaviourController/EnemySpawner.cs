@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
             enemy.GetComponentInChildren<PlayerSOReader>().SetWeapon(_loadouts[Random.Range(0, _loadouts.Length  - 1)]);
         }
         
-        for (int i = 0; i < _enemiesInLocationRandomize[0] - 1; i++)
+        for (int i = 0; i < enemiesCount; i++)
         {
             int currentSpawn = Random.Range(0, _spawnPoints.Length);
             
