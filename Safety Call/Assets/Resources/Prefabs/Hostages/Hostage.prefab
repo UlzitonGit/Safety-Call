@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
+  m_Sprite: {fileID: 6196224877491342354, guid: 87b014bd8af16764f95e384a9ca96fed, type: 3}
   m_Color: {r: 0, g: 1, b: 0.023376703, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -324,7 +324,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 0
   m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -482,7 +482,7 @@ Transform:
   m_GameObject: {fileID: 7716894624360826403}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1599, z: 0}
+  m_LocalPosition: {x: 0.008, y: -0.243, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
