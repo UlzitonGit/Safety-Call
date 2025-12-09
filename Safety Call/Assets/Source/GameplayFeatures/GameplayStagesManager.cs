@@ -11,6 +11,8 @@ public class GameplayStagesManager : MonoBehaviour
     
     [SerializeField] private GamePlayStatesUI _gamePlayStatesUI;
 
+    [SerializeField] private bool _isTutorial;
+
     private int _hostagesCount;
     private int _playersCount;
     private int _enemyCount;
@@ -33,6 +35,7 @@ public class GameplayStagesManager : MonoBehaviour
 
     public void EnemyKilled()
     {
+        if(_isTutorial) return;
         _enemyCount -= 1;
         _score += 50;
         if (_enemyCount == 0)
