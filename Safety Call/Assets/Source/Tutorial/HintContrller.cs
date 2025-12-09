@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class HintContrller : MonoBehaviour
 {
-    public UnityEvent SecondHintEvent;
+    public UnityEvent AfterHintEvent;
     [SerializeField] private GameObject HintPanel;
     [SerializeField] private Image HintImage;
     [SerializeField] private TextMeshProUGUI HintText;
@@ -39,7 +39,7 @@ public class HintContrller : MonoBehaviour
         InputManager.Instance.SwitchActionMapType(ActionMapType.MissionController);
         if (_curHint == 0)
         {
-            SecondHintEvent?.Invoke();
+            AfterHintEvent?.Invoke();
         }
         _curHint++;
     }
@@ -49,7 +49,7 @@ public class HintContrller : MonoBehaviour
         InputManager.Instance.SwitchActionMapType(ActionMapType.MissionController);
         if (_curHint == 0)
         {
-            SecondHintEvent?.Invoke();
+            AfterHintEvent?.Invoke();
         }
         _curHint++;
     }
