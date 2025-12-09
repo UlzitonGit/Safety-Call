@@ -2,20 +2,19 @@ using Source.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
 {
-    [SerializeField] private DialoguesDataSO dialoguesData;
-    [SerializeField] private GameObject playerBubble;
-    [SerializeField] private GameObject npcBubble;
-    [SerializeField] private TextMeshProUGUI playerText;
-    [SerializeField] private TextMeshProUGUI npcText;
-    [SerializeField] private GameObject exclamationMark;
-
-    private AnimatedText _curAnimatedText;
+    public bool InDialogue { get; private set; } = false;
+    [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private TextMeshProUGUI nameCharText;
+    [SerializeField] private Image charIcon;
+    [SerializeField] private AnimatedText animatedText;
+    [SerializeField] private bool _inHub;
+    private DialoguesDataSO _dialoguesData;
     private DialogueData _curDialogue;
     private int _curPhraseIndex = 0;
-    private bool _haveDialogue = true;
 
     private InputAction _nextAction;
     private InputAction _exitAction;
@@ -37,16 +36,16 @@ public class DialogueController : MonoBehaviour
 
     private void DoNext(InputAction.CallbackContext ctx)
     {
-        if (_curAnimatedText == null)
+        if (animatedText == null)
             return;
-        if (_curAnimatedText.IsPrinted)
+        if (animatedText.IsPrinted)
         {
             _curPhraseIndex++;
             ShowPhrase();
         }
         else
         {
-            _curAnimatedText.StopPrintText();
+            animatedText.StopPrintText();
         }
     }
     private void DoExit(InputAction.CallbackContext ctx)
@@ -54,27 +53,34 @@ public class DialogueController : MonoBehaviour
         ExitDialogue();
     }
 
-    public bool GetHaveDialogues()
+    public void StartDialogue(DialoguesDataSO dialoguesData)
     {
-        int sum = 0;
-        for (int i = 0; i < dialoguesData.DialogueData.Count; i++)
-        {
-            if (dialoguesData.DialogueData[i].AlreadyBeen)
-                sum++;
-        }
-        if (sum == dialoguesData.DialogueData.Count)
-            return false;
-        return true;
+        _dialoguesData  = dialoguesData;
+        InDialogue = true;
+        dialoguePanel.SetActive(true);
+        ChooseDialogue();
     }
 
-    public void ChooseDialogue()
+    public void StartDialogue(DialogueData dialogueData)
     {
-        for (int i = 0; i < dialoguesData.DialogueData.Count; i++)
+        _curDialogue = dialogueData;
+        InDialogue = true;
+        dialoguePanel.SetActive(true);
+        ShowPhrase();
+    }
+
+    public bool GetInDialogue()
+    {
+        return InDialogue;
+    }
+
+    private void ChooseDialogue()
+    {
+        for (int i = 0; i < _dialoguesData.DialogueData.Count; i++)
         {
-            if (!dialoguesData.DialogueData[i].AlreadyBeen)
+            if (!_dialoguesData.DialogueData[i].AlreadyBeen)
             {
-                _curDialogue = dialoguesData.DialogueData[i];
-                exclamationMark.SetActive(false);
+                _curDialogue = _dialoguesData.DialogueData[i];
                 ShowPhrase();
                 return;
             }
@@ -83,40 +89,29 @@ public class DialogueController : MonoBehaviour
         return;
     }
 
-    private void ExitDialogue()
-    {
-        _curPhraseIndex = 0;
-        playerBubble.SetActive(false);
-        npcBubble.SetActive(false);
-        InputManager.Instance.SwitchActionMapType(ActionMapType.HubController);
-        if (dialoguesData.DialogueData[dialoguesData.DialogueData.Count-1].AlreadyBeen)
-            _haveDialogue = false;
-        exclamationMark.SetActive(_haveDialogue);
-    }
-
     private void ShowPhrase()
     {
         if (_curPhraseIndex < _curDialogue.Phrase.Count)
         {
-            if (_curDialogue.Phrase[_curPhraseIndex].Talker == TalkerType.Player)
-            {
-                playerBubble.SetActive(true);
-                npcBubble.SetActive(false);
-                _curAnimatedText = playerText.GetComponent<AnimatedText>();
-                _curAnimatedText.StartPrintText(_curDialogue.Phrase[_curPhraseIndex].Phrase);
-            }
-            else
-            {
-                npcBubble.SetActive(true);
-                playerBubble.SetActive(false);
-                _curAnimatedText = npcText.GetComponent<AnimatedText>();
-                _curAnimatedText.StartPrintText(_curDialogue.Phrase[_curPhraseIndex].Phrase);
-            }
+            nameCharText.text = _curDialogue.Phrase[_curPhraseIndex].Talker.ToString();
+            charIcon.sprite = _curDialogue.Phrase[_curPhraseIndex].CharacterIcon;
+            animatedText.StartPrintText(_curDialogue.Phrase[_curPhraseIndex].Phrase);
         }
         else
         {
             _curDialogue.AlreadyBeen = true;
             ExitDialogue();
         }
+    }
+
+    private void ExitDialogue()
+    {
+        _curPhraseIndex = 0;
+        dialoguePanel.SetActive(false);
+        if (_inHub)
+            InputManager.Instance.SwitchActionMapType(ActionMapType.HubController);
+        else
+            InputManager.Instance.SwitchActionMapType(ActionMapType.MissionController);
+        InDialogue = false;
     }
 }

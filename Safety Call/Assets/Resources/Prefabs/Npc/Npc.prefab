@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 4879754382820620580}
   - component: {fileID: 8570613284387167397}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ExclamationMark
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -778,7 +778,6 @@ GameObject:
   - component: {fileID: 8575891721388396614}
   - component: {fileID: 971752656623111170}
   - component: {fileID: 4368977181200698362}
-  - component: {fileID: 3826776268716996255}
   m_Layer: 0
   m_Name: Npc
   m_TagString: Untagged
@@ -879,26 +878,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa6e01507ba51c4e8263ae60d9cee76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueController: {fileID: 3826776268716996255}
   hint: {fileID: 4992202564688095731}
---- !u!114 &3826776268716996255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2880617047072724621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67163e5995b034459c838d3feb3dfba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialoguesData: {fileID: 11400000, guid: d06ee2e5f881c8b4bbca227c39011772, type: 2}
-  playerBubble: {fileID: 8248315495769270236}
-  npcBubble: {fileID: 8278064339917400392}
-  playerText: {fileID: 2564357190922123436}
-  npcText: {fileID: 3797053738203160185}
   exclamationMark: {fileID: 1904953865274971649}
+  dialogueController: {fileID: 0}
+  dialoguesDataSO: {fileID: 11400000, guid: d06ee2e5f881c8b4bbca227c39011772, type: 2}
 --- !u!1 &4037752511122036806
 GameObject:
   m_ObjectHideFlags: 0
