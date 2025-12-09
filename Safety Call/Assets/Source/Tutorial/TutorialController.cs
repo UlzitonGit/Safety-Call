@@ -13,6 +13,7 @@ public class TutorialController : MonoBehaviour
 
     private int _curHintId = 0;
     private int _curDialogue = 0;
+    private int _curRoom = 1;
 
     private void OnEnable()
     {
@@ -33,6 +34,12 @@ public class TutorialController : MonoBehaviour
         hintContrller.AfterHintEvent.AddListener(SecondDialogue);
         hintOnTrigger.TriggerEvent.AddListener(SecondHint);
         hintOnTrigger.TriggerEvent.AddListener(ThirdHint);
+        hintContrller.AfterHintEvent.AddListener(FourthDialogue);
+    }
+
+    public void SetRoom(int num)
+    {
+        _curRoom = num;
     }
 
     private void FirstHint()
@@ -55,7 +62,7 @@ public class TutorialController : MonoBehaviour
 
     private void SecondHint()
     {
-        if (_curHintId == 1)
+        if (_curHintId == 1 && _curRoom == 2)
         {
             hintContrller.ShowHint();
             _curHintId++;
@@ -64,7 +71,7 @@ public class TutorialController : MonoBehaviour
 
     private void ThirdDialogue(InputAction.CallbackContext ctx)
     {
-        if (_curDialogue == 2)
+        if (_curDialogue == 2 && _curRoom == 2)
         {
             dialogueController.StartDialogue(tutorialDialog);
             _curDialogue++;
@@ -74,10 +81,20 @@ public class TutorialController : MonoBehaviour
 
     private void ThirdHint()
     {
-        if (_curHintId == 2)
+        if (_curHintId == 2 && _curRoom == 3)
         {
             hintContrller.ShowHint();
             _curHintId++;
         }
     }
+
+    private void FourthDialogue()
+    {
+        if (_curDialogue == 3 && _curRoom == 3)
+        {
+            dialogueController.StartDialogue(tutorialDialog);
+            _curDialogue++;
+        }
+    }
+
 }
