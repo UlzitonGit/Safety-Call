@@ -35,7 +35,6 @@ public class NpcDialogue : MonoBehaviour
         if (_canTalk)
         {
             hint.SetActive(false);
-            InputManager.Instance.SwitchActionMapType(ActionMapType.Dialogue);
             _npsRandomPhrase.InDialogue = true;
             dialogueController.StartDialogue(dialoguesDataSO);
         }

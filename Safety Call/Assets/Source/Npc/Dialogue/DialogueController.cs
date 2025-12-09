@@ -1,6 +1,7 @@
 using Source.Core;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -18,6 +19,7 @@ public class DialogueController : MonoBehaviour
 
     private InputAction _nextAction;
     private InputAction _exitAction;
+    public UnityEvent DialogueEndEvent;
 
     private void OnEnable()
     {
@@ -55,18 +57,11 @@ public class DialogueController : MonoBehaviour
 
     public void StartDialogue(DialoguesDataSO dialoguesData)
     {
+        InputManager.Instance.SwitchActionMapType(ActionMapType.Dialogue);
         _dialoguesData  = dialoguesData;
         InDialogue = true;
         dialoguePanel.SetActive(true);
         ChooseDialogue();
-    }
-
-    public void StartDialogue(DialogueData dialogueData)
-    {
-        _curDialogue = dialogueData;
-        InDialogue = true;
-        dialoguePanel.SetActive(true);
-        ShowPhrase();
     }
 
     public bool GetInDialogue()
@@ -111,7 +106,11 @@ public class DialogueController : MonoBehaviour
         if (_inHub)
             InputManager.Instance.SwitchActionMapType(ActionMapType.HubController);
         else
+        {
             InputManager.Instance.SwitchActionMapType(ActionMapType.MissionController);
+            DialogueEndEvent?.Invoke();
+        }
+            
         InDialogue = false;
     }
 }

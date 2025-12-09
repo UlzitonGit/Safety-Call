@@ -16,5 +16,5 @@ public enum TalkerType
     Suber = 1,
     Laska = 2,
     Beast = 3,
-    Asahy = 4
+    Asahi = 4
 }
