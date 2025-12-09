@@ -35,7 +35,6 @@ public abstract class FieldOfView : MonoBehaviour
             }
             else if (Vector2.Angle(transform.up, dirToTarget) < _viewAngle / 2)
             {
-                print(colliders.Length);
                 if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, _obstacleLayerMask))
                 {
                     ActionViewedObject(target);

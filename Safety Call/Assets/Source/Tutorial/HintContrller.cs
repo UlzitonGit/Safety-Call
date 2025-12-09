@@ -37,10 +37,7 @@ public class HintContrller : MonoBehaviour
     {
         HintPanel.SetActive(false);
         InputManager.Instance.SwitchActionMapType(ActionMapType.MissionController);
-        if (_curHint == 0)
-        {
-            AfterHintEvent?.Invoke();
-        }
+        AfterHintEvent?.Invoke();
         _curHint++;
     }
     public void HideHint()

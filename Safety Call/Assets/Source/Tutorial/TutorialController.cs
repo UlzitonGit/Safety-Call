@@ -9,6 +9,7 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private HintContrller hintContrller;
     [SerializeField] private DialoguesDataSO tutorialDialog;
     [SerializeField] private HintOnTrigger hintOnTrigger;
+    [SerializeField] private OpenSecondDoor openSecondDoor;
     private InputAction _lookAction;
 
     private int _curHintId = 0;
@@ -31,10 +32,8 @@ public class TutorialController : MonoBehaviour
         dialogueController.StartDialogue(tutorialDialog);
         _curDialogue++;
         dialogueController.DialogueEndEvent.AddListener(FirstHint);
-        hintContrller.AfterHintEvent.AddListener(SecondDialogue);
-        hintOnTrigger.TriggerEvent.AddListener(SecondHint);
-        hintOnTrigger.TriggerEvent.AddListener(ThirdHint);
-        hintContrller.AfterHintEvent.AddListener(FourthDialogue);
+        /*hintContrller.AfterHintEvent.AddListener(SecondFourthDialogue);
+        hintOnTrigger.TriggerEvent.AddListener(SecondThirdHint);*/
     }
 
     public void SetRoom(int num)
@@ -51,7 +50,7 @@ public class TutorialController : MonoBehaviour
         }
     }
 
-    private void SecondDialogue()
+    public void SecondDialogue()
     {
         if (_curDialogue == 1)
         {
@@ -60,7 +59,7 @@ public class TutorialController : MonoBehaviour
         }
     }
 
-    private void SecondHint()
+    public void SecondHint()
     {
         if (_curHintId == 1 && _curRoom == 2)
         {
@@ -76,10 +75,11 @@ public class TutorialController : MonoBehaviour
             dialogueController.StartDialogue(tutorialDialog);
             _curDialogue++;
             _lookAction.performed -= ThirdDialogue;
+            openSecondDoor.Open();
         }
     }
 
-    private void ThirdHint()
+    public void ThirdHint()
     {
         if (_curHintId == 2 && _curRoom == 3)
         {
@@ -88,8 +88,10 @@ public class TutorialController : MonoBehaviour
         }
     }
 
-    private void FourthDialogue()
+    public void FourthDialogue()
     {
+        print(_curDialogue);
+        print(_curRoom);
         if (_curDialogue == 3 && _curRoom == 3)
         {
             dialogueController.StartDialogue(tutorialDialog);
