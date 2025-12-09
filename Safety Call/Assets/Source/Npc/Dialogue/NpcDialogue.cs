@@ -4,9 +4,10 @@ using UnityEngine.InputSystem;
 
 public class NpcDialogue : MonoBehaviour
 {
-    [SerializeField] private DialogueController dialogueController;
     [SerializeField] private GameObject hint;
-
+    [SerializeField] private GameObject exclamationMark;
+    [SerializeField] private DialogueController dialogueController;
+    [SerializeField] private DialoguesDataSO dialoguesDataSO;
     private NpcRandomPhrase _npsRandomPhrase;
     private bool _canTalk = false;
 
@@ -21,6 +22,7 @@ public class NpcDialogue : MonoBehaviour
     private void Start()
     {
         _npsRandomPhrase = GetComponent<NpcRandomPhrase>();
+        exclamationMark.SetActive(GetHaveDialogues());
     }
 
     private void OnDisable()
@@ -35,16 +37,29 @@ public class NpcDialogue : MonoBehaviour
             hint.SetActive(false);
             InputManager.Instance.SwitchActionMapType(ActionMapType.Dialogue);
             _npsRandomPhrase.InDialogue = true;
-            dialogueController.ChooseDialogue();
+            dialogueController.StartDialogue(dialoguesDataSO);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && dialogueController.GetHaveDialogues())
+        if (collision.tag == "Player" && GetHaveDialogues())
         {
+            exclamationMark.SetActive(false);
             hint.SetActive(true);
             _canTalk = true;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!dialogueController.InDialogue)
+        {
+            if (collision.tag == "Player" && GetHaveDialogues())
+            {
+                hint.SetActive(true);
+                _canTalk = true;
+            }
         }
     }
 
@@ -54,6 +69,23 @@ public class NpcDialogue : MonoBehaviour
         {
             hint.SetActive(false);
             _canTalk = false;
+            if (GetHaveDialogues())
+            {
+                exclamationMark.SetActive(true);
+            }
         }
+    }
+
+    private bool GetHaveDialogues()
+    {
+        int sum = 0;
+        for (int i = 0; i < dialoguesDataSO.DialogueData.Count; i++)
+        {
+            if (dialoguesDataSO.DialogueData[i].AlreadyBeen)
+                sum++;
+        }
+        if (sum == dialoguesDataSO.DialogueData.Count)
+            return false;
+        return true;
     }
 }
