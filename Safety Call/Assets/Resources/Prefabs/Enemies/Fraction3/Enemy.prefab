@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bloodVfxPrefab: {fileID: 5931750505607395279, guid: e142c5577ffba5e43b29e5fc9bd8cbb5, type: 3}
-  _maxHealth: 100
+  _maxHealth: 75
   _timeToReaction: 0.4
   _creaturesData: {fileID: 6912702452998548018}
   _playerAnimator: {fileID: 344221237194380116}
@@ -286,6 +286,7 @@ MonoBehaviour:
   _movement: {fileID: 8495540433829747488}
   _rotation: {fileID: 1506585922548495257}
   _bodySpriteRenderer: {fileID: 8952473746704567642}
+  EulerZ: 1
   _rotationIndex: 0
 --- !u!195 &2842111965714764363
 NavMeshAgent:

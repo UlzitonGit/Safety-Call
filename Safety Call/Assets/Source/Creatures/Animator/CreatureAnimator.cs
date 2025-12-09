@@ -14,6 +14,8 @@ public abstract class CreatureAnimator : MonoBehaviour
     
     [SerializeField] protected SpriteRenderer _bodySpriteRenderer;
 
+    [SerializeField] private bool EulerZ;
+
     public float _rotationIndex;
     
     protected bool _isDead = false;
@@ -24,7 +26,14 @@ public abstract class CreatureAnimator : MonoBehaviour
         _legsAnimator.SetFloat("Horizontal", _movement.GetHorizontalSpeed());
         _legsAnimator.SetFloat("Input", _movement.GetSpeed());
         _rotationIndex = _rotation.rotation.z;
-        _upperAnimator.SetFloat("Input", _rotation.rotation.eulerAngles.y);
+        if (EulerZ)
+        {
+            _upperAnimator.SetFloat("Input", _rotation.rotation.eulerAngles.z);
+        }
+        else
+        {
+            _upperAnimator.SetFloat("Input", _rotation.rotation.eulerAngles.y);
+        }
         if (_rotationIndex < 0.2f && _rotationIndex > -0.2f)
             _bodySpriteRenderer.sortingOrder = 5;
         else  
