@@ -50,7 +50,7 @@ MonoBehaviour:
   _shootPoint: {fileID: 291335330471831298}
   _layersToIgnore:
     serializedVersion: 2
-    m_Bits: 4748
+    m_Bits: 12940
   _weaponSoundPlayer: {fileID: 5937684455274459370}
   _shootVFX: {fileID: 5645292386630942619}
   _maxAmmo: 12
@@ -59,6 +59,7 @@ MonoBehaviour:
   _damage: 12
   _canShoot: 1
   _tag: Enemy
+  _missChance: 1
 --- !u!1 &491006826344053467
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +136,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 204185871426364955, guid: ac4b2bff574f6ea4285bfce86356a278, type: 3}
+  m_Sprite: {fileID: -5402108795415925660, guid: 4858d38ea6717174f91121b5e5ae2d31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
