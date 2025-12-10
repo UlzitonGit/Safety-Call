@@ -13,12 +13,16 @@ public class PlayersControl : MonoBehaviour
     
     [SerializeField] private PlayerChooser _chooser;
     
+    [SerializeField] private Animator _animatorPanelIndividual;
+    
     private PlayerMovement _controlingUnit;
     private PlayerData _controlingData;
     
     private bool _isSinglePlayer;
 
     private InputAction _switchMoveTypeAction;
+    
+    private PlayerUiDrawer _uiDrawer;
 
     private void OnEnable()
     {
@@ -49,6 +53,7 @@ public class PlayersControl : MonoBehaviour
     {
         _controlingUnit = _playerData._playerMovement.GetComponent<PlayerMovement>();
         _controlingData = _playerData;
+        _uiDrawer = _playerData._playerHealth.GetComponent<PlayerHealth>().GetPlayerUiDrawer();
         _singlePlayerControl._playerMovement = _controlingUnit;
         _singlePlayerControl.enabled = true;
         //_tacticalControl.enabled = false;
@@ -62,6 +67,7 @@ public class PlayersControl : MonoBehaviour
         _singlePlayerControl.enabled = false;
         _tacticalControl.enabled = true;
         _isSinglePlayer = false;
+        
         SwitchPlayerStates(false);
         InputManager.Instance.SwitchActionMapType(ActionMapType.TacticalMove);
         _cameraSwitcher.SwitchCameraToTacticalControl();
@@ -70,7 +76,9 @@ public class PlayersControl : MonoBehaviour
     private void SwitchPlayerStates(bool state)
     {
         _controlingData._PlayerGunfightBehaviour._isControlling = state;
+        _uiDrawer.PlayPickAnim(state);
         _controlingUnit._isControlling = state;
+        _animatorPanelIndividual.SetBool("Picked", state);
         _controlingData._PlayerWeaponController.SetLocal(state);
         _controlingUnit.StopAgent(state);
         _isSinglePlayer = state;

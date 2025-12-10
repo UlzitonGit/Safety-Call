@@ -10,9 +10,12 @@ public class PlayerUiDrawer : MonoBehaviour
     [SerializeField] private Image[] _hpBar;
     
     [SerializeField] private string _name;
+    
+    private Animator _animator;
 
     private void Start()
     {
+        _animator = GetComponent<Animator>();
         foreach (var name in _namesMeshProUGUI)
         {
             name.text = _name;
@@ -25,5 +28,10 @@ public class PlayerUiDrawer : MonoBehaviour
         {
             hpBar.fillAmount = health / 100;
         }
+    }
+
+    public void PlayPickAnim(bool state)
+    {
+        _animator.SetBool("Picked", state);
     }
 }

@@ -20,12 +20,14 @@ public abstract class CreatureAnimator : MonoBehaviour
     
     protected bool _isDead = false;
 
-    protected void Update()
+    protected virtual void Update()
     {
         _legsAnimator.SetFloat("Vertical", _movement.GetVerticalSpeed());
         _legsAnimator.SetFloat("Horizontal", _movement.GetHorizontalSpeed());
         _legsAnimator.SetFloat("Input", _movement.GetSpeed());
         _rotationIndex = _rotation.rotation.z;
+        if(_rotation.rotation.eulerAngles.z == 0 && _rotation.rotation.eulerAngles.y != 0) EulerZ = false;
+        if(_rotation.rotation.eulerAngles.z != 0 && _rotation.rotation.eulerAngles.y == 0) EulerZ = true;
         if (EulerZ)
         {
             _upperAnimator.SetFloat("Input", _rotation.rotation.eulerAngles.z);
