@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0.1614, y: 0.207, z: 0}
-  m_LocalScale: {x: 1.5053815, y: 1.5011663, z: 1.5053815}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7461071707147772209}
@@ -50,7 +50,7 @@ MonoBehaviour:
   _shootPoint: {fileID: 291335330471831298}
   _layersToIgnore:
     serializedVersion: 2
-    m_Bits: 4684
+    m_Bits: 12876
   _weaponSoundPlayer: {fileID: 5937684455274459370}
   _shootVFX: {fileID: 7953178337403452290}
   _maxAmmo: 30
@@ -136,7 +136,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -7389967749310623695, guid: 66888ba083f71aa4a9bbf10c33af3745, type: 3}
+  m_Sprite: {fileID: 1865844510135877793, guid: 4858d38ea6717174f91121b5e5ae2d31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
