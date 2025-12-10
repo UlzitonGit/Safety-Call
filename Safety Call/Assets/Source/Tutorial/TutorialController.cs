@@ -1,10 +1,12 @@
 using Source.Core;
+using Source.Players.Controls;
 using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class TutorialController : MonoBehaviour
 {
+    [SerializeField] private PlayerChooser playerChooser;
     [SerializeField] private DialogueController dialogueController;
     [SerializeField] private HintContrller hintContrller;
     [SerializeField] private DialoguesDataSO tutorialDialog;
@@ -32,8 +34,12 @@ public class TutorialController : MonoBehaviour
         dialogueController.StartDialogue(tutorialDialog);
         _curDialogue++;
         dialogueController.DialogueEndEvent.AddListener(FirstHint);
-        /*hintContrller.AfterHintEvent.AddListener(SecondFourthDialogue);
-        hintOnTrigger.TriggerEvent.AddListener(SecondThirdHint);*/
+        /*hintContrller.AfterHintEvent.AddListener(SecondDialogue);
+        hintOnTrigger.TriggerEvent.AddListener(SecondHint);
+        hintOnTrigger.TriggerEvent.AddListener(ThirdHint);
+        hintContrller.AfterHintEvent.AddListener(FourthDialogue);
+        hintOnTrigger.TriggerEvent.AddListener(ThirdHint);
+        hintContrller.AfterHintEvent.AddListener(FifthDialogue);*/
     }
 
     public void SetRoom(int num)
@@ -93,6 +99,24 @@ public class TutorialController : MonoBehaviour
         print(_curDialogue);
         print(_curRoom);
         if (_curDialogue == 3 && _curRoom == 3)
+        {
+            dialogueController.StartDialogue(tutorialDialog);
+            _curDialogue++;
+        }
+    }
+
+    public void FourthHint()
+    {
+        if (_curHintId == 3 && _curRoom == 5)
+        {
+            hintContrller.ShowHint();
+            _curHintId++;
+        }
+    }
+
+    public void FifthDialogue()
+    {
+        if (_curDialogue == 4 && _curRoom == 5)
         {
             dialogueController.StartDialogue(tutorialDialog);
             _curDialogue++;

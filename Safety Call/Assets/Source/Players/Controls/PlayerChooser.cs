@@ -14,6 +14,7 @@ namespace Source.Players.Controls
         [SerializeField] private PlayerTacticalControlInput _playerMoveInput;
     
         [SerializeField] private PlayerSpotlighter _playerSpotlighter;
+        [SerializeField] private bool isTutorial;
 
         private int _playersChosen;
         
@@ -44,6 +45,14 @@ namespace Source.Players.Controls
             _selectUnits12Action.performed += SetFirstAndSecondPlayers;
             _selectUnits34Action.performed += SetThirdAndFourthPlayers;
             _selectAllUnitsAction.performed += SetAllPlayers;
+
+            if (isTutorial)
+            {
+                _selectUnit3Action.performed -= SetThirdPlayer;
+                _selectUnit4Action.performed -= SetFourthPlayer;
+                _selectUnits34Action.performed -= SetThirdAndFourthPlayers;
+                _selectAllUnitsAction.performed -= SetAllPlayers;
+            }
         }
         
 
@@ -56,6 +65,15 @@ namespace Source.Players.Controls
             _selectUnits12Action.performed -= SetFirstAndSecondPlayers;
             _selectUnits34Action.performed -= SetThirdAndFourthPlayers;
             _selectAllUnitsAction.performed -= SetAllPlayers;
+        }
+
+        public void AbilitySelectAll()
+        {
+            isTutorial = false;
+            _selectUnit3Action.performed += SetThirdPlayer;
+            _selectUnit4Action.performed += SetFourthPlayer;
+            _selectUnits34Action.performed += SetThirdAndFourthPlayers;
+            _selectAllUnitsAction.performed += SetAllPlayers;
         }
 
         private void SetFirstPlayer(InputAction.CallbackContext ctx)
