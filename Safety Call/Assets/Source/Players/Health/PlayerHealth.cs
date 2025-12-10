@@ -50,4 +50,9 @@ public class PlayerHealth : CreatureHealth
     {
         return _isRevived;
     }
+
+    public PlayerUiDrawer GetPlayerUiDrawer()
+    {
+        return _playerUiDrawer;
+    }
 }

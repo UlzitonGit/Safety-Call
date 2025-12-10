@@ -78,7 +78,7 @@ public class CameraController : MonoBehaviour
     
     void HandleDrag()
     {
-        if (isDragging)
+        if (isDragging && Time.timeScale != 0)
         {
             Vector3 currentMousePosition = Input.mousePosition;
             Vector3 mouseDelta = currentMousePosition - lastMousePosition;
