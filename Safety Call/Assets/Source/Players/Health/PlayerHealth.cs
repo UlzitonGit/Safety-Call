@@ -18,7 +18,7 @@ public class PlayerHealth : CreatureHealth
         _playerUiDrawer.UpdateUI(_currentHealth);
     }
 
-    private void AddHealth(float health)
+    public void AddHealth(float health)
     {
         _currentHealth += health;
         print(_currentHealth);

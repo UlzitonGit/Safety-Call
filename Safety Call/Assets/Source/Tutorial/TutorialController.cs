@@ -12,6 +12,7 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private DialoguesDataSO tutorialDialog;
     [SerializeField] private HintOnTrigger hintOnTrigger;
     [SerializeField] private OpenSecondDoor openSecondDoor;
+    [SerializeField] private PlayerHealth cuberHealth;
     private InputAction _lookAction;
 
     private int _curHintId = 0;
@@ -34,12 +35,7 @@ public class TutorialController : MonoBehaviour
         dialogueController.StartDialogue(tutorialDialog);
         _curDialogue++;
         dialogueController.DialogueEndEvent.AddListener(FirstHint);
-        /*hintContrller.AfterHintEvent.AddListener(SecondDialogue);
-        hintOnTrigger.TriggerEvent.AddListener(SecondHint);
-        hintOnTrigger.TriggerEvent.AddListener(ThirdHint);
-        hintContrller.AfterHintEvent.AddListener(FourthDialogue);
-        hintOnTrigger.TriggerEvent.AddListener(ThirdHint);
-        hintContrller.AfterHintEvent.AddListener(FifthDialogue);*/
+        cuberHealth.AddHealth(-100);
     }
 
     public void SetRoom(int num)
@@ -96,9 +92,16 @@ public class TutorialController : MonoBehaviour
 
     public void FourthDialogue()
     {
-        print(_curDialogue);
-        print(_curRoom);
         if (_curDialogue == 3 && _curRoom == 3)
+        {
+            dialogueController.StartDialogue(tutorialDialog);
+            _curDialogue++;
+        }
+    }
+
+    public void FifthDialogue()
+    {
+        if (_curDialogue == 4 && _curRoom == 5)
         {
             dialogueController.StartDialogue(tutorialDialog);
             _curDialogue++;
@@ -114,13 +117,39 @@ public class TutorialController : MonoBehaviour
         }
     }
 
-    public void FifthDialogue()
+    public void SixthDialogue()
     {
-        if (_curDialogue == 4 && _curRoom == 5)
+        if (_curDialogue == 5 && _curRoom == 5)
         {
             dialogueController.StartDialogue(tutorialDialog);
             _curDialogue++;
         }
     }
 
+    public void FifthHint()
+    {
+        if (_curHintId == 4 && _curRoom == 5)
+        {
+            hintContrller.ShowHint();
+            _curHintId++;
+        }
+    }
+
+    public void SeventhDialogue()
+    {
+        if (_curDialogue == 6 && _curRoom == 6)
+        {
+            dialogueController.StartDialogue(tutorialDialog);
+            _curDialogue++;
+        }
+    }
+
+    public void SixthHint()
+    {
+        if (_curHintId == 5 && _curRoom == 6)
+        {
+            hintContrller.ShowHint();
+            _curHintId++;
+        }
+    }
 }
