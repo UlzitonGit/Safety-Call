@@ -7,7 +7,7 @@ public class EnemyStates : CreatureStates
     public override void SetAlive(bool alive)
     {
         base.SetAlive(alive);
-        _enemyData._FieldOfView.SetIsAbleToSee(alive);
-        _enemyData._playerGunfight.SetIsAbleToShoot(alive);
+        if(_enemyData._FieldOfView != null)  _enemyData._FieldOfView.SetIsAbleToSee(alive);
+        if(_enemyData._playerGunfight != null)  _enemyData._playerGunfight.SetIsAbleToShoot(alive);
     }
 }

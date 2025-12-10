@@ -1,3 +1,4 @@
+using System.Collections;
 using Source.Creatures.Health;
 using Source.Players.Movement;
 using UnityEngine;
@@ -15,7 +16,13 @@ public class PlayerHealth : CreatureHealth
     public override void GetDamage(float damage, Vector3 enemyPos)
     {
         base.GetDamage(damage, enemyPos);
+        StartCoroutine(LookAtTarget(enemyPos));
         _playerUiDrawer.UpdateUI(_currentHealth);
+    }
+    IEnumerator LookAtTarget(Vector3 enemyPos)
+    {
+        yield return new WaitForSeconds(_timeToReaction);
+        _creaturesData._playerMovement.LookAtTarget(enemyPos);
     }
 
     public void AddHealth(float health)
@@ -42,6 +49,7 @@ public class PlayerHealth : CreatureHealth
     protected override void Death()
     {
         base.Death();
+        _playerAnimator.Death();
         _creaturesData._playerState.SetAlive(_isAlive);
         _gameplayStagesManager.PlayerKilled();
     }

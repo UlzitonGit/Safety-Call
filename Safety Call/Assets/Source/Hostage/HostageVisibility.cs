@@ -34,6 +34,7 @@ public class HostageVisibility : MonoBehaviour, IPlayerSpotable
     {
         print("Show");
         IsVisible = true;
+        _states.SetVisible(true);
         _meshRenderer.SetActive(true);
         _timeToHide = 0.4f;
     }
@@ -41,6 +42,7 @@ public class HostageVisibility : MonoBehaviour, IPlayerSpotable
     private void HideHostage()
     {
         _meshRenderer.SetActive(false);
+        _states.SetVisible(false);
         IsVisible = false;
     }
 

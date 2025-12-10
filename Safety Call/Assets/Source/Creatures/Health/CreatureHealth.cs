@@ -35,17 +35,12 @@ namespace Source.Creatures.Health
         public virtual void GetDamage(float damage, Vector3 enemyPos)
         {
             _currentHealth -= damage;
-            StartCoroutine(LookAtTarget(enemyPos));
+            //StartCoroutine(LookAtTarget(enemyPos));
             Instantiate(_bloodVfxPrefab, transform.position, Quaternion.identity);
             print(_currentHealth);
             CheckHealth();
         }
-
-        IEnumerator LookAtTarget(Vector3 enemyPos)
-        {
-            yield return new WaitForSeconds(_timeToReaction);
-            _creaturesData._playerMovement.LookAtTarget(enemyPos);
-        }
+        
 
         protected virtual void CheckHealth()
         {
@@ -58,7 +53,6 @@ namespace Source.Creatures.Health
         protected virtual void Death()
         {
             if(!_isAlive) return;
-            _playerAnimator.Death();
             _currentHealth = 0;
             _creaturesData._playerState.SetCanMove(false);
             _creaturesData._playerMovement.StopMovement();
