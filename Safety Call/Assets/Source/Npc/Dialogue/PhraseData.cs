@@ -1,11 +1,10 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 [Serializable]
 public class PhraseData
 {
-    [field:SerializeField] public string Phrase {  get; private set; }
+    [TextArea(3, 5)][SerializeField] public string Phrase;
     [field: SerializeField] public TalkerType Talker { get; private set; }
     [field: SerializeField] public Sprite CharacterIcon { get; private set; }
 }

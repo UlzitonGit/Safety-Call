@@ -7,7 +7,7 @@ public class RemoteControlePanel : MonoBehaviour
     [SerializeField] private GameObject[] _connectedHackables;
     
     private List<IHackable> _hackables = new List<IHackable>();
-    
+    private bool _isHacked = false;
     
 
     private void Start()
@@ -23,6 +23,12 @@ public class RemoteControlePanel : MonoBehaviour
         foreach (var hackable in _hackables)
         {
             hackable.Hack();
+            _isHacked=true;
         }
+    }
+
+    public bool IsHacked()
+    {
+        return _isHacked;
     }
 }

@@ -46,6 +46,19 @@ public class PlayerHealth : CreatureHealth
         _isAlive = true;
     }
 
+    public void TutorialDeath()
+    {
+        if (!_isAlive) return;
+        _currentHealth = 0;
+        _creaturesData._playerState.SetCanMove(false);
+        _creaturesData._playerMovement.StopMovement();
+        _capsuleCollider2D.enabled = false;
+        _capsuleCollider2D.isTrigger = true;
+        _isAlive = false;
+        _playerAnimator.Death();
+        _creaturesData._playerState.SetAlive(_isAlive);
+    }
+
     protected override void Death()
     {
         base.Death();

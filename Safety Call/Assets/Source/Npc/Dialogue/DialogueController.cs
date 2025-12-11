@@ -16,6 +16,7 @@ public class DialogueController : MonoBehaviour
     private DialoguesDataSO _dialoguesData;
     private DialogueData _curDialogue;
     private int _curPhraseIndex = 0;
+    private ActionMapType _curActionMap;
 
     private InputAction _nextAction;
     private InputAction _exitAction;
@@ -57,6 +58,7 @@ public class DialogueController : MonoBehaviour
 
     public void StartDialogue(DialoguesDataSO dialoguesData)
     {
+        _curActionMap = InputManager.Instance.CurentActionMapType;
         InputManager.Instance.SwitchActionMapType(ActionMapType.Dialogue);
         _dialoguesData  = dialoguesData;
         InDialogue = true;
@@ -103,14 +105,8 @@ public class DialogueController : MonoBehaviour
     {
         _curPhraseIndex = 0;
         dialoguePanel.SetActive(false);
-        if (_inHub)
-            InputManager.Instance.SwitchActionMapType(ActionMapType.HubController);
-        else
-        {
-            InputManager.Instance.SwitchActionMapType(ActionMapType.MissionController);
-            DialogueEndEvent?.Invoke();
-        }
-            
+        InputManager.Instance.SwitchActionMapType(_curActionMap);
         InDialogue = false;
+        DialogueEndEvent?.Invoke();
     }
 }

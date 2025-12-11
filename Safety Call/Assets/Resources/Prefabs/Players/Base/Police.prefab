@@ -345,7 +345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1a
+  m_text: Beast
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7bf2080641755b429c46b94853fb5c4, type: 2}
   m_sharedMaterial: {fileID: 9142882854171817519, guid: c7bf2080641755b429c46b94853fb5c4, type: 2}
@@ -773,6 +773,7 @@ MonoBehaviour:
   _movement: {fileID: 9199300337024040843}
   _rotation: {fileID: 3401516190086788079}
   _bodySpriteRenderer: {fileID: 6445254468419455309}
+  EulerZ: 0
   _rotationIndex: 0
 --- !u!1 &6844982473664074441
 GameObject:

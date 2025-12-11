@@ -9,7 +9,8 @@ public class Medkit : MonoBehaviour
     [SerializeField] private GameObject hint;
     [SerializeField] private bool isStation;
     private bool _canInteract = false;
-    private PlayerHealth curPlayerHealth;
+    private bool _isUsed = false;
+    private PlayerHealth _curPlayerHealth;
 
     private InputAction _interactAction;
 
@@ -28,12 +29,15 @@ public class Medkit : MonoBehaviour
     {
         if (_canInteract)
         {
-            if (curPlayerHealth != null)
+            if (!_isUsed)
             {
-                curPlayerHealth.AddHealth(healPoints);
-                if (!isStation)
+                if (_curPlayerHealth != null)
                 {
-                    healPoints = 0;
+                    _curPlayerHealth.AddHealth(healPoints);
+                    if (!isStation)
+                    {
+                        _isUsed = true;
+                    }
                 }
             }
         }
@@ -41,11 +45,14 @@ public class Medkit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (!_isUsed)
         {
-            curPlayerHealth = collision.GetComponent<PlayerHealth>();
-            hint.SetActive(true);
-            _canInteract = true;
+            if (collision.tag == "Player")
+            {
+                _curPlayerHealth = collision.GetComponent<PlayerHealth>();
+                hint.SetActive(true);
+                _canInteract = true;
+            }
         }
     }
 
@@ -53,7 +60,7 @@ public class Medkit : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            curPlayerHealth = null;
+            _curPlayerHealth = null;
             hint.SetActive(false);
             _canInteract = false;
         }

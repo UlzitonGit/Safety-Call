@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: d8a27e1e741b4e74b96158c9179b6731
+guid: f353d7f29db84fd4a9568fe406a1eba1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3362463721365418002
-    second: image_2025-10-14_19-56-45_0
+      213: -4034514563918673244
+    second: LaskaHint_0
+  - first:
+      213: 153459460928278329
+    second: LaskaHint_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -109,30 +112,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: image_2025-10-14_19-56-45_0
+      name: LaskaHint_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1486
-        height: 892
+        x: 184
+        y: 176
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eef40ed7f012651d0800000000000000
-      internalID: -3362463721365418002
+      spriteID: 4aacc7041668208c0800000000000000
+      internalID: -4034514563918673244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaskaHint_1
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 176
+        width: 1119
+        height: 1501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93f8d001192312200800000000000000
+      internalID: 153459460928278329
       vertices: []
       indices: 
       edges: []
@@ -161,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      image_2025-10-14_19-56-45_0: -3362463721365418002
+      LaskaHint_0: -4034514563918673244
+      LaskaHint_1: 153459460928278329
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

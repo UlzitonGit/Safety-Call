@@ -62,6 +62,7 @@ namespace Source.Core
             GameInput?.Hub.Disable();
             GameInput?.UI.Disable();
             GameInput?.Dialogue.Disable();
+            GameInput?.Hint.Disable();
         }
 
         public void SwitchActionMapType(ActionMapType mapType)
@@ -94,11 +95,15 @@ namespace Source.Core
                 case ActionMapType.Dialogue:
                     GameInput.Dialogue.Enable();
                     break;
+                case ActionMapType.Hint:
+                    GameInput.Hint.Enable();
+                    break;
                 default:
                     GameInput.Base.Enable();
                     break;
 
             }
+            print($"swich Action Map Type on {mapType}");
             CurentActionMapType = mapType;
         }
     }
@@ -110,7 +115,8 @@ namespace Source.Core
         TacticalMove,
         IndividualMove,
         UI,
-        Dialogue
+        Dialogue,
+        Hint
 
     }
 }

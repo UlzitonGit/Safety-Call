@@ -57,7 +57,8 @@ namespace Source.Players.Controls
         }
         private void MakePlayerMove(Vector3 position)
         {
-            if(_playerMovement == null) return;
+            if(_playerMovement == null) 
+                return;
             for (int i = 0; i < _playerMovement.Count; i++)
             {
                 _playerMovement[i].UpdatePathLine();
@@ -66,8 +67,8 @@ namespace Source.Players.Controls
         }
         private void MakePlayerAim(Vector3 target)
         {
-            if(_playerMovement == null) return;
-            print("look");
+            if(_playerMovement == null) 
+                return;
             for (int i = 0; i < _playerMovement.Count; i++)
             {
                 _playerMovement[i].LookAtTarget(target);

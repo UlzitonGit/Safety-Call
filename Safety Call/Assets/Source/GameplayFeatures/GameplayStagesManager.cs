@@ -67,6 +67,7 @@ public class GameplayStagesManager : MonoBehaviour
 
     public void HostageRescued()
     {
+        if (_isTutorial) return;
         _hostagesCount -= 1;
         _score += 100;
         if (_hostagesCount == 0)

@@ -12,20 +12,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a292771c38a854e4ba55dd2e80a1782e, type: 3}
   m_Name: TutorialHintSO
   m_EditorClassIdentifier: 
-  <tutorialHints>k__BackingField:
-  - <HintText>k__BackingField: "Right-click a squad member(s), then right-click a
-      point on the screen to make them move to that location. If you want to take
-      your time \u2014 no worries. Press Space to enter Strategy Mode, and press
-      Space again to exit it."
-    <HintSprite>k__BackingField: {fileID: 126331474537477859, guid: 778c6f24b8058ff488f0c975c2b02c3b, type: 3}
-  - <HintText>k__BackingField: To control the viewing direction of a squad member(s),
-      use LMB to indicate the direction.
-    <HintSprite>k__BackingField: {fileID: -3362463721365418002, guid: d8a27e1e741b4e74b96158c9179b6731, type: 3}
-  - <HintText>k__BackingField: "Remember, your teammates are seasoned professionals
-      trained to shoot the moment an enemy enters their line of sight. The hostages\u2019
-      lives always matter more than the criminals\u2019. Don\u2019t forget that."
-    <HintSprite>k__BackingField: {fileID: -3362463721365418002, guid: d8a27e1e741b4e74b96158c9179b6731, type: 3}
-  - <HintText>k__BackingField: "To contact a specific squad member directly, press
-      F. To simplify command input, control them with WASD \u2014 your teammate will
-      follow direction orders."
-    <HintSprite>k__BackingField: {fileID: 3884160693074117875, guid: 263ffdaecd14059428cb2a74e81e2fc0, type: 3}
+  <TutorialHintsPages>k__BackingField:
+  - <TutorialHints>k__BackingField:
+    - HintText: Press 1/2/3/4 (currently only 1/2) on your keyboard to select member(s),
+        then right-click a point on the screen to make them move to that location.
+      <HintSprite>k__BackingField: {fileID: 2606183968138867961, guid: 51008fa4d22a4924295fb6afd0716948, type: 3}
+    - HintText: Hold the mouse wheel to move the camera, scroll the wheel to zoom.
+      <HintSprite>k__BackingField: {fileID: 2606183968138867961, guid: 51008fa4d22a4924295fb6afd0716948, type: 3}
+    - HintText: "If you want to take your time \u2014 no worries.\r\nPress Space
+        to enter Strategy Mode, and press Space again to exit it."
+      <HintSprite>k__BackingField: {fileID: 2606183968138867961, guid: 51008fa4d22a4924295fb6afd0716948, type: 3}
+    AlreadyBeen: 1
+  - <TutorialHints>k__BackingField:
+    - HintText: To control the viewing direction of a squad member(s), use LMB to
+        indicate the direction.
+      <HintSprite>k__BackingField: {fileID: -769646553364320610, guid: a9257042f024790489fb579306980d10, type: 3}
+    AlreadyBeen: 1
+  - <TutorialHints>k__BackingField:
+    - HintText: "Remember, your teammates are seasoned professionals trained to shoot
+        the moment an enemy enters their line of sight. The hostages\u2019 lives
+        always matter more than the criminals\u2019. Don\u2019t forget that."
+      <HintSprite>k__BackingField: {fileID: -6313564984418638136, guid: 2dd63bd6c81a0ff44a899e88678cf1e2, type: 3}
+    AlreadyBeen: 1
+  - <TutorialHints>k__BackingField:
+    - HintText: To contact a specific squad member directly, press F.
+      <HintSprite>k__BackingField: {fileID: -300228626528376694, guid: 5b3a75dbb592b204bb337b44f3451f43, type: 3}
+    - HintText: "To simplify command input, control them with WASD \u2014 your teammate
+        will follow direction orders."
+      <HintSprite>k__BackingField: {fileID: -300228626528376694, guid: 5b3a75dbb592b204bb337b44f3451f43, type: 3}
+    AlreadyBeen: 1
+  - <TutorialHints>k__BackingField:
+    - HintText: To give a permission-to-act order, press E.
+      <HintSprite>k__BackingField: {fileID: -3959105904334305274, guid: 800c29a194af21a4aaf615c56ef5bdbc, type: 3}
+    AlreadyBeen: 1
+  - <TutorialHints>k__BackingField:
+    - HintText: 'The fire command is triggered with LMB.
+
+        And by the way,
+        in this mode, flashlights work automatically!'
+      <HintSprite>k__BackingField: {fileID: -1229150698277667725, guid: a5bd7b24b7251cc4cbfc402369c2222b, type: 3}
+    AlreadyBeen: 1
+  - <TutorialHints>k__BackingField:
+    - HintText: 'Another reminder: your squad members are highly versatile professionals.
+        Any role-specific actions should be assigned individually!'
+      <HintSprite>k__BackingField: {fileID: -7468805904632639568, guid: a9a3c6de9ad0528439cdf8a60d579c1b, type: 3}
+    - HintText: "Same method: connect to someone and press E to authorize the action.
+        They\u2019re not idiots \u2014 they know their areas of responsibility."
+      <HintSprite>k__BackingField: {fileID: -7468805904632639568, guid: a9a3c6de9ad0528439cdf8a60d579c1b, type: 3}
+    - HintText: "Laska \u2014 experienced medic."
+      <HintSprite>k__BackingField: {fileID: -4034514563918673244, guid: f353d7f29db84fd4a9568fe406a1eba1, type: 3}
+    - HintText: "Cyber \u2014 your beloved brother and an excellent hacker!"
+      <HintSprite>k__BackingField: {fileID: 2705468512593387660, guid: 780d47e738815464fb336094e2ad2477, type: 3}
+    - HintText: "Beast \u2014 police officer with an extensive record. Leave the
+        bomb disposal to him."
+      <HintSprite>k__BackingField: {fileID: -5860269798671940536, guid: cff97a0b951b4644da816a8a566bfb19, type: 3}
+    - HintText: "And of course Asahi \u2014 your firepower. (Exercise increased caution.)"
+      <HintSprite>k__BackingField: {fileID: -4798789925700262402, guid: 6a6d6c647598879428b48ed77d66a276, type: 3}
+    AlreadyBeen: 1
+  - <TutorialHints>k__BackingField:
+    - HintText: "To order a grenade throw without extra chatter, press G. (Naturally,
+        after choosing who\u2019ll take responsibility.)"
+      <HintSprite>k__BackingField: {fileID: -8523026103460759700, guid: 5a6c1e5038fd54047b1449339fff8eb2, type: 3}
+    - HintText: "A hostage may be inside the room \u2014 your mission is to escort
+        them to the safe zone.\r\n Press E to order your teammates to take the hostage
+        with them.\r\n Press E again to order them to leave the hostage in place."
+      <HintSprite>k__BackingField: {fileID: 8996337740997539812, guid: 8fb5fb226108e13458e2867d49fc6a57, type: 3}
+    AlreadyBeen: 0

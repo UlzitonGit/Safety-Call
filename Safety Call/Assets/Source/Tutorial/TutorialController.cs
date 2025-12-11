@@ -1,6 +1,5 @@
 using Source.Core;
 using Source.Players.Controls;
-using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,11 +12,16 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private HintOnTrigger hintOnTrigger;
     [SerializeField] private OpenSecondDoor openSecondDoor;
     [SerializeField] private PlayerHealth cuberHealth;
+
+    [Header("-----------")]
+    [SerializeField] private GameObject card1;
+    [SerializeField] private GameObject card2;
     private InputAction _lookAction;
 
     private int _curHintId = 0;
     private int _curDialogue = 0;
     private int _curRoom = 1;
+    private bool _ninthDialogue = false;
 
     private void OnEnable()
     {
@@ -32,10 +36,13 @@ public class TutorialController : MonoBehaviour
 
     void Start()
     {
+        foreach(DialogueData dialogue in tutorialDialog.DialogueData)
+        {
+            dialogue.AlreadyBeen = false;
+        }
         dialogueController.StartDialogue(tutorialDialog);
         _curDialogue++;
-        dialogueController.DialogueEndEvent.AddListener(FirstHint);
-        cuberHealth.AddHealth(-100);
+        cuberHealth.TutorialDeath();
     }
 
     public void SetRoom(int num)
@@ -43,11 +50,11 @@ public class TutorialController : MonoBehaviour
         _curRoom = num;
     }
 
-    private void FirstHint()
+    public void FirstHint()
     {
         if (_curHintId == 0)
         {
-            hintContrller.ShowHint();
+            hintContrller.StartHint();
             _curHintId++;
         }
     }
@@ -65,7 +72,7 @@ public class TutorialController : MonoBehaviour
     {
         if (_curHintId == 1 && _curRoom == 2)
         {
-            hintContrller.ShowHint();
+            hintContrller.StartHint();
             _curHintId++;
         }
     }
@@ -85,7 +92,7 @@ public class TutorialController : MonoBehaviour
     {
         if (_curHintId == 2 && _curRoom == 3)
         {
-            hintContrller.ShowHint();
+            hintContrller.StartHint();
             _curHintId++;
         }
     }
@@ -112,7 +119,7 @@ public class TutorialController : MonoBehaviour
     {
         if (_curHintId == 3 && _curRoom == 5)
         {
-            hintContrller.ShowHint();
+            hintContrller.StartHint();
             _curHintId++;
         }
     }
@@ -130,7 +137,7 @@ public class TutorialController : MonoBehaviour
     {
         if (_curHintId == 4 && _curRoom == 5)
         {
-            hintContrller.ShowHint();
+            hintContrller.StartHint();
             _curHintId++;
         }
     }
@@ -148,8 +155,69 @@ public class TutorialController : MonoBehaviour
     {
         if (_curHintId == 5 && _curRoom == 6)
         {
-            hintContrller.ShowHint();
+            hintContrller.StartHint();
             _curHintId++;
+        }
+    }
+
+    public void EighthDialogue()
+    {
+        if (_curDialogue == 7 && _curRoom == 7)
+        {
+            print("8 dialogue start");
+            dialogueController.StartDialogue(tutorialDialog);
+            card1.SetActive(true);
+            card2.SetActive(true);
+            playerChooser.AbilitySelectAll();
+            _curDialogue++;
+        }
+    }
+
+    public void SeventhHint()
+    {
+        if (_curHintId == 6 && _curRoom == 7)
+        {
+            print("7 hint");
+            hintContrller.StartHint();
+            _curHintId++;
+        }
+    }
+
+    public void NinthDialogue()
+    {
+        if (_curDialogue == 8 && _curRoom == 7)
+        {
+            print("10 dialogue");
+            dialogueController.StartDialogue(tutorialDialog);
+            _curDialogue++;
+        }
+    }
+
+    public void TenthDialogue()
+    {
+        if (_curDialogue == 9 && _curRoom == 8)
+        {
+            dialogueController.StartDialogue(tutorialDialog);
+            _curDialogue++;
+        }
+    }
+
+    public void EighthHint()
+    {
+        if (_curHintId == 11 && _curRoom == 8)
+        {
+            hintContrller.StartHint();
+            _curHintId++;
+            _ninthDialogue = true;
+        }
+    }
+
+    public void EleventhDialogue()
+    {
+        if (_curDialogue == 10 && _curRoom == 8)
+        {
+            dialogueController.StartDialogue(tutorialDialog);
+            _curDialogue++;
         }
     }
 }

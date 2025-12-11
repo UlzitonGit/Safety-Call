@@ -14,129 +14,135 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <DialogueData>k__BackingField:
   - <Phrase>k__BackingField:
-    - <Phrase>k__BackingField: "Eve, what\u2019s the situation? All the fuse panels
-        are down \u2014 we\u2019ve got no idea where to go. Can you mark a point
-        on the map?"
+    - Phrase: "Eve, what\u2019s the situation?"
       <Talker>k__BackingField: 4
-      <CharacterIcon>k__BackingField: {fileID: -4859121182848250815, guid: 87b014bd8af16764f95e384a9ca96fed, type: 3}
-    - <Phrase>k__BackingField: No problem. Stand by for further instructions.
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: Can you mark a point on the map?
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: No problem. Stand by for further instructions.
       <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
-    - <Phrase>k__BackingField: "Don\u2019t forget about me! Not everyone brought
-        extra mags\u2026  If I wander too far from Asahi, things\u2019ll get bad."
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Don\u2019t forget about me! Not everyone brought extra mags\u2026"
       <Talker>k__BackingField: 2
-      <CharacterIcon>k__BackingField: {fileID: 7114522981547430709, guid: 6ba5f0b73824bee4d8fb2f3a7468e561, type: 3}
-    - <Phrase>k__BackingField: "Maybe you shouldn\u2019t have burned through half
-        the arsenal. Our budget isn\u2019t infinite. Alright, enough chatter. Let\u2019s
-        get to it. Move straight ahead."
-      <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
-    AlreadyBeen: 0
-  - <Phrase>k__BackingField:
-    - <Phrase>k__BackingField: "These system hints are written like we\u2019re dealing
-        with toddlers\u2026"
-      <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
-    - <Phrase>k__BackingField: What was that?
-      <Talker>k__BackingField: 4
-      <CharacterIcon>k__BackingField: {fileID: -4859121182848250815, guid: 87b014bd8af16764f95e384a9ca96fed, type: 3}
-    - <Phrase>k__BackingField: None of your business. Just move.
-      <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
-    AlreadyBeen: 0
-  - <Phrase>k__BackingField:
-    - <Phrase>k__BackingField: Were you just controlling my flashlight?
-      <Talker>k__BackingField: 4
-      <CharacterIcon>k__BackingField: {fileID: -4859121182848250815, guid: 87b014bd8af16764f95e384a9ca96fed, type: 3}
-    - <Phrase>k__BackingField: "Shh\u2026 look, someone\u2019s there\u2026 or something\u2026
-        Eve, shine a light!"
+      <CharacterIcon>k__BackingField: {fileID: -1568359511483838592, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "If I wander too far from Asahi, things\u2019ll get bad.\r\n"
       <Talker>k__BackingField: 2
-      <CharacterIcon>k__BackingField: {fileID: 7114522981547430709, guid: 6ba5f0b73824bee4d8fb2f3a7468e561, type: 3}
-    - <Phrase>k__BackingField: " Chill out. It\u2019s just a medkit."
-      <Talker>k__BackingField: 4
-      <CharacterIcon>k__BackingField: {fileID: -4859121182848250815, guid: 87b014bd8af16764f95e384a9ca96fed, type: 3}
-    - <Phrase>k__BackingField: "Quiet, both of you! You\u2019re a terrible squad.
-        You both need to pay more attention. At this rate you\u2019ll even miss the
-        hostage\u2026"
+      <CharacterIcon>k__BackingField: {fileID: -1568359511483838592, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Maybe you shouldn\u2019t have burned through half the arsenal."
       <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
-    - <Phrase>k__BackingField: "Yes, ma\u2019am, \u201CGeneral\u201D!"
-      <Talker>k__BackingField: 4
-      <CharacterIcon>k__BackingField: {fileID: -4859121182848250815, guid: 87b014bd8af16764f95e384a9ca96fed, type: 3}
-    - <Phrase>k__BackingField: "\u201CMiss\u201D will be enough."
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Our budget isn\u2019t infinite."
       <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
-    - <Phrase>k__BackingField: "Yes, ma\u2019am. \u201CMiss.\u201D"
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Alright, enough chatter. Let\u2019s get to it. Move straight ahead."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    AlreadyBeen: 1
+  - <Phrase>k__BackingField:
+    - Phrase: "These system hints are written like we\u2019re dealing with toddlers\u2026"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: What was that?
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: None of your business. Just move.
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    AlreadyBeen: 1
+  - <Phrase>k__BackingField:
+    - Phrase: Were you just controlling my flashlight?
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "Shh\u2026 look, someone\u2019s there\u2026 or something\u2026 Eve,
+        shine a light!"
       <Talker>k__BackingField: 2
-      <CharacterIcon>k__BackingField: {fileID: 7114522981547430709, guid: 6ba5f0b73824bee4d8fb2f3a7468e561, type: 3}
-    - <Phrase>k__BackingField: "Ahem\u2026 thank you. Hey\u2014Wait! are you laughing
-        back there? Pathetic\u2026 moving on. I hate you."
+      <CharacterIcon>k__BackingField: {fileID: -1568359511483838592, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Quiet, both of you! You\u2019re a terrible squad. You both need to
+        pay more attention. At this rate you\u2019ll even miss the hostage\u2026"
       <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
-    AlreadyBeen: 0
-  - <Phrase>k__BackingField:
-    - <Phrase>k__BackingField: "Yeah\u2026 right, not our lives\u2026"
-      <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
-    AlreadyBeen: 0
-  - <Phrase>k__BackingField:
-    - <Phrase>k__BackingField: "Eve? We got slightly shot\u2026 We should probably
-        do something about this."
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Yes, ma\u2019am, \u201CGeneral\u201D!"
       <Talker>k__BackingField: 4
-      <CharacterIcon>k__BackingField: {fileID: -4859121182848250815, guid: 87b014bd8af16764f95e384a9ca96fed, type: 3}
-    - <Phrase>k__BackingField: "First \u2014 the wounds are minor."
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "\u201CMiss\u201D will be enough."
       <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
-    - <Phrase>k__BackingField: "Second \u2014 no terrorists detected."
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Yes, ma\u2019am. \u201CMiss.\u201D"
+      <Talker>k__BackingField: 2
+      <CharacterIcon>k__BackingField: {fileID: -1568359511483838592, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Ahem\u2026 thank you."
       <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
-    - <Phrase>k__BackingField: "Third \u2014 Laska guards the hall, and you check
-        the room."
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Hey\u2014Wait! are you laughing back there?"
       <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Pathetic\u2026 moving on. I hate you."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
     AlreadyBeen: 1
   - <Phrase>k__BackingField:
-    - <Phrase>k__BackingField: "Thanks for not saying \u201Cpuppet control\u201D\u2026"
+    - Phrase: "Yeah\u2026 right, not our lives\u2026"
       <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
     AlreadyBeen: 1
   - <Phrase>k__BackingField:
-    - <Phrase>k__BackingField: "The sensors picked up noise. I think someone\u2019s
-        there. Asahi goes first."
+    - Phrase: "Eve? We  got slightly shot\u2026 We should probably do something about
+        this."
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "First \u2014 the wounds are minor."
       <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Second \u2014 no terrorists detected."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Third \u2014 Laska guards the hall, and you check the room."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
     AlreadyBeen: 1
   - <Phrase>k__BackingField:
-    - <Phrase>k__BackingField: "Now, you\u2019re all together again. According to
-        the layout, this is the second-to-last security room."
+    - Phrase: "Thanks for not saying \u201Cpuppet control\u201D\u2026"
       <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
     AlreadyBeen: 1
   - <Phrase>k__BackingField:
-    - <Phrase>k__BackingField: Looks like this was written by an AI....
+    - Phrase: "The sensors picked up noise. I think someone\u2019s there. Asahi goes
+        first."
       <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
-    - <Phrase>k__BackingField: "Alright\u2026 Laska, take care of Cyber \u2014 he\u2019s
-        doing terribly."
-      <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
-    - <Phrase>k__BackingField: "Beast \u2014 sweep the room for threats."
-      <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
-    - <Phrase>k__BackingField: "Cyber\u2026 once you come to, deal with that panel.
-        My eyes hurt looking at your cameras, I need more visual coverage."
-      <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
     AlreadyBeen: 1
   - <Phrase>k__BackingField:
-    - <Phrase>k__BackingField: "The next room is square\u2026 once you enter, they\u2019ll
-        open fire immediately. I recommend using a flashbang."
+    - Phrase: "Now, you\u2019re all together again. According to the layout, this
+        is the second-to-last security room."
       <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
     AlreadyBeen: 1
   - <Phrase>k__BackingField:
-    - <Phrase>k__BackingField: "Yeah, yeah. Anyway\u2014rest\u2019s on you. Move
-        out."
+    - Phrase: Looks like this was written by an AI....
       <Talker>k__BackingField: 0
-      <CharacterIcon>k__BackingField: {fileID: 2870835291233917642, guid: 763c011a79bc70943b2d93576efb60b9, type: 3}
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Alright\u2026 Laska, take care of Cyber \u2014 he\u2019s doing terribly."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Beast \u2014 sweep the room for threats."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Cyber\u2026 once you come to, deal with that panel."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: My eyes hurt looking at your cameras, I need more visual coverage.
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
     AlreadyBeen: 1
+  - <Phrase>k__BackingField:
+    - Phrase: "The next room is square\u2026 once you enter, they\u2019ll open fire
+        immediately. I recommend using a flashbang."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    AlreadyBeen: 1
+  - <Phrase>k__BackingField:
+    - Phrase: "Yeah, yeah. Anyway\u2014rest\u2019s on you. Move out."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    AlreadyBeen: 0

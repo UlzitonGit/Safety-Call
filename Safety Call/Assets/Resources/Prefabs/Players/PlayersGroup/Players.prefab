@@ -712,9 +712,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7768365029244376702}
   - {fileID: 1423470212858946403}
   - {fileID: 2358234357648701028}
+  - {fileID: 7768365029244376702}
   - {fileID: 8272906630744272761}
   m_Father: {fileID: 8350238754712605968}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1213,6 +1213,7 @@ MonoBehaviour:
   - {fileID: 2090371862929174591}
   _playerMoveInput: {fileID: 6343793284322802544}
   _playerSpotlighter: {fileID: 2216884241681464104}
+  isTutorial: 0
 --- !u!1 &8453138853020416295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1943,6 +1944,14 @@ PrefabInstance:
     - target: {fileID: 6550785735887451340, guid: c71f83aa9379bd746a58cf7a3f0efd3f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 15.900002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989616415004117180, guid: c71f83aa9379bd746a58cf7a3f0efd3f, type: 3}
+      propertyPath: m_text
+      value: Military
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989616415004117180, guid: c71f83aa9379bd746a58cf7a3f0efd3f, type: 3}
+      propertyPath: m_fontStyle
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7141777915032113008, guid: c71f83aa9379bd746a58cf7a3f0efd3f, type: 3}
       propertyPath: m_Name
@@ -2939,12 +2948,12 @@ MonoBehaviour:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 0, y: 0, z: 0}
     m_EdgeProcessing: 1
-    m_TrimEdge: -1
+    m_TrimEdge: 0
     m_FlipX: 0
     m_FlipY: 0
     m_InitialTrim: 0
   m_CastingOption: 1
-  m_PreviousTrimEdge: -1
+  m_PreviousTrimEdge: 0
   m_PreviousEdgeProcessing: 1
   m_PreviousShadowCastingSource: 2
   m_PreviousShadowShape2DSource: {fileID: 328140750543952977}

@@ -18,6 +18,8 @@ public class AnimatedText : MonoBehaviour
 
     public void StartPrintText(string mes)
     {
+        if (mes == null)
+            return;
         if (_text == null)
             _text = GetComponent<TextMeshProUGUI>();
         _message = mes;
@@ -38,7 +40,7 @@ public class AnimatedText : MonoBehaviour
 
     public void StopPrintText()
     {
-        StopCoroutine(PrintText());
+        StopAllCoroutines();
         _text.text = _message;
         IsPrinted = true;
     }

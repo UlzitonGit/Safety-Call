@@ -110,6 +110,15 @@ namespace Source.Core
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""c47d685a-4646-4426-a53a-d8ea6cb67818"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +141,17 @@ namespace Source.Core
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MoveCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7a352347-7d58-4e35-a88b-32b37fcc60af"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -678,6 +698,15 @@ namespace Source.Core
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""d489acdb-79b6-4350-b08f-cd86f09d1f93"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -700,6 +729,17 @@ namespace Source.Core
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f8d4535-c1df-4ec4-b801-54470ab77d09"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1240,6 +1280,54 @@ namespace Source.Core
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Hint"",
+            ""id"": ""113fc3ac-fb5d-4bba-b26e-89fa9a7f7a6b"",
+            ""actions"": [
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""5574a6ba-454e-4e95-a6a7-98f991f56e8e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Next"",
+                    ""type"": ""Button"",
+                    ""id"": ""17f0eae7-5810-4cea-ab81-b647d6951773"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""67b36132-6c51-496f-b461-1f6a4620d285"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c72d169a-2097-4abf-9bbd-1bff30ff119c"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1309,6 +1397,7 @@ namespace Source.Core
             m_Base = asset.FindActionMap("Base", throwIfNotFound: true);
             m_Base_ScaleCamera = m_Base.FindAction("ScaleCamera", throwIfNotFound: true);
             m_Base_MoveCamera = m_Base.FindAction("MoveCamera", throwIfNotFound: true);
+            m_Base_Menu = m_Base.FindAction("Menu", throwIfNotFound: true);
             // Mission
             m_Mission = asset.FindActionMap("Mission", throwIfNotFound: true);
             m_Mission_TimeDilation = m_Mission.FindAction("TimeDilation", throwIfNotFound: true);
@@ -1341,6 +1430,7 @@ namespace Source.Core
             m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
             m_Dialogue_Next = m_Dialogue.FindAction("Next", throwIfNotFound: true);
             m_Dialogue_HubController = m_Dialogue.FindAction("HubController", throwIfNotFound: true);
+            m_Dialogue_Exit = m_Dialogue.FindAction("Exit", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1354,6 +1444,10 @@ namespace Source.Core
             m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
             m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
             m_UI_Exit = m_UI.FindAction("Exit", throwIfNotFound: true);
+            // Hint
+            m_Hint = asset.FindActionMap("Hint", throwIfNotFound: true);
+            m_Hint_Exit = m_Hint.FindAction("Exit", throwIfNotFound: true);
+            m_Hint_Next = m_Hint.FindAction("Next", throwIfNotFound: true);
         }
 
         ~@GameInput()
@@ -1365,6 +1459,7 @@ namespace Source.Core
             UnityEngine.Debug.Assert(!m_Hub.enabled, "This will cause a leak and performance issues, GameInput.Hub.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_Dialogue.enabled, "This will cause a leak and performance issues, GameInput.Dialogue.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, GameInput.UI.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_Hint.enabled, "This will cause a leak and performance issues, GameInput.Hint.Disable() has not been called.");
         }
 
         /// <summary>
@@ -1442,6 +1537,7 @@ namespace Source.Core
         private List<IBaseActions> m_BaseActionsCallbackInterfaces = new List<IBaseActions>();
         private readonly InputAction m_Base_ScaleCamera;
         private readonly InputAction m_Base_MoveCamera;
+        private readonly InputAction m_Base_Menu;
         /// <summary>
         /// Provides access to input actions defined in input action map "Base".
         /// </summary>
@@ -1461,6 +1557,10 @@ namespace Source.Core
             /// Provides access to the underlying input action "Base/MoveCamera".
             /// </summary>
             public InputAction @MoveCamera => m_Wrapper.m_Base_MoveCamera;
+            /// <summary>
+            /// Provides access to the underlying input action "Base/Menu".
+            /// </summary>
+            public InputAction @Menu => m_Wrapper.m_Base_Menu;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -1493,6 +1593,9 @@ namespace Source.Core
                 @MoveCamera.started += instance.OnMoveCamera;
                 @MoveCamera.performed += instance.OnMoveCamera;
                 @MoveCamera.canceled += instance.OnMoveCamera;
+                @Menu.started += instance.OnMenu;
+                @Menu.performed += instance.OnMenu;
+                @Menu.canceled += instance.OnMenu;
             }
 
             /// <summary>
@@ -1510,6 +1613,9 @@ namespace Source.Core
                 @MoveCamera.started -= instance.OnMoveCamera;
                 @MoveCamera.performed -= instance.OnMoveCamera;
                 @MoveCamera.canceled -= instance.OnMoveCamera;
+                @Menu.started -= instance.OnMenu;
+                @Menu.performed -= instance.OnMenu;
+                @Menu.canceled -= instance.OnMenu;
             }
 
             /// <summary>
@@ -2109,6 +2215,7 @@ namespace Source.Core
         private List<IDialogueActions> m_DialogueActionsCallbackInterfaces = new List<IDialogueActions>();
         private readonly InputAction m_Dialogue_Next;
         private readonly InputAction m_Dialogue_HubController;
+        private readonly InputAction m_Dialogue_Exit;
         /// <summary>
         /// Provides access to input actions defined in input action map "Dialogue".
         /// </summary>
@@ -2128,6 +2235,10 @@ namespace Source.Core
             /// Provides access to the underlying input action "Dialogue/HubController".
             /// </summary>
             public InputAction @HubController => m_Wrapper.m_Dialogue_HubController;
+            /// <summary>
+            /// Provides access to the underlying input action "Dialogue/Exit".
+            /// </summary>
+            public InputAction @Exit => m_Wrapper.m_Dialogue_Exit;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -2160,6 +2271,9 @@ namespace Source.Core
                 @HubController.started += instance.OnHubController;
                 @HubController.performed += instance.OnHubController;
                 @HubController.canceled += instance.OnHubController;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
             }
 
             /// <summary>
@@ -2177,6 +2291,9 @@ namespace Source.Core
                 @HubController.started -= instance.OnHubController;
                 @HubController.performed -= instance.OnHubController;
                 @HubController.canceled -= instance.OnHubController;
+                @Exit.started -= instance.OnExit;
+                @Exit.performed -= instance.OnExit;
+                @Exit.canceled -= instance.OnExit;
             }
 
             /// <summary>
@@ -2416,6 +2533,113 @@ namespace Source.Core
         /// Provides a new <see cref="UIActions" /> instance referencing this action map.
         /// </summary>
         public UIActions @UI => new UIActions(this);
+
+        // Hint
+        private readonly InputActionMap m_Hint;
+        private List<IHintActions> m_HintActionsCallbackInterfaces = new List<IHintActions>();
+        private readonly InputAction m_Hint_Exit;
+        private readonly InputAction m_Hint_Next;
+        /// <summary>
+        /// Provides access to input actions defined in input action map "Hint".
+        /// </summary>
+        public struct HintActions
+        {
+            private @GameInput m_Wrapper;
+
+            /// <summary>
+            /// Construct a new instance of the input action map wrapper class.
+            /// </summary>
+            public HintActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+            /// <summary>
+            /// Provides access to the underlying input action "Hint/Exit".
+            /// </summary>
+            public InputAction @Exit => m_Wrapper.m_Hint_Exit;
+            /// <summary>
+            /// Provides access to the underlying input action "Hint/Next".
+            /// </summary>
+            public InputAction @Next => m_Wrapper.m_Hint_Next;
+            /// <summary>
+            /// Provides access to the underlying input action map instance.
+            /// </summary>
+            public InputActionMap Get() { return m_Wrapper.m_Hint; }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+            public void Enable() { Get().Enable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+            public void Disable() { Get().Disable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+            public bool enabled => Get().enabled;
+            /// <summary>
+            /// Implicitly converts an <see ref="HintActions" /> to an <see ref="InputActionMap" /> instance.
+            /// </summary>
+            public static implicit operator InputActionMap(HintActions set) { return set.Get(); }
+            /// <summary>
+            /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <param name="instance">Callback instance.</param>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+            /// </remarks>
+            /// <seealso cref="HintActions" />
+            public void AddCallbacks(IHintActions instance)
+            {
+                if (instance == null || m_Wrapper.m_HintActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_HintActionsCallbackInterfaces.Add(instance);
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
+                @Next.started += instance.OnNext;
+                @Next.performed += instance.OnNext;
+                @Next.canceled += instance.OnNext;
+            }
+
+            /// <summary>
+            /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <remarks>
+            /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+            /// </remarks>
+            /// <seealso cref="HintActions" />
+            private void UnregisterCallbacks(IHintActions instance)
+            {
+                @Exit.started -= instance.OnExit;
+                @Exit.performed -= instance.OnExit;
+                @Exit.canceled -= instance.OnExit;
+                @Next.started -= instance.OnNext;
+                @Next.performed -= instance.OnNext;
+                @Next.canceled -= instance.OnNext;
+            }
+
+            /// <summary>
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="HintActions.UnregisterCallbacks(IHintActions)" />.
+            /// </summary>
+            /// <seealso cref="HintActions.UnregisterCallbacks(IHintActions)" />
+            public void RemoveCallbacks(IHintActions instance)
+            {
+                if (m_Wrapper.m_HintActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            /// <summary>
+            /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+            /// </summary>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+            /// </remarks>
+            /// <seealso cref="HintActions.AddCallbacks(IHintActions)" />
+            /// <seealso cref="HintActions.RemoveCallbacks(IHintActions)" />
+            /// <seealso cref="HintActions.UnregisterCallbacks(IHintActions)" />
+            public void SetCallbacks(IHintActions instance)
+            {
+                foreach (var item in m_Wrapper.m_HintActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_HintActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        /// <summary>
+        /// Provides a new <see cref="HintActions" /> instance referencing this action map.
+        /// </summary>
+        public HintActions @Hint => new HintActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         /// <summary>
         /// Provides access to the input control scheme.
@@ -2502,6 +2726,13 @@ namespace Source.Core
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnMoveCamera(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Menu" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnMenu(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Mission" which allows adding and removing callbacks.
@@ -2696,6 +2927,13 @@ namespace Source.Core
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnHubController(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Exit" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnExit(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
@@ -2781,6 +3019,28 @@ namespace Source.Core
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnExit(InputAction.CallbackContext context);
+        }
+        /// <summary>
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Hint" which allows adding and removing callbacks.
+        /// </summary>
+        /// <seealso cref="HintActions.AddCallbacks(IHintActions)" />
+        /// <seealso cref="HintActions.RemoveCallbacks(IHintActions)" />
+        public interface IHintActions
+        {
+            /// <summary>
+            /// Method invoked when associated input action "Exit" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnExit(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Next" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnNext(InputAction.CallbackContext context);
         }
     }
 }

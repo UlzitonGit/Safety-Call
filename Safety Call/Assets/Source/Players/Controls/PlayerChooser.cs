@@ -119,7 +119,6 @@ namespace Source.Players.Controls
              {
                  playersToControl.Add(_creatureMovements[index]);
                  _players.Add(_creatureMovements[index].GetComponent<PlayerData>());
-                 print(_creatureMovements[index].gameObject.name);
              }
              _playerMoveInput.SetPlayerMovement(playersToControl);
              _playerSpotlighter.SetChosenPlayer(playerIndexes);
@@ -132,7 +131,6 @@ namespace Source.Players.Controls
             {
                 if (_creatureMovements[index] != null)
                 {
-                    print(_creatureMovements[index].gameObject.name);
                     indexesToReturn.Add(index);
                 }
             }
