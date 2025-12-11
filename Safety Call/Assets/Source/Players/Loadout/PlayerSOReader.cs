@@ -10,6 +10,7 @@ public class PlayerSOReader : MonoBehaviour
 
     [SerializeField] private Transform _weaponPoint;
     
+    
     private bool spawned = false;
 
     private void Start()
