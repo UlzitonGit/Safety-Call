@@ -10,6 +10,7 @@ namespace Source.Players.Controls
     public class PlayerChooser : MonoBehaviour
     {
         [SerializeField] public PlayerMovement[] _creatureMovements;
+        
     
         [SerializeField] private PlayerTacticalControlInput _playerMoveInput;
     
@@ -152,7 +153,6 @@ namespace Source.Players.Controls
                 {
                     SetChosenPlayer(AddPlayersToList(new[] { i }));
                 }
-
                 i++;
             }
         }
