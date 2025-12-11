@@ -1,3 +1,4 @@
+using System;
 using Source.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,6 +12,12 @@ public class PlayerWeaponController : WeaponController
 
     private bool _startLocalShoot = false;
     private bool _isLocal;
+    private AudioFightMixer _audioFightMixer;
+
+    private void Start()
+    {
+        _audioFightMixer = FindAnyObjectByType<AudioFightMixer>();
+    }
 
     private void OnEnable()
     {
@@ -25,6 +32,7 @@ public class PlayerWeaponController : WeaponController
         if (_weaponGeneral.IsCanShoot() && _startFire)
         {
             _weaponGeneral.Shoot(_target.position);
+            _audioFightMixer.StartFightSong();
         }
 
         if (_weaponGeneral.IsCanShoot() && _isLocal && _startLocalShoot && _playerData._playerState.IsAlive)
@@ -42,6 +50,7 @@ public class PlayerWeaponController : WeaponController
     private void StartShoot(InputAction.CallbackContext ctx)
     {
         _startLocalShoot = true;
+        
     }
 
     private void StopShoot(InputAction.CallbackContext ctx)
