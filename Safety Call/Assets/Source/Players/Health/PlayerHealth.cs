@@ -7,6 +7,9 @@ public class PlayerHealth : CreatureHealth
 {
     [SerializeField] private PlayerUiDrawer _playerUiDrawer;
     [SerializeField] private UiDamageShower _uiDamageShower;
+    
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _audioClip;
 
     private bool _isRevived;
     protected override void Start()
@@ -17,6 +20,7 @@ public class PlayerHealth : CreatureHealth
     public override void GetDamage(float damage, Vector3 enemyPos)
     {
         base.GetDamage(damage, enemyPos);
+        _audioSource.PlayOneShot(_audioClip);
         StartCoroutine(LookAtTarget(enemyPos));
         _uiDamageShower.GetDamage();
         _playerUiDrawer.UpdateUI(_currentHealth);

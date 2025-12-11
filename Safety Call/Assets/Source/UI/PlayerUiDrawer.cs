@@ -27,6 +27,14 @@ public class PlayerUiDrawer : MonoBehaviour
         foreach (var hpBar in _hpBar)
         {
             hpBar.fillAmount = health / 100;
+            if (health <= 0)
+            {
+                GetComponent<Image>().color = Color.red;
+            }
+            else
+            {
+                GetComponent<Image>().color = Color.white;
+            }
         }
     }
 
