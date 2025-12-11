@@ -17,6 +17,7 @@ public class CameraIndividualController : MonoBehaviour
     
     [SerializeField] private float minZoom = 2f;
     [SerializeField] private float maxZoom = 10f;
+    [SerializeField] private UiDamageShower _uiDamageShower;
     
     private InputAction _zoomCameraAction;
     
@@ -54,6 +55,7 @@ public class CameraIndividualController : MonoBehaviour
         {
             _camera.orthographicSize -= scroll * zoomSpeed;
             _camera.orthographicSize = Mathf.Clamp(_camera.orthographicSize, minZoom, maxZoom);
+            _uiDamageShower.Zoom();
         }
     }
     

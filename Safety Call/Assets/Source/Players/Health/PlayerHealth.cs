@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerHealth : CreatureHealth
 {
     [SerializeField] private PlayerUiDrawer _playerUiDrawer;
+    [SerializeField] private UiDamageShower _uiDamageShower;
 
     private bool _isRevived;
     protected override void Start()
@@ -17,6 +18,7 @@ public class PlayerHealth : CreatureHealth
     {
         base.GetDamage(damage, enemyPos);
         StartCoroutine(LookAtTarget(enemyPos));
+        _uiDamageShower.GetDamage();
         _playerUiDrawer.UpdateUI(_currentHealth);
     }
     IEnumerator LookAtTarget(Vector3 enemyPos)
