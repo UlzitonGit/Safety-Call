@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Vector2 minBounds = new Vector2(-10f, -10f);
     [SerializeField] private Vector2 maxBounds = new Vector2(10f, 10f);
     
+    [SerializeField] private UiDamageShower _uiDamageShower;
+    
     private Camera cam;
     private Vector3 lastMousePosition;
     private Vector3 dragOrigin;
@@ -73,6 +75,7 @@ public class CameraController : MonoBehaviour
         {
             cam.orthographicSize -= scroll * zoomSpeed;
             cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minZoom, maxZoom);
+            _uiDamageShower.Zoom();
         }
     }
     

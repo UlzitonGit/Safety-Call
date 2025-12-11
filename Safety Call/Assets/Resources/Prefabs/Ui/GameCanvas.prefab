@@ -2180,6 +2180,7 @@ GameObject:
   - component: {fileID: 2971541130393607624}
   - component: {fileID: 4683486490043259135}
   - component: {fileID: 2156365517583600754}
+  - component: {fileID: 577897935541189383}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -2315,6 +2316,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorTexture: {fileID: 2800000, guid: aaea43c5a96fc4b4794126dab306b8c2, type: 3}
   clickPosition: {x: 0, y: 0}
+--- !u!114 &577897935541189383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6624929241007951794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c5d7aec00db7f44a14fad7ec6940c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreText: {fileID: 1336553414992294583}
+  _quitButton: {fileID: 7264170780796772391}
 --- !u!1 &6690474522941199146
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,8 +3199,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 727.69775, y: 342.1402}
+  m_AnchoredPosition: {x: 0, y: 107.393524}
+  m_SizeDelta: {x: 727.6978, y: 556.9273}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3144830515958859631
 CanvasRenderer:
