@@ -13,8 +13,10 @@ public class Claymore : GranadeAbstract
     
     [SerializeField] private float _damage;
 
+    [SerializeField]  private bool isTutorial;
     private bool _isActive = true;
-    
+    private bool _canBomb = true;
+
     private bool _exploded;
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,19 +30,27 @@ public class Claymore : GranadeAbstract
     }
     protected override void ActionTargets(List<CreatureStates> targets)
     {
-        foreach (var target in targets)
+        if (_canBomb)
         {
-            target.GetComponent<CreatureHealth>().GetDamage(_damage, transform.position);
+            foreach (var target in targets)
+            {
+                target.GetComponent<CreatureHealth>().GetDamage(_damage, transform.position);
+            }
+            _canBomb = false;
+            StartCoroutine(Destroy());
         }
-
-        StartCoroutine(Destroy());
     }
 
     IEnumerator Destroy()
     {
         yield return new WaitForSeconds(4f);
+        _canBomb = true;
+        if (isTutorial)
+            yield break;
+
         Destroy(_parent);
         gameObject.SetActive(false);
+        
     }
 
     public void Deactivate()
@@ -48,6 +58,10 @@ public class Claymore : GranadeAbstract
         _isActive = false;
         Destroy(_parent);
         gameObject.SetActive(false);
-        
+    }
+
+    public bool IsActive()
+    {
+        return _isActive;
     }
 }

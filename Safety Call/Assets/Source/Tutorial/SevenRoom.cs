@@ -3,7 +3,7 @@ using UnityEngine;
 public class SevenRoom : MonoBehaviour
 {
     [SerializeField] private RemoteControlePanel controlePanel;
-    [SerializeField] private TutorialClaymore claymore;
+    [SerializeField] private Claymore claymore;
     [SerializeField] private AutomaticDoor automaticDoor;
 
     void Update()
