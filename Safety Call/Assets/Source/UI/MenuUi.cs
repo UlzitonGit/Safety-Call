@@ -12,4 +12,9 @@ public class MenuUi : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void PlayGame(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
 }
