@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a78bf532027c5a4c80f5de8d13c9b36, type: 3}
+  m_Name: LaskaPhrases
+  m_EditorClassIdentifier: 
+  AllPhrases:
+  - Phrases:
+    - "Serhio\u2026 "
+    - "How do I fix this? Does he even love me anymore\u2026? "
+    - "There\u2019s gotta be a catch in this job\u2026 right? "
+    Level: 0
+  - Phrases:
+    - "This gear is so heavy\u2026 my arms are dying\u2026 "
+    - "Is he gonna get jealous\u2026? "
+    - 'I need coffee. And shortbread. Immediately. '
+    Level: 1
+  - Phrases:
+    - "Poor Eve\u2026 Everything she had to go through to end up here\u2026 and in
+      this condition\u2026 "
+    - "\u2026Oh wow\u2026 "
+    - "The time I spent with Serheo\u2026 was the best of my life. Shame I didn\u2019t
+      realize it earlier\u2026 "
+    Level: 2
+  - Phrases:
+    - "I\u2019m so tired of dealing with this nerd\u2026 Maybe I should just drop
+      it all?... "
+    - "Just a bit more and I\u2019ll crack\u2026 and put the ring back on again\u2026 "
+    - "This time was terrifying\u2026 What if the next one is the last for me?"
+    Level: 3

@@ -1,0 +1,332 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 384d2f52723fb9a45ba468e233333ee5, type: 3}
+  m_Name: AsahiDialogues
+  m_EditorClassIdentifier: 
+  <DialogueData>k__BackingField:
+  - <Phrase>k__BackingField:
+    - Phrase: "You\u2019ve been staring at that vending machine for a while. You
+        thirsty, or just looking for someone to talk to?\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "\u2026\u2026\u2026..\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Hel\u2014\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "You\u2019re distracting me. I can\u2019t decide between vanilla or
+        whipped cream flavor.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Huh. I thought team communication was supposed to be important. Guess
+        sugar comes first for you. Maybe try looking at the person you\u2019re talking
+        to? Heeey\u2014\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "\u2026\u2026\u2026\u2026\u2026\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Alright, fine. If it were me, I\u2019d go with whipped cream. Sounds
+        unique.\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "First\u2014 yeah, thanks."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Second\u2014 I\u2019m not \u201Chey\u201D or \u201Chello\u201D."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Third\u2014 I prefer sour over sweet."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Nice to meet you. \u2026Or is that part of the list too? Never mind.
+        Bye. Go... do something useful.\r"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Well\u2026.That was a good start, right? "
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    <Level>k__BackingField: 0
+    AlreadyBeen: 0
+  - <Phrase>k__BackingField:
+    - Phrase: 'Hi.
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Hey. Thanks for actually saying hi today. Should I take that as a
+        compliment?
+
+'
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: 'Ew. No. Especially considering you stink. Go shower.
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Unlike some people, I spent three hours running around a factory with
+        a gun. '
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "But I\u2019m still curious\u2014why\u2019d you come over? A few days
+        ago you snapped at me just for trying to talk."
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "I didn\u2019t come to talk. I observed your performance and supervised
+        the entire team. And I have comments for you specifically.\r"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "If that\u2019s just an excuse to start a conversation, then go on.\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "Your behavior was unacceptable. Everyone listened to what I said,
+        except you \u2014 you charged in headfirst."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "We operate QUIETLY. So we don\u2019t get wiped out because someone
+        thinks they can single-handedly save the day."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Because of your actions, Laska had to patch you up. All over.
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "And? Are you, like, worried? About your \u201Cteammates\u2019\u201D
+        lives?\r"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "Um\u2026No\u2026 This is a reprimand. Anyway, um\u2026 I\u2019m throwing
+        out all your cigarettes for that. Stop putting your coworkers at risk.\r\r"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Uh-huh\u2026 okay? Though they could\u2019ve shot Laska. Or your brother.\r\n\r\r"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "They would\u2019ve gotten shot not because they were reckless. I\u2019m
+        emphasizing your\u2026 ridiculous behavior."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "You\u2019re flustered, aren\u2019t you? "
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "What?! No. Gross. Go shower. You and Mister Beast\u2014 I mean Beast\u2014
+        are exhausting."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Got it, got it. I won\u2019t put the \u201Cteam\u201D at risk. Especially
+        the \u201Ctwitchy ones.\u201D Heh. "
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    <Level>k__BackingField: 1
+    AlreadyBeen: 0
+  - <Phrase>k__BackingField:
+    - Phrase: "Hey. Knew you\u2019d show up. Got you a soda in advance."
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: ?!... Okay. Thanks. Why are you looking at me like that?
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'You look really disappointed again. Brother trouble?
+
+'
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "Um\u2026 no? Why would you think that?\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I overheard some of your conversations. And everything I heard sounded\u2026
+        not great.\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "Well\u2026 what, are you stupid? You think families don\u2019t fight?
+        He\u2019ll sulk, then get over it\u2026\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Is it always like that with you two?
+
+'
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: Yeah. Is that weird?
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Hm\u2026 You know what I think? I think you pay too much attention
+        to people who don\u2019t want it. Every time I hear Cyber, I\u2019m convinced.\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "It\u2019s not about attention\u2026 we barely talk."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "He\u2019s mad at me because he\u2019s not living like a corporate
+        golden boy anymore. Anyway, you didn\u2019t finish your thought. What are
+        you suggesting?"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Shift your focus onto something else.
+
+'
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: 'Like what?
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Like me, for example.
+
+'
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "WHAT?! I mean\u2014 uh\u2014 sorry, what?\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Let\u2019s go to the bar. Have a drink."
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "Not much \u2014 one beer each."
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "We can\u2019t drink here anyway. You can complain about all your \u201Cfamily
+        conflicts.\u201D"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "Uh\u2026 I\u2026 don\u2019t like alcohol\u2026\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "If we\u2019re going to the bar then\u2026 milkshake. Vanilla. And
+        we go\u2026 late at night. When everyone\u2019s asleep\u2026\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Milkshake. Got it. Deal.
+
+'
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    <Level>k__BackingField: 2
+    AlreadyBeen: 0
+  - <Phrase>k__BackingField:
+    - Phrase: "Asahi\u2026\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Heh. What\u2019s up, barrel?\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "You-ugh\u2013oh! Don\u2019t call me that! Especially here\u2026\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "And I told you \u2014 the bar is supposed to be a secret.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "And\u2026 I think\u2026 let\u2019s go to the bar again at night. I
+        want a drink\u2026again\u2026\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "You tell me not to call you that, but fully commit to the nickname\u2026\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "But hey, listen \u2014 I took you to the bar because I thought we\u2019d
+        have a drink\u2026 a beer, max.\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: 'You really should learn to talk about personal stuff without twenty
+        shots in your system.
+
+'
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "You don\u2019t want to go to the bar with me anymore?\u2026\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I don\u2019t want to drag your drunk body across half the city again
+        and hold your hair while you, uh\u2026 \u201Ctalk to the toilet.\u201D\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "So next time we\u2019re going to a restaurant.\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "You like food too, don\u2019t you?"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: 'A restaurant?
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'What kind of nonsense is that?
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I thought you took me to the bar because YOU wanted a drink \u2014
+        just not alone."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'I took you to the bar because I wanted to actually talk to you without
+        you running off behind the nearest corner after two sentences.
+
+'
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "You always have something to say\u2026\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "But I honestly did NOT expect what you said that night\u2026 hahahaha\u2026"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "Listening to you talk like this, I don\u2019t even feel embarrassed\u2026\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Seriously? Hearing that from you\u2026\r\nYou\u2019re gonna make me
+        think you really like me.\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "\u2026\u2026\u2026.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Oh wow\u2026 you didn\u2019t run away.\r\nSo I was right.\r\n"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "Uh\u2026 eh\u2026 THAT!! DISGUSTING!!\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "YOU\u2014 you\u2026 YOU\u2026 sound like\u2026 I DON\u2019T KNOW!!!\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'BYE! I NEED TO WORK!
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "And you\u2014 just\u2014 go die or something\u2026 god\u2026 horrible\u2026 "
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "I want to drink even more now\u2026"
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "Looks like the punishment isn\u2019t the contract \u2014 but the squad
+        I got with it\u2026 "
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "Okay, yeah\u2026 mhm\u2026 "
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: 'Yep, deal. '
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    - Phrase: "I\u2019ll knock when you\u2026 \u201Ccool off.\u201D "
+      <Talker>k__BackingField: 4
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 772d2f4c4bd7d2243884975d29558354, type: 2}
+    <Level>k__BackingField: 3
+    AlreadyBeen: 0

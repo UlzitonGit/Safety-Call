@@ -1,0 +1,291 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 384d2f52723fb9a45ba468e233333ee5, type: 3}
+  m_Name: SyberDialogues
+  m_EditorClassIdentifier: 
+  <DialogueData>k__BackingField:
+  - <Phrase>k__BackingField:
+    - Phrase: Vincent, how are you?
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I\u2019m busy. Did you forget they told us to use our real names as
+        little as possible?\r"
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "There\u2019s no one else here right now. Besides, you\u2019re my brother."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "The only thing I\u2019m grateful to our parents for is giving us nice
+        names. Don\u2019t you think so? "
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Though, fair\u2014how could they give \u201Ccombat projects\u201D
+        names that aren\u2019t aesthetically pleasing? He-he-he\u2026."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I don\u2019t like them.\r\n"
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: 'Why?...
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "Because \u201CVincent\u201D is tied to you. And anything tied to you
+        makes me uncomfortable and irritated. Go do something useful and stop bothering
+        me.\r\n"
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "Fine\u2026 I just hope one day you\u2019ll stop hating me for the
+        fact that thanks to me you\u2019re not some corporate battle puppet or merchandise.\r"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: Want me to repeat it word for word?
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: G-e-t. O-u-t. D-i-s-a-p-p-e-a-r.
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "Shame no one\u2019s killed you on a mission yet \u2014 maybe then
+        you\u2019d finally stop haunting me.\r\n"
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: 'Huh? Fine! Got it. '
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    <Level>k__BackingField: 0
+    AlreadyBeen: 0
+  - <Phrase>k__BackingField:
+    - Phrase: Abigail.
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: 'Huh? Yeah?..
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Please get out of the briefing room.
+
+'
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "I\u2019m working here too\u2026 and technically I\u2019m acting as
+        management, you know.\r"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Yeah, but you\u2019re blocking the big screen. And I\u2019d like to
+        watch what I\u2019m watching\u2026 alone.\r\n"
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "What are you watching?!\u2026"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "\u2026.\r\n"
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: 'OH MY GOD.
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I knew it\u2026"
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: YOU HOOKED THE SCREEN TO A GOVERNMENT SATELLITE?!
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: CAN YOU ZOOM IN ON THE MARIANA TRENCH?
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: I WANNA SEE THE WAVES IN REAL TIME!
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Leave. If you want to look at things you like \u2014 figure it out
+        yourself. Don\u2019t touch me.\r\n"
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "So we\u2019re not looking for penguins either?\u2026\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "When you talk about yourself, don\u2019t associate it with me. And
+        don\u2019t use \u201Cwe\u201D about you and me ever again.\r\n"
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "I thought since you called me by my name \u2014 you wanted to make
+        up."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "People here aren\u2019t used to callsigns yet\u2026 and you\u2019re
+        always so strict with callsigns\u2026 so I thought it meant something."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I used your name because it gets your attention faster, and I\u2019m
+        trying to remove you from my \u201Cradius\u201D as efficiently as possible. "
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Right\u2026 well judging by this, your love for penguins still hasn\u2019t
+        gone away\u2026 "
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "For penguins \u2014 no. For you \u2014 never existed. "
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    <Level>k__BackingField: 2
+    AlreadyBeen: 0
+  - <Phrase>k__BackingField:
+    - Phrase: CYBER.
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Can you not yell? What do you want from me now?
+
+'
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: 'I came to annoy you. On purpose.
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'What? Are you out of your mind?
+
+'
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "No. You\u2019ve finally pissed me off for good.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "So I\u2019m going to act like you.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "From now on, you fill out your reports yourself, I\u2019m not covering
+        your tech expenses, and, as you love to say: \u201CIf you like it so much,
+        deal with it yourself.\u201D"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I\u2019m not giving you part of my budget anymore either.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I\u2019ll spend it on food.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: The noodles are now mine.
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "If you wanna eat \u2014 cook for yourself.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Watched too many family dramas?
+
+'
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: 'No.
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'I just discovered that my noodles are gone again.
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "That\u2019s the reason for your tantrum?\r\n"
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "If you\u2019re done, leave me alone.\r"
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "Oh I\u2019m done.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "And I\u2019m leaving you without budget too.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "What\u2019s that supposed to mean?"
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "It means I filed a complaint on you.\r"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'What?
+
+'
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: 'Your budget got cut to minimum.
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'The only two times I asked YOU to handle YOUR OWN activity reports,
+        you missed both deadlines.
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: I got blamed for it.
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Then I found holes in the financial logs, searched your room, and
+        found piles of useless junk.
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Four kinds of gamepads. '
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Because of your crap I had to redistribute money to buy food. '
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I\u2019m done with it \u2014 now you deal with everything yourself."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: And guess what?
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I\u2019M NOT TALKING TO YOU ANYMORE EITHER. "
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Oh, really?! '
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: Fine.
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "Then I\u2019ll just keep doing what I always do. "
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "They can kick me from the squad \u2014 and you\u2019ll forgive me
+        as always, sentimental mess that you are. "
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: 'You really should stop hanging out with Asahi and Beast so much. '
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: "You\u2019re becoming even more of a pushover. "
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: Or is this Laska rubbing off on you with her romantic worldview?
+      <Talker>k__BackingField: 1
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: 8cc05025e2080b84b9d061669b988c9f, type: 2}
+    - Phrase: Blah-blah. Bye.
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "By the way, I resold the gamepads \u2014 now I have money for NOODLES. "
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: YOU WHAT?!
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    <Level>k__BackingField: 3
+    AlreadyBeen: 0

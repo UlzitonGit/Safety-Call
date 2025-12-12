@@ -90,12 +90,7 @@ public class HintContrller : MonoBehaviour
     }
 
     private void DoHideHint(InputAction.CallbackContext ctx)
-    {
-        if (_curHint < _curHintPages.TutorialHints.Count)
-        {
-            Next();
-            return;
-        }  
+    { 
         Hide();
     }
 
@@ -106,6 +101,7 @@ public class HintContrller : MonoBehaviour
 
     private void Hide()
     {
+        _curHintPages.AlreadyBeen = true;
         hintPanel.SetActive(false);
         nextHintButton.gameObject.SetActive(false);
         InputManager.Instance.SwitchActionMapType(_curActionMap);

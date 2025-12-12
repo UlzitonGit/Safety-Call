@@ -21,16 +21,19 @@ public class TutorialController : MonoBehaviour
     private int _curHintId = 0;
     private int _curDialogue = 0;
     private int _curRoom = 1;
-    private bool _ninthDialogue = false;
+    private int _curPlayerPrefs;
 
     private void OnEnable()
     {
+        _curPlayerPrefs = PlayerPrefs.GetInt("PlayerPrefs");
+        PlayerPrefs.SetInt("CurLevel", 10);
         _lookAction = InputManager.Instance.GameInput.TacticalMove.Turn;
         _lookAction.performed += ThirdDialogue;
     }
 
     private void OnDisable()
     {
+        PlayerPrefs.SetInt("CurLevel", _curPlayerPrefs);
         _lookAction.performed -= ThirdDialogue;
     }
 
@@ -208,7 +211,6 @@ public class TutorialController : MonoBehaviour
         {
             hintContrller.StartHint();
             _curHintId++;
-            _ninthDialogue = true;
         }
     }
 

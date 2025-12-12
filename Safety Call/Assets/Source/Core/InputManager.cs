@@ -103,7 +103,6 @@ namespace Source.Core
                     break;
 
             }
-            print($"swich Action Map Type on {mapType}");
             CurentActionMapType = mapType;
         }
     }

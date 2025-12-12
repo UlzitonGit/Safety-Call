@@ -12,7 +12,6 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameCharText;
     [SerializeField] private Image charIcon;
     [SerializeField] private AnimatedText animatedText;
-    [SerializeField] private bool _inHub;
     private DialoguesDataSO _dialoguesData;
     private DialogueData _curDialogue;
     private int _curPhraseIndex = 0;
@@ -75,7 +74,7 @@ public class DialogueController : MonoBehaviour
     {
         for (int i = 0; i < _dialoguesData.DialogueData.Count; i++)
         {
-            if (!_dialoguesData.DialogueData[i].AlreadyBeen)
+            if (!_dialoguesData.DialogueData[i].AlreadyBeen && PlayerPrefs.GetInt("CurLevel") == _dialoguesData.DialogueData[i].Level)
             {
                 _curDialogue = _dialoguesData.DialogueData[i];
                 ShowPhrase();
@@ -103,6 +102,7 @@ public class DialogueController : MonoBehaviour
 
     private void ExitDialogue()
     {
+        _curDialogue.AlreadyBeen = true;
         _curPhraseIndex = 0;
         dialoguePanel.SetActive(false);
         InputManager.Instance.SwitchActionMapType(_curActionMap);

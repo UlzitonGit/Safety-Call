@@ -21,6 +21,7 @@ public class NpcDialogue : MonoBehaviour
 
     private void Start()
     {
+        print("start");
         _npsRandomPhrase = GetComponent<NpcRandomPhrase>();
         exclamationMark.SetActive(GetHaveDialogues());
     }
@@ -42,7 +43,7 @@ public class NpcDialogue : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && GetHaveDialogues())
+        if (collision.CompareTag("Player") && GetHaveDialogues())
         {
             exclamationMark.SetActive(false);
             hint.SetActive(true);
@@ -54,7 +55,7 @@ public class NpcDialogue : MonoBehaviour
     {
         if (!dialogueController.InDialogue)
         {
-            if (collision.tag == "Player" && GetHaveDialogues())
+            if (collision.CompareTag("Player") && GetHaveDialogues())
             {
                 hint.SetActive(true);
                 _canTalk = true;
@@ -64,7 +65,7 @@ public class NpcDialogue : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             hint.SetActive(false);
             _canTalk = false;
@@ -77,14 +78,15 @@ public class NpcDialogue : MonoBehaviour
 
     private bool GetHaveDialogues()
     {
-        int sum = 0;
         for (int i = 0; i < dialoguesDataSO.DialogueData.Count; i++)
         {
-            if (dialoguesDataSO.DialogueData[i].AlreadyBeen)
-                sum++;
-        }
-        if (sum == dialoguesDataSO.DialogueData.Count)
-            return false;
+            if (dialoguesDataSO.DialogueData[i].Level == PlayerPrefs.GetInt("CurLevel"))
+            {
+                if (dialoguesDataSO.DialogueData[i].AlreadyBeen)
+                    return false;
+            }
+            
+        }   
         return true;
     }
 }
