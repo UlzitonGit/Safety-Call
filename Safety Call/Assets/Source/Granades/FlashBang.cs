@@ -7,10 +7,17 @@ public class FlashBang : GranadeAbstract
     [SerializeField] private float _flashDuration;
     
     [SerializeField] private Animator _animator;
+    
+    [SerializeField] private AudioSource _audioSource;
+    
+    [SerializeField] private AudioClip _audioClip;
+    [SerializeField] private GameObject _sprite;
 
     protected override void ActionTargets(List<CreatureStates> targets)
     {
         StartCoroutine(FlashTargets(targets));
+        _audioSource.PlayOneShot(_audioClip);
+        _sprite.SetActive(false);
     }
 
     IEnumerator FlashTargets(List<CreatureStates> targets)
