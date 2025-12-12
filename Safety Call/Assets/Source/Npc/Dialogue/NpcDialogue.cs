@@ -21,6 +21,7 @@ public class NpcDialogue : MonoBehaviour
 
     private void Start()
     {
+        print("start");
         _npsRandomPhrase = GetComponent<NpcRandomPhrase>();
         exclamationMark.SetActive(GetHaveDialogues());
     }

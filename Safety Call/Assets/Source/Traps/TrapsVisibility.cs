@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TrapsVisibility : MonoBehaviour, IPlayerSpotable
 {
-    [Range(0.1f, 1)][SerializeField] private float spawnChance;
+    [Range(0f, 1.1f)][SerializeField] private float spawnChance;
     public bool IsVisible;
    
     [SerializeField] private GameObject _meshRenderer;

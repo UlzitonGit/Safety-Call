@@ -28,11 +28,6 @@ public class DialogueController : MonoBehaviour
 
         _nextAction.performed += DoNext;
         _exitAction.performed += DoExit;
-
-        if (!PlayerPrefs.HasKey("CurLevel"))
-        {
-            PlayerPrefs.SetInt("CurLevel", 0);
-        }
     }
 
     private void OnDisable()
@@ -79,7 +74,7 @@ public class DialogueController : MonoBehaviour
     {
         for (int i = 0; i < _dialoguesData.DialogueData.Count; i++)
         {
-            if (!_dialoguesData.DialogueData[i].AlreadyBeen)
+            if (!_dialoguesData.DialogueData[i].AlreadyBeen && PlayerPrefs.GetInt("CurLevel") == _dialoguesData.DialogueData[i].Level)
             {
                 _curDialogue = _dialoguesData.DialogueData[i];
                 ShowPhrase();
@@ -107,6 +102,7 @@ public class DialogueController : MonoBehaviour
 
     private void ExitDialogue()
     {
+        _curDialogue.AlreadyBeen = true;
         _curPhraseIndex = 0;
         dialoguePanel.SetActive(false);
         InputManager.Instance.SwitchActionMapType(_curActionMap);
