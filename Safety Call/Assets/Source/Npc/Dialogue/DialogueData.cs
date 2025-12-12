@@ -7,6 +7,7 @@ using UnityEngine;
 public class DialogueData
 {
     [field:SerializeField] public List<PhraseData> Phrase {  get; private set; }
+    [field: SerializeField] public int Level { get; private set; }
     [field: SerializeField] private static bool _alreadyBeen;
     public bool AlreadyBeen = _alreadyBeen;
 }

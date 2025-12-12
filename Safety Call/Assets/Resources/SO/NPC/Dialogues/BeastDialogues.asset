@@ -1,0 +1,277 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 384d2f52723fb9a45ba468e233333ee5, type: 3}
+  m_Name: BeastDialogues
+  m_EditorClassIdentifier: 
+  <DialogueData>k__BackingField:
+  - <Phrase>k__BackingField:
+    - Phrase: "Hey, how old are you anyway? Doesn\u2019t it feel like a bit too much
+        responsibility for someone your age to run an entire squad?\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "I\u2019m twenty. And I\u2019m in charge because I wasn\u2019t convicted
+        of \u201Cdesertion\u201D and \u201Ccovering up crimes,\u201D unlike some
+        people here. "
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "The chances of me screwing up or \u201Cbetraying\u201D anyone are
+        lower.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I protected someone I cared about. That\u2019s hardly betrayal.\r"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "I\u2019m speaking from the perspective of the \u201Claw\u201D and
+        the court. I have no personal issues with you\u2026 aside from the fact that
+        I hate when you and Asahi smoke. It stinks.\r"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Hm\u2026 And what exactly did you do, according to the \u201Claw\u201D?\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "I\u2019ve known you all for two days. Why would I share anything with
+        someone from a team that\u2019ll probably fall apart soon?\r"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Just curious. At twenty, childhood shouldn\u2019t be over yet.\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "\u2026\r"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I saved myself and my brother. That\u2019s all you get.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    <Level>k__BackingField: 0
+    AlreadyBeen: 0
+  - <Phrase>k__BackingField:
+    - Phrase: "You\u2019re red all over. What happened?\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "\u2026\u2026\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "You keep making that face\u2026 What are you staring at?\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "Huh? What?.. Oh\u2026 I just\u2026 I really hate gear rooms."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "They\u2019re always dusty\u2026 and my blood vessels hurt\u2026 The
+        first time they shoved me into a \u201Cmilitary\u201D locker room after one
+        of my first missions\u2026"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I almost passed out because of the helmet. It was stuffy. I can\u2019t
+        stand stuffy rooms.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Yeah, that happens. And looking at you, I get the impression a vest
+        could knock you over. And\u2014\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "That\u2019s because you\u2019re fat.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I\u2019m not fat. But yeah, I do need to lose some weight. And I wasn\u2019t
+        finished. I don\u2019t think you\u2019re dizzy from the gear this time. You
+        work from an office now, after all.\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "And what\u2019s that supposed to mean?\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "It means you\u2019re watching a sporty Asian guy changing clothes
+        with a look like you\u2019re barely conscious."
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "What? Ew\u2014 no. Ask my brother. He\u2019ll tell you my face is
+        always \u201Cdumb-looking.\u201D"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    <Level>k__BackingField: 1
+    AlreadyBeen: 0
+  - <Phrase>k__BackingField:
+    - Phrase: "Mister\u2014 I mean\u2026 Sir Beast\u2026"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "You can call me Serh\xE9o. Or Andr\xE9s. Or Mr. Torres. Or Mr. Casta\xF1o.
+        Whatever you like.\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "Do you always brag about being born in a \u201Cgood country at the
+        right time\u201D?"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Anyway, that\u2019s not what I came for! Sir Beast, I wanted to ask
+        you something."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Oh? Unexpected. Go on.
+
+'
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "Well\u2026 um. I\u2019m hungry.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "\u2026\u2026.\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "Is this a joke? Because if it is, that\u2019s actually pretty funny\u2026
+        hahaha\u2026\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "No\u2026 Sir\u2014 Mister! I\u2019m serious. The next food shipment
+        isn\u2019t soon, and going to the store\u2026 I\u2019m too hungry for that.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "So what do you want from me? Supplies? Why are you talking about shipments?
+        There\u2019s plenty of food.\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "The noodles\u2026 mashed potatoes\u2026 and cup soups are gone\u2026\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Ah, so that\u2019s what it is\u2026 noodles, huh\u2026 well, if you\u2019re
+        that hungry, then you\u2019ll have to ask properly!"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "I didn\u2019t hear a single \u201CSir Beast\u2026 please cook something
+        for me\u2026\u201D"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: 'EXCUSE ME?!
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "HA! That face \u2014 as always, priceless. Relax, I\u2019m joking.
+        Want some barbecue?\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "Not surprising that with a personality like yours your \u201Cwife\u201D
+        expects \u201Cfeats\u201D from you\u2026 And\u2026.yes, I want some\u2026.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Let\u2019s not talk about the first part. And here\u2019s the deal
+        \u2014 I\u2019ll tell you what to do, and you\u2019ll cook."
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: Time you learned to make something other than instant noodles.
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "I like noodles\u2026 but fine\u2026 Will the oil splash everywhere?\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Good lord\u2026 tragic. Be careful and you won\u2019t burn yourself.
+        You\u2019re military, aren\u2019t you? Hahaha\u2026\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    <Level>k__BackingField: 2
+    AlreadyBeen: 0
+  - <Phrase>k__BackingField:
+    - Phrase: Wow. You two are talking.
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: I am talking. Laska is silent.
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: 'And?
+
+'
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "From your perspective, that probably counts as a \u201Cdialogue,\u201D
+        considering you love to demonstrate your glorious talent for ignoring people."
+      <Talker>k__BackingField: 2
+      <CharacterIcon>k__BackingField: {fileID: -1568359511483838592, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "But I\u2019m not answering my husband\u2019s questions about why I\u2019m
+        not talking to him."
+      <Talker>k__BackingField: 2
+      <CharacterIcon>k__BackingField: {fileID: -1568359511483838592, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "So go ahead and tell him I said: \u201CI don\u2019t talk to traitors.\u201D"
+      <Talker>k__BackingField: 2
+      <CharacterIcon>k__BackingField: {fileID: -1568359511483838592, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Ignoring people on purpose?\u2026 I\u2026 uh\u2026"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Sir Beast, your\u2026 \u201Cnot-quite-ex-wife-but-kind-of\u201D asked
+        me to inform you she\u2019s not speaking to traitors."
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Mhm. And you can also tell him that \u201Ctraitors\u201D are those
+        who, instead of trying to win their wife back, spend more time chatting with
+        young girls and helping them out."
+      <Talker>k__BackingField: 2
+      <CharacterIcon>k__BackingField: {fileID: -1568359511483838592, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "I think I\u2019ll just g\u2014\u2026\r"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "No, Eve, you\u2019re not going anywhere.\r\n"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: Ellaina, repeat what you just said.
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "Are you saying I\u2019m giving too much attention to a CHILD who can\u2019t
+        even cook herself a meal?"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "Are you saying that if we had a kid, you\u2019d be jealous of them
+        too?"
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: You need to apologize to the kid for dragging her into OUR mess.
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "Can I please leave\u2026"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "NO. We\u2019re not done!\r\n"
+      <Talker>k__BackingField: 2
+      <CharacterIcon>k__BackingField: {fileID: -1568359511483838592, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Why should I apologize, when the reason I drag her into conflict is
+        YOU?!
+
+'
+      <Talker>k__BackingField: 2
+      <CharacterIcon>k__BackingField: {fileID: -1568359511483838592, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: 'Because every time I even come near you, you make that offended face,
+        turn away, and ignore me for OVER A MONTH.
+
+'
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: 'But the moment a girl young enough to be my daughter asks for HELP,
+        YOU STORM IN AND START YELLING AT HER!
+
+'
+      <Talker>k__BackingField: 3
+      <CharacterIcon>k__BackingField: {fileID: 21300000, guid: ba79efd1bd3c2b648aed46d6546c83aa, type: 2}
+    - Phrase: "THE ONLY ONE YELLING HERE IS YOU, YOU B##@%\u2014!!! "
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "Oh my god\u2014f #%#\u2026 I\u2019m leaving\u2026.\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "YOU\u2019RE SUCH AN\u2014 A&%#@#!! AND\u2014 !!!\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: "FINE! THEN SIT HERE ALONE, YOU\u2014 B#@#*!!!!!\r\n"
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    - Phrase: ASAHI!!!!
+      <Talker>k__BackingField: 0
+      <CharacterIcon>k__BackingField: {fileID: 6228503042602868858, guid: 18e5e53b2d56b6b4ca947de5ec35f9d4, type: 3}
+    <Level>k__BackingField: 3
+    AlreadyBeen: 0

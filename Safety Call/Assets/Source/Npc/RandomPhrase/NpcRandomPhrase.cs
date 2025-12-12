@@ -5,7 +5,7 @@ using UnityEngine;
 public class NpcRandomPhrase : MonoBehaviour
 {
     [SerializeField] private float showTime;
-    [SerializeField] private PhrasesSO phrases;
+    [SerializeField] private AllPhrasesSO phrases;
     [SerializeField] private GameObject phraseObj;
     [SerializeField] private TextMeshProUGUI phraseText;
     [SerializeField] private RandomPhraseController phraseController;

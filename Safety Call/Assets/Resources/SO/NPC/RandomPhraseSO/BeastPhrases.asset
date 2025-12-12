@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a78bf532027c5a4c80f5de8d13c9b36, type: 3}
+  m_Name: BeastPhrases
+  m_EditorClassIdentifier: 
+  AllPhrases:
+  - Phrases:
+    - "How many bans can one job have? Can\u2019t even grab a beer. "
+    - "Taking orders from a kid\u2026 what a joke. "
+    - 'Am I the only one with a normal callsign here? '
+    Level: 0
+  - Phrases:
+    - "A cop\u2019s no soldier\u2026 guess I really do need to lose weight. "
+    - "I miss Ellaina\u2019s dinners\u2026 "
+    - "TV\u2019s waiting for me. "
+    Level: 1
+  - Phrases:
+    - "Coffee at six a.m., a boring report, her laughter in the kitchen\u2026 What
+      a luxury that was. "
+    - "I may be an old, broken tool, but I\u2019m still fit for duty. "
+    - "Maybe she\u2019s right to be angry\u2026 I wasn\u2019t good enough for her.
+      I need to be better. "
+    Level: 2
+  - Phrases:
+    - "I actually lost weight\u2026 Should I be proud of myself? "
+    - "Ellaina\u2019s still trying to make me jealous\u2026 but I can\u2019t get
+      jealous over a teenager. I just\u2026 love her. And I trust her. "
+    - "RIGHT! If I cook my signature pasta\u2014she\u2019ll definitely talk to me! "
+    Level: 3

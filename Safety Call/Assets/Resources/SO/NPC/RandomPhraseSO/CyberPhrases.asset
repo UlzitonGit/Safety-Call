@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a78bf532027c5a4c80f5de8d13c9b36, type: 3}
+  m_Name: CyberPhrases
+  m_EditorClassIdentifier: 
+  AllPhrases:
+  - Phrases:
+    - "This isn\u2019t fair. "
+    - "I\u2019m tired\u2026 she drags me everywhere. "
+    - 'WHAT is wrong with this equipment!? '
+    Level: 0
+  - Phrases:
+    - 'These callsigns are stupid. '
+    - "Site block? Really? I\u2019ll deal with that. "
+    - 'I want a glowing keyboard. A good one. '
+    Level: 1
+  - Phrases:
+    - All this fuss is just a temporary obstacle on the way to silence and order.
+    - "Beast\u2019s only useful function is being a shield for more valuable assets. "
+    - "Evi is impossible to read. She pushed me to run away from my parents, and
+      now she\u2019s clinging to Beast. Either she has some strange tendencies\u2026
+      or she\u2019s got father issues. "
+    Level: 2
+  - Phrases:
+    - 'Is Eve really being this rude to me because of Asahi? '
+    - "Should I react to Laska\u2019s behavior? She\u2019s over thirty, sure, but\u2026
+      she\u2019s not bad. Not bad for someone like Beast, anyway\u2026haha.. "
+    - "I can\u2019t get used to Eve\u2019s coldness\u2026 She\u2019s actually pulling
+      away. That\u2019s disadvantageous. "
+    Level: 3

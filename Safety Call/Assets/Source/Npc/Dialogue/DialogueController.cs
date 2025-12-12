@@ -12,7 +12,6 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameCharText;
     [SerializeField] private Image charIcon;
     [SerializeField] private AnimatedText animatedText;
-    [SerializeField] private bool _inHub;
     private DialoguesDataSO _dialoguesData;
     private DialogueData _curDialogue;
     private int _curPhraseIndex = 0;
@@ -29,6 +28,11 @@ public class DialogueController : MonoBehaviour
 
         _nextAction.performed += DoNext;
         _exitAction.performed += DoExit;
+
+        if (!PlayerPrefs.HasKey("CurLevel"))
+        {
+            PlayerPrefs.SetInt("CurLevel", 0);
+        }
     }
 
     private void OnDisable()
