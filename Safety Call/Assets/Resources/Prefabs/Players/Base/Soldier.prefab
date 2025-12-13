@@ -1017,6 +1017,9 @@ MonoBehaviour:
   _creaturesData: {fileID: 8060874682696989706}
   _playerAnimator: {fileID: 472451369716976119}
   _playerUiDrawer: {fileID: 0}
+  _uiDamageShower: {fileID: 0}
+  _audioSource: {fileID: 0}
+  _audioClip: {fileID: 0}
 --- !u!114 &8060874682696989706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1444,7 +1447,7 @@ MonoBehaviour:
     m_Bits: 12352
   _obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 1025
+    m_Bits: 33793
   _playerGunfightBehaviourManager: {fileID: 7314110743048061526}
 --- !u!1 &8706471357249041251
 GameObject:

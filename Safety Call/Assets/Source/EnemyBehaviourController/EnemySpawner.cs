@@ -16,9 +16,7 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private PlayerLoadoutSO[] _loadouts;
     
-    private List<int>  busySpawns = new List<int>();
-    
-    private List<GameObject> _enemies = new List<GameObject>();
+    private List<EnemyData> _enemies = new List<EnemyData>();
 
     private List<EnemyMovement> _enemyMovements = new List<EnemyMovement>();
     
@@ -30,12 +28,13 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < enemiesCount; i++)
         {
             int currentSpawn = Random.Range(0, _spawnPoints.Length);
-            _enemies.Add(Instantiate(_enemiesPrefabs[Random.Range(0, _enemiesPrefabs.Length)], _spawnPoints[currentSpawn].position, Quaternion.identity));
+            _enemies.Add(Instantiate(_enemiesPrefabs[Random.Range(0, _enemiesPrefabs.Length)], _spawnPoints[currentSpawn].position, Quaternion.identity).GetComponent<EnemyData>());
         }
         foreach (var enemy in _enemies)
         {
-            _enemyMovements.Add(enemy.GetComponent<EnemyMovement>());
-            enemy.GetComponentInChildren<PlayerSOReader>().SetWeapon(_loadouts[Random.Range(0, _loadouts.Length  - 1)]);
+            _enemyMovements.Add(enemy._enemyMovement);
+            enemy._SoReader.SetWeapon(_loadouts[Random.Range(0, _loadouts.Length  - 1)]);
+            enemy._enemyHealth.SetActionController(_actionController);
         }
         
         _actionController.InitializeStartPoints(_enemyMovements);

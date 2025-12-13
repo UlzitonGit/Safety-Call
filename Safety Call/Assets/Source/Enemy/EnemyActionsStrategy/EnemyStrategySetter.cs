@@ -13,12 +13,12 @@ public class EnemyStrategySetter
         _stayStrategy = new StrategyStayAndLook();
     }
 
-    public void PerformMovement(CreatureMovement creature, Transform target)
+    public void PerformMovement(CreatureMovement creature, Vector3 target)
     {
         //Debug.Log(creature + " : " + target.name);
         _moveStrategy.PerformStrategy(creature, target);
     }
-    public void PerformStay(CreatureMovement creature, Transform target)
+    public void PerformStay(CreatureMovement creature, Vector3 target)
     {
         _stayStrategy.PerformStrategy(creature, target);
     }

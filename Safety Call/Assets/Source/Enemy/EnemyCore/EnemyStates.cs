@@ -8,6 +8,6 @@ public class EnemyStates : CreatureStates
     {
         base.SetAlive(alive);
         if(_enemyData._FieldOfView != null)  _enemyData._FieldOfView.SetIsAbleToSee(alive);
-        if(_enemyData._playerGunfight != null)  _enemyData._playerGunfight.SetIsAbleToShoot(alive);
+        if(_enemyData._enemyGunfight != null)  _enemyData._enemyGunfight.SetIsAbleToShoot(alive);
     }
 }

@@ -29,7 +29,7 @@ public class GlobalEnemyActionController: MonoBehaviour
         yield return new WaitForSeconds(Random.Range(4f, 15f));
         InitializeMovementToRandomPoint(_enemiesList[Random.Range(0, _enemiesList.Count - 1)]);
         StartCoroutine(MoveRandomEnemy());
-    }
+    } 
     public void InitializeStartPoints(List<EnemyMovement> enemiesList)
     {
         _enemiesList = enemiesList;
@@ -43,5 +43,15 @@ public class GlobalEnemyActionController: MonoBehaviour
     public void InitializeMovementToRandomPoint(CreatureMovement creature)
     {
         _strategySetter.PerformMovement(creature, _interestPoints.GetRandomPoint());
+    }
+
+    public void MoveClosestEnemies(Vector3 myPosition, Vector3 enemyPosition)
+    {
+        Collider2D[] closetEnemies = Physics2D.OverlapCircleAll(myPosition, 16, LayerMask.GetMask("Enemy"));
+        foreach (var enemy in closetEnemies)
+        {
+            print(enemy.name);
+            _strategySetter.PerformMovement(enemy.GetComponent<CreatureMovement>(), enemyPosition);
+        }
     }
 }

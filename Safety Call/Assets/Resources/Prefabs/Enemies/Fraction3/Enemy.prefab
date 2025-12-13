@@ -326,7 +326,11 @@ MonoBehaviour:
   <_playerState>k__BackingField: {fileID: 2402734017574895527}
   <_playerHealth>k__BackingField: {fileID: 2253681756269262941}
   _FieldOfView: {fileID: 2890953296134418534}
-  _playerGunfight: {fileID: 8757865318597274204}
+  _enemyGunfight: {fileID: 8757865318597274204}
+  _SoReader: {fileID: 7224119510295779337}
+  <_enemyMovement>k__BackingField: {fileID: 8495540433829747488}
+  <_enemyState>k__BackingField: {fileID: 2402734017574895527}
+  <_enemyHealth>k__BackingField: {fileID: 2253681756269262941}
 --- !u!1 &1905116009122558922
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +431,7 @@ MonoBehaviour:
     m_Bits: 128
   _obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 1025
+    m_Bits: 33793
   _enemyGunfightBehaviourManager: {fileID: 8757865318597274204}
   _enemyVisibility: {fileID: 2930930875671489204}
 --- !u!114 &7497874624726885077

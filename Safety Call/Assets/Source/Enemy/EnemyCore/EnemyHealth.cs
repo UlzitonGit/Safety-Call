@@ -7,6 +7,7 @@ namespace Source.Enemy
     public class EnemyHealth : CreatureHealth
     {
         private EnemyStates _enemyStates;
+        private GlobalEnemyActionController _actionController;
         protected override void Start()
         {
             base.Start();
@@ -17,6 +18,8 @@ namespace Source.Enemy
         {
             base.GetDamage(damage, enemyPos);
             StartCoroutine(LookAtTarget(enemyPos));
+            _actionController.MoveClosestEnemies(transform.position, enemyPos);
+            
         }
         IEnumerator LookAtTarget(Vector3 enemyPos)
         {
@@ -30,6 +33,11 @@ namespace Source.Enemy
             _gameplayStagesManager.EnemyKilled();
             _playerAnimator.Death();
             _enemyStates.SetAlive(_isAlive);
+        }
+
+        public void SetActionController(GlobalEnemyActionController actionController)
+        {
+            _actionController  = actionController;
         }
     }
 }

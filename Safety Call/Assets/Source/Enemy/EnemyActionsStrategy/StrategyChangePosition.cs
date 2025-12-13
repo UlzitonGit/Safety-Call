@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class StrategyChangePosition : IEnemyActionStrategy
 {
-    public void PerformStrategy(CreatureMovement creature, Transform target)
+    public void PerformStrategy(CreatureMovement creature, Vector3 target)
     {
-        creature.MoveOnTarget(target.position);
-        creature.LookAtTarget(target.position);
+        creature.MoveOnTarget(target);
+        creature.LookAtTarget(target);
     }
 }
