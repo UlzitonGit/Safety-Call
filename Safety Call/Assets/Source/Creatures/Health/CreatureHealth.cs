@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Source.Creatures.Health
 {
-    public abstract class CreatureHealth : MonoBehaviour
+    public abstract class CreatureHealth : MonoBehaviour, IDamagable
     {
         public float CurrentHealth => _currentHealth;
         [SerializeField] protected GameObject _bloodVfxPrefab;

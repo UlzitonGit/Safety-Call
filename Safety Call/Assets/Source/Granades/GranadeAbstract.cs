@@ -11,7 +11,7 @@ public abstract class GranadeAbstract : MonoBehaviour, IThrowable
     [SerializeField] protected float _timeToDetonate;
     [SerializeField] protected float _thowPower;
     
-    Rigidbody2D _rigidbody;
+    private Rigidbody2D _rigidbody;
     
     public void Throw()
     {
