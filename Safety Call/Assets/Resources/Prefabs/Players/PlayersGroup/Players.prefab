@@ -5424,8 +5424,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1530388718655736015}
   - component: {fileID: 6343793284322802544}
-  - component: {fileID: 2521261502046650038}
-  - component: {fileID: 2527570071310913309}
   m_Layer: 0
   m_Name: PlayerMover
   m_TagString: Untagged
@@ -5460,37 +5458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ab68dbecba6c04d802df242f97b2c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2521261502046650038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4035473172574693062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15a473d54eb2b2e4bac3ce5101d9545c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tacticalControl: {fileID: 6343793284322802544}
-  _singlePlayerControl: {fileID: 2527570071310913309}
-  _cameraSwitcher: {fileID: 1103715339250419878}
-  _chooser: {fileID: 6755392622207291622}
-  _animatorPanelIndividual: {fileID: 0}
---- !u!114 &2527570071310913309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4035473172574693062}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66eb9ff2e9164af4daf045ce45904aea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerMovement: {fileID: 0}
-  _playerChooser: {fileID: 6755392622207291622}
 --- !u!1 &4626761084809042804
 GameObject:
   m_ObjectHideFlags: 0
@@ -21327,10 +21294,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2739827789379491557, guid: 4e1fa0caa58afff43be89a109d223923, type: 3}
-      propertyPath: _playerSingleControlInput
-      value: 
-      objectReference: {fileID: 2527570071310913309}
     - target: {fileID: 2887123306717992400, guid: 4e1fa0caa58afff43be89a109d223923, type: 3}
       propertyPath: _viewRadius
       value: 25
@@ -22487,14 +22450,14 @@ PrefabInstance:
       propertyPath: _rotationIndex
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 2739827789379491557, guid: 3e05c3dcdee5cfc4ebf8bba9ebf57ee8, type: 3}
-      propertyPath: _playerSingleControlInput
-      value: 
-      objectReference: {fileID: 2527570071310913309}
     - target: {fileID: 2887123306717992400, guid: 3e05c3dcdee5cfc4ebf8bba9ebf57ee8, type: 3}
       propertyPath: _viewRadius
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3939940155969001234, guid: 3e05c3dcdee5cfc4ebf8bba9ebf57ee8, type: 3}
+      propertyPath: '_granades.Array.data[0]'
+      value: 
+      objectReference: {fileID: 371894770633950278, guid: fe4c802b560fe1c4ca5c828a4b15773a, type: 3}
     - target: {fileID: 4523262986331714428, guid: 3e05c3dcdee5cfc4ebf8bba9ebf57ee8, type: 3}
       propertyPath: _audioClip
       value: 
@@ -22766,10 +22729,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3199551859868359131}
     m_Modifications:
-    - target: {fileID: 2739827789379491557, guid: c1939fe5028a63c4eb1eceb7872f8993, type: 3}
-      propertyPath: _playerSingleControlInput
-      value: 
-      objectReference: {fileID: 2527570071310913309}
     - target: {fileID: 2887123306717992400, guid: c1939fe5028a63c4eb1eceb7872f8993, type: 3}
       propertyPath: _viewRadius
       value: 25
@@ -23066,10 +23025,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3199551859868359131}
     m_Modifications:
-    - target: {fileID: 2739827789379491557, guid: d5fc420ef43ebef4b8523201a60bcb6d, type: 3}
-      propertyPath: _playerSingleControlInput
-      value: 
-      objectReference: {fileID: 2527570071310913309}
     - target: {fileID: 2887123306717992400, guid: d5fc420ef43ebef4b8523201a60bcb6d, type: 3}
       propertyPath: _viewRadius
       value: 25

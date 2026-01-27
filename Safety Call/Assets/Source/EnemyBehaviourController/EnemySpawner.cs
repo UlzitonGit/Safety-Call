@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] _enemiesPrefabs;
     
+    [SerializeField] private GameplayStagesManager _gameplayStagesManager;
     
     [SerializeField] private Transform[] _spawnPoints;
 
@@ -36,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
             enemy._SoReader.SetWeapon(_loadouts[Random.Range(0, _loadouts.Length  - 1)]);
             enemy._enemyHealth.SetActionController(_actionController);
         }
-        
+        _gameplayStagesManager.EnemyCount(enemiesCount);
         _actionController.InitializeStartPoints(_enemyMovements);
     }
 }

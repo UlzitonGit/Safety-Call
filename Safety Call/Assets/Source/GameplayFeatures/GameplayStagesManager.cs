@@ -1,6 +1,7 @@
 using System;
 using Source.Enemy;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameplayStagesManager : MonoBehaviour
 {
@@ -11,10 +12,8 @@ public class GameplayStagesManager : MonoBehaviour
     
     [SerializeField] private GamePlayStatesUI _gamePlayStatesUI;
 
-    [SerializeField] private bool _isTutorial;
-
     private int _hostagesCount;
-    private int _playersCount;
+    private int _playersCount = 4;
     private int _enemyCount;
 
     private bool _enemiesKilled;
@@ -23,19 +22,19 @@ public class GameplayStagesManager : MonoBehaviour
     private int _maxScore;
     private int _score;
 
-    private void Start()
+    public void EnemyCount(int count)
     {
-        _enemyCount = FindObjectsByType<EnemyHealth>(FindObjectsSortMode.None).Length;
-        _playersCount = FindObjectsByType<PlayerHealth>(FindObjectsSortMode.None).Length;
-        _hostagesCount = FindObjectsByType<HostagesHealth>(FindObjectsSortMode.None).Length;
-        
-        _maxScore = _enemyCount * 50 + _playersCount * 200 + _hostagesCount * 100;
-        _score = _playersCount * 200;
+        _enemyCount = count;
     }
 
+    public void HostagesCount(int count)
+    {
+        _hostagesCount = count;
+    }
+    
+    
     public void EnemyKilled()
     {
-        if(_isTutorial) return;
         _enemyCount -= 1;
         _score += 50;
         if (_enemyCount == 0)
@@ -67,7 +66,6 @@ public class GameplayStagesManager : MonoBehaviour
 
     public void HostageRescued()
     {
-        if (_isTutorial) return;
         _hostagesCount -= 1;
         _score += 100;
         if (_hostagesCount == 0)
@@ -82,6 +80,8 @@ public class GameplayStagesManager : MonoBehaviour
     {
         if (_hostagesRescued && _enemiesKilled)
         {
+            _maxScore = _enemyCount * 50 + _playersCount * 200 + _hostagesCount * 100;
+            _score = _playersCount * 200;
             _winEndPanel.SetActive(true);
             _endGamePanel.ShowResults(_score, _maxScore);
         }

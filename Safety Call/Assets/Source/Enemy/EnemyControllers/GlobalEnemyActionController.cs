@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Source.Creatures.Movement;
@@ -47,7 +48,7 @@ public class GlobalEnemyActionController: MonoBehaviour
 
     public void MoveClosestEnemies(Vector3 myPosition, Vector3 enemyPosition)
     {
-        Collider2D[] closetEnemies = Physics2D.OverlapCircleAll(myPosition, 16, LayerMask.GetMask("Enemy"));
+        Collider2D[] closetEnemies = Physics2D.OverlapCircleAll(myPosition, 10, LayerMask.GetMask("Enemy"));
         foreach (var enemy in closetEnemies)
         {
             print(enemy.name);

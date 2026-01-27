@@ -9,7 +9,7 @@ public class HostagesSpawner : MonoBehaviour
 
     [SerializeField] private int[] _hostagesInLocationRandomize;
 
-   
+    [SerializeField] private GameplayStagesManager _gameplayStagesManager;
 
 
     private void Start()
@@ -22,5 +22,6 @@ public class HostagesSpawner : MonoBehaviour
             int currentSpawn = Random.Range(0, _spawnPoints.Length);
             Instantiate(_hostagesPrefabs[Random.Range(0, _hostagesPrefabs.Length)], _spawnPoints[currentSpawn].position, Quaternion.identity);
         }
+        _gameplayStagesManager.HostagesCount(enemiesCount);
     }
 }
