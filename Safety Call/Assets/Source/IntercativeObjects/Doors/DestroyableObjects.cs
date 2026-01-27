@@ -6,14 +6,13 @@ public class DestroyableObjects : MonoBehaviour, IDamagable
 
     [SerializeField] private GameObject _deathVFX;
     
-    [SerializeField] private GameObject _objectToDestroy;
     public void GetDamage(float damage, Vector3 enemyPos)
     {
         health -= damage;
         if (health <= 0)
         {
             Instantiate(_deathVFX, transform.position, Quaternion.identity);
-            Destroy(_objectToDestroy);
+            Destroy(gameObject);
         }
     }
 }

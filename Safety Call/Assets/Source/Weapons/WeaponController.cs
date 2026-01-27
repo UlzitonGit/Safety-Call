@@ -8,13 +8,19 @@ public abstract class WeaponController : MonoBehaviour
 
     [SerializeField] public WeaponGeneral _weaponGeneral;
     
+    [SerializeField] protected float critChance = 15f;
+    
     protected bool _startFire;
     
     protected Transform _target;
 
     protected bool _isShooting;
-    
-    
+
+    private void Start()
+    {
+        _weaponGeneral.SetCritChance(critChance);
+    }
+
     public virtual void StartFire(Transform target, bool prepareMultiply = false)
     {
         _target = target;

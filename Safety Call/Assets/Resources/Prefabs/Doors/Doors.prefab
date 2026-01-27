@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2575970752026346759}
   - component: {fileID: 7766679663570022000}
   - component: {fileID: 4740042962486283638}
+  - component: {fileID: 8916668609324366391}
   m_Layer: 17
   m_Name: "\u0441\u0442\u0435\u043D\u044B \u0434\u043B\u044F \u0441\u0431\u043E\u0440\u043A\u0438_28
     (1)"
@@ -190,6 +191,20 @@ MonoBehaviour:
     - rid: 2478425002316922970
       type: {class: ShadowShape2DProvider_SpriteRenderer, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data: 
+--- !u!114 &8916668609324366391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29241815843116027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6739da8aaad80c549866e2c69d6c71a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  _deathVFX: {fileID: 1274955706039015637, guid: a7ba34d4fcaa5bb418ee914d8832045a, type: 3}
 --- !u!1 &409819585340573222
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +217,7 @@ GameObject:
   - component: {fileID: 7766548967019409483}
   - component: {fileID: 1943969241714643145}
   - component: {fileID: 7158432014097294324}
+  - component: {fileID: 829431983438331109}
   m_Layer: 17
   m_Name: "\u0441\u0442\u0435\u043D\u044B \u0434\u043B\u044F \u0441\u0431\u043E\u0440\u043A\u0438_28"
   m_TagString: Untagged
@@ -379,6 +395,20 @@ MonoBehaviour:
     - rid: 2478425002316922971
       type: {class: ShadowShape2DProvider_SpriteRenderer, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data: 
+--- !u!114 &829431983438331109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409819585340573222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6739da8aaad80c549866e2c69d6c71a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  _deathVFX: {fileID: 1274955706039015637, guid: a7ba34d4fcaa5bb418ee914d8832045a, type: 3}
 --- !u!1 &2838763573970801557
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +419,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5320150982255194091}
   - component: {fileID: 1331152430318056558}
-  m_Layer: 17
+  m_Layer: 2
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +451,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2838763573970801557}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b0c8787212c5295499ddb1f6f423e48a, type: 2}
   m_CullingMode: 0
@@ -445,7 +475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4943317920856942609}
   - component: {fileID: 8072136208494586134}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: "\u0441\u0432\u0435\u0442\u0438\u043B\u044C\u043D\u0438\u043A \u0438 \u043C\u0443\u0441\u043E\u0440_4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8031652098292660194}
   - component: {fileID: 7527039235534992365}
-  m_Layer: 17
+  m_Layer: 0
   m_Name: "\u0441\u0432\u0435\u0442\u0438\u043B\u044C\u043D\u0438\u043A \u0438 \u043C\u0443\u0441\u043E\u0440_4
     (1)"
   m_TagString: Untagged
@@ -622,8 +652,7 @@ GameObject:
   - component: {fileID: 5838914278746632695}
   - component: {fileID: 554909940334253883}
   - component: {fileID: 9075065414054818857}
-  - component: {fileID: 5383800652940451509}
-  m_Layer: 17
+  m_Layer: 2
   m_Name: Doors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +709,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0021429062, y: 0.3577919}
+  m_Offset: {x: -0.0021429062, y: 0.3137064}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -690,7 +719,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.1210365, y: 2.4097385}
+  m_Size: {x: 3.1210365, y: 3.7803802}
   m_EdgeRadius: 0
 --- !u!50 &554909940334253883
 Rigidbody2D:
@@ -733,18 +762,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 1331152430318056558}
   _isActive: 1
---- !u!114 &5383800652940451509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8756425900120758080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6739da8aaad80c549866e2c69d6c71a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  _deathVFX: {fileID: 1274955706039015637, guid: a7ba34d4fcaa5bb418ee914d8832045a, type: 3}
-  _objectToDestroy: {fileID: 8756425900120758080}

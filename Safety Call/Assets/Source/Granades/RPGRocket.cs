@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Source.Creatures.Health;
 using UnityEngine;
 
@@ -55,38 +56,28 @@ public class RPGRocket: MonoBehaviour
     }
     protected void Explode(List<IDamagable> targets)
     {
+        
         if (_canBomb)
         {
             Instantiate(_explosionSystem, transform.position, Quaternion.identity);
             _audioSource.Play();
+            _canBomb = false;
+            StartCoroutine(Destroy());
+            if(targets.Count == 0) return;
             foreach (var target in targets)
             {
                 target.GetDamage(_damage, transform.position);
             }
-            _canBomb = false;
-            StartCoroutine(Destroy());
         }
     }
     protected virtual  List<IDamagable> Detonate()
     {
         Collider2D[] hitedObjects = Physics2D.OverlapCircleAll(transform.position, this._radius, _targetLayer);
-        
         List<IDamagable> targets = new List<IDamagable>();
-        
         foreach (Collider2D hitedObject in hitedObjects)
         {
-            Vector2 direction = (hitedObject.transform.position - transform.position).normalized;
-            
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, _radius, ~_layersToIgnore);
-            Debug.DrawRay(transform.position, direction * 10f, Color.red, 1);
-            hit.transform.TryGetComponent(out IDamagable creatureStates);
-            if (creatureStates != null)
-            {
-                targets.Add(creatureStates);
-                print(creatureStates);
-            }
+            targets.Add(hitedObject.GetComponent<IDamagable>());
         }
-
         return targets;
     }
 

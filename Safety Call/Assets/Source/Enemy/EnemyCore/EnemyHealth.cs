@@ -32,6 +32,7 @@ namespace Source.Enemy
             base.Death();
             _gameplayStagesManager.EnemyKilled();
             _playerAnimator.Death();
+            _enemyStates.SetVisible(true);
             _enemyStates.SetAlive(_isAlive);
         }
 

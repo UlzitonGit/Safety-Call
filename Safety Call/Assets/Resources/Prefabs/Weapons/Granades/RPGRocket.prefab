@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 1115131159920322460}
   m_Layer: 16
   m_Name: RPGRocket
-  m_TagString: Untagged
+  m_TagString: Interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -499,7 +499,7 @@ MonoBehaviour:
     m_Bits: 65804
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 131264
-  _radius: 3
+    m_Bits: 132288
+  _radius: 4
   _timeToDetonate: 5
-  _thowPower: 10
+  _thowPower: 15

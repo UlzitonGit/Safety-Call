@@ -65,5 +65,6 @@ namespace Source.Creatures.Health
         {
             return _isAlive;
         }
+        
     }
 }

@@ -12,5 +12,9 @@ public class AbilityUser : MonoBehaviour
         {
             _abilities[0].UseAbility();
         }
+        if (Input.GetKeyDown(KeyCode.D) && _abilities[1].CanBeUsed)
+        {
+            _abilities[1].UseAbility();
+        }
     }
 }

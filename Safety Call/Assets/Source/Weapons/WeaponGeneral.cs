@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Source.Enemy;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public abstract class WeaponGeneral : MonoBehaviour
 {
@@ -19,13 +20,17 @@ public abstract class WeaponGeneral : MonoBehaviour
     
     [SerializeField] protected float _timeBetweenShots;
     [SerializeField] protected float _damage;
-    
+
+    protected float critChance;
     protected Coroutine _shootingCoroutine;
 
     [SerializeField] private bool _canShoot = true;
-    
-    
-    
+
+
+    public void SetCritChance(float critChance)
+    {
+        this.critChance = critChance;
+    }
 
     public virtual void Shoot(Vector3 target)
     {
@@ -40,6 +45,10 @@ public abstract class WeaponGeneral : MonoBehaviour
             Debug.DrawRay(_shootPoint.position, direction * 10f, Color.red, 1);
             
             DealDamage(hit);
+            if (critChance >= Random.Range(0f, 100f))
+            {
+                DealDamage(hit);
+            }
             StartCoroutine(DelayBetweenShoots());
 
     }

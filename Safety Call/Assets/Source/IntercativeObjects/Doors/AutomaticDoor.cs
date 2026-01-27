@@ -10,9 +10,9 @@ public class AutomaticDoor : MonoBehaviour, IHackable
     private void OnTriggerStay2D(Collider2D other)
     {
         if(!_isActive) return;
-        
         if (other.CompareTag("Player") || other.CompareTag("Enemy") || other.CompareTag("Interactive"))
         {
+            print(other.name);
             _animator.SetBool("isOpened", true);
         }
     }

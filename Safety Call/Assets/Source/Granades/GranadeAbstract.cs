@@ -11,7 +11,7 @@ public abstract class GranadeAbstract : MonoBehaviour, IThrowable
     [SerializeField] protected float _timeToDetonate;
     [SerializeField] protected float _thowPower;
     
-    private Rigidbody2D _rigidbody;
+    protected Rigidbody2D _rigidbody;
     
     public void Throw()
     {
@@ -45,7 +45,7 @@ public abstract class GranadeAbstract : MonoBehaviour, IThrowable
         return targets;
     }
 
-    protected IEnumerator DetonateCountdown()
+    protected virtual IEnumerator DetonateCountdown()
     {
         yield return new WaitForSeconds(_timeToDetonate);
         ActionTargets(Detonate());
