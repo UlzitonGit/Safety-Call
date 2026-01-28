@@ -49,6 +49,23 @@ namespace Source.Creatures.Health
                 Death();
             }
         }
+        public virtual void AddHealth(float health)
+        {
+            _currentHealth += health;
+            if(health > _maxHealth) health = _maxHealth;
+            print(_currentHealth);
+        }
+        public virtual void Revive()
+        {
+            _currentHealth = 0;
+            _creaturesData._playerState.SetCanMove(true);
+            _creaturesData._playerState.SetAlive(true);
+            
+            _playerAnimator.Revive();
+            AddHealth(30f);
+            _capsuleCollider2D.enabled = true;
+            _isAlive = true;
+        }
 
         protected virtual void Death()
         {

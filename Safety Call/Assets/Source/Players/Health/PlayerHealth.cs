@@ -31,25 +31,13 @@ public class PlayerHealth : CreatureHealth
         _creaturesData._playerMovement.LookAtTarget(enemyPos);
     }
 
-    public void AddHealth(float health)
-    {
-        _currentHealth += health;
-        print(_currentHealth);
-        _playerUiDrawer.UpdateUI(_currentHealth);
-    }
 
-    public void Revive()
+    public override void Revive()
     {
-        _currentHealth = 0;
-        _creaturesData._playerState.SetCanMove(true);
-        _creaturesData._playerState.SetAlive(true);
+        base.Revive();
         _creaturesData._playerMovement.GetComponent<PlayerMovement>().StopAgent(false);
         
         _isRevived = true;
-        _playerAnimator.Revive();
-        AddHealth(40f);
-        _capsuleCollider2D.enabled = true;
-        _isAlive = true;
     }
 
     public void TutorialDeath()
@@ -71,6 +59,12 @@ public class PlayerHealth : CreatureHealth
         _playerAnimator.Death();
         _creaturesData._playerState.SetAlive(_isAlive);
         _gameplayStagesManager.PlayerKilled();
+    }
+
+    public override void AddHealth(float health)
+    {
+        base.AddHealth(health);
+        _playerUiDrawer.UpdateUI(_currentHealth);
     }
 
     public bool GetIsRevived()

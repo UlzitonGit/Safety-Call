@@ -6,6 +6,8 @@ public abstract class AbilityBase : MonoBehaviour
     [SerializeField] private float _reloadTime;
     
     [HideInInspector] public bool CanBeUsed = true;
+
+    [SerializeField] protected int _usageCount;
     public abstract void UseAbility();
 
     protected IEnumerator Reloading()
