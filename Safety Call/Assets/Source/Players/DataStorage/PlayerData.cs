@@ -11,4 +11,6 @@ public class PlayerData : CreaturesData
     [field:SerializeField] public PlayerWeaponController _PlayerWeaponController { get; private set; }
     
     [field:SerializeField] public FieldOfView _FieldOfView { get; private set; }
+    
+    [field:SerializeField] public AbilityUser _AbilityUser { get; private set; }
 }

@@ -668,7 +668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prepareBeforeShoot: 0.4
   _weaponGeneral: {fileID: 0}
-  _playerSingleControlInput: {fileID: 0}
+  critChance: 15
   _playerData: {fileID: 8060874682696989706}
 --- !u!1 &5808896999414277240
 GameObject:
@@ -1434,7 +1434,7 @@ MonoBehaviour:
     m_Bits: 12352
   _obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 33793
+    m_Bits: 164865
   _playerGunfightBehaviourManager: {fileID: 7314110743048061526}
 --- !u!1 &8706471357249041251
 GameObject:

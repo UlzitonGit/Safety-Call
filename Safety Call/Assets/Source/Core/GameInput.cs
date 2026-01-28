@@ -196,6 +196,24 @@ namespace Source.Core
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UseAbility1"",
+                    ""type"": ""Button"",
+                    ""id"": ""debfab56-4d98-44d2-a12b-0301d58fb8f0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UseAbility2"",
+                    ""type"": ""Button"",
+                    ""id"": ""459123b3-d295-4232-9d35-e23231be8476"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -240,6 +258,28 @@ namespace Source.Core
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""UseGranade"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c469905-53d1-4e48-9113-78afa7986bd6"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseAbility1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5b7ac42-7f5b-410b-b01d-eeacf8982743"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseAbility2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1404,6 +1444,8 @@ namespace Source.Core
             m_Mission_UseAbility = m_Mission.FindAction("UseAbility", throwIfNotFound: true);
             m_Mission_UseGranade = m_Mission.FindAction("UseGranade", throwIfNotFound: true);
             m_Mission_SwitchMoveType = m_Mission.FindAction("SwitchMoveType", throwIfNotFound: true);
+            m_Mission_UseAbility1 = m_Mission.FindAction("UseAbility1", throwIfNotFound: true);
+            m_Mission_UseAbility2 = m_Mission.FindAction("UseAbility2", throwIfNotFound: true);
             // TacticalMove
             m_TacticalMove = asset.FindActionMap("TacticalMove", throwIfNotFound: true);
             m_TacticalMove_Move = m_TacticalMove.FindAction("Move", throwIfNotFound: true);
@@ -1657,6 +1699,8 @@ namespace Source.Core
         private readonly InputAction m_Mission_UseAbility;
         private readonly InputAction m_Mission_UseGranade;
         private readonly InputAction m_Mission_SwitchMoveType;
+        private readonly InputAction m_Mission_UseAbility1;
+        private readonly InputAction m_Mission_UseAbility2;
         /// <summary>
         /// Provides access to input actions defined in input action map "Mission".
         /// </summary>
@@ -1684,6 +1728,14 @@ namespace Source.Core
             /// Provides access to the underlying input action "Mission/SwitchMoveType".
             /// </summary>
             public InputAction @SwitchMoveType => m_Wrapper.m_Mission_SwitchMoveType;
+            /// <summary>
+            /// Provides access to the underlying input action "Mission/UseAbility1".
+            /// </summary>
+            public InputAction @UseAbility1 => m_Wrapper.m_Mission_UseAbility1;
+            /// <summary>
+            /// Provides access to the underlying input action "Mission/UseAbility2".
+            /// </summary>
+            public InputAction @UseAbility2 => m_Wrapper.m_Mission_UseAbility2;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -1722,6 +1774,12 @@ namespace Source.Core
                 @SwitchMoveType.started += instance.OnSwitchMoveType;
                 @SwitchMoveType.performed += instance.OnSwitchMoveType;
                 @SwitchMoveType.canceled += instance.OnSwitchMoveType;
+                @UseAbility1.started += instance.OnUseAbility1;
+                @UseAbility1.performed += instance.OnUseAbility1;
+                @UseAbility1.canceled += instance.OnUseAbility1;
+                @UseAbility2.started += instance.OnUseAbility2;
+                @UseAbility2.performed += instance.OnUseAbility2;
+                @UseAbility2.canceled += instance.OnUseAbility2;
             }
 
             /// <summary>
@@ -1745,6 +1803,12 @@ namespace Source.Core
                 @SwitchMoveType.started -= instance.OnSwitchMoveType;
                 @SwitchMoveType.performed -= instance.OnSwitchMoveType;
                 @SwitchMoveType.canceled -= instance.OnSwitchMoveType;
+                @UseAbility1.started -= instance.OnUseAbility1;
+                @UseAbility1.performed -= instance.OnUseAbility1;
+                @UseAbility1.canceled -= instance.OnUseAbility1;
+                @UseAbility2.started -= instance.OnUseAbility2;
+                @UseAbility2.performed -= instance.OnUseAbility2;
+                @UseAbility2.canceled -= instance.OnUseAbility2;
             }
 
             /// <summary>
@@ -2769,6 +2833,20 @@ namespace Source.Core
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnSwitchMoveType(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "UseAbility1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnUseAbility1(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "UseAbility2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnUseAbility2(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "TacticalMove" which allows adding and removing callbacks.
