@@ -24,4 +24,9 @@ public class HealingPistol : AbilityBase
         
         StartCoroutine(Reloading());
     }
+
+    public void AddUsages(int amount)
+    {
+        _usageCount += amount;
+    }
 }

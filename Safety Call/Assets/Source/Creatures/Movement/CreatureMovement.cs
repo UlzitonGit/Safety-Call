@@ -75,12 +75,20 @@ namespace Source.Creatures.Movement
         {
             return _agent.velocity.magnitude;
         }
+        public float  GetAgentSpeed()
+        {
+            return _agent.speed;
+        }
 
         public NavMeshPath GetPath()
         {
             return _agent.path;
         }
 
+        public void SetSpeed(float speed)
+        {
+            _agent.speed = speed;
+        }
        
 
     }

@@ -52,7 +52,7 @@ namespace Source.Creatures.Health
         public virtual void AddHealth(float health)
         {
             _currentHealth += health;
-            if(health > _maxHealth) health = _maxHealth;
+            if(_currentHealth > _maxHealth) _currentHealth = _maxHealth;
             print(_currentHealth);
         }
         public virtual void Revive()

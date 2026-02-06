@@ -15,7 +15,7 @@ public class Medkit : MonoBehaviour
 
     private void OnEnable()
     {
-        _interactAction = InputManager.Instance.GameInput.Mission.UseAbility;
+        _interactAction = InputManager.Instance.GameInput.Mission.Interact;
         _interactAction.performed += DoInteract;
     }
 
@@ -32,11 +32,18 @@ public class Medkit : MonoBehaviour
             {
                 if (_curPlayerHealth != null)
                 {
+                    if (_curPlayerHealth.TryGetComponent<FerretPassive>(out var ferretPassive))
+                    {
+                        _curPlayerHealth.AddHealth(100);
+                        ferretPassive.AddHealingPistolAmmo(healPoints / 10);
+                    }
                     _curPlayerHealth.AddHealth(healPoints);
                     if (!isStation)
                     {
                         _isUsed = true;
+                        Destroy(gameObject);
                     }
+                    
                 }
             }
         }

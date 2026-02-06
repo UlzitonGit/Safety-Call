@@ -24,7 +24,10 @@ public class PlayerWeaponController : WeaponController
             _weaponGeneral.Shoot(_target.position);
             _audioFightMixer.StartFightSong();
         }
-        
     }
-    
+
+    public WeaponGeneral GetWeapon()
+    {
+        return _weaponGeneral;
+    }
 }

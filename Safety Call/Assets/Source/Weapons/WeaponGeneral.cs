@@ -74,14 +74,19 @@ public abstract class WeaponGeneral : MonoBehaviour
         return (60 / _timeBetweenShots).ToString();
     }
 
-    public string GetDamage()
+    public float GetDamage()
     {
-        return _damage.ToString();
+        return _damage;
     }
 
     public string GetName()
     {
         return gameObject.name;
+    }
+
+    public void SetDamage(float damage)
+    {
+        _damage = damage;
     }
 
     public int GetMaxAmmo()

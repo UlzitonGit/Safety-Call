@@ -214,6 +214,15 @@ namespace Source.Core
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""2db46cee-40d6-47bb-b846-8fa99a8f342f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -280,6 +289,17 @@ namespace Source.Core
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""UseAbility2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5bcfc873-de5f-4cc9-82be-ee1862ad0999"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1446,6 +1466,7 @@ namespace Source.Core
             m_Mission_SwitchMoveType = m_Mission.FindAction("SwitchMoveType", throwIfNotFound: true);
             m_Mission_UseAbility1 = m_Mission.FindAction("UseAbility1", throwIfNotFound: true);
             m_Mission_UseAbility2 = m_Mission.FindAction("UseAbility2", throwIfNotFound: true);
+            m_Mission_Interact = m_Mission.FindAction("Interact", throwIfNotFound: true);
             // TacticalMove
             m_TacticalMove = asset.FindActionMap("TacticalMove", throwIfNotFound: true);
             m_TacticalMove_Move = m_TacticalMove.FindAction("Move", throwIfNotFound: true);
@@ -1701,6 +1722,7 @@ namespace Source.Core
         private readonly InputAction m_Mission_SwitchMoveType;
         private readonly InputAction m_Mission_UseAbility1;
         private readonly InputAction m_Mission_UseAbility2;
+        private readonly InputAction m_Mission_Interact;
         /// <summary>
         /// Provides access to input actions defined in input action map "Mission".
         /// </summary>
@@ -1736,6 +1758,10 @@ namespace Source.Core
             /// Provides access to the underlying input action "Mission/UseAbility2".
             /// </summary>
             public InputAction @UseAbility2 => m_Wrapper.m_Mission_UseAbility2;
+            /// <summary>
+            /// Provides access to the underlying input action "Mission/Interact".
+            /// </summary>
+            public InputAction @Interact => m_Wrapper.m_Mission_Interact;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -1780,6 +1806,9 @@ namespace Source.Core
                 @UseAbility2.started += instance.OnUseAbility2;
                 @UseAbility2.performed += instance.OnUseAbility2;
                 @UseAbility2.canceled += instance.OnUseAbility2;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
 
             /// <summary>
@@ -1809,6 +1838,9 @@ namespace Source.Core
                 @UseAbility2.started -= instance.OnUseAbility2;
                 @UseAbility2.performed -= instance.OnUseAbility2;
                 @UseAbility2.canceled -= instance.OnUseAbility2;
+                @Interact.started -= instance.OnInteract;
+                @Interact.performed -= instance.OnInteract;
+                @Interact.canceled -= instance.OnInteract;
             }
 
             /// <summary>
@@ -2847,6 +2879,13 @@ namespace Source.Core
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnUseAbility2(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnInteract(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "TacticalMove" which allows adding and removing callbacks.

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class AbilityBase : MonoBehaviour
 {
-    [SerializeField] private float _reloadTime;
+    [SerializeField] protected float _reloadTime;
     
     [HideInInspector] public bool CanBeUsed = true;
 

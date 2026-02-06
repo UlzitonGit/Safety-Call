@@ -59,6 +59,10 @@ public class PlayerHealth : CreatureHealth
         _playerAnimator.Death();
         _creaturesData._playerState.SetAlive(_isAlive);
         _gameplayStagesManager.PlayerKilled();
+        if (gameObject.TryGetComponent<FerretPassive>(out var ferretPassive))
+        {
+            Revive();
+        }
     }
 
     public override void AddHealth(float health)
