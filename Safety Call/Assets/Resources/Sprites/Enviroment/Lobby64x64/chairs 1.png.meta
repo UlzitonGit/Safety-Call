@@ -91,7 +91,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -105,7 +105,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,7 +126,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -597,7 +597,26 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chairs 1_0: 5093166461778828979
+      chairs 1_1: -2150204633827465967
+      chairs 1_10: 7182747045071665751
+      chairs 1_11: -1871996198743076105
+      chairs 1_12: 4947636608952706346
+      chairs 1_13: -9060274744905008723
+      chairs 1_14: -889419773860026728
+      chairs 1_15: -3112491424807189845
+      chairs 1_16: -4307726824407404645
+      chairs 1_17: -6055865334194738696
+      chairs 1_18: -6765731262969502171
+      chairs 1_2: 2372632813845214398
+      chairs 1_3: 2133062334489222066
+      chairs 1_4: -1968356738189702322
+      chairs 1_5: -802449626023509277
+      chairs 1_6: 4107056349953523608
+      chairs 1_7: -2329638029430446909
+      chairs 1_8: -7745052807074071548
+      chairs 1_9: 7288616774983012765
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
