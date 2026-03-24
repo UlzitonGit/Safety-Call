@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RPGRocket: MonoBehaviour
+public class C4: MonoBehaviour
 {
     [SerializeField] private ParticleSystem _explosionSystem;
     
@@ -12,13 +12,9 @@ public class RPGRocket: MonoBehaviour
     
     [SerializeField] private float _damage;
 
-    [SerializeField] private float _speed;
     
-    [SerializeField] protected LayerMask _layersToIgnore;
     [SerializeField] protected LayerMask _targetLayer;
     [SerializeField] protected float _radius;
-    [SerializeField] protected float _timeToDetonate;
-    [SerializeField] protected float _thowPower;
     
     private bool _isActive = false;
     private bool _canBomb = true;
@@ -28,28 +24,11 @@ public class RPGRocket: MonoBehaviour
     private Vector3 _startPosition;
     
     private Rigidbody2D _rigidbody;
-    
 
-    private void Start()
+
+    public void Activate()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
-        _rigidbody.AddForce(transform.up * _thowPower, ForceMode2D.Impulse);
-        _startPosition = transform.position;
-    }
-
-    private void Update()
-    { 
-        if(_isActive) return;
-        _isActive = Vector3.Distance(transform.position, _startPosition) > 1.4f;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!_exploded && _isActive)
-        {
-            _exploded = true;
-            Explode(Detonate());
-        }
+        Explode(Detonate());
     }
     protected void Explode(List<IDamagable> targets)
     {

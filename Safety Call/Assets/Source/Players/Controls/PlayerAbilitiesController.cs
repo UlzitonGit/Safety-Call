@@ -47,7 +47,8 @@ public class PlayerAbilitiesController : MonoBehaviour
         if (_playerChooser.GetPlayersChosen() == 1)
         {
             PlayerData _currentPlayerData = _playerChooser.GetChosenPlayers()[0];
-            _currentPlayerData._AbilityUser._abilities[0].UseAbility();
+            if( _currentPlayerData._AbilityUser._abilities.Count >= 1)
+                _currentPlayerData._AbilityUser._abilities[0].UseAbility();
         }
     }
     private void PerformAbilityQ(InputAction.CallbackContext ctx)
@@ -55,7 +56,8 @@ public class PlayerAbilitiesController : MonoBehaviour
         if (_playerChooser.GetPlayersChosen() == 1)
         {
             PlayerData _currentPlayerData = _playerChooser.GetChosenPlayers()[0];
-            _currentPlayerData._AbilityUser._abilities[1].UseAbility();
+            if( _currentPlayerData._AbilityUser._abilities.Count >= 2)
+                _currentPlayerData._AbilityUser._abilities[1].UseAbility();
         }
     }
     private void PerformAbilityD(InputAction.CallbackContext ctx)
@@ -63,7 +65,8 @@ public class PlayerAbilitiesController : MonoBehaviour
         if (_playerChooser.GetPlayersChosen() == 1)
         {
             PlayerData _currentPlayerData = _playerChooser.GetChosenPlayers()[0];
-            _currentPlayerData._AbilityUser._abilities[2].UseAbility();
+            if( _currentPlayerData._AbilityUser._abilities.Count >= 3)
+                _currentPlayerData._AbilityUser._abilities[2].UseAbility();
         }
     }
 }
