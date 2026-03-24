@@ -9,6 +9,7 @@ public class Buffer : AbilityBase
     {
         if(_usageCount == 0 || !CanBeUsed) return;
         _usageCount -= 1;
+        CanBeUsed = false;
         _bufferInstance = Instantiate(_buffer, transform.position, Quaternion.identity);
         StartCoroutine(BufferCountDown());
     }
@@ -17,5 +18,7 @@ public class Buffer : AbilityBase
     {
         yield return new WaitForSeconds(_reloadTime / 2);
         Destroy(_bufferInstance.gameObject);
+        yield return new WaitForSeconds(_reloadTime / 2);
+        CanBeUsed = true;
     }
 }
