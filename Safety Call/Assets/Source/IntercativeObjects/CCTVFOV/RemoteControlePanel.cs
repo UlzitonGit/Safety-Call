@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RemoteControlePanel : MonoBehaviour
+public class RemoteControlePanel : MonoBehaviour, IHackable
 {
     [SerializeField] private GameObject[] _connectedHackables;
     

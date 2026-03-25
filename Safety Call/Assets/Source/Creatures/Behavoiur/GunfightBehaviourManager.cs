@@ -8,7 +8,7 @@ namespace Source.Players.Behaviour
 {
     public abstract class GunfightBehaviourManager : MonoBehaviour
     {
-        public CreatureStates EnemyTarget{get; private set;}
+        public CreaturesData EnemyTarget{get; private set;}
         
         [SerializeField] protected WeaponController _weapon;
         
@@ -33,7 +33,7 @@ namespace Source.Players.Behaviour
             }
             
             {
-                if (!EnemyTarget.IsAlive || !EnemyTarget.IsVisible)
+                if (!EnemyTarget._playerState.IsAlive || !EnemyTarget._playerState.IsVisible)
                 {
                     EnemyTarget = null;
                     _weapon.StopFire();
@@ -48,9 +48,9 @@ namespace Source.Players.Behaviour
             return _hasTarget;
         }
 
-        public virtual void AddEnemyTarget(CreatureStates enemy)
+        public virtual void AddEnemyTarget(CreaturesData enemy)
         {
-            if(EnemyTarget !=null || _hasTarget || !_canShoot || !enemy.IsAlive) return;
+            if(EnemyTarget !=null || _hasTarget || !_canShoot || !enemy._playerState.IsAlive) return;
             EnemyTarget = enemy;
             _hasTarget = true;
             if (CheckShootingRelevation())

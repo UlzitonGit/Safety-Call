@@ -1,3 +1,4 @@
+using System;
 using Source.Creatures.Movement;
 using UnityEngine;
 
@@ -13,12 +14,20 @@ public abstract class CreatureAnimator : MonoBehaviour
     [SerializeField] protected Transform _rotation;
     
     [SerializeField] protected SpriteRenderer _bodySpriteRenderer;
+    [SerializeField] private int _highSortingOrder = 5;
+    [SerializeField] private int _lowSortingOrder = 3;
 
     [SerializeField] private bool EulerZ;
 
     public float _rotationIndex;
     
     protected bool _isDead = false;
+
+    private void Start()
+    {
+        if (_lowSortingOrder == 0) _lowSortingOrder = 3;
+        if (_highSortingOrder == 0) _highSortingOrder = 5;
+    }
 
     protected virtual void Update()
     {
@@ -37,9 +46,9 @@ public abstract class CreatureAnimator : MonoBehaviour
             _upperAnimator.SetFloat("Input", _rotation.rotation.eulerAngles.y);
         }
         if (_rotationIndex < 0.2f && _rotationIndex > -0.2f)
-            _bodySpriteRenderer.sortingOrder = 5;
+            _bodySpriteRenderer.sortingOrder = _highSortingOrder;
         else  
-            _bodySpriteRenderer.sortingOrder = 3;
+            _bodySpriteRenderer.sortingOrder = _lowSortingOrder;
     }
 
     public void Death()

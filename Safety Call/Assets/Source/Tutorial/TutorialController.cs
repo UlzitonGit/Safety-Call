@@ -45,7 +45,6 @@ public class TutorialController : MonoBehaviour
         }
         dialogueController.StartDialogue(tutorialDialog);
         _curDialogue++;
-        cuberHealth.TutorialDeath();
     }
 
     public void SetRoom(int num)

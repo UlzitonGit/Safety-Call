@@ -20,6 +20,6 @@ public class EnemyFieldOfView : FieldOfView
         print(player.transform.name);
         player._playerState.SetVisible(true);
         _enemyVisibility.ShowEnemy();
-        _enemyGunfightBehaviourManager.AddEnemyTarget(player._playerState);
+        _enemyGunfightBehaviourManager.AddEnemyTarget(player);
     }
 }

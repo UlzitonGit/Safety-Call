@@ -1,6 +1,7 @@
 using Source.Creatures.Health;
 using Source.Creatures.Movement;
 using Source.Players.Behaviour;
+using Source.Players.Movement;
 using UnityEngine;
 
 public abstract class CreaturesData : MonoBehaviour
