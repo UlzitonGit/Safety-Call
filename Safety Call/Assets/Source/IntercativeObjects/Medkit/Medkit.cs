@@ -8,11 +8,8 @@ public class Medkit : MonoBehaviour, IInteractable
     [SerializeField] private int healPoints;
     [SerializeField] private GameObject hint;
     [SerializeField] private bool isStation;
-    private bool _canInteract = false;
     private bool _isUsed = false;
     private PlayerHealth _curPlayerHealth;
-
-    private InputAction _interactAction;
     
 
     public void DoInteract()

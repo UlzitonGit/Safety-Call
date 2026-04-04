@@ -121,5 +121,10 @@ public abstract class WeaponGeneral : MonoBehaviour
     {
         return _maxAmmo;
     }
+
+    public void SetMaxAmmo(int maxAmmo)
+    {
+        _maxAmmo += maxAmmo;
+    }
  
 }
