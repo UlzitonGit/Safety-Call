@@ -1,8 +1,9 @@
+using System;
 using Source.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Medkit : MonoBehaviour
+public class Medkit : MonoBehaviour, IInteractable
 {
     [SerializeField] private int healPoints;
     [SerializeField] private GameObject hint;
@@ -12,22 +13,10 @@ public class Medkit : MonoBehaviour
     private PlayerHealth _curPlayerHealth;
 
     private InputAction _interactAction;
+    
 
-    private void OnEnable()
+    public void DoInteract()
     {
-        _interactAction = InputManager.Instance.GameInput.Mission.Interact;
-        _interactAction.performed += DoInteract;
-    }
-
-    private void OnDisable()
-    {
-        _interactAction.performed -= DoInteract;
-    }
-
-    private void DoInteract(InputAction.CallbackContext ctx)
-    {
-        if (_canInteract)
-        {
             if (!_isUsed)
             {
                 if (_curPlayerHealth != null)
@@ -46,29 +35,25 @@ public class Medkit : MonoBehaviour
                     
                 }
             }
+    }
+
+    protected void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            hint.SetActive(true);
+            collision.GetComponent<PlayerInteraction>().SetInteractable(this);
+            _curPlayerHealth = collision.GetComponent<PlayerHealth>();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerExit2D(Collider2D collision)
     {
-        if (!_isUsed)
+        if (collision.CompareTag("Player") )
         {
-            if (collision.tag == "Player")
-            {
-                _curPlayerHealth = collision.GetComponent<PlayerHealth>();
-                hint.SetActive(true);
-                _canInteract = true;
-            }
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            _curPlayerHealth = null;
             hint.SetActive(false);
-            _canInteract = false;
+            collision.GetComponent<PlayerInteraction>().SetInteractable(null);
         }
     }
+
 }
