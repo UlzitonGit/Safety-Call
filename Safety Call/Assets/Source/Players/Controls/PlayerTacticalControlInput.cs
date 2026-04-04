@@ -43,7 +43,7 @@ namespace Source.Players.Controls
             _playerMovement = playerMovement;
         }
 
-        private Vector3 GetClickCoordinates()
+        public Vector3 GetClickCoordinates()
         {
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Mouse.current.position.x.ReadValue(), Mouse.current.position.y.ReadValue(), 1));
             RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
