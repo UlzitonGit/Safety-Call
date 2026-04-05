@@ -421,16 +421,16 @@ MonoBehaviour:
     m_Value: 0.321
   xMultiplier:
     m_OverrideState: 1
-    m_Value: 0.791
+    m_Value: 1
   yMultiplier:
     m_OverrideState: 1
-    m_Value: 0.679
+    m_Value: 1
   center:
     m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
   scale:
     m_OverrideState: 1
-    m_Value: 0.96
+    m_Value: 1.01
 --- !u!114 &-824462925285277494
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -631,10 +631,10 @@ MonoBehaviour:
   active: 1
   temperature:
     m_OverrideState: 1
-    m_Value: 100
+    m_Value: 46.3
   tint:
     m_OverrideState: 1
-    m_Value: -1.4
+    m_Value: 8.2
 --- !u!114 &3460444317416099510
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -650,7 +650,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.01
+    m_Value: 0.168
 --- !u!114 &5762530381802164056
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -666,7 +666,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.57
   tintColor:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -708,7 +708,7 @@ MonoBehaviour:
     m_Value: 0.5
   streaksOrientation:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1.08
   streaksThreshold:
     m_OverrideState: 1
     m_Value: 0.25
@@ -789,7 +789,7 @@ MonoBehaviour:
   active: 1
   distance:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   cropToFit:
     m_OverrideState: 1
     m_Value: 1

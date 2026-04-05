@@ -35,7 +35,7 @@ public class MenuUi : MonoBehaviour
         {
             if (async.progress >= 0.9f && !async.allowSceneActivation)
             {
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(15f);
                 async.allowSceneActivation = true;
             }
             yield return null;
