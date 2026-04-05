@@ -25,6 +25,8 @@ namespace Source.Creatures.Health
         
        [SerializeField] protected CreatureAnimator _playerAnimator;
 
+       [SerializeField] protected float _defence = 0;
+
         protected virtual void Start()
         {
             _currentHealth = _maxHealth;
@@ -51,6 +53,11 @@ namespace Source.Creatures.Health
         }
         public virtual void AddHealth(float health)
         {
+            if (health < 0)
+            {
+                health -= _defence;
+                if(health >=0) return;
+            }
             _currentHealth += health;
             if(_currentHealth > _maxHealth) _currentHealth = _maxHealth;
             print(_currentHealth);
@@ -82,6 +89,10 @@ namespace Source.Creatures.Health
         {
             return _isAlive;
         }
-        
+
+        public void SetDefence(float defence)
+        {
+            _defence += defence;
+        }
     }
 }

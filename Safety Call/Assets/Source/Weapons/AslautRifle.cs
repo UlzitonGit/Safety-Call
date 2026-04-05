@@ -18,7 +18,7 @@ public class AslautRifle : WeaponGeneral
         print(hit.collider.name);
         if (Random.Range(0f, 1f) < _missChance)
         {
-            hit.transform.GetComponent<CreaturesData>()._playerHealth.GetDamage(_damage, transform.position);   
+            hit.transform.GetComponent<IDamagable>().GetDamage(_damage, transform.position);   
         }
     }
 }

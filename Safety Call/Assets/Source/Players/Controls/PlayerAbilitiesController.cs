@@ -44,26 +44,29 @@ public class PlayerAbilitiesController : MonoBehaviour
 
     private void PerformAbilityE(InputAction.CallbackContext ctx)
     {
-        if (_playerChooser.GetPlayersChosen() == 1)
+        if (_playerChooser.GetPlayersChosen() == 1 && _playerChooser.GetChosenPlayers()[0].gameObject.activeInHierarchy)
         {
             PlayerData _currentPlayerData = _playerChooser.GetChosenPlayers()[0];
-            _currentPlayerData._AbilityUser._abilities[0].UseAbility();
+            if( _currentPlayerData._AbilityUser._abilities.Count >= 1 && _currentPlayerData._playerState.IsAlive)
+                _currentPlayerData._AbilityUser._abilities[0].UseAbility();
         }
     }
     private void PerformAbilityQ(InputAction.CallbackContext ctx)
     {
-        if (_playerChooser.GetPlayersChosen() == 1)
+        if (_playerChooser.GetPlayersChosen() == 1 && _playerChooser.GetChosenPlayers()[0].gameObject.activeInHierarchy)
         {
             PlayerData _currentPlayerData = _playerChooser.GetChosenPlayers()[0];
-            _currentPlayerData._AbilityUser._abilities[1].UseAbility();
+            if( _currentPlayerData._AbilityUser._abilities.Count >= 2 && _currentPlayerData._playerState.IsAlive)
+                _currentPlayerData._AbilityUser._abilities[1].UseAbility();
         }
     }
     private void PerformAbilityD(InputAction.CallbackContext ctx)
     {
-        if (_playerChooser.GetPlayersChosen() == 1)
+        if (_playerChooser.GetPlayersChosen() == 1 && _playerChooser.GetChosenPlayers()[0].gameObject.activeInHierarchy)
         {
             PlayerData _currentPlayerData = _playerChooser.GetChosenPlayers()[0];
-            _currentPlayerData._AbilityUser._abilities[2].UseAbility();
+            if( _currentPlayerData._AbilityUser._abilities.Count >= 3 && _currentPlayerData._playerState.IsAlive)
+                _currentPlayerData._AbilityUser._abilities[2].UseAbility();
         }
     }
 }

@@ -10,7 +10,7 @@ public class EnemyGunFightBehaviour : GunfightBehaviourManager
     }
     
 
-    public override void AddEnemyTarget(CreatureStates enemy)
+    public override void AddEnemyTarget(CreaturesData enemy)
     {
         base.AddEnemyTarget(enemy);
         enemy.GetComponent<PlayerData>()._playerVisibility.ShowEnemy();

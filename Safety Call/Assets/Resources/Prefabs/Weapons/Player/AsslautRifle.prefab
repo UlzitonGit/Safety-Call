@@ -53,10 +53,13 @@ MonoBehaviour:
     m_Bits: 45708
   _weaponSoundPlayer: {fileID: 5937684455274459370}
   _shootVFX: {fileID: 2639931556325961225}
-  _maxAmmo: 30
+  _maxAmmo: 180
+  _magazineCapacity: 30
+  _currentAmmo: 30
   _prepareBeforeShoot: 0.2
   _timeBetweenShots: 0.1
   _damage: 20
+  _reloadTime: 2
   _canShoot: 1
   _tag: Enemy
   _missChance: 1
@@ -112,6 +115,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -133,6 +138,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
@@ -190,7 +196,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1505315633526727479, guid: 948067f5b5cee94468fd38d07849832a, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 5f9aba7d080cefc42a69b68ac6354d45, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 5f9aba7d080cefc42a69b68ac6354d45, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.7

@@ -43,7 +43,6 @@ namespace Source.Creatures.Movement
         protected virtual void LookAtPosition()
         {
             if(!_creatureStates.CanMove || _creatureStates.IsStunned) return;
-            //print(targetPosition);
             Vector3 direction = _target - _aimPoint.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             

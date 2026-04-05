@@ -39,19 +39,7 @@ public class PlayerHealth : CreatureHealth
         
         _isRevived = true;
     }
-
-    public void TutorialDeath()
-    {
-        if (!_isAlive) return;
-        _currentHealth = 0;
-        _creaturesData._playerState.SetCanMove(false);
-        _creaturesData._playerMovement.StopMovement();
-        _capsuleCollider2D.enabled = false;
-        _capsuleCollider2D.isTrigger = true;
-        _isAlive = false;
-        _playerAnimator.Death();
-        _creaturesData._playerState.SetAlive(_isAlive);
-    }
+    
 
     protected override void Death()
     {
@@ -59,9 +47,10 @@ public class PlayerHealth : CreatureHealth
         _playerAnimator.Death();
         _creaturesData._playerState.SetAlive(_isAlive);
         _gameplayStagesManager.PlayerKilled();
-        if (gameObject.TryGetComponent<FerretPassive>(out var ferretPassive))
+        if (gameObject.TryGetComponent<FerretPassive>(out var ferretPassive) && !_isRevived)
         {
             Revive();
+            _isRevived = true;
         }
     }
 

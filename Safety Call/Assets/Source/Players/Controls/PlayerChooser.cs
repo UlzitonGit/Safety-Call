@@ -160,5 +160,6 @@ namespace Source.Players.Controls
         {
             return _playersChosen;
         }
+        
     }
 }

@@ -4,27 +4,17 @@ using UnityEngine.InputSystem;
 
 namespace Source.IntercativeObjects.ObjectsInHub
 {
-    public class ShowInterface : MonoBehaviour
+    public class ShowInterface : MonoBehaviour, IInteractable
     {
         [SerializeField] private GameObject _panel;
         [SerializeField] private GameObject _hint;
 
         private InputAction _interactAction;
 
-        private bool _canInteract = false;
+        private bool _canInteract = true;
+        
 
-        private void OnEnable()
-        {
-            _interactAction = InputManager.Instance.GameInput.Hub.Interact;
-            _interactAction.performed += DoInteract;
-        }
-
-        private void OnDisable()
-        {
-            _interactAction.performed -= DoInteract;
-        }
-
-        private void DoInteract(InputAction.CallbackContext ctx)
+        public void DoInteract()
         {
             if (_canInteract)
             {
@@ -32,21 +22,21 @@ namespace Source.IntercativeObjects.ObjectsInHub
             }
         }
             
-        private void OnTriggerEnter2D(Collider2D collision)
+        protected void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.tag == "Player")
+            if (collision.CompareTag("Player"))
             {
                 _hint.SetActive(true);
-                _canInteract = true;
+                collision.GetComponent<PlayerInteraction>().SetInteractable(this);
             }
         }
 
-        private void OnTriggerExit2D(Collider2D collision)
+        protected void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.tag == "Player")
+            if (collision.CompareTag("Player") )
             {
                 _hint.SetActive(false);
-                _canInteract = false;
+                collision.GetComponent<PlayerInteraction>().SetInteractable(null);
             }
         }
     }

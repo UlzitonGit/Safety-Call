@@ -15,14 +15,21 @@ public abstract class WeaponGeneral : MonoBehaviour
     [SerializeField] protected ParticleSystem _shootVFX;
 
     [SerializeField] protected int _maxAmmo;
+    
+    [SerializeField] protected int _magazineCapacity;
+    
+    [SerializeField] protected int _currentAmmo;
 
     [SerializeField] protected float _prepareBeforeShoot;
     
     [SerializeField] protected float _timeBetweenShots;
     [SerializeField] protected float _damage;
+    
+    [SerializeField] protected float _reloadTime;
 
     protected float critChance;
     protected Coroutine _shootingCoroutine;
+    protected bool _isReloading;
 
     [SerializeField] private bool _canShoot = true;
 
@@ -35,11 +42,14 @@ public abstract class WeaponGeneral : MonoBehaviour
     public virtual void Shoot(Vector3 target)
     {
         if(!_canShoot) return;
+        if (_currentAmmo > 0)
+        {
             _shootVFX.Play();
-             _canShoot = false;
+            _canShoot = false;
             _weaponSoundPlayer.PlayShootSound();
+            _currentAmmo--;
             
-           Vector2 direction = (target - transform.position).normalized;
+            Vector2 direction = (target - transform.position).normalized;
             
             RaycastHit2D hit = Physics2D.Raycast(_shootPoint.position, direction, 100, ~_layersToIgnore);
             Debug.DrawRay(_shootPoint.position, direction * 10f, Color.red, 1);
@@ -51,11 +61,29 @@ public abstract class WeaponGeneral : MonoBehaviour
             }
             StartCoroutine(DelayBetweenShoots());
 
+        }
+        else if(!_isReloading)
+        {
+            StartCoroutine(Reloading());
+        }
     }
 
     protected virtual void DealDamage(RaycastHit2D hit)
     {
         
+    }
+
+    IEnumerator Reloading()
+    {
+        _isReloading = false;
+        _currentAmmo = 0;
+        yield return new WaitForSeconds(_reloadTime);
+        if (_maxAmmo >= _magazineCapacity)
+        {
+            _currentAmmo = _magazineCapacity;
+            _maxAmmo -= _magazineCapacity;
+        }
+        _isReloading = true;
     }
 
     IEnumerator DelayBetweenShoots()
@@ -92,6 +120,11 @@ public abstract class WeaponGeneral : MonoBehaviour
     public int GetMaxAmmo()
     {
         return _maxAmmo;
+    }
+
+    public void SetMaxAmmo(int maxAmmo)
+    {
+        _maxAmmo += maxAmmo;
     }
  
 }
