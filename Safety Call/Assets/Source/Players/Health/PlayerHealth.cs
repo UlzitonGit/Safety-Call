@@ -23,7 +23,6 @@ public class PlayerHealth : CreatureHealth
         _audioSource.PlayOneShot(_audioClip);
         StartCoroutine(LookAtTarget(enemyPos));
         _uiDamageShower.GetDamage();
-        _playerUiDrawer.UpdateUI(_currentHealth);
     }
     IEnumerator LookAtTarget(Vector3 enemyPos)
     {
@@ -57,7 +56,6 @@ public class PlayerHealth : CreatureHealth
     public override void AddHealth(float health)
     {
         base.AddHealth(health);
-        _playerUiDrawer.UpdateUI(_currentHealth);
     }
 
     public bool GetIsRevived()

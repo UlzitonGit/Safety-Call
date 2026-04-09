@@ -26,18 +26,27 @@ namespace Source.Creatures.Health
        [SerializeField] protected CreatureAnimator _playerAnimator;
 
        [SerializeField] protected float _defence = 0;
+       
+       public ObservableValue<float> Health { get; set; }
 
         protected virtual void Start()
         {
             _currentHealth = _maxHealth;
             _gameplayStagesManager = FindAnyObjectByType<GameplayStagesManager>();
             _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+            Health = new ObservableValue<float>(_currentHealth);
         }
 
         public virtual void GetDamage(float damage, Vector3 enemyPos)
         {
+            if (damage < 0)
+            {
+                damage -= _defence;
+                if(damage >=0) return;
+            }
             _currentHealth -= damage;
             //StartCoroutine(LookAtTarget(enemyPos));
+            Health.Value = _currentHealth;
             Instantiate(_bloodVfxPrefab, transform.position, Quaternion.identity);
             print(_currentHealth);
             CheckHealth();
@@ -59,6 +68,7 @@ namespace Source.Creatures.Health
                 if(health >=0) return;
             }
             _currentHealth += health;
+            Health.Value = _currentHealth;
             if(_currentHealth > _maxHealth) _currentHealth = _maxHealth;
             print(_currentHealth);
         }
