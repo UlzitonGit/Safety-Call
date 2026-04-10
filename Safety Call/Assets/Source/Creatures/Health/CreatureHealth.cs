@@ -28,6 +28,7 @@ namespace Source.Creatures.Health
        [SerializeField] protected float _defence = 0;
        
        public ObservableValue<float> Health { get; set; }
+       public ObservableValue<string> Status { get; set; } = new ObservableValue<string>("ALIVE");
 
         protected virtual void Start()
         {

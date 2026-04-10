@@ -10,10 +10,13 @@ public class PlayerHealth : CreatureHealth
     
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _audioClip;
-
+    
+   
+    
     private bool _isRevived;
     protected override void Start()
     {
+        Status = new ObservableValue<string>("ALIVE");
         base.Start();
     }
 
@@ -33,9 +36,10 @@ public class PlayerHealth : CreatureHealth
 
     public override void Revive()
     {
+        if(_isRevived) return;
         base.Revive();
+        Status.Value = "ALIVE";
         _creaturesData._playerMovement.GetComponent<PlayerMovement>().StopAgent(false);
-        
         _isRevived = true;
     }
     
@@ -46,10 +50,13 @@ public class PlayerHealth : CreatureHealth
         _playerAnimator.Death();
         _creaturesData._playerState.SetAlive(_isAlive);
         _gameplayStagesManager.PlayerKilled();
+        if (!_isRevived)
+            Status.Value = "IN COMA";
+        else
+            Status.Value = "DEAD";
         if (gameObject.TryGetComponent<FerretPassive>(out var ferretPassive) && !_isRevived)
         {
             Revive();
-            _isRevived = true;
         }
     }
 

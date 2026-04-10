@@ -11,10 +11,12 @@ public class PlayerWeaponController : WeaponController
     private bool _startLocalShoot = false;
     private bool _isLocal;
     private AudioFightMixer _audioFightMixer;
+    
 
     private void Start()
     {
         _audioFightMixer = FindAnyObjectByType<AudioFightMixer>();
+       
     }
     
     private void Update()

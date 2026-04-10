@@ -33,6 +33,14 @@ public abstract class WeaponGeneral : MonoBehaviour
 
     [SerializeField] private bool _canShoot = true;
 
+    public ObservableValue<int> MaxAmmo { get; set; }
+    public ObservableValue<int> CurrentAmmo { get; set; }
+
+    private void Start()
+    {
+        MaxAmmo = new ObservableValue<int>(_maxAmmo);
+        CurrentAmmo = new ObservableValue<int>(_currentAmmo);
+    }
 
     public void SetCritChance(float critChance)
     {
@@ -48,6 +56,7 @@ public abstract class WeaponGeneral : MonoBehaviour
             _canShoot = false;
             _weaponSoundPlayer.PlayShootSound();
             _currentAmmo--;
+            CurrentAmmo.Value = _currentAmmo;
             
             Vector2 direction = (target - transform.position).normalized;
             
@@ -75,7 +84,7 @@ public abstract class WeaponGeneral : MonoBehaviour
 
     IEnumerator Reloading()
     {
-        _isReloading = false;
+        _isReloading = true;
         _currentAmmo = 0;
         yield return new WaitForSeconds(_reloadTime);
         if (_maxAmmo >= _magazineCapacity)
@@ -83,7 +92,9 @@ public abstract class WeaponGeneral : MonoBehaviour
             _currentAmmo = _magazineCapacity;
             _maxAmmo -= _magazineCapacity;
         }
-        _isReloading = true;
+        _isReloading = false;
+        CurrentAmmo.Value = _currentAmmo;
+        MaxAmmo.Value = _maxAmmo;
     }
 
     IEnumerator DelayBetweenShoots()
