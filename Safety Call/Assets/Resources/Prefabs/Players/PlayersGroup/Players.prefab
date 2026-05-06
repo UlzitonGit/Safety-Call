@@ -1463,8 +1463,6 @@ GameObject:
   - component: {fileID: 6259801167301479422}
   - component: {fileID: 3776843522186975251}
   - component: {fileID: 7853371048807266886}
-  - component: {fileID: 4695326617509944984}
-  - component: {fileID: 1103715339250419878}
   - component: {fileID: 8883678486825139572}
   - component: {fileID: 9111556987041854121}
   m_Layer: 2
@@ -1611,44 +1609,9 @@ MonoBehaviour:
   maxZoom: 20
   dragSpeed: 6
   useBounds: 1
-  minBounds: {x: -52.9, y: -28.3}
-  maxBounds: {x: 92.3, y: 70}
+  minBounds: {x: -9.4, y: -45.7}
+  maxBounds: {x: 76.9, y: 6.9}
   _uiDamageShower: {fileID: 8883678486825139572}
---- !u!114 &4695326617509944984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408520190026319192}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9973a69659611d7408af26fbf39abe0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  offset: {x: 0, y: 0, z: -10}
-  smoothSpeed: 5
-  followX: 1
-  followY: 1
-  zoomSpeed: 5
-  minZoom: 2
-  maxZoom: 20
-  _uiDamageShower: {fileID: 8883678486825139572}
---- !u!114 &1103715339250419878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408520190026319192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a24206dcb0cfdb469f6c7f7a6903851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cameraController: {fileID: 7853371048807266886}
-  _cameraIndividual: {fileID: 4695326617509944984}
 --- !u!114 &8883678486825139572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33053,7 +33016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _volume: {fileID: 0}
   _playerChooser: {fileID: 6755392622207291622}
-  _cameraSwitcher: {fileID: 1103715339250419878}
+  _cameraSwitcher: {fileID: 0}
 --- !u!1 &8491418385954911711
 GameObject:
   m_ObjectHideFlags: 0
@@ -38552,6 +38515,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1505241145110537332}
     - target: {fileID: 4523262986331714428, guid: 4e1fa0caa58afff43be89a109d223923, type: 3}
+      propertyPath: _playerUiDrawer
+      value: 
+      objectReference: {fileID: 2909450311738171656}
+    - target: {fileID: 4523262986331714428, guid: 4e1fa0caa58afff43be89a109d223923, type: 3}
       propertyPath: _uiDamageShower
       value: 
       objectReference: {fileID: 8883678486825139572}
@@ -39970,6 +39937,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1105267857880339505}
     - target: {fileID: 4523262986331714428, guid: 3e05c3dcdee5cfc4ebf8bba9ebf57ee8, type: 3}
+      propertyPath: _playerUiDrawer
+      value: 
+      objectReference: {fileID: 2909450311738171656}
+    - target: {fileID: 4523262986331714428, guid: 3e05c3dcdee5cfc4ebf8bba9ebf57ee8, type: 3}
       propertyPath: _uiDamageShower
       value: 
       objectReference: {fileID: 8883678486825139572}
@@ -40299,6 +40270,10 @@ PrefabInstance:
       propertyPath: _audioSource
       value: 
       objectReference: {fileID: 1255342003688778790}
+    - target: {fileID: 4523262986331714428, guid: c1939fe5028a63c4eb1eceb7872f8993, type: 3}
+      propertyPath: _playerUiDrawer
+      value: 
+      objectReference: {fileID: 2909450311738171656}
     - target: {fileID: 4523262986331714428, guid: c1939fe5028a63c4eb1eceb7872f8993, type: 3}
       propertyPath: _uiDamageShower
       value: 
@@ -40660,6 +40635,10 @@ PrefabInstance:
       propertyPath: _audioSource
       value: 
       objectReference: {fileID: 3464163811545285331}
+    - target: {fileID: 4523262986331714428, guid: d5fc420ef43ebef4b8523201a60bcb6d, type: 3}
+      propertyPath: _playerUiDrawer
+      value: 
+      objectReference: {fileID: 2909450311738171656}
     - target: {fileID: 4523262986331714428, guid: d5fc420ef43ebef4b8523201a60bcb6d, type: 3}
       propertyPath: _uiDamageShower
       value: 
