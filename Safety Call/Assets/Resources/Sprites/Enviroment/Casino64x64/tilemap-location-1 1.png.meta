@@ -1,46 +1,10 @@
 fileFormatVersion: 2
-guid: e34f0ee842526eb4caf96d6425372437
+guid: ce15aa2bcad4ecc4c8fb5ca456574ee4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8790720302637002298
-    second: doors street 3_0
-  - first:
-      213: 6265471526081862799
-    second: doors street 3_1
-  - first:
-      213: -5096154459911957711
-    second: doors street 3_2
-  - first:
-      213: 4665169372806124063
-    second: doors street 3_3
-  - first:
-      213: -2796866147565735609
-    second: doors street 3_4
-  - first:
-      213: 5512011933584474461
-    second: doors street 3_5
-  - first:
-      213: -3343349434812339336
-    second: doors street 3_6
-  - first:
-      213: 1011737284367510075
-    second: doors street 3_7
-  - first:
-      213: 7411330402922996763
-    second: doors street 3_8
-  - first:
-      213: -2987419600279319723
-    second: doors street 3_9
-  - first:
-      213: 6621233785551703035
-    second: doors street 3_10
-  - first:
-      213: -75676816373340277
-    second: doors street 3_11
-  - first:
-      213: -7676280344870796703
-    second: doors street 3_12
+      213: -8761364604391131247
+    second: tilemap-location-1 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -108,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -149,7 +113,139 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: doors street 3_0
+      name: tilemap-location-1 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197f59fdf41696680800000000000000
+      internalID: -8761364604391131247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap-location-1 1_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4fc36f364a25c418ee3c6c7d3d8088
+      internalID: -456871326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap-location-1 1_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858c0b2679610fb459e37b24d3391073
+      internalID: -566097277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap-location-1 1_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc17570b3e0cc9a458bc9b12c2e47d0b
+      internalID: -1744442611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap-location-1 1_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67479c6c7de186145a2e3effe11b64bb
+      internalID: 1640633966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap-location-1 1_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf43e1420b216ed4cab2ae99e37d5961
+      internalID: 198452574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemap-location-1 1_6
       rect:
         serializedVersion: 2
         x: 0
@@ -157,21 +253,21 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4ce23857d854ea4f92729caf710a4cd
-      internalID: 1771688137
+      spriteID: 61588d1a0f8e2994c849baec4f510e82
+      internalID: -440113370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doors street 3_1
+      name: tilemap-location-1 1_7
       rect:
         serializedVersion: 2
         x: 64
@@ -179,21 +275,21 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: feb9702dd00893f4ba8562b67197b9e6
-      internalID: 490107598
+      spriteID: c74ab0e30c79fd64f8caaf804e20df82
+      internalID: 1887411475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doors street 3_2
+      name: tilemap-location-1 1_8
       rect:
         serializedVersion: 2
         x: 128
@@ -201,131 +297,21 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2ae334bbacd49244bf5a8fa2432ef5e
-      internalID: -1036500977
+      spriteID: 6eb76b67d25caee46b4a7ef3c6f76eb9
+      internalID: 829154993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doors street 3_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1298654bb22920d4199bf09270ec4669
-      internalID: 2031189460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doors street 3_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0158e16c26c4021418b3f2d8868f895b
-      internalID: 1586439655
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doors street 3_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d04a902b3fb5b54eb1d9b8c346dd75b
-      internalID: 1964233926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doors street 3_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 141c6f998aa778a449192827b9b5012e
-      internalID: -1007984726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doors street 3_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7eabb342920fdf1418e0f45df998763a
-      internalID: 746186608
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doors street 3_8
+      name: tilemap-location-1 1_9
       rect:
         serializedVersion: 2
         x: 0
@@ -333,21 +319,21 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3dd6951e5aefea47b273ee1c9c3e4e8
-      internalID: 687644051
+      spriteID: 0298fe1b31ce4664fa3e09aa00a58fdd
+      internalID: -1485135656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doors street 3_9
+      name: tilemap-location-1 1_10
       rect:
         serializedVersion: 2
         x: 64
@@ -355,21 +341,21 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15534045c49623b4090d8731aef5195f
-      internalID: -2066464189
+      spriteID: 4102a3cd2d2f5ee4dbd704b6409bb8b6
+      internalID: -808585341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doors street 3_10
+      name: tilemap-location-1 1_11
       rect:
         serializedVersion: 2
         x: 128
@@ -377,125 +363,15 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09fda4ada074d2847ad41c137a014dbb
-      internalID: -596615274
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doors street 3_11
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53becef82fd8cb84cae73b827101a2a5
-      internalID: -793309480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doors street 3_12
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb8004a6e83c42c45ab3734c4b01ad49
-      internalID: 1273849991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doors street 3_13
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49a4324dfb67c6547a65cad9fd41c018
-      internalID: 1416802343
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doors street 3_14
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80ee62ade2ed6284285031ab9e1bd0e0
-      internalID: -786687371
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: doors street 3_15
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91213a744e10f9f459393c1632ec58ef
-      internalID: -94172549
+      spriteID: ac2bc61f3be54064888bb12b8b36e842
+      internalID: 28201865
       vertices: []
       indices: 
       edges: []
@@ -504,7 +380,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1ba01ee661253eb46a98d023ed1c600e
+    spriteID: b8644303ef013e14f95a9b1246155899
     internalID: 0
     vertices: []
     indices: 
@@ -512,24 +388,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      doors street 3_0: 1771688137
-      doors street 3_1: 490107598
-      doors street 3_10: -596615274
-      doors street 3_11: -793309480
-      doors street 3_12: 1273849991
-      doors street 3_13: 1416802343
-      doors street 3_14: -786687371
-      doors street 3_15: -94172549
-      doors street 3_2: -1036500977
-      doors street 3_3: 2031189460
-      doors street 3_4: 1586439655
-      doors street 3_5: 1964233926
-      doors street 3_6: -1007984726
-      doors street 3_7: 746186608
-      doors street 3_8: 687644051
-      doors street 3_9: -2066464189
+      tilemap-location-1 1_0: -8761364604391131247
+      tilemap-location-1 1_1: -456871326
+      tilemap-location-1 1_10: -808585341
+      tilemap-location-1 1_11: 28201865
+      tilemap-location-1 1_2: -566097277
+      tilemap-location-1 1_3: -1744442611
+      tilemap-location-1 1_4: 1640633966
+      tilemap-location-1 1_5: 198452574
+      tilemap-location-1 1_6: -440113370
+      tilemap-location-1 1_7: 1887411475
+      tilemap-location-1 1_8: 829154993
+      tilemap-location-1 1_9: -1485135656
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
