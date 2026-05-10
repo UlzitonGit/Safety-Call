@@ -1,3 +1,4 @@
+using System;
 using Source.Players.Movement;
 using UnityEngine;
 
@@ -13,4 +14,8 @@ public class PlayerData : CreaturesData
     [field:SerializeField] public FieldOfView _FieldOfView { get; private set; }
     
     [field:SerializeField] public AbilityUser _AbilityUser { get; private set; }
+    
+    [field:SerializeField]  public PlayerAbilitiesSO _AbilitySO { get; private set; }
+
+    
 }

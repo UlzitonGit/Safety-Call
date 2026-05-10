@@ -16,7 +16,7 @@ namespace Source.Players.Controls
     
         [SerializeField] private PlayerSpotlighter _playerSpotlighter;
         [SerializeField] private bool isTutorial;
-
+        [SerializeField] private PlayerUiDrawer _playerUiDrawer;
         private int _playersChosen;
         
         private List<PlayerData> _players;
@@ -28,7 +28,8 @@ namespace Source.Players.Controls
         private InputAction _selectUnits12Action;
         private InputAction _selectUnits34Action;
         private InputAction _selectAllUnitsAction;
-
+        
+        
         private void OnEnable()
         {
             _selectUnit1Action = InputManager.Instance.GameInput.TacticalMove.SelectUnit1;
@@ -120,6 +121,14 @@ namespace Source.Players.Controls
              {
                  playersToControl.Add(_creatureMovements[index]);
                  _players.Add(_creatureMovements[index].GetComponent<PlayerData>());
+             }
+             if (playerIndexes.Count == 1)
+             {
+                _playerUiDrawer.Bind(playersToControl[0].GetComponent<PlayerData>());
+             }
+             else
+             {
+                 _playerUiDrawer.ShowUndefPanel();
              }
              _playerMoveInput.SetPlayerMovement(playersToControl);
              _playerSpotlighter.SetChosenPlayer(playerIndexes);
