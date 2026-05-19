@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EveRight
+  m_Name: EveLDW
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.033, y: -0.0948, z: 0}
+        value: {x: 0.0696, y: -0.1059996, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -37,7 +37,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.0227, y: -0.0888, z: 0}
+        value: {x: -0.0853, y: -0.1059996, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -69,7 +69,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_SortingOrder
     path: "arms/\u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0448\u0430 \u043F\u0440\u0430\u0432\u0430\u044F
-      \u0440\u0443\u043A\u0430 2_0 (1)"
+      \u0440\u0443\u043A\u0430 2_0"
     classID: 212
     script: {fileID: 0}
     flags: 0
@@ -77,29 +77,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -7474793738175707520, guid: 34b21f97b3db73c45a849bb0eeee1a49, type: 3}
+      value: {fileID: -5073295375425182085, guid: 4a669e584144af043a63b29497720be1, type: 3}
     attribute: m_Sprite
     path: 
-    classID: 212
-    script: {fileID: 0}
-    flags: 2
-  - serializedVersion: 2
-    curve:
-    - time: 0
-      value: {fileID: -1012968353440548730, guid: 9f52012aa4b02c342a6118ee78a6d7a5, type: 3}
-    attribute: m_Sprite
-    path: "arms/\u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0448\u0430 \u043F\u0440\u0430\u0432\u0430\u044F
-      \u0440\u0443\u043A\u0430 2_0 (1)"
-    classID: 212
-    script: {fileID: 0}
-    flags: 2
-  - serializedVersion: 2
-    curve:
-    - time: 0
-      value: {fileID: -1012968353440548730, guid: 9f52012aa4b02c342a6118ee78a6d7a5, type: 3}
-    attribute: m_Sprite
-    path: "arms/\u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0448\u0430 \u043F\u0440\u0430\u0432\u0430\u044F
-      \u0440\u0443\u043A\u0430 2_0"
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -120,24 +100,6 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2740422870
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 2033618259
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
       path: 2033618259
       attribute: 1
       script: {fileID: 0}
@@ -156,7 +118,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2740422870
+      path: 2033618259
       attribute: 3762991556
       script: {fileID: 0}
       typeID: 212
@@ -165,9 +127,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -7474793738175707520, guid: 34b21f97b3db73c45a849bb0eeee1a49, type: 3}
-    - {fileID: -1012968353440548730, guid: 9f52012aa4b02c342a6118ee78a6d7a5, type: 3}
-    - {fileID: -1012968353440548730, guid: 9f52012aa4b02c342a6118ee78a6d7a5, type: 3}
+    - {fileID: -5073295375425182085, guid: 4a669e584144af043a63b29497720be1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -195,7 +155,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.033
+        value: 0.0696
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -217,7 +177,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.0948
+        value: -0.1059996
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -252,72 +212,6 @@ AnimationClip:
     attribute: m_LocalPosition.z
     path: "arms/\u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0448\u0430 \u043F\u0440\u0430\u0432\u0430\u044F
       \u0440\u0443\u043A\u0430 2_0"
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.0227
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.x
-    path: "arms/\u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0448\u0430 \u043F\u0440\u0430\u0432\u0430\u044F
-      \u0440\u0443\u043A\u0430 2_0 (1)"
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -0.0888
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.y
-    path: "arms/\u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0448\u0430 \u043F\u0440\u0430\u0432\u0430\u044F
-      \u0440\u0443\u043A\u0430 2_0 (1)"
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalPosition.z
-    path: "arms/\u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0448\u0430 \u043F\u0440\u0430\u0432\u0430\u044F
-      \u0440\u0443\u043A\u0430 2_0 (1)"
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -339,8 +233,74 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_SortingOrder
     path: "arms/\u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0448\u0430 \u043F\u0440\u0430\u0432\u0430\u044F
-      \u0440\u0443\u043A\u0430 2_0 (1)"
+      \u0440\u0443\u043A\u0430 2_0"
     classID: 212
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0853
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: "arms/\u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0448\u0430 \u043F\u0440\u0430\u0432\u0430\u044F
+      \u0440\u0443\u043A\u0430 2_0 (1)"
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.1059996
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: "arms/\u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0448\u0430 \u043F\u0440\u0430\u0432\u0430\u044F
+      \u0440\u0443\u043A\u0430 2_0 (1)"
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: "arms/\u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0448\u0430 \u043F\u0440\u0430\u0432\u0430\u044F
+      \u0440\u0443\u043A\u0430 2_0 (1)"
+    classID: 4
     script: {fileID: 0}
     flags: 0
   m_EulerEditorCurves: []
