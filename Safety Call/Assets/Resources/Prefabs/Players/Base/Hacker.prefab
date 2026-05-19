@@ -54,6 +54,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -75,10 +77,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 9115822925114371885, guid: d2a422a0156b461498b93cd9bdd13b7d, type: 3}
+  m_Sprite: {fileID: -1867070219005738609, guid: 1c9319c88f2f39d4c900768b08c8e262, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -443,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 3014345862564632748}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.005, y: -0.1852, z: 0}
+  m_LocalPosition: {x: -0.017, y: -0.215, z: 0}
   m_LocalScale: {x: 0.7979, y: 0.7979, z: 0.7979}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -469,6 +472,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -490,10 +495,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8311138243763395243, guid: 483d26e33662abb4d8000632691be76f, type: 3}
+  m_Sprite: {fileID: 8881200474334093394, guid: 23ffce279309162489c4cb377f7487a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -773,6 +779,8 @@ MonoBehaviour:
   _movement: {fileID: 9199300337024040843}
   _rotation: {fileID: 3401516190086788079}
   _bodySpriteRenderer: {fileID: 6445254468419455309}
+  _highSortingOrder: 5
+  _lowSortingOrder: 3
   EulerZ: 0
   _rotationIndex: 0
 --- !u!1 &6844982473664074441
@@ -1015,6 +1023,7 @@ MonoBehaviour:
   _timeToReaction: 0.4
   _creaturesData: {fileID: 8060874682696989706}
   _playerAnimator: {fileID: 472451369716976119}
+  _defence: 0
   _playerUiDrawer: {fileID: 0}
   _uiDamageShower: {fileID: 0}
   _audioSource: {fileID: 0}
@@ -1039,6 +1048,8 @@ MonoBehaviour:
   <_PlayerGunfightBehaviour>k__BackingField: {fileID: 7314110743048061526}
   <_PlayerWeaponController>k__BackingField: {fileID: 2739827789379491557}
   <_FieldOfView>k__BackingField: {fileID: 2887123306717992400}
+  <_AbilityUser>k__BackingField: {fileID: 0}
+  <_AbilitySO>k__BackingField: {fileID: 0}
 --- !u!50 &8593676973527141423
 Rigidbody2D:
   serializedVersion: 5
