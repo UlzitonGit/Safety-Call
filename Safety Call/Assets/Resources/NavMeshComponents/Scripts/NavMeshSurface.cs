@@ -218,7 +218,7 @@ namespace NavMeshPlus.Components
             {
                 AddData();
             }
-
+            print("NavMesh");
             return UpdateNavMesh(m_NavMeshData);
         }
 

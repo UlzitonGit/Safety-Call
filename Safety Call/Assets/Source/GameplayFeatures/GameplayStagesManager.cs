@@ -29,6 +29,10 @@ public class GameplayStagesManager : MonoBehaviour
     public ObservableValue<int> Enemies { get; set; }
     private void Start()
     {
+        if (!_playerUiDrawer.gameObject.activeInHierarchy)
+        {
+            _playerUiDrawer.gameObject.SetActive(true);
+        }
         Percents = new ObservableValue<float>(0);
         Hostages = new ObservableValue<int>(0);
         Enemies = new ObservableValue<int>(0);
