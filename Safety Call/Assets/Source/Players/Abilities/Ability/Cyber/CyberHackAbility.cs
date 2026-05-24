@@ -7,6 +7,7 @@ public class CyberHackAbility : AbilityBase
     public override void UseAbility()
     {
         Collider2D toHack = Physics2D.OverlapCircle(transform.position, _hackRange, _layerMask);
+        print("Hack");
         if(toHack != null)
             toHack.GetComponent<IHackable>().Hack();
     }

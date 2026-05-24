@@ -20,10 +20,11 @@ public class RemoteControlePanel : MonoBehaviour, IHackable
 
     public void Hack()
     {
+        _isHacked=true;
         foreach (var hackable in _hackables)
         {
+            print("hackable");
             hackable.Hack();
-            _isHacked=true;
         }
     }
 
