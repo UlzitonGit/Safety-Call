@@ -11,7 +11,18 @@ namespace Source.Players.Movement
         
         public bool _isControlling;
         
-        
+        private void Update()
+        {
+            transform.rotation = new Quaternion(0,0,0,1);
+            if (_aimPoint.transform.localEulerAngles.z > 0 && _aimPoint.transform.localEulerAngles.z > 180)
+            {
+                _aimPoint.localScale = new Vector3(1, 1, 1);
+            }
+            else
+            {
+                _aimPoint.localScale = new Vector3(-1, 1, 1);
+            }
+        }
         public override void MoveOnTarget(Vector3 target)
         {
             if (!_agent.enabled) return;
@@ -24,7 +35,7 @@ namespace Source.Players.Movement
             UpdatePathLine();
         }
         
-
+        
         public override void LookAtTarget(Vector3 target)
         {
             _target = target;

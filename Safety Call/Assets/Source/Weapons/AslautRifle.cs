@@ -5,6 +5,7 @@ public class AslautRifle : WeaponGeneral
 {
     [SerializeField] private string _tag;
     [SerializeField] private float _missChance = 1;
+    
 
 
     public override void Shoot(Vector3 target)
