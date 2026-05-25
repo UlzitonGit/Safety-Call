@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69c6b1f1e1fc2c4b9a85c7696ada520, type: 3}
+  m_Name: TutuorialFourth
+  m_EditorClassIdentifier: Assembly-CSharp::DialogSO
+  replics:
+  - 'CYBER: Oh its a vent'
+  - 'CYBER: I can go in and open doors for you'
+  - 'EVE: sounds dangerous!'
+  - 'CYBER: Not your buisness'
+  images:
+  - {fileID: 21300000, guid: 982c9bdce119d014ba995c86232be4e1, type: 3}
+  - {fileID: 21300000, guid: 371d4bcc54be93d46b71c488ebb7bbda, type: 3}
+  - {fileID: 21300000, guid: 8e221e175c9df0e4191be6054241883f, type: 3}
+  - {fileID: 21300000, guid: a869dbe140cb3d841b52b0cde0ae8373, type: 3}
