@@ -6,6 +6,7 @@ public class HostageInteractor : MonoBehaviour
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private Animator _animator;
     [SerializeField] private float _speed;
+    [SerializeField] private bool _isTutorial;
     private Transform _player;
     private bool _isMoving;
     private void Update()
@@ -27,7 +28,12 @@ public class HostageInteractor : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && CheckPlayers() && !_isMoving)
         {
             _animator.SetBool("isMoving", true);
+            
             _isMoving = true;
+            if (_isTutorial)
+            {
+                FindAnyObjectByType<TutorialController>().DestroyHostageHints();
+            }
         }
         else if (Input.GetKeyDown(KeyCode.E) && CheckPlayers() && _isMoving)
         {

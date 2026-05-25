@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69c6b1f1e1fc2c4b9a85c7696ada520, type: 3}
+  m_Name: TutuorialNine
+  m_EditorClassIdentifier: Assembly-CSharp::DialogSO
+  replics:
+  - 'EVE: well we made it some how'
+  - 'ASAHI: Nah it was greate'
+  - 'FERRET: eeeeh sure....'
+  - 'BEAST: Chill out Asian boy is right'
+  - 'CYBER: .....'
+  images:
+  - {fileID: 21300000, guid: 5e812a86d9e1cdc41bf1a66b66163d30, type: 3}
+  - {fileID: 21300000, guid: 1026920e933c1424e82cac90f1b10cac, type: 3}
+  - {fileID: 21300000, guid: 40b579d8b9c9ac3468c5756bbad4128b, type: 3}
+  - {fileID: 21300000, guid: 9bf2fe62400cfdd44bc0305a95dcb1b5, type: 3}
+  - {fileID: 21300000, guid: 58b975855c2182b48a5cb73aefa04afb, type: 3}

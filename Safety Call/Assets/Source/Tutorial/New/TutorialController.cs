@@ -15,6 +15,7 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private RemoteControlePanel remoteControlePanel;
     [SerializeField] private GameObject[] destroyHints;
     [SerializeField] private GameObject[] hostageHints;
+    [SerializeField] private GameObject[] hostageHints2;
     [SerializeField] private GameObject reviveHint;
     [SerializeField] private Alarm alarm;
     public bool checkCyberPicked;
@@ -92,6 +93,13 @@ public class TutorialController : MonoBehaviour
         destroyHint = true;
         destroyHints[0].SetActive(false);
         destroyHints[1].SetActive(false);
+        NextStage();
+    }
+
+    public void HostageRescued()
+    {
+        hostageHints2[0].SetActive(false);
+        hostageHints2[1].SetActive(false);
         NextStage();
     }
 
