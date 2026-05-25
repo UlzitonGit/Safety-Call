@@ -10,7 +10,7 @@ public class DestroyableDoors : MonoBehaviour, IDamagable
     [SerializeField] private float health = 100f;
     [SerializeField] private NavMeshSurface _navMeshSurface;
     [SerializeField] private GameObject _deathVFX;
-    
+    [SerializeField] private bool isTutorial;
     public void GetDamage(float damage, Vector3 enemyPos)
     {
         if(health <= 0) return;
@@ -20,6 +20,10 @@ public class DestroyableDoors : MonoBehaviour, IDamagable
             Instantiate(_deathVFX, transform.position, Quaternion.identity);
             m_Door.SetActive(false);
             _navMeshSurface.BuildNavMesh();
+            if (isTutorial)
+            {
+                FindAnyObjectByType<TutorialController>().DestroyHints();
+            }
         }
     }
     

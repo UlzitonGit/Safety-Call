@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69c6b1f1e1fc2c4b9a85c7696ada520, type: 3}
+  m_Name: TutuorialSIX
+  m_EditorClassIdentifier: Assembly-CSharp::DialogSO
+  replics:
+  - 'CYBER: Okay now i need to find a controll panel'
+  - 'BEAST: Yeah try not to die kid'
+  - 'FERRET: Dont listen to him you are doing great job'
+  images:
+  - {fileID: 21300000, guid: 982c9bdce119d014ba995c86232be4e1, type: 3}
+  - {fileID: 21300000, guid: 9bf2fe62400cfdd44bc0305a95dcb1b5, type: 3}
+  - {fileID: 21300000, guid: 1f739aa91a0fba049841d0fed6bd3945, type: 3}

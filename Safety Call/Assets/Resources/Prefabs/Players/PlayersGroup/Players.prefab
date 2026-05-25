@@ -1803,7 +1803,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 13
   m_Sprite: {fileID: 9115822925114371885, guid: d2a422a0156b461498b93cd9bdd13b7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3823,7 +3823,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 12
   m_Sprite: {fileID: -1778513766190094198, guid: e00e0b5e3f21d7f4294dab0070447224, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -27110,6 +27110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5800965117286145564}
+  - component: {fileID: 8720902812110408778}
   - component: {fileID: 1534583996465240713}
   - component: {fileID: 7554653252968587761}
   m_Layer: 7
@@ -27134,6 +27135,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8316772411345132657}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8720902812110408778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7233838177617540991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc27441ebac76404cb6859e7b621fe50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CyberScan
+  _reloadTime: 0
+  CanBeUsed: 1
+  _usageCount: 0
 --- !u!114 &1534583996465240713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39959,6 +39975,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1778513766190094198, guid: e00e0b5e3f21d7f4294dab0070447224, type: 3}
+    - target: {fileID: 339820987764568417, guid: 3e05c3dcdee5cfc4ebf8bba9ebf57ee8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 472451369716976119, guid: 3e05c3dcdee5cfc4ebf8bba9ebf57ee8, type: 3}
       propertyPath: _rotationIndex
       value: 90
@@ -40055,6 +40075,10 @@ PrefabInstance:
       propertyPath: m_StoppingDistance
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 6445254468419455309, guid: 3e05c3dcdee5cfc4ebf8bba9ebf57ee8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7947878613775972204, guid: 3e05c3dcdee5cfc4ebf8bba9ebf57ee8, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.138369
@@ -40148,7 +40172,7 @@ AudioSource:
   m_GameObject: {fileID: 2515317074647773025}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1505315633526727479, guid: 948067f5b5cee94468fd38d07849832a, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -40251,6 +40275,7 @@ MonoBehaviour:
   _abilities:
   - {fileID: 1534583996465240713}
   - {fileID: 7554653252968587761}
+  - {fileID: 0}
 --- !u!114 &3206814586192626047
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class PlayerHealth : CreatureHealth
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _audioClip;
     
-   
+    [SerializeField] private bool _isTutorial;
     
     private bool _isRevived;
     protected override void Start()
@@ -41,6 +41,10 @@ public class PlayerHealth : CreatureHealth
         Status.Value = "ALIVE";
         _creaturesData._playerMovement.GetComponent<PlayerMovement>().StopAgent(false);
         _isRevived = true;
+        if (_isTutorial)
+        {
+            FindAnyObjectByType<TutorialController>().Revived();
+        }
     }
     
 
