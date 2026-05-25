@@ -124,7 +124,8 @@ namespace Source.Players.Controls
              }
              if (playerIndexes.Count == 1)
              {
-                _playerUiDrawer.Bind(playersToControl[0].GetComponent<PlayerData>());
+                 if(playersToControl[0].GetComponent<AbilityUser>() != null)
+                    _playerUiDrawer.Bind(playersToControl[0].GetComponent<PlayerData>());
              }
              else
              {
