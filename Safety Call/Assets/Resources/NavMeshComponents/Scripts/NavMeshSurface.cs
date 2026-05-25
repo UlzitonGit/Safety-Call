@@ -175,7 +175,7 @@ namespace NavMeshPlus.Components
         public void BuildNavMesh()
         {
             using var builderState = new NavMeshBuilderState() { };
-
+            Debug.Log("BuildNavMesh");
             var sources = CollectSources(builderState);
 
             // Use unscaled bounds - this differs in behaviour from e.g. collider components.

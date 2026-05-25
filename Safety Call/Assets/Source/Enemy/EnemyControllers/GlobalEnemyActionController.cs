@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 
 public class GlobalEnemyActionController: MonoBehaviour
 {
+    [SerializeField] private bool _isMovable = true;
     
     [SerializeField] EnemyInterestPoints _interestPoints;
 
@@ -27,12 +28,16 @@ public class GlobalEnemyActionController: MonoBehaviour
 
     IEnumerator MoveRandomEnemy()
     {
-        yield return new WaitForSeconds(Random.Range(4f, 15f));
-        InitializeMovementToRandomPoint(_enemiesList[Random.Range(0, _enemiesList.Count - 1)]);
-        StartCoroutine(MoveRandomEnemy());
+        if (_isMovable)
+        {
+            yield return new WaitForSeconds(Random.Range(4f, 15f));
+            InitializeMovementToRandomPoint(_enemiesList[Random.Range(0, _enemiesList.Count - 1)]);
+            StartCoroutine(MoveRandomEnemy());
+        }
     } 
     public void InitializeStartPoints(List<EnemyMovement> enemiesList)
     {
+        if(!_isMovable) return;
         _enemiesList = enemiesList;
         foreach (var enemy in _enemiesList)
         {
@@ -43,6 +48,7 @@ public class GlobalEnemyActionController: MonoBehaviour
 
     public void InitializeMovementToRandomPoint(CreatureMovement creature)
     {
+        if(!_isMovable) return;
         _strategySetter.PerformMovement(creature, _interestPoints.GetRandomPoint());
     }
 
