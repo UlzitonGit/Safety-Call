@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Source.Players.Controls;
@@ -7,6 +8,7 @@ public class CyberDroneController : AbilityBase
 {
     [SerializeField] private PlayerTacticalControlInput _playerTacticalControlInput;
     [SerializeField] private GameObject drone;
+    private bool isUsed;
     private Drone _droneInstance;
 
     public override void UseAbility()
@@ -29,10 +31,20 @@ public class CyberDroneController : AbilityBase
     public override void ShowHint()
     {
         _hint.SetActive(true);
+        isUsed = true;
     }
 
     public override void Cancel()
     {
         _hint.SetActive(false);
+        isUsed = false;
+    }
+
+    private void Update()
+    {
+        if (isUsed)
+        {
+            _hint.transform.position = _playerTacticalControlInput.GetClickCoordinates();
+        }
     }
 }
