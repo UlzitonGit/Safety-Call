@@ -8,7 +8,11 @@ public abstract class AbilityBase : MonoBehaviour
     [HideInInspector] public bool CanBeUsed = true;
 
     [SerializeField] protected int _usageCount;
+    [SerializeField] protected GameObject _hint;
     public abstract void UseAbility();
+    public abstract void ShowHint();
+    
+    public abstract void Cancel();
 
     protected IEnumerator Reloading()
     {

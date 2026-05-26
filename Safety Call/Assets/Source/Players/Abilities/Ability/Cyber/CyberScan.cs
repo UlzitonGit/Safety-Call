@@ -10,6 +10,15 @@ public class CyberScan : AbilityBase
     {
         scans = FindObjectsByType<Scannable>(FindObjectsSortMode.None);
     }
+    public override void ShowHint()
+    {
+        _hint.SetActive(true);
+    }
+
+    public override void Cancel()
+    {
+        _hint.SetActive(false);
+    }
 
     public override void UseAbility()
     {

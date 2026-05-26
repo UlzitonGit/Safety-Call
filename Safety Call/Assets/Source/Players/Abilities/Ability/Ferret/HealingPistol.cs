@@ -29,4 +29,13 @@ public class HealingPistol : AbilityBase
     {
         _usageCount += amount;
     }
+    public override void ShowHint()
+    {
+        _hint.SetActive(true);
+    }
+
+    public override void Cancel()
+    {
+        _hint.SetActive(false);
+    }
 }

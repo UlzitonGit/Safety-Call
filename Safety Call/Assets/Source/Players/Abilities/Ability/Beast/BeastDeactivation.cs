@@ -10,4 +10,13 @@ public class BeastDeactivation : AbilityBase
         if(claymore != null)
             claymore.GetComponentInChildren<Claymore>().Deactivate();
     }
+    public override void ShowHint()
+    {
+        _hint.SetActive(true);
+    }
+
+    public override void Cancel()
+    {
+        _hint.SetActive(false);
+    }
 }

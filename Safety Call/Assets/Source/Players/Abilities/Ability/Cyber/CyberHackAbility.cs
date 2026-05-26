@@ -11,4 +11,13 @@ public class CyberHackAbility : AbilityBase
         if(toHack != null)
             toHack.GetComponent<IHackable>().Hack();
     }
+    public override void ShowHint()
+    {
+        _hint.SetActive(true);
+    }
+
+    public override void Cancel()
+    {
+        _hint.SetActive(false);
+    }
 }

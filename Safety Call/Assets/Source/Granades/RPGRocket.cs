@@ -45,7 +45,7 @@ public class RPGRocket: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!_exploded && _isActive)
+        if (!_exploded && _isActive && !other.CompareTag("Player"))
         {
             _exploded = true;
             Explode(Detonate());

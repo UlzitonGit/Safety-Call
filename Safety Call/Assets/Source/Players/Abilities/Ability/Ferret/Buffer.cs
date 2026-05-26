@@ -21,4 +21,13 @@ public class Buffer : AbilityBase
         yield return new WaitForSeconds(_reloadTime / 2);
         CanBeUsed = true;
     }
+    public override void ShowHint()
+    {
+        _hint.SetActive(true);
+    }
+
+    public override void Cancel()
+    {
+        _hint.SetActive(false);
+    }
 }

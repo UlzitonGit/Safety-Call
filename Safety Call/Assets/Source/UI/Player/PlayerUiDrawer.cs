@@ -17,7 +17,8 @@ public class PlayerUiDrawer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _hostages;
     [SerializeField] private TextMeshProUGUI _enemiesKilled;
     [SerializeField] private TextMeshProUGUI _percentsText;
-    
+    [SerializeField] private GameObject _abilityPanel;
+    [SerializeField] private TextMeshProUGUI _abilityTextMain;
     
     private PlayerData _viewModel;
     private GameplayStagesManager _gamePlayStatesUI;
@@ -99,6 +100,17 @@ public class PlayerUiDrawer : MonoBehaviour
     {
         _abilityPanel.SetActive(true);
         _abilityText.text = _viewModel._AbilitySO.GetDescription(index);
+    }
+
+    public void AbilityHintPanel(int index)
+    {
+        _abilityPanel.SetActive(true);
+        _abilityTextMain.text = $"{_viewModel._AbilitySO.GetDescription(index)}";
+    }
+
+    public void CloseAbilityPanel()
+    {
+        _abilityPanel.SetActive(false);
     }
     private void UpdateIcons()
     {

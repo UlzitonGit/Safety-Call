@@ -19,4 +19,13 @@ public class BeastShieldAbilitie : AbilityBase
         }
         _shieldActive = !_shieldActive;
     }
+    public override void ShowHint()
+    {
+        _hint.SetActive(true);
+    }
+
+    public override void Cancel()
+    {
+        _hint.SetActive(false);
+    }
 }

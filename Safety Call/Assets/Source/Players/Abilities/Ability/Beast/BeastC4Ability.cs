@@ -21,4 +21,13 @@ public class BeastC4Ability : AbilityBase
         _isActive = !_isActive;
         StartCoroutine(Reloading());
     }
+    public override void ShowHint()
+    {
+        _hint.SetActive(true);
+    }
+
+    public override void Cancel()
+    {
+        _hint.SetActive(false);
+    }
 }

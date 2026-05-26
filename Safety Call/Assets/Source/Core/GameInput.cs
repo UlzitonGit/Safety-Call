@@ -224,6 +224,15 @@ namespace Source.Core
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CancelAbility"",
+                    ""type"": ""Button"",
+                    ""id"": ""71157178-6c3a-49e0-8fe3-139984d87cbd"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -301,6 +310,17 @@ namespace Source.Core
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5ee9ba42-091c-46f7-abc9-ae17784b619f"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CancelAbility"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1468,6 +1488,7 @@ namespace Source.Core
             m_Mission_UseAbility1 = m_Mission.FindAction("UseAbility1", throwIfNotFound: true);
             m_Mission_UseAbility2 = m_Mission.FindAction("UseAbility2", throwIfNotFound: true);
             m_Mission_Interact = m_Mission.FindAction("Interact", throwIfNotFound: true);
+            m_Mission_CancelAbility = m_Mission.FindAction("CancelAbility", throwIfNotFound: true);
             // TacticalMove
             m_TacticalMove = asset.FindActionMap("TacticalMove", throwIfNotFound: true);
             m_TacticalMove_Move = m_TacticalMove.FindAction("Move", throwIfNotFound: true);
@@ -1724,6 +1745,7 @@ namespace Source.Core
         private readonly InputAction m_Mission_UseAbility1;
         private readonly InputAction m_Mission_UseAbility2;
         private readonly InputAction m_Mission_Interact;
+        private readonly InputAction m_Mission_CancelAbility;
         /// <summary>
         /// Provides access to input actions defined in input action map "Mission".
         /// </summary>
@@ -1763,6 +1785,10 @@ namespace Source.Core
             /// Provides access to the underlying input action "Mission/Interact".
             /// </summary>
             public InputAction @Interact => m_Wrapper.m_Mission_Interact;
+            /// <summary>
+            /// Provides access to the underlying input action "Mission/CancelAbility".
+            /// </summary>
+            public InputAction @CancelAbility => m_Wrapper.m_Mission_CancelAbility;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -1810,6 +1836,9 @@ namespace Source.Core
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @CancelAbility.started += instance.OnCancelAbility;
+                @CancelAbility.performed += instance.OnCancelAbility;
+                @CancelAbility.canceled += instance.OnCancelAbility;
             }
 
             /// <summary>
@@ -1842,6 +1871,9 @@ namespace Source.Core
                 @Interact.started -= instance.OnInteract;
                 @Interact.performed -= instance.OnInteract;
                 @Interact.canceled -= instance.OnInteract;
+                @CancelAbility.started -= instance.OnCancelAbility;
+                @CancelAbility.performed -= instance.OnCancelAbility;
+                @CancelAbility.canceled -= instance.OnCancelAbility;
             }
 
             /// <summary>
@@ -2887,6 +2919,13 @@ namespace Source.Core
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnInteract(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "CancelAbility" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnCancelAbility(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "TacticalMove" which allows adding and removing callbacks.

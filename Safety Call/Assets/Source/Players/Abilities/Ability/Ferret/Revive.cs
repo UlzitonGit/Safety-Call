@@ -20,4 +20,13 @@ public class Revive : AbilityBase
             }
         }
     }
+    public override void ShowHint()
+    {
+        _hint.SetActive(true);
+    }
+
+    public override void Cancel()
+    {
+        _hint.SetActive(false);
+    }
 }
