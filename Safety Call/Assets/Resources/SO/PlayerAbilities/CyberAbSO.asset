@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: CyberAbSO
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAbilitiesSO
   abilities:
-  - {fileID: -8876641551535793593, guid: 0f152b4c461672646ae40b1916eca340, type: 3}
-  - {fileID: 9141551276572910829, guid: 46af99aa47c439347a80cbd90df8d724, type: 3}
-  - {fileID: -8120302050354792237, guid: 158863334ad26224386ac816e0f49280, type: 3}
+  - {fileID: 9177237542500377291, guid: 143733766c7dcd0419a76a1206e75741, type: 3}
+  - {fileID: 3611950002740066039, guid: 143733766c7dcd0419a76a1206e75741, type: 3}
+  - {fileID: 3429291182450029267, guid: 143733766c7dcd0419a76a1206e75741, type: 3}
   info:
-  - 'Hacks cameras connected to the selected control panel, granting Eve access to
-    the surveillance system. Unlocks doors connected to the selected panel. Can also
-    hack ventilation systems.  '
   - 'Deploys a recon drone in the selected direction. The drone reveals the surrounding
     area while moving to the target point, remains there for 15 seconds, then returns.
     The drone can be destroyed by enemies.  '
+  - 'Hacks cameras connected to the selected control panel, granting Eve access to
+    the surveillance system. Unlocks doors connected to the selected panel. Can also
+    hack ventilation systems.  '
   - 'Highlights all interactive objects on the map for 5 seconds.  '
