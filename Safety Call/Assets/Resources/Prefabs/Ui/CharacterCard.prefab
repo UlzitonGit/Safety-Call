@@ -172,7 +172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.2, y: -14}
+  m_AnchoredPosition: {x: 2.2567015, y: 7.4}
   m_SizeDelta: {x: 139.3461, y: 139.3461}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7682739633849059673
@@ -569,7 +569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8897961381539405715, guid: b68d82072105d2a47890b4bff5d4086e, type: 3}
+  m_Sprite: {fileID: 5826329469782705028, guid: 143733766c7dcd0419a76a1206e75741, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -591,9 +591,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a417f89b2fa4f40af0e2787d428023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _namesMeshProUGUI: []
-  _hpBar: []
-  _name: Hacker
+  _infoPanel: {fileID: 0}
+  _noInfoPanel: {fileID: 0}
+  _healthBar: {fileID: 0}
+  _maxAmmoText: {fileID: 0}
+  _currentAmmoText: {fileID: 0}
+  _statusText: {fileID: 0}
+  _missionStatusBar: {fileID: 0}
+  _abilityIcons: []
+  _hostages: {fileID: 0}
+  _enemiesKilled: {fileID: 0}
+  _percentsText: {fileID: 0}
+  _abilityPanel: {fileID: 0}
+  _abilityTextMain: {fileID: 0}
+  _abilityUseText: {fileID: 0}
 --- !u!1 &7757286766855059267
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.0000023842, y: -23.5}
+  m_AnchoredPosition: {x: 0.0000023842, y: -22.08}
   m_SizeDelta: {x: 134.8327, y: 31.3591}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7465151025929316625
@@ -659,7 +670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1961534960777993972, guid: df8f7d155cf770b479696144443dd107, type: 3}
+  m_Sprite: {fileID: -6098933818550099220, guid: 143733766c7dcd0419a76a1206e75741, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
