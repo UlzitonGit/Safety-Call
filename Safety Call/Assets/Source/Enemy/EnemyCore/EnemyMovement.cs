@@ -7,6 +7,14 @@ public class EnemyMovement : CreatureMovement
     protected void FixedUpdate()
     {
         LookAtPosition();
+        if (_aimPoint.transform.localEulerAngles.z > 0 && _aimPoint.transform.localEulerAngles.z > 180)
+        {
+            _aimPoint.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            _aimPoint.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     public override void LookAtTarget(Vector3 target)
