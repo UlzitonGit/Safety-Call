@@ -71,7 +71,7 @@ public class PlayerAbilitiesController : MonoBehaviour
                 QReady = false;
                 DReady = false;
                 _currentPlayerData._AbilityUser._abilities[0].ShowHint(); 
-                _playerUiDrawer.AbilityHintPanel(0);
+                _playerUiDrawer.AbilityHintPanel(0, "E");
                 _abilityUser = _currentPlayerData._AbilityUser;
             }
             else
@@ -114,7 +114,7 @@ public class PlayerAbilitiesController : MonoBehaviour
                 EReady = false;
                 DReady = false;
                 CloseAllHints();
-                _playerUiDrawer.AbilityHintPanel(1);
+                _playerUiDrawer.AbilityHintPanel(1, "Q");
                 _currentPlayerData._AbilityUser._abilities[1].ShowHint();    
                 _abilityUser = _currentPlayerData._AbilityUser;
             }
@@ -156,7 +156,7 @@ public class PlayerAbilitiesController : MonoBehaviour
                 QReady = false;
                 EReady = false;
                 CloseAllHints();
-                _playerUiDrawer.AbilityHintPanel(2);
+                _playerUiDrawer.AbilityHintPanel(2, "D");
                 _currentPlayerData._AbilityUser._abilities[2].ShowHint();    
                 _abilityUser = _currentPlayerData._AbilityUser;
             }

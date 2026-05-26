@@ -17,6 +17,10 @@ MonoBehaviour:
   - {fileID: 5049783485040867628, guid: 569c06c33f0c32a4e9e5c44b1cbf1f25, type: 3}
   - {fileID: -2412975284033521810, guid: 49a8165ea96948e47994880a6229a44e, type: 3}
   info:
-  - 'TUNG '
-  - SAHUR
-  - 67
+  - 'Deploys a ballistic shield for an unlimited duration. The shield can be lowered
+    at any time. While active, Beast and nearby allies/hostages take no damage from
+    bullets or shrapnel, but Beast cannot shoot while using it. Shield durability
+    decreases when absorbing bullet or explosive damage.  '
+  - 'Places C4 at the selected location. Using the skill again detonates the explosive.
+    Detonating an already placed C4 does not consume an additional charge.  '
+  - 'Disarms tripwires in radius  '

@@ -19,7 +19,7 @@ public class PlayerUiDrawer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _percentsText;
     [SerializeField] private GameObject _abilityPanel;
     [SerializeField] private TextMeshProUGUI _abilityTextMain;
-    
+    [SerializeField] private TextMeshProUGUI _abilityUseText;
     private PlayerData _viewModel;
     private GameplayStagesManager _gamePlayStatesUI;
     private GameObject _currentPanel;
@@ -102,10 +102,11 @@ public class PlayerUiDrawer : MonoBehaviour
         _abilityText.text = _viewModel._AbilitySO.GetDescription(index);
     }
 
-    public void AbilityHintPanel(int index)
+    public void AbilityHintPanel(int index, string use)
     {
         _abilityPanel.SetActive(true);
         _abilityTextMain.text = $"{_viewModel._AbilitySO.GetDescription(index)}";
+        _abilityUseText.text = "PRESS " + use + " TO CONFIRM";
     }
 
     public void CloseAbilityPanel()
