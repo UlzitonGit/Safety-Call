@@ -9,6 +9,7 @@ public class CCTVFOV : MonoBehaviour, IHackable
     [SerializeField] private bool _isActive;
     
     private List<IPlayerSpotable> _enemyVisibilities = new List<IPlayerSpotable>();
+    [SerializeField] private GameObject _hacked;
 
     private bool _hasInSeeZone;
 
@@ -49,6 +50,7 @@ public class CCTVFOV : MonoBehaviour, IHackable
     public void Hack()
     {
         _isActive = true;
+        _hacked.SetActive(true);
         _activationLightGameObject.SetActive(true);
     }
 }

@@ -7,6 +7,7 @@ public class RemoteControlePanel : MonoBehaviour, IHackable
     [SerializeField] private GameObject[] _connectedHackables;
     [SerializeField] private bool isTutorial;
     private List<IHackable> _hackables = new List<IHackable>();
+    [SerializeField] private GameObject _hacked;
     private bool _isHacked = false;
     
 
@@ -21,6 +22,7 @@ public class RemoteControlePanel : MonoBehaviour, IHackable
     public void Hack()
     {
         GetComponent<BoxCollider2D>().enabled = false;
+        _hacked.SetActive(true);
         _isHacked=true;
         foreach (var hackable in _hackables)
         {
