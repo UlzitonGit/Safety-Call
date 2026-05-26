@@ -53,6 +53,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -74,6 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
@@ -244,7 +247,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.24, y: -3.11, z: -0.028975075}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8579834690224718510}
@@ -297,6 +300,7 @@ MonoBehaviour:
   _timeToReaction: 0.4
   _creaturesData: {fileID: 5626567879417844196}
   _playerAnimator: {fileID: 0}
+  _defence: 0
 --- !u!114 &7738272878052374514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +318,7 @@ MonoBehaviour:
     m_Bits: 128
   _animator: {fileID: 878022430315518884}
   _speed: 5
+  _isTutorial: 0
 --- !u!114 &3547421703258644069
 MonoBehaviour:
   m_ObjectHideFlags: 0
