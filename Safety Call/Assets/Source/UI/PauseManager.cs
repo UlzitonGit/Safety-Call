@@ -3,10 +3,12 @@ using Source.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Source.Players.Controls;
+using UnityEngine.SceneManagement;
 
 
 public class PauseManager : MonoBehaviour
 {
+    [SerializeField] private GameObject pausePanel;
     private InputAction _pause;
     private bool isPaused = false;
 
@@ -20,24 +22,43 @@ public class PauseManager : MonoBehaviour
     {
         _pause.performed -= UsePause;
     }
-
+    
     private void UsePause(InputAction.CallbackContext ctx)
+    {
+        ChoosePause();
+    }
+
+    public void ChoosePause()
     {
         if (isPaused)
         {
             Resume();
+            isPaused = false;
+            pausePanel.SetActive(false);
         }
         else
         {
             Pause();
+            isPaused = true;
+            pausePanel.SetActive(true);
         }
     }
-    public void Pause()
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(1);
+    }
+    private void Pause()
     {
         Time.timeScale = 0;
     }
 
-    public void Resume()
+    private void Resume()
     {
         Time.timeScale = 1;
     }
