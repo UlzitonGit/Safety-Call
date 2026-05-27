@@ -25,7 +25,7 @@ public class HostageInteractor : MonoBehaviour
 
     private void Inputs()
     {
-        if (Input.GetKeyDown(KeyCode.E) && CheckPlayers() && !_isMoving)
+        if (Input.GetKeyDown(KeyCode.F) && CheckPlayers() && !_isMoving)
         {
             _animator.SetBool("isMoving", true);
             
@@ -35,7 +35,7 @@ public class HostageInteractor : MonoBehaviour
                 FindAnyObjectByType<TutorialController>().DestroyHostageHints();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.E) && CheckPlayers() && _isMoving)
+        else if (Input.GetKeyDown(KeyCode.F) && CheckPlayers() && _isMoving)
         {
             _player = transform;
             _animator.SetBool("isMoving", false);
