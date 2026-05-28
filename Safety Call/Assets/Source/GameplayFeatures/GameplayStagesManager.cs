@@ -8,7 +8,7 @@ public class GameplayStagesManager : MonoBehaviour
     
     public int AllHostages;
     public int AllEnemies;
-    
+    [SerializeField] private int levelIndex;
     [SerializeField] private GameObject _winEndPanel;
     [SerializeField] private GameObject _looseEndPanel;
     [SerializeField] private CreaturesData[] _creaturesData;
@@ -103,6 +103,11 @@ public class GameplayStagesManager : MonoBehaviour
         {
             _maxScore = _enemyCount * 50 + _playersCount * 200 + _hostagesCount * 100;
             _score = _playersCount * 200;
+            int maxLevel = PlayerPrefs.GetInt("MaxLevel");
+            if (maxLevel < levelIndex)
+            {
+                PlayerPrefs.SetInt("MaxLevel", levelIndex);
+            }
             _winEndPanel.SetActive(true);
         }
     }

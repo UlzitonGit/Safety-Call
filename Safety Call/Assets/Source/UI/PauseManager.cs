@@ -55,6 +55,12 @@ public class PauseManager : MonoBehaviour
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
     }
+
+    public void BackToLoadingScreen()
+    {
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+    }
     private void Pause()
     {
         Time.timeScale = 0;
