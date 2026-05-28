@@ -23,7 +23,7 @@ public class DialogController : MonoBehaviour, IStartable
         speakerIcon.sprite = dialog[dialogIndex].images[replicaIndex];
         Time.timeScale = 0f;
     }
-
+    
     public void NextReplica()
     {
         replicaIndex++;

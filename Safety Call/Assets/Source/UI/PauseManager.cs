@@ -47,11 +47,13 @@ public class PauseManager : MonoBehaviour
     public void PlayAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
 
     public void BackToMainMenu()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
     private void Pause()
     {

@@ -39,7 +39,6 @@ public class Medkit : MonoBehaviour, IInteractable
         if (collision.CompareTag("Player"))
         {
             hint.SetActive(true);
-            collision.GetComponent<PlayerInteraction>().SetInteractable(this);
             _curPlayerHealth = collision.GetComponent<PlayerHealth>();
         }
     }
@@ -49,7 +48,6 @@ public class Medkit : MonoBehaviour, IInteractable
         if (collision.CompareTag("Player") )
         {
             hint.SetActive(false);
-            collision.GetComponent<PlayerInteraction>().SetInteractable(null);
         }
     }
 

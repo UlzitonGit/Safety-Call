@@ -14,8 +14,8 @@ public abstract class CreatureAnimator : MonoBehaviour
     [SerializeField] protected Transform _rotation;
     
     [SerializeField] protected SpriteRenderer _bodySpriteRenderer;
-    [SerializeField] private int _highSortingOrder = 5;
-    [SerializeField] private int _lowSortingOrder = 3;
+    [SerializeField] protected int _highSortingOrder = 5;
+    [SerializeField] protected int _lowSortingOrder = 3;
 
     [SerializeField] private bool EulerZ;
 

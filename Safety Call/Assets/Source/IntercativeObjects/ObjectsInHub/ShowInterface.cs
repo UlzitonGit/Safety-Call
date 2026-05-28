@@ -12,8 +12,12 @@ namespace Source.IntercativeObjects.ObjectsInHub
         private InputAction _interactAction;
 
         private bool _canInteract = true;
-        
 
+        public void SetCanInteract(bool value)
+        {
+            _canInteract = value;
+            _hint.SetActive(value);
+        }
         public void DoInteract()
         {
             if (_canInteract)
@@ -24,19 +28,17 @@ namespace Source.IntercativeObjects.ObjectsInHub
             
         protected void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Player"))
+            if (collision.CompareTag("Player") && _canInteract)
             {
                 _hint.SetActive(true);
-                collision.GetComponent<PlayerInteraction>().SetInteractable(this);
             }
         }
 
         protected void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.CompareTag("Player") )
+            if (collision.CompareTag("Player") && _canInteract)
             {
                 _hint.SetActive(false);
-                collision.GetComponent<PlayerInteraction>().SetInteractable(null);
             }
         }
     }

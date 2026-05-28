@@ -1,12 +1,14 @@
+using System.Collections.Generic;
 using Source.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
-
+    [SerializeField] private LayerMask _canInteractLayer = 20;
+    [SerializeField] private float _radius = 1;
     private InputAction _interactAction;
-    private IInteractable _interactable;
+    private List<IInteractable> _interactable = new List<IInteractable>();
     private void OnEnable()
     {
         _interactAction = InputManager.Instance.GameInput.Mission.Interact;
@@ -20,14 +22,22 @@ public class PlayerInteraction : MonoBehaviour
 
     private void DoInteract(InputAction.CallbackContext obj)
     {
+        _interactable.Clear();
+        Collider2D[] interactions = Physics2D.OverlapCircleAll(transform.position, 1f, _canInteractLayer);
+        foreach (Collider2D interactable in interactions)
+        {
+            if (interactable.TryGetComponent<IInteractable>(out IInteractable i))
+            {
+                _interactable.Add(i);
+            }
+        }
         if (_interactable != null)
         {
-            _interactable.DoInteract();
+            foreach (IInteractable interactable in _interactable)
+            {
+                interactable.DoInteract();
+            }
         }
     }
-
-    public void SetInteractable(IInteractable interactable)
-    {
-        _interactable = interactable;
-    }
+    
 }

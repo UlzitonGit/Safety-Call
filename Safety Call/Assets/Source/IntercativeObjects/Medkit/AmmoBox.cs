@@ -26,7 +26,6 @@ public class AmmoBox : MonoBehaviour, IInteractable
         if (collision.CompareTag("Player"))
         {
             hint.SetActive(true);
-            collision.GetComponent<PlayerInteraction>().SetInteractable(this);
             _weapon = collision.GetComponentInChildren<WeaponGeneral>();
         }
     }
@@ -36,7 +35,6 @@ public class AmmoBox : MonoBehaviour, IInteractable
         if (collision.CompareTag("Player") )
         {
             hint.SetActive(false);
-            collision.GetComponent<PlayerInteraction>().SetInteractable(null);
         }
     }
 
