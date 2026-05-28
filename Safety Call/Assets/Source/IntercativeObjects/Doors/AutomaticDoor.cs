@@ -6,7 +6,7 @@ public class AutomaticDoor : MonoBehaviour, IHackable
     [SerializeField] private Animator _animator;
 
     [SerializeField] private bool _isActive;
-
+    
     private void OnTriggerStay2D(Collider2D other)
     {
         if(!_isActive) return;
