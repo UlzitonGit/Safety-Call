@@ -8,7 +8,8 @@ public class DialogueInvoker : MonoBehaviour
     private int currentLevel;
     private void Start()
     {
-        currentLevel = PlayerPrefs.GetInt("LevelsCompleted");
+        currentLevel = PlayerPrefs.GetInt("MaxLevel");
+        print(currentLevel);
         foreach (Dialogs dialog in dialogs)
         {
             if(currentLevel == dialog.index)
