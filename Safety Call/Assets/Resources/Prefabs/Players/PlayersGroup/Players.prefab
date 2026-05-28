@@ -8016,6 +8016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8638569680124365508}
   - component: {fileID: 3421440058216390467}
+  - component: {fileID: 9166586084804470143}
   m_Layer: 7
   m_Name: AimPoint
   m_TagString: Untagged
@@ -8059,6 +8060,28 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 164865
   _playerGunfightBehaviourManager: {fileID: 0}
+--- !u!95 &9166586084804470143
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485231631376320176}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6df58094c0895874a90902c265b47bb6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1491184902408189092
 GameObject:
   m_ObjectHideFlags: 0
@@ -8100,7 +8123,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491184902408189092}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -26147,7 +26170,7 @@ Transform:
   m_GameObject: {fileID: 3211836411244324996}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.005, y: -0.1852, z: 0}
+  m_LocalPosition: {x: -0.005, y: 0.0094, z: 0}
   m_LocalScale: {x: 0.7979, y: 0.7979, z: 0.7979}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26160,7 +26183,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3211836411244324996}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -26200,7 +26223,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 12
-  m_Sprite: {fileID: -1778513766190094198, guid: e00e0b5e3f21d7f4294dab0070447224, type: 3}
+  m_Sprite: {fileID: 3395334381432380528, guid: dc4534fb48cf5b548adcdb1e4b512dd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -26221,7 +26244,7 @@ Animator:
   m_GameObject: {fileID: 3211836411244324996}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4248e6f90cfffe34f8aa56fe5d7adb10, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6df58094c0895874a90902c265b47bb6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
