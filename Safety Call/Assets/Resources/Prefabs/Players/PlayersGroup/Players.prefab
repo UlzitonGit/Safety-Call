@@ -62217,6 +62217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllHostages: 0
   AllEnemies: 0
+  levelIndex: 0
   _winEndPanel: {fileID: 6292121904020553894}
   _looseEndPanel: {fileID: 2173409678433306452}
   _creaturesData:
@@ -80520,6 +80521,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d55f9525190c8f42bd3fcabeec21664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  _canInteractLayer:
+    serializedVersion: 2
+    m_Bits: 20
+  _radius: 1
 --- !u!114 &5710673144685241889 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8060874682696989706, guid: 4e1fa0caa58afff43be89a109d223923, type: 3}
@@ -81983,6 +81988,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d55f9525190c8f42bd3fcabeec21664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  _canInteractLayer:
+    serializedVersion: 2
+    m_Bits: 20
+  _radius: 1
 --- !u!114 &2565298239321903907 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8060874682696989706, guid: 3e05c3dcdee5cfc4ebf8bba9ebf57ee8, type: 3}
@@ -82391,6 +82400,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d55f9525190c8f42bd3fcabeec21664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  _canInteractLayer:
+    serializedVersion: 2
+    m_Bits: 20
+  _radius: 1
 --- !u!4 &7078879805548416720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4552896821078176600, guid: c1939fe5028a63c4eb1eceb7872f8993, type: 3}
@@ -82760,6 +82773,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d55f9525190c8f42bd3fcabeec21664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  _canInteractLayer:
+    serializedVersion: 2
+    m_Bits: 20
+  _radius: 1
 --- !u!114 &969960674760881086 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8060874682696989706, guid: d5fc420ef43ebef4b8523201a60bcb6d, type: 3}

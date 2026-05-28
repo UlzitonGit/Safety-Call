@@ -103,11 +103,11 @@ public class GameplayStagesManager : MonoBehaviour
         {
             _maxScore = _enemyCount * 50 + _playersCount * 200 + _hostagesCount * 100;
             _score = _playersCount * 200;
-            int maxLevel = PlayerPrefs.GetInt("MaxLevel");
-            if (maxLevel < levelIndex)
-            {
-                PlayerPrefs.SetInt("MaxLevel", levelIndex);
-            }
+            //int maxLevel = PlayerPrefs.GetInt("MaxLevel");
+            //if (maxLevel < levelIndex)
+            //{
+            PlayerPrefs.SetInt("MaxLevel", levelIndex);
+            //}
             _winEndPanel.SetActive(true);
         }
     }
