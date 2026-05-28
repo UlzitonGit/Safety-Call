@@ -209,7 +209,8 @@ MonoBehaviour:
   IsVisible: 0
   _meshRenderer: {fileID: 8828717864427696516}
   _weapon: {fileID: 8807926204296876587}
-  _weaponGameObject: {fileID: 0}
+  _weaponGameObject:
+  - {fileID: 0}
 --- !u!114 &2253681756269262941
 MonoBehaviour:
   m_ObjectHideFlags: 0
